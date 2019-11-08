@@ -2,7 +2,7 @@
 
 ----
 
-**支持以下IDE **
+**支持以下IDE**
 
 - IntelliJ IDEA 173+(2017.3+)
 - IntelliJ IDEA Community Edition 173+(2017.3+)
