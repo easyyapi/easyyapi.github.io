@@ -2,7 +2,7 @@
 
 - 优雅的文档来自优雅的注释
 - 基于[javadoc](#Javadoc)&[KDoc](#KDoc)解析API文档
-- [QA](https://github.com/tangcent/easy-yapi/blob/master/docs/QA.md)
+- [QA](https://easyyapi.com/demo/QA.html)
 
 
 ## 功能特性
