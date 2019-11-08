@@ -3,7 +3,7 @@ banner:
   name: 'EasyYapi'
   desc: '优雅的文档来自优雅的注释'
   btns:
-    - { name: 'Start', href: './documents/intro.html', primary: true }
+    - { name: 'Start', href: './documents/index.html', primary: true }
     - { name: 'Github >', href: 'https://github.com/tangcent/easy-yapi' }
   caption: '当前版本: v1.2.1'
 features:
