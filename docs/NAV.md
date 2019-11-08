@@ -1,4 +1,4 @@
 # EasyYapi
 
 * [documents](/documents/index.md)
-* [about](/about/index.html)
+* [about](/about/index.md)

@@ -1,14 +1,17 @@
 ---
 banner:
-  name: 'Simplifies API Development'
-  desc: 'Parsing based on javadoc&KDoc'
+  name: 'EasyYapi'
+  desc: '优雅的文档来自优雅的注释'
   btns:
-    - { name: 'Start', href: './documents/index.html', primary: true }
+    - { name: 'Start', href: './documents/intro.html', primary: true }
     - { name: 'Github >', href: 'https://github.com/tangcent/easy-yapi' }
-  caption: 'current version: v1.2.1'
+  caption: '当前版本: v1.2.1'
 features:
-  - { name: 'Several Sources', desc: 'Java/Kotlin' }
-  - { name: 'Several Output', desc: 'Postman/Markdown/Yapi' }
+  - { name: '多语言', desc: 'Java/Kotlin' }
+  - { name: '多框架', desc: 'Spring MVC/Spring boot/Spring WebFlux' }
+  - { name: '多渠道', desc: 'Postman/Markdown/Yapi' }
+  - { name: '丰富的扩展性', desc: '支持多种配置与扩展,满足不同框架与代码规范' }
+  - { name: '调试利器', desc: '无需导出,直接请求' }
 
 footer:
   copyRight:
