@@ -1,16 +1,16 @@
-# Installation
+# 安装
 
 ----
 
-**support following product build version > 173(2017.3)**
+**支持以下IDE **
 
-- IntelliJ IDEA
-- IntelliJ IDEA Community Edition
+- IntelliJ IDEA 173+(2017.3+)
+- IntelliJ IDEA Community Edition 173+(2017.3+)
 
-**using IDE plugin system**
+**从IDEA仓库中安装**
 - <kbd>Preferences(Settings)</kbd> > <kbd>Plugins</kbd> > <kbd>Browse repositories...</kbd> > <kbd>find"EasyYapi"</kbd> > <kbd>Install Plugin</kbd>
 
-**Manual:**
-- download from [Jetbrains](https://plugins.jetbrains.com/plugin/12458-easyyapi) or [Github](https://github.com/tangcent/easy-yapi/releases) -> <kbd>Preferences(Settings)</kbd> > <kbd>Plugins</kbd> > <kbd>Install plugin from disk...</kbd>
+**手动下载安装:**
+- 下载插件 [Jetbrains](https://plugins.jetbrains.com/plugin/12458-easyyapi) or [Github](https://github.com/tangcent/easy-yapi/releases) -> <kbd>Preferences(Settings)</kbd> > <kbd>Plugins</kbd> > <kbd>Install plugin from disk...</kbd>
 
-restart **IDE**.
+重启 **IDE**.

@@ -1,4 +1,4 @@
 # EasyYapi
 
-* [documents](/documents/index.md)
-* [about](/about/index.md)
+* [文档](/documents/index.md)
+* [demo](/demo/index.md)

@@ -5,16 +5,13 @@
 - [QA](https://github.com/tangcent/easy-yapi/blob/master/docs/QA.md)
 
 
-## Feature
-- [X] Support Java&Kotlin
-- [X] Support Spring
-- [X] Export api to Postman
-- [X] Export api to Yapi
-- [ ] Export api to Word
-- [X] Export api to Markdown
-- [X] Export method doc(rpc) to Markdown
-- [X] Export method doc(rpc) to Yapi
-- [X] Call api from code
-- [X] Api DashBoard
-- [X] YApi DashBoard
+## 功能特性
+- 导出API文档到Postman
+- 导出API文档到Yapi
+- 导出API文档到Markdown
+- 导出RPC文档到Markdown
+- 导出RPC文档到Yapi
+- 在IDEA中直接发起API请求
+- Api DashBoard
+- YApi DashBoard
 
