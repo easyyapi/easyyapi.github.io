@@ -111,7 +111,7 @@
 
     ```
     
-6. How to declare a api requires some special permission in a description with javax.annotation.security?
+6. 如何在API描述中声明API需要的权限(javax.annotation.security)?
 
    * add config for spring security:
 
@@ -144,7 +144,7 @@
 
    ```
    
-7. How to config for spring security
+7. 如何在API描述中声明API需要的权限(spring security)?
 
    * add config for spring security:
 
@@ -178,7 +178,7 @@
 
    ```
    
-8. How to ignore the special field?
+8. 如何忽略某些字段?
 
    * To ignore the field with special name:
 
@@ -201,7 +201,7 @@
    json.rule.field.ignore=groovy:it.hasModifier("transient")
    ```
 
-9. How to resolve the special type as another one?
+9. 如何将指定类型转换为另一种类型处理?
 
    * Receive or output 'java.time.LocalDateTime' as 'yyyy-mm-dd'
 
