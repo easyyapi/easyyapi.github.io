@@ -6,7 +6,7 @@
    
 2. 如何组织API到指定文件夹?
 
-   * add config:
+   * 增加配置:
 
    ```properties
    #find module for comment tag 
@@ -29,7 +29,7 @@
 
 3. 如何忽略API?
 
-   * add config:
+   * 增加配置:
 
    ```properties
    #ignore class or method which has comment tag 'ignore' 
@@ -74,20 +74,20 @@
    
 4. 如何设置API/文件夹的名称/描述?
 
-    * in general:
+    * 一般来说:
 
     ```java
     /**
-     * The head line will be the name of api directory
-     * The rest lines will be the description of api directory
+     * 第一行注释作为文件夹的标题
+     * 剩余行注释作为文件夹的描述
      */
     @RestController
     @RequestMapping(value = "mock")
     public class MockCtrl {
     
         /**
-         * The head line will be the name of api
-         * The rest lines will be the description of api
+         * 第一行行注释作为API的标题
+         * 剩余行注释作为API的描述
          */
         @GetMapping("/string")
         public String mockString() {
@@ -98,7 +98,7 @@
     
 5. 如何在API/文件夹的描述中说明API/文件夹被废弃了?
 
-    * you can add additional config:
+    * 添加配置:
 
     ```properties
     doc.method[#deprecated]=groovy:"\n「deprecated」" + it.doc("deprecated")
@@ -124,16 +124,16 @@
 
    ```java
    /**
-    * The head line will be the name of api directory
-    * The rest lines will be the description of api directory
+    * 第一行注释作为文件夹的标题
+    * 剩余行注释作为文件夹的描述
     */
    @RestController
    @RequestMapping(value = "mock")
    public class MockCtrl {
    
        /**
-        * The head line will be the name of api
-        * The rest lines will be the description of api
+        * 第一行行注释作为API的标题
+        * 剩余行注释作为API的描述
         */
        @GetMapping("/string")
        @RolesAllowed("admin")
@@ -158,16 +158,16 @@
 
    ```java
    /**
-    * The head line will be the name of api directory
-    * The rest lines will be the description of api directory
+    * 第一行注释作为文件夹的标题
+    * 剩余行注释作为文件夹的描述
     */
    @RestController
    @RequestMapping(value = "mock")
    public class MockCtrl {
    
        /**
-        * The head line will be the name of api
-        * The rest lines will be the description of api
+        * 第一行行注释作为API的标题
+        * 剩余行注释作为API的描述
         */
        @GetMapping("/string")
        @PreAuthorize("hasRole('admin')")
