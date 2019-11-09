@@ -1,0 +1,40 @@
+# blacklist
+branches:
+  except:
+    - master
+
+# whitelist
+branches:
+  only:
+    - dev
+
+language: node_js
+node_js:
+ - '10.0.0'
+sudo: false # faster builds
+
+matrix:
+  include:
+    - os: linux
+      sudo: required
+      jdk: openjdk8
+
+os: osx
+
+cache:
+  directories:
+    - node_modules
+install:
+  - npm install
+  # - npm install ydoc
+script:
+  - ./build.sh
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: false
+  target-branch: master
+  on:
+    branch: dev
