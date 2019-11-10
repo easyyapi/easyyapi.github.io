@@ -5,5 +5,4 @@
 * [介绍](index.md)
 * [安装](installation.md)
 * [使用](use.md)
-* [配置](setting.md)
 * [注释规范](docs.md)
