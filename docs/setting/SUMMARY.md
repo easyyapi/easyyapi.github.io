@@ -17,3 +17,4 @@
     * [doc.class](rules/doc_class.md)
     * [param.requierd](rules/param_requierd.md)
     * [param.ignore](rules/param_ignore.md)
+    * [param.default.value](rules/param_default_value.md)

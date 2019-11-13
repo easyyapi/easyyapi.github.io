@@ -11,7 +11,7 @@
 | [doc.class](rules/doc_class.md)  | class | v1.3.0+ | 类上的额外注释 |
 | [param.required](rules/param_required.md) | arg | v0.7.3+ | API参数是否为必须(即不可为空) |
 | [param.ignore](rules/param_ignore.md)  | arg | v1.3.0+ | 忽略API参数 |
-| param.default.value | arg | v1.3.0+ | API参数的默认值 |
+| [param.default.value](rules/param_default_value.md) | arg | v1.3.0+ | API参数的默认值 |
 | field.required | field | v0.7.3+ | 字段是否为必须(不可为空) |
 | api.tag | method | v0.7.5+ | 标记接口tag |
 | api.status | method | v0.8.0+ | 标记接口status(应返回done/undone) |
