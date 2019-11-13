@@ -36,7 +36,6 @@ public class MockCtrl {
 
     /**
     * Mock String
-    * @ignore
     */
     @ApiOperation(value = "mock string")
     @GetMapping("/string")

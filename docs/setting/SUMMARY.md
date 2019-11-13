@@ -14,3 +14,6 @@
     * [json.rule.convert](rules/json_rule_convert.md)
     * [doc.field](rules/doc_field.md)
     * [doc.method](rules/doc_method.md)
+    * [doc.class](rules/doc_class.md)
+    * [param.requierd](rules/param_requierd.md)
+    * [param.ignore](rules/param_ignore.md)

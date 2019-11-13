@@ -26,7 +26,6 @@ public class MockCtrl {
 
     /**
     * Mock String
-    * @ignore
     */
     @GetMapping("/string")
     public String mockString(
