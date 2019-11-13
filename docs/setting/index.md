@@ -20,4 +20,4 @@
 | .postman.config | property | postman |
 | .postman.yml/.postman.yaml | yml | postman |
 | .yapi.config | property | yapi |
-| .yapi.yml/.postman.yaml | yml | yapi |
+| .yapi.yml/.yapi.yaml | yml | yapi |
