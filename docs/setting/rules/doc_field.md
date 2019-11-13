@@ -14,7 +14,7 @@ doc.field[@kotlin.Deprecated]=groovy:"\n「已废弃」" + it.ann("kotlin.Deprec
 
 ```
 
-### 添加对swagger ApiModelProperty支持
+### 添加对swagger @ApiModelProperty支持
 ```properties
 doc.field=@io.swagger.annotations.ApiModelProperty#value
 ```

@@ -7,7 +7,7 @@
 ### 在IDE中设置(全局)
 
 - <kbd>Preferences(Settings)</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd>
-- 首次使用此插件时，建议开启inferEnable,这将允许插件在遇到不确定的方法返回类型为(Object，Some\<Object>)时尝试通过代码流进行推断,并根据项目需求设置maxDeep(最大推断深度)
+- 首次使用此插件时，可以开启inferEnable,这将允许插件在遇到不确定的方法返回类型为(Object，Some\<Object>)时尝试通过代码流进行推断,并根据项目需求设置maxDeep(最大推断深度)
 
 ### 使用配置文件(当前项目)
 

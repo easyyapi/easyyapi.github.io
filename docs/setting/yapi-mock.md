@@ -55,7 +55,7 @@ mock.[*.sex|string]=@pick(["男","女"])
 mock.[*.gender|integer]=@natural(0,2)
 mock.[*.gender|string]=@pick(["男","女"])
 
-//用户信息相关
+#用户信息相关
 mock.[*.phone|string]=${phone}
 mock.[*Phone|string]=${phone}
 mock.[*.provinceName|string]=@province

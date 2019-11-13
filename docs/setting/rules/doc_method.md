@@ -19,7 +19,7 @@ doc.method[groovy:it.containingClass().hasAnn("kotlin.Deprecated")]=groovy:"\n�
 
 ```
 
-### 添加对swagger ApiOperation支持
+### 添加对swagger @ApiOperation支持
 ```properties
 doc.method=@io.swagger.annotations.ApiOperation#value
 ```
