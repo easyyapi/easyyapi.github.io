@@ -11,7 +11,13 @@
 
 ### 使用配置文件(当前项目)
 
- - 将配置文件添加到项目根目录中
- - .easy.api.config 对所有操作有效
- - .postman.config 对Postman相关操作有效
- - .yapi.config 对Yapi相关操作有效
+ - 将配置文件添加到项目或模块根目录中
+
+| 文件  |  类型  |  适用的操作  |
+| ------------ | ------------ | ------------ |
+| .easy.api.config | property | markdown/postman/yapi |
+| .easy.api.yml/.easy.api.yaml | yml | markdown/postman/yapi |
+| .postman.config | property | postman |
+| .postman.yml/.postman.yaml | yml | postman |
+| .yapi.config | property | yapi |
+| .yapi.yml/.postman.yaml | yml | yapi |
