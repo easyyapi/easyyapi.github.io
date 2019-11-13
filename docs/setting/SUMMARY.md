@@ -15,6 +15,7 @@
     * [doc.field](rules/doc_field.md)
     * [doc.method](rules/doc_method.md)
     * [doc.class](rules/doc_class.md)
-    * [param.requierd](rules/param_requierd.md)
+    * [param.requierd](rules/param_required.md)
     * [param.ignore](rules/param_ignore.md)
     * [param.default.value](rules/param_default_value.md)
+    * [field.requierd](rules/field_required.md)
