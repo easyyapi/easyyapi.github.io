@@ -5,7 +5,7 @@
 | [ignore](rules/ignore.md) | class/method | v0.7.2+ | 忽略API |
 | [json.rule.field.name](rules/json_rule_field_name.md) | field | v0.7.2+ | 设置输出的字段名(用于json中字段名与类中字段名不一致) |
 | [json.rule.field.ignore](rules/json_rule_field_ignore.md) | field | v0.7.2+ | 忽略字段(设置某些字段不出现在json中,或不需要请求时给出) |
-| json.rule.convert | - | v0.7.2+ | 用于设置某些类型转换为其他类型处理，通常用于使用了Spring的自定义类型转换器的情况 |
+| [json.rule.convert](rules/json_rule_convert.md) | - | v0.7.2+ | 用于设置某些类型转换为其他类型处理，通常用于使用了Spring的自定义类型转换器的情况 |
 | doc.field | field | v0.7.2+ | 字段的额外注释 |
 | doc.method | method | v0.7.2+ | 方法(api)的额外注释 |
 | param.required | arg | v0.7.3+ | API参数是否为必须(不可为空) |
