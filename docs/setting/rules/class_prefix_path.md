@@ -23,5 +23,5 @@ server.servlet.context-path=/demo
 ```yaml
 server:
   servlet:
-      context-path: /kotlin
+      context-path: /demo
 ```

@@ -39,7 +39,8 @@
 - groovy规则为 groovy:groovyScript
 - js规则为 js:jsScript
 - 脚本中默认注入[it]表示当前规则的应用对象,应用对象只提供方法即[it.method()✅]，不提供属性[it.property❎]
-- 对于class(类)、method(方法/API)、field(字段/属性),arg(参数)都支持如下方法
+
+### 对于class(类)、method(方法/API)、field(字段/属性),arg(参数)都支持如下方法
 
 
 | 方法  |  返回值  |  描述  |  例子  |
@@ -53,7 +54,7 @@
 | doc("tag","subTag") | String | 获取二级注释tag值 | it.doc("param","a")| 
 | hasDoc("tag") | String | 是否有指定注释tag | it.hasDoc("ignore")| 
 
-## 不同的应用对象提供额外的方法
+### 不同的应用对象提供额外的方法
 
 - class(类)
 
