@@ -13,8 +13,11 @@
 | [param.ignore](rules/param_ignore.md)  | arg | v1.3.0+ | 忽略API参数 |
 | [param.default.value](rules/param_default_value.md) | arg | v1.3.0+ | API参数的默认值 |
 | [method.additional.header](rules/method_additional_header.md) | method | v1.3.0+ | API需要额外的header |
+|  |  |  | {name: "header name",value: "",desc: "",required:false, example:""} |
 | method.additional.param | method | v1.3.0+ | API需要额外的参数 |
+|  |  |  | {name: "param name",value: "defaultValue",desc: "",required:false} |
 | method.additional.response.header | method | v1.3.0+ | API的响应包含额外的header |
+|  |  |  | {name: "header name",value: "",desc: "",required:false, example:""} |
 | [field.required](rules/field_required.md) | field | v0.7.3+ | 字段是否为必须(即不可为空) |
 | [api.tag](rules/api_tag.md) | method | v0.7.5+ | 标记接口tag |
 | [api.status](rules/api_status.md) | method | v0.8.0+ | 标记接口status(应返回done/undone) |
