@@ -3,6 +3,7 @@
 - 标记接口tag
 
 ### 默认推荐配置
+
 ```properties
 #yapi tag
 api.tag[@java.lang.Deprecated]=deprecated
@@ -17,13 +18,14 @@ api.tag[groovy:it.containingClass().hasAnn("kotlin.Deprecated")]=deprecated
 ```
 
 ### 添加对swagger @ApiOperation支持
+
 ```properties
 api.tag=@io.swagger.annotations.ApiOperation#tags
 ```
 
 ### demo
-```java
 
+```java
 /**
 * Mock Apis
 */

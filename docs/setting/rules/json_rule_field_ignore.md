@@ -4,6 +4,7 @@
 
 
 ### 默认推荐配置
+
 ```properties
 #Support for Jackson annotations
 json.rule.field.ignore=@com.fasterxml.jackson.annotation.JsonIgnore#value
@@ -13,6 +14,7 @@ json.rule.field.ignore=!@com.google.gson.annotations.Expose#serialize
 ```
 
 ### demo
+
 ```java
 public class TestJsonIgnoreBean {
 

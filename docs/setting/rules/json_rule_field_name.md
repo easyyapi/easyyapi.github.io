@@ -4,6 +4,7 @@
 
 
 ### 默认推荐配置
+
 ```properties
 #Support for Jackson annotations
 json.rule.field.name=@com.fasterxml.jackson.annotation.JsonProperty#value
@@ -13,6 +14,7 @@ json.rule.field.name=@com.google.gson.annotations.SerializedName#value
 ```
 
 ### demo
+
 ```java
 public class TestJsonFieldBean {
     @JsonProperty("a")

@@ -6,6 +6,7 @@
 
 
 ### 默认推荐配置
+
 ```properties
 ignore=#ignore
 ```

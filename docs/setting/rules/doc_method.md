@@ -4,6 +4,7 @@
 
 
 ### 默认推荐配置
+
 ```properties
 #deprecated info(java)
 doc.method[#deprecated]=groovy:"\n「已废弃」" + it.doc("deprecated")
@@ -20,11 +21,13 @@ doc.method[groovy:it.containingClass().hasAnn("kotlin.Deprecated")]=groovy:"\n�
 ```
 
 ### 添加对swagger @ApiOperation支持
+
 ```properties
 doc.method=@io.swagger.annotations.ApiOperation#value
 ```
 
 ### demo
+
 ```java
 
 /**

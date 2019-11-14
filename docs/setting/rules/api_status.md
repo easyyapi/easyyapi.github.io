@@ -1,26 +1,30 @@
-# param.ignore
+# api.status
 
-- 忽略API参数
+- 标记接口status
 
-### 添加对swagger @ApiParam支持
+### 默认推荐配置
 
 ```properties
-param.ignore=@io.swagger.annotations.ApiParam#hidden
+#yapi status
+api.status[#undone]=undone
+api.status[#todo]=undone
 ```
 
 ### demo
-
 ```java
+/**
+* Mock Apis
+*/
 @RestController
 @RequestMapping(value = "mock")
 public class MockCtrl {
 
     /**
     * Mock String
+    * @undone
     */
     @GetMapping("/string")
-    public String mockString(
-            @ApiParam(value = "seed for mock",hidden = true)  long seed) {
+    public String mockString() {
         return Result.success("mock string");
     }
 

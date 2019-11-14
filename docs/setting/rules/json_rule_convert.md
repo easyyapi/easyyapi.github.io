@@ -4,6 +4,7 @@
 
 
 ### 默认推荐配置
+
 ```properties
 #The ObjectId and Date are parsed as strings
 json.rule.convert[org.bson.types.ObjectId]=java.lang.String
