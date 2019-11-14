@@ -3,7 +3,7 @@
 ## 可增加自定义mock规则(beta)
 例如:
 
-```text
+```properties
 ## 增加自定义mock规则
 #mockjs官方示例: http://mockjs.com/examples.html
 #定义一些基础的规则
@@ -26,7 +26,7 @@ objectId=@string("0123456789abcdef",24,24)
 ## 可以使用mockjs提供的规则与自定义的规则来定制最后输出到YAPI的mock信息
 例如:
 
-```text
+```properties
 #常见的响应mock
 mock.[c|integer]=0
 mock.[code|integer]=0
@@ -43,6 +43,9 @@ mock.[*.p|integer]=1
 mock.[*.l|integer]=@pick(["10","15","100"])
 mock.[*.t|integer]=@natural(0,1000)
 mock.[*.offset|integer]=1
+mock.[*.page|integer]=1
+mock.[*.pageIndex|integer]=1
+mock.[*.pageSize|integer]=@pick(["10","15","100"])
 mock.[*.limit|integer]=@pick(["10","15","100"])
 mock.[*.total|integer]=@natural(0,1000)
 
@@ -57,7 +60,9 @@ mock.[*.gender|string]=@pick(["男","女"])
 
 #用户信息相关
 mock.[*.phone|string]=${phone}
+mock.[*.mobile|string]=${phone}
 mock.[*Phone|string]=${phone}
+mock.[*Mobile|string]=${phone}
 mock.[*.provinceName|string]=@province
 mock.[*ProvinceName|string]=@province
 mock.[*.cityName|string]=@city
