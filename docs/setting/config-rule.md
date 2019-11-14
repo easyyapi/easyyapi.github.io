@@ -13,7 +13,7 @@
 | [param.ignore](rules/param_ignore.md)  | arg | v1.3.0+ | 忽略API参数 |
 | [param.default.value](rules/param_default_value.md) | arg | v1.3.0+ | API参数的默认值 |
 | [field.required](rules/field_required.md) | field | v0.7.3+ | 字段是否为必须(即不可为空) |
-| api.tag | method | v0.7.5+ | 标记接口tag |
+| [api.tag](rules/api_tag.md) | method | v0.7.5+ | 标记接口tag |
 | api.status | method | v0.8.0+ | 标记接口status(应返回done/undone) |
 | mdoc.class.filter | class | v0.9.5+ | 选择哪些类可以导出方法文档(rpc) |
 | mdoc.method.filter | method | v0.9.5+ | 选择哪些方法可以导出方法文档(rpc) |

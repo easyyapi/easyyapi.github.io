@@ -19,3 +19,4 @@
     * [param.ignore](rules/param_ignore.md)
     * [param.default.value](rules/param_default_value.md)
     * [field.requierd](rules/field_required.md)
+    * [api.tag](rules/api_tag.md)
