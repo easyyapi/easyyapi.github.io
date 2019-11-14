@@ -22,3 +22,4 @@
     * [field.requierd](rules/field_required.md)
     * [api.tag](rules/api_tag.md)
     * [api.status](rules/api_status.md)
+    * [class.prefix.path](rules/class_prefix_path.md)

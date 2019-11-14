@@ -25,6 +25,7 @@
 | mdoc.method.filter | method | v0.9.5+ | 选择哪些方法可以导出方法文档(rpc) |
 | mdoc.method.path | method | v0.9.5+ | 设置方法文档(rpc)的路径 |
 | mdoc.method.http.method | method | v0.9.5+ | 设置方法文档(rpc)HTTP请求方式 |
+| [class.prefix.path](rules/class_prefix_path.md)  | class | v1.3.0+ | 设置API请求前缀 |
 
 # 简单规则
 - \# 读取注释上的tag
