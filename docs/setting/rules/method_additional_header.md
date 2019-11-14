@@ -1,0 +1,48 @@
+# method.additional.header
+
+- API需要额外的header
+
+### 如JWT, 所有的接口都需要在header中携带token
+
+```properties
+method.additional.header={name: "Authorization",value: "",desc: "认证Token",required:true, example:""}
+```
+
+### 如果需要排除指定开放的接口不需要token可以这样配置:
+
+- 假定有如下注解:
+
+```java
+package com.itangcent.common.annotation;
+
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
+
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+
+/**
+ * 声明接口为公开接口
+ */
+
+@Documented
+@Retention(RUNTIME)
+@Target({TYPE, METHOD})
+public @interface Public {
+}
+
+```
+
+- 则可如此配置
+
+```properties
+method.additional.header[!@com.itangcent.common.annotation.Public]={name: "Authorization",value: "",desc: "认证Token",required:true, example:""}
+```
+
+- 等价于
+
+```properties
+method.additional.header[groovy:!it.hasAnn("com.itangcent.common.annotation.Public")]={name: "Authorization",value: "",desc: "认证Token",required:true, example:""}
+```

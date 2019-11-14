@@ -11,7 +11,6 @@ api.tag[#deprecated]=deprecated
 api.tag[groovy:it.containingClass().hasAnn("java.lang.Deprecated")]=deprecated
 api.tag[groovy:it.containingClass().hasDoc("deprecated")]=deprecated
 
-#[yapi_tag_kotlin]
 #yapi tag for kotlin
 api.tag[@kotlin.Deprecated]=deprecated
 api.tag[groovy:it.containingClass().hasAnn("kotlin.Deprecated")]=deprecated

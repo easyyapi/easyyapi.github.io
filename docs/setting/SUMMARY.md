@@ -18,6 +18,7 @@
     * [param.requierd](rules/param_required.md)
     * [param.ignore](rules/param_ignore.md)
     * [param.default.value](rules/param_default_value.md)
+    * [method.additional.header](rules/method_additional_header.md)
     * [field.requierd](rules/field_required.md)
     * [api.tag](rules/api_tag.md)
     * [api.status](rules/api_status.md)
