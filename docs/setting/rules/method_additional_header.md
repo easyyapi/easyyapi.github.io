@@ -46,3 +46,36 @@ method.additional.header[!@com.itangcent.common.annotation.Public]={name: "Autho
 ```properties
 method.additional.header[groovy:!it.hasAnn("com.itangcent.common.annotation.Public")]={name: "Authorization",value: "",desc: "认证Token",required:true, example:""}
 ```
+
+
+### demo
+
+```java
+/**
+* Mock Apis
+*/
+@RestController
+@RequestMapping(value = "mock")
+public class MockCtrl {
+
+    /**
+    * public api
+    * Token is not required
+    */
+    @Public
+    @GetMapping("/apiWithoutToken")
+    public String apiWithoutToken() {
+        return Result.success("no token");
+    }
+
+    /**
+    * private api
+    * Token is required
+    */
+    @GetMapping("/apiWithToken")
+    public String apiWithToken() {
+        return Result.success("wow,you got a token");
+    }
+
+}
+```
