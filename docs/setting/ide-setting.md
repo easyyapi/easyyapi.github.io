@@ -2,28 +2,27 @@
 # 在IDE中设置(全局)
 
 - <kbd>Preferences(Settings)</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd>
-- 首次使用此插件时，可以开启inferEnable,这将允许插件在遇到不确定的方法返回类型为(Object，Some\<Object>)时尝试通过代码流进行推断,并根据项目需求设置maxDeep(最大推断深度)
 
 ### 通用配置
 
 ![avatar](/asset/idea-general.png)
 
 **Common** :
- - log: 一般来说使用一段时间后,log可以设置为HIGH,减少不必要的输出<br>当出现异常情况时,可以设置为LOW,获的更多信息
+ - log: 一般来说使用一段时间后,log可以设置为`HIGH`,减少不必要的输出<br>当出现异常情况时,可以设置为`LOW`,获的更多信息
 
 **Support** :
  - methodDoc: 勾选后，允许导出方法文档, 亦可用于导出rpc相关文档<br>
- 支持导出到markdown/yapi
+ 支持导出到`markdown/yapi`
 
 **Postman** :
- - token: 用于设置或更新postman privateToken, 可以从[Postman Integrations Dashboard](https://go.postman.co/integrations/services/pm_pro_api)获得 
+ - token: 用于设置或更新`postman privateToken`, 可以从[Postman Integrations Dashboard](https://go.postman.co/integrations/services/pm_pro_api)获得 
 
 **Yapi** :
- - server 即部署的yapi地址，如:http://127.0.0.1:3000/
- - tokens 即yapi项目中用于请求项目openapi的私有token，获取方式为项目->设置->token 配置 -> 工具标识
+ - server 即部署的yapi地址，如:`http://127.0.0.1:3000/`
+ - tokens 即yapi项目中用于请求项目openapi的私有token，获取方式为`项目->设置->token 配置 -> 工具标识`
 
 **Markdown** :
- - outputDemo: 导出markdown文档时, 为每个API生成一个响应demo
+ - outputDemo: 导出`markdown`文档时, 为每个API生成一个响应demo
 
 **Cache** :
  - global: 全局缓存
