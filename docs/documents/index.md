@@ -1,7 +1,7 @@
 # Introduction
 
 - 优雅的文档来自优雅的注释
-- 基于[javadoc](#Javadoc)&[KDoc](#KDoc)解析API文档
+- 基于[javadoc](./docs.md#Javadoc)&[KDoc](./docs.md#KDoc)解析API文档
 - [QA](https://easyyapi.com/qa/index.html)
 
 
