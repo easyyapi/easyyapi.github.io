@@ -12,6 +12,11 @@
 | .yapi.config | property | yapi |
 | .yapi.yml/.yapi.yaml | yml | yapi |
 
+- 在配置文件中可以使用`properties.additional`来加载额外的配置文件:
+```properties
+properties.additional=$additional_properties_file_path$
+```
+
 ### 配置后的目录结构如下:
 
 ```
@@ -86,24 +91,10 @@ project-root
 └────.easy.api.config⑥
 ```
 
-**特殊说明**:
-- 在配置文件中可以使用`properties.additional`来加载额外的配置文件:
-```properties
-#Import spring properties
-properties.additional=$additional_properties_file_path$
-```
-- 在推荐配置中有加载spring相关配置:
-```properties
-#Import spring properties
-properties.additional=${module_path}/src/main/resources/application.properties
-properties.additional=${module_path}/src/main/resources/application.yml
-properties.additional=${module_path}/src/main/resources/application.yaml
-```
-
 ### 上述结构中:
 
 - ①: 只对`java(module1)`生效
 - ②: 如果开启了默认推荐配置的话,默认会加载,所以其中的参数可以在③中通过`{property}`来使用
 - ③: 只对`kotlin(module2)`生效
-- ④/⑤: `application.properties/application.yml/application.yaml`都可以被加载
+- ④/⑤: 与②一样`application.properties/application.yml/application.yaml`都可以被加载
 - ⑥: 对`java(module1)`/`kotlin(module2)`/`springboot-demo(module3)`/`springboot-webflux-demo(module4)`都生效
