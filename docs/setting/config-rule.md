@@ -6,6 +6,7 @@
 | [json.rule.field.name](rules/json_rule_field_name.md) | field | v0.7.2+ | 设置输出的字段名(用于json中字段名与类中字段名不一致) |
 | [json.rule.field.ignore](rules/json_rule_field_ignore.md) | field | v0.7.2+ | 忽略字段(设置某些字段不出现在json中,或不需要请求时给出) |
 | [json.rule.convert](rules/json_rule_convert.md) | - | v0.7.2+ | 用于设置某些类型转换为其他类型处理，通常用于使用了Spring的自定义类型转换器的情况 |
+| [json.rule.enum.convert](rules/json_rule_enum_convert.md) | class | v1.2.0+ | 用于枚举类型的特殊转换 |
 | [doc.field](rules/doc_field.md) | field | v0.7.2+ | 字段的额外注释 |
 | [doc.method](rules/doc_method.md) | method | v0.7.2+ | 方法(api)的额外注释 |
 | [doc.class](rules/doc_class.md)  | class | v1.3.0+ | 类上的额外注释 |

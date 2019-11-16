@@ -14,6 +14,7 @@
     * [json.rule.field.name](rules/json_rule_field_name.md)
     * [json.rule.field.ignore](rules/json_rule_field_ignore.md)
     * [json.rule.convert](rules/json_rule_convert.md)
+    * [json.rule.enum.convert](rules/json_rule_enum_convert.md)
     * [doc.field](rules/doc_field.md)
     * [doc.method](rules/doc_method.md)
     * [doc.class](rules/doc_class.md)
