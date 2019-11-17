@@ -1,6 +1,4 @@
-# 对springboot-webflux的支持
-
-### 在推荐配置中有部分springboot-webflux相关的配置
+**在推荐配置中有部分[springboot-webflux](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux)相关的配置**
 
 ```properties
 #resolve Mono/Flux

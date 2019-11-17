@@ -1,6 +1,5 @@
-# 对spring-boot的支持
+**在推荐配置中有很多spring-boot相关的配置**
 
-### 在推荐配置中有很多spring-boot相关的配置
 - 处理`HttpEntity`/`RequestEntity`/`ResponseEntity`
 
 ```properties
