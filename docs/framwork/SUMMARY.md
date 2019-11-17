@@ -2,5 +2,5 @@
 
 ### 框架支持
 
-* [spring](spring.md)
+* [spring-boot](spring-boot.md)
 * [swagger](swagger.md)
