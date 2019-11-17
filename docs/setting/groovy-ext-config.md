@@ -2,8 +2,8 @@
 
 ## 介绍
 
-- 针对极其特殊的情况, 无法使用简单配置实现需求时, 可以使用groovy扩展可获得极高的定制性功能, 相对的, 对于开发者有一定的技术要求,
-包括groovy以及当前插件的结构等都要有一定的了解
+- 针对极其特殊的情况, 无法使用简单配置实现需求时, 可以使用groovy扩展以获得极高的定制化功能
+- 相对普通配置来说, 对于开发者有一定的技术要求,包括groovy以及当前插件的结构等都要有一定的了解
 - [wiki](https://en.wikipedia.org/wiki/Apache_Groovy)
 - [offical](http://groovy-lang.org/)
 - [demo](https://github.com/Earth-1610/spring-demo/tree/master/.easyapi/ext)
@@ -14,6 +14,7 @@
 - 创建扩展文件 ${ActionName}Ext.groovy<br>当前可支持的操作有:
   - ApiCallAction
   - ApiDashBoardAction
+  - YApiDashBoardAction
   - FieldsToJsonAction
   - MarkdownExportAction
   - PostmanExportAction
