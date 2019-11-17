@@ -2,8 +2,8 @@
 
 - 用于API分组
 - 当无配置生效时, 默认使用当前模块/项目名
-- 导出postman时,将为每个module创建一个文件夹
-- 导出yapi时,每个module对应yapi中的一个项目
+- 导出`postman`时,将为每个`module`创建一个文件夹
+- 导出`yapi`时,每个`module`对应`yapi`中的一个项目
 
 
 ### 默认推荐配置

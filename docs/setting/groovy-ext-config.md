@@ -10,15 +10,16 @@
 
 ## 使用步骤
 
-- 在项目目录下创建 /.easyapi/ext
-- 创建扩展文件 ${ActionName}Ext.groovy<br>当前可支持的操作有:
-  - ApiCallAction
-  - ApiDashBoardAction
-  - YApiDashBoardAction
-  - FieldsToJsonAction
-  - MarkdownExportAction
-  - PostmanExportAction
-  - YapiExportAction
+- 在项目目录下创建 `/.easyapi/ext`
+- 创建扩展文件 `${ActionName}Ext.groovy`<br>当前可支持的操作有:
+  - `ApiCallAction`
+  - `ApiDashBoardAction`
+  - `YApiDashBoardAction`
+  - `FieldsToJsonAction`
+  - `MarkdownExportAction`
+  - `PostmanExportAction`
+  - `YapiExportAction`
+
 - 在扩展文件中声明扩展类:
 ```groovy
 class ActionNameExt implements ActionExt {
@@ -35,7 +36,7 @@ class ActionNameExt implements ActionExt {
 
 ### demo
 
-- YapiExportActionExt.groovy
+- `YapiExportActionExt.groovy`
 ```groovy
 import com.intellij.psi.*
 import com.itangcent.common.model.Request

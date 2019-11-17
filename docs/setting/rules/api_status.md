@@ -1,6 +1,6 @@
 # api.status
 
-- 标记接口status
+- 标记接口`status`
 
 ### 默认推荐配置
 

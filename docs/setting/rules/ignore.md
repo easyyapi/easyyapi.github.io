@@ -1,8 +1,8 @@
 # ignore
 
-- 用于忽略class/method，不进行解析
-- 注释在class上时,整个类将被忽略
-- 注释在method上时,当前方法将被忽略
+- 用于忽略`class`/`method`，不进行解析
+- 注释在`class`上时,整个类将被忽略
+- 注释在`method`上时,当前方法将被忽略
 
 
 ### 默认推荐配置
@@ -13,7 +13,7 @@ ignore=#ignore
 
 ### demo
 
-* 在类上注释@ignore忽略当前类
+* 在类上注释`@ignore`忽略当前类
 
 ```java
 /**
@@ -27,7 +27,7 @@ public class MockCtrl {
 }
 ```
 
-* 在方法上注释@ignore忽略当前API
+* 在方法上注释`@ignore`忽略当前API
 
 ```java
 /**

@@ -1,6 +1,6 @@
 # Yapi相关参数配置
 
-- 在导出过程中如果需要yapi相关参数，将会以弹窗的方式提供输入
+- 在导出过程中如果需要`yapi`相关参数，将会以弹窗的方式提供输入
 - 也可以在<kbd>Preferences(Settings)</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> 中手动配置
 - 需要提供的参数有
   - server 即部署的yapi地址，如:`http://127.0.0.1:3000/`
