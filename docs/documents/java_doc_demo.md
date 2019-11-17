@@ -44,12 +44,15 @@ public class MockCtrl {
     }
 
     /**
-    * 所有注释或者参数描述中都可以使用`@link`来指向另一个API
+    * 所有注释或者参数描述中都可以使用`@link`来引用另一个API
     * 例如:
     * 请先访问{@link #methodName4(String)}
+
+    * 也可以使用`@see`来引用另一个API
     *
     * @param param1 参数1的名称或描述 可以从{@link #methodName5(String)}中获得
-    * @deprecated 改用{@link #methodName6(String)}
+    * @see #methodName6(String)
+    * @deprecated 改用{@link #methodName7(String)}
     */
     @Deprecated
     @RequestMapping(value = "/pathOfApi3")
@@ -86,9 +89,11 @@ public class MockDtoOrVo {
     private int field4;
 
     /**
-     * 字段被废弃了,用@deprecated
+     * 可以用注解`@Deprecated`来表示字段被废弃
+     * 也可以用注释`@deprecated`
      * @deprecated It's a secret
      */
+    @Deprecated
     private int field5;
 
     /**

@@ -26,3 +26,4 @@
     * [api.tag](rules/api_tag.md)
     * [api.status](rules/api_status.md)
     * [class.prefix.path](rules/class_prefix_path.md)
+* [groovy本地扩展](groovy-ext-config.md)
