@@ -63,3 +63,50 @@ public class TestJsonIgnoreBean {
     }
 }
 ```
+
+### 定制化配置示例
+
+- 忽略指定名称的字段:
+
+  - 配置如下
+
+    ```properties
+    # ignore field 'log'
+    json.rule.field.ignore=log
+    ```
+
+  - 将忽略如下字段
+
+    ```java
+    private String log;
+    ```
+
+- 忽略指定类型的字段:
+
+  - 配置如下
+
+    ```properties
+    # ignore field 'log' typed xxx.xxx.Log
+    json.rule.field.ignore=groovy:it.type().name()=="xxx.xxx.Log"
+    ```
+
+  - 将忽略如下字段
+  
+    ```java
+    private Log xxx;
+    ```
+
+- 忽略指定`modifier`的字段:
+
+  - 配置如下
+    ```properties
+    #ignore transient field
+    json.rule.field.ignore=groovy:it.hasModifier("transient")||it.hasModifier("protected")
+    ```
+
+  - 将忽略如下字段
+  
+    ```java
+    private transient Int xxx;
+    protected Long yyy;
+    ```
