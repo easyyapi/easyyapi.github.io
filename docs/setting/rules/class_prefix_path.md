@@ -11,7 +11,7 @@ class.prefix.path=${server.servlet.context-path}
 ###set ignoreUnresolved = false
 ```
 
-### demo
+### 使用推荐配置后，可识别如下spring配置
 
 - spring application.properties 
 
@@ -24,4 +24,10 @@ server.servlet.context-path=/demo
 server:
   servlet:
       context-path: /demo
+```
+
+### 自定义demo
+
+```properties
+class.prefix.path=/demo
 ```
