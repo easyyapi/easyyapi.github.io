@@ -1,1 +1,258 @@
-# 一些常见的问题
+<span id="1"></span>
+
+# 如何添加配置文件?
+
+   * see [local-file-config](/setting/local-file-config.html)
+   
+---
+
+<span id="2"></span>
+
+# 如何组织API到指定文件夹?
+
+   * `module`用于分类api
+        * 导出`postman`时,每个`module`将作为一个单独的文件夹
+        * 导出`yapi`,每个`module`需要配置相应的`token`,即对应一个`yapi`中的项目
+
+   * 增加配置:
+
+   ```properties
+   #find module from comment tag 
+   module=#module
+   ```
+   
+   * 在类上这样注释:
+
+   ```java
+   /**
+    * Mock Apis
+    *
+    * @module mock
+    */
+   @RestController
+   @RequestMapping(value = "mock")
+   public class MockCtrl {
+   }
+   ```
+
+---
+
+<span id="3"></span>
+
+# 如何忽略API?
+
+   * 增加配置:
+
+   ```properties
+   #ignore class or method which has comment tag 'ignore' 
+   ignore=#ignore
+   ```
+   
+   * 在类上注释@ignore忽略当前类
+
+   ```java
+   /**
+    * Mock Apis
+    *
+    * @ignore
+    */
+   @RestController
+   @RequestMapping(value = "mock")
+   public class MockCtrl {
+   }
+   ```
+   
+   * 在方法上注释@ignore忽略当前API
+
+   ```java
+   /**
+    * Mock Apis
+    */
+   @RestController
+   @RequestMapping(value = "mock")
+   public class MockCtrl {
+   
+        /**
+         * Mock String
+         * @ignore
+         */
+        @GetMapping("/string")
+        public String mockString() {
+            return Result.success("mock string");
+        }
+
+   }
+   ```
+
+
+---
+
+<span id="4"></span>
+
+# 如何设置API/文件夹的名称/描述?
+
+ * 一般来说:
+
+    ```java
+    /**
+     * 第一行注释作为文件夹的标题
+     * 剩余行注释作为文件夹的描述
+     */
+    @RestController
+    @RequestMapping(value = "mock")
+    public class MockCtrl {
+    
+        /**
+         * 第一行行注释作为API的标题
+         * 剩余行注释作为API的描述
+         */
+        @GetMapping("/string")
+        public String mockString() {
+            return Result.success("mock string");
+        }
+    }
+    ```
+---
+
+<span id="5"></span>
+
+# 如何在API/文件夹的描述中说明API/文件夹被废弃了?
+
+*   添加配置:
+
+    ```properties
+    doc.method[#deprecated]=groovy:"\n「deprecated」" + it.doc("deprecated")
+    doc.method[@java.lang.Deprecated]=「deprecated」
+    doc.method[@kotlin.Deprecated]=groovy:"\n「deprecated」" + it.ann("kotlin.Deprecated","message")
+
+    doc.method[groovy:it.containingClass().hasDoc("deprecated")]=groovy:"\n「deprecated」" + it.containingClass().doc("deprecated")
+    doc.method[groovy:it.containingClass().hasAnn("java.lang.Deprecated")]=「deprecated」
+    doc.method[groovy:it.containingClass().hasAnn("kotlin.Deprecated")]=groovy:"\n「deprecated」 " + it.containingClass().ann("kotlin.Deprecated","message")
+
+    ```
+
+---
+
+<span id="6"></span>
+    
+# 如何在API描述中声明API需要的权限(javax.annotation.security)?
+
+   * add config for spring security:
+
+   ```properties
+   # security description
+   doc.method[@javax.annotation.security.RolesAllowed]=groovy:"require role:"+it.ann("javax.annotation.security.RolesAllowed")
+   ```
+   
+   * code:
+
+   ```java
+   /**
+    * 第一行注释作为文件夹的标题
+    * 剩余行注释作为文件夹的描述
+    */
+   @RestController
+   @RequestMapping(value = "mock")
+   public class MockCtrl {
+   
+       /**
+        * 第一行行注释作为API的标题
+        * 剩余行注释作为API的描述
+        */
+       @GetMapping("/string")
+       @RolesAllowed("admin")
+       public String mockString() {
+           return Result.success("mock string");
+       }
+   }
+
+   ```
+
+---
+
+<span id="7"></span>
+
+# 如何在API描述中声明API需要的权限(spring security)?
+
+   * add config for spring security:
+
+   ```properties
+   # security description
+   find_role_in_PreAuthorize=(function(exp){var str="";if(exp.indexOf("hasRole")!=-1){var roles=exp.match(/hasRole\\((.*?)\\)/);if(roles&&roles.length>1){str+="require role:"+roles[1];}};return str})
+   doc.method[@org.springframework.security.access.prepost.PreAuthorize]=js:${find_role_in_PreAuthorize}(it.ann("org.springframework.security.access.prepost.PreAuthorize"))
+   ```
+   
+   * code:
+
+   ```java
+   /**
+    * 第一行注释作为文件夹的标题
+    * 剩余行注释作为文件夹的描述
+    */
+   @RestController
+   @RequestMapping(value = "mock")
+   public class MockCtrl {
+   
+       /**
+        * 第一行行注释作为API的标题
+        * 剩余行注释作为API的描述
+        */
+       @GetMapping("/string")
+       @PreAuthorize("hasRole('admin')")
+       public String mockString() {
+           return Result.success("mock string");
+       }
+   }
+
+   ```
+
+---
+
+<span id="8"></span>
+ 
+# 如何忽略某些字段?
+
+   * To ignore the field with special name:
+
+   ```properties
+   # ignore field 'log'
+   json.rule.field.ignore=log
+   ```
+   
+   * To ignore the field with special type:
+
+   ```properties
+   # ignore field 'log' typed xxx.xxx.Log
+   json.rule.field.ignore=groovy:it.type().name()=="xxx.xxx.Log"
+   ```
+   
+   * To ignore the field with special modifier:
+
+   ```properties
+   #ignore transient field
+   json.rule.field.ignore=groovy:it.hasModifier("transient")
+   ```
+
+---
+
+<span id="9"></span>
+
+
+# 如何将指定类型转换为另一种类型处理?
+
+   * Receive or output `java.time.LocalDateTime` as `yyyy-mm-dd`
+
+   ```properties
+   #Resolve 'java.time.LocalDateTime' as 'java.lang.String'
+   json.rule.convert[java.time.LocalDateTime]=java.lang.String
+   json.rule.convert[java.time.LocalDate]=java.lang.String
+   ```
+   
+   * Receive or output `java.time.LocalDateTime` as `timestamp`
+   
+   ```properties
+   #Resolve 'java.time.LocalDateTime' as 'java.lang.Long'
+   json.rule.convert[java.time.LocalDateTime]=java.lang.Long
+   json.rule.convert[java.time.LocalDate]=java.lang.Long
+   ```
+   
