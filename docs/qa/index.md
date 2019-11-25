@@ -1,14 +1,14 @@
-<span id="1"></span>
 
-# 如何添加配置文件?
+
+## 如何添加配置文件
 
    * see [local-file-config](/setting/local-file-config.html)
    
 ---
 
-<span id="2"></span>
 
-# 如何组织API到指定文件夹?
+
+## 如何组织API到指定文件夹
 
    * `module`用于分类api
         * 导出`postman`时,每个`module`将作为一个单独的文件夹
@@ -37,9 +37,9 @@
 
 ---
 
-<span id="3"></span>
 
-# 如何忽略API?
+
+## 如何忽略API
 
    * 增加配置:
 
@@ -84,12 +84,11 @@
    }
    ```
 
-
 ---
 
-<span id="4"></span>
 
-# 如何设置API/文件夹的名称/描述?
+
+## 如何设置API/文件夹的名称/描述
 
  * 一般来说:
 
@@ -114,9 +113,9 @@
     ```
 ---
 
-<span id="5"></span>
 
-# 如何在API/文件夹的描述中说明API/文件夹被废弃了?
+
+## 如何在API/文件夹的描述中说明API/文件夹被废弃了
 
 *   添加配置:
 
@@ -133,14 +132,14 @@
 
 ---
 
-<span id="6"></span>
+
     
-# 如何在API描述中声明API需要的权限(javax.annotation.security)?
+## 如何在API描述中声明API需要的权限(javax annotation security)
 
    * add config for spring security:
 
    ```properties
-   # security description
+   ## security description
    doc.method[@javax.annotation.security.RolesAllowed]=groovy:"require role:"+it.ann("javax.annotation.security.RolesAllowed")
    ```
    
@@ -170,14 +169,14 @@
 
 ---
 
-<span id="7"></span>
 
-# 如何在API描述中声明API需要的权限(spring security)?
+
+## 如何在API描述中声明API需要的权限(spring security)
 
    * add config for spring security:
 
    ```properties
-   # security description
+   ## security description
    find_role_in_PreAuthorize=(function(exp){var str="";if(exp.indexOf("hasRole")!=-1){var roles=exp.match(/hasRole\\((.*?)\\)/);if(roles&&roles.length>1){str+="require role:"+roles[1];}};return str})
    doc.method[@org.springframework.security.access.prepost.PreAuthorize]=js:${find_role_in_PreAuthorize}(it.ann("org.springframework.security.access.prepost.PreAuthorize"))
    ```
@@ -208,21 +207,21 @@
 
 ---
 
-<span id="8"></span>
+
  
-# 如何忽略某些字段?
+## 如何忽略某些字段
 
    * To ignore the field with special name:
 
    ```properties
-   # ignore field 'log'
+   ## ignore field 'log'
    json.rule.field.ignore=log
    ```
    
    * To ignore the field with special type:
 
    ```properties
-   # ignore field 'log' typed xxx.xxx.Log
+   ## ignore field 'log' typed xxx.xxx.Log
    json.rule.field.ignore=groovy:it.type().name()=="xxx.xxx.Log"
    ```
    
@@ -235,10 +234,10 @@
 
 ---
 
-<span id="9"></span>
 
 
-# 如何将指定类型转换为另一种类型处理?
+
+## 如何将指定类型转换为另一种类型处理
 
    * Receive or output `java.time.LocalDateTime` as `yyyy-mm-dd`
 
