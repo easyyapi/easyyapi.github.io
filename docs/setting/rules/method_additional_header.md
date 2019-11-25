@@ -18,7 +18,6 @@ package com.itangcent.common.annotation;
 /**
  * 声明接口为公开接口
  */
-
 @Documented
 @Retention(RUNTIME)
 @Target({TYPE, METHOD})
@@ -56,7 +55,7 @@ public class MockCtrl {
     */
     @Public
     @GetMapping("/apiWithoutToken")
-    public String apiWithoutToken() {
+    public Result<String> apiWithoutToken() {
         return Result.success("no token");
     }
 
@@ -65,7 +64,7 @@ public class MockCtrl {
     * Token is required
     */
     @GetMapping("/apiWithToken")
-    public String apiWithToken() {
+    public Result<String> apiWithToken() {
         return Result.success("wow,you got a token");
     }
 
