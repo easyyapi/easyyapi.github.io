@@ -26,4 +26,5 @@
     * [api.tag](rules/api_tag.md)
     * [api.status](rules/api_status.md)
     * [class.prefix.path](rules/class_prefix_path.md)
+    * [constant.field.ignore](rules/constant_field_ignore.md)
 * [groovy本地扩展](groovy-ext-config.md)
