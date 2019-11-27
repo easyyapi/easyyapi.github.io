@@ -3,7 +3,7 @@
 - 忽略字段(设置某些字段不出现在json中,或不需要请求时给出)
 
 
-### 默认推荐配置
+## 默认推荐配置
 
 ```properties
 #Support for Jackson annotations
@@ -13,7 +13,9 @@ json.rule.field.ignore=@com.fasterxml.jackson.annotation.JsonIgnore#value
 json.rule.field.ignore=!@com.google.gson.annotations.Expose#serialize
 ```
 
-### demo
+## demo
+
+***TestJsonIgnoreBean.java***
 
 ```java
 public class TestJsonIgnoreBean {
@@ -30,41 +32,20 @@ public class TestJsonIgnoreBean {
     @JsonIgnore
     private Long shouldIgnoreForJackson;
 
-    public Long getShouldNotIgnoreForGson() {
-        return shouldNotIgnoreForGson;
-    }
+    //constructors...
 
-    public void setShouldNotIgnoreForGson(Long shouldNotIgnoreForGson) {
-        this.shouldNotIgnoreForGson = shouldNotIgnoreForGson;
-    }
-
-    public Long getShouldIgnoreForGson() {
-        return shouldIgnoreForGson;
-    }
-
-    public void setShouldIgnoreForGson(Long shouldIgnoreForGson) {
-        this.shouldIgnoreForGson = shouldIgnoreForGson;
-    }
-
-    public Long getShouldNotIgnoreForJackson() {
-        return shouldNotIgnoreForJackson;
-    }
-
-    public void setShouldNotIgnoreForJackson(Long shouldNotIgnoreForJackson) {
-        this.shouldNotIgnoreForJackson = shouldNotIgnoreForJackson;
-    }
-
-    public Long getShouldIgnoreForJackson() {
-        return shouldIgnoreForJackson;
-    }
-
-    public void setShouldIgnoreForJackson(Long shouldIgnoreForJackson) {
-        this.shouldIgnoreForJackson = shouldIgnoreForJackson;
-    }
+    //getters...
 }
 ```
 
-### 定制化配置示例
+### 作为API返回值导出:
+
+| 名称 | 类型 | 是否必须 | 默认值 | 备注 | 其他信息 |
+| --- | --- | --- | --- | --- | --- |
+| shouldNotIgnoreForGson |	integer | 非必须 |  |  | mock: |
+| shouldNotIgnoreForJackson | integer | 非必须 |  |  | mock: |
+
+## 定制化配置示例
 
 - 忽略指定名称的字段:
 
