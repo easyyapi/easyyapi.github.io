@@ -1,33 +1,34 @@
 # 支持的规则
-| 规则的key | 规则目标(上下文) | 版本 | 规则描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;规则的key | 规则目标(上下文) | 版本 | 规则描述 |
 | ------------ | ------------ | ------------ |------------ |
-| [module](rules/module.md) | class | v0.7.2+ | 为api分组 |
-| [ignore](rules/ignore.md) | class/method | v0.7.2+ | 忽略API |
-| [json.rule.field.name](rules/json_rule_field_name.md) | field | v0.7.2+ | 设置输出的字段名(用于json中字段名与类中字段名不一致) |
-| [json.rule.field.ignore](rules/json_rule_field_ignore.md) | field | v0.7.2+ | 忽略字段(设置某些字段不出现在json中,或不需要请求时给出) |
-| [json.rule.convert](rules/json_rule_convert.md) | - | v0.7.2+ | 用于设置某些类型转换为其他类型处理，通常用于使用了Spring的自定义类型转换器的情况 |
-| [json.rule.enum.convert](rules/json_rule_enum_convert.md) | class | v1.2.0+ | 用于枚举类型的特殊转换 |
-| [doc.field](rules/doc_field.md) | field | v0.7.2+ | 字段的额外注释 |
-| [doc.method](rules/doc_method.md) | method | v0.7.2+ | 方法(api)的额外注释 |
-| [doc.class](rules/doc_class.md)  | class | v1.3.0+ | 类上的额外注释 |
-| [param.required](rules/param_required.md) | arg | v0.7.3+ | API参数是否为必须(即不可为空) |
-| [param.ignore](rules/param_ignore.md)  | arg | v1.3.0+ | 忽略API参数 |
-| [param.default.value](rules/param_default_value.md) | arg | v1.3.0+ | API参数的默认值 |
-| [method.additional.header](rules/method_additional_header.md) | method | v1.3.0+ | API需要额外的header |
+| &nbsp;&nbsp;&nbsp;&nbsp;[module](rules/module.md) | class | v0.7.2+ | 为api分组 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[ignore](rules/ignore.md) | class/method | v0.7.2+ | 忽略API |
+| &nbsp;&nbsp;&nbsp;&nbsp;[json.rule.field.name](rules/json_rule_field_name.md) | field | v0.7.2+ | 设置输出的字段名(用于json中字段名与类中字段名不一致) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[json.rule.field.ignore](rules/json_rule_field_ignore.md) | field | v0.7.2+ | 忽略字段(设置某些字段不出现在json中,或不需要请求时给出) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[json.rule.convert](rules/json_rule_convert.md) | - | v0.7.2+ | 用于设置某些类型转换为其他类型处理，通常用于使用了Spring的自定义类型转换器的情况 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[json.rule.enum.convert](rules/json_rule_enum_convert.md) | class | v1.2.0+ | 用于枚举类型的特殊转换 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[doc.field](rules/doc_field.md) | field | v0.7.2+ | 字段的额外注释 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[doc.method](rules/doc_method.md) | method | v0.7.2+ | 方法(api)的额外注释 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[doc.class](rules/doc_class.md)  | class | v1.3.0+ | 类上的额外注释 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[param.required](rules/param_required.md) | arg | v0.7.3+ | API参数是否为必须(即不可为空) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[param.ignore](rules/param_ignore.md)  | arg | v1.3.0+ | 忽略API参数 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[param.default.value](rules/param_default_value.md) | arg | v1.3.0+ | API参数的默认值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[method.additional.header](rules/method_additional_header.md) | method | v1.3.0+ | API需要额外的header |
 |  |  |  | {name: "header name",value: "",desc: "",required:false, example:""} |
-| method.additional.param | method | v1.3.0+ | API需要额外的参数 |
+| &nbsp;&nbsp;&nbsp;&nbsp;method.additional.param | method | v1.3.0+ | API需要额外的参数 |
 |  |  |  | {name: "param name",value: "defaultValue",desc: "",required:false} |
-| method.additional.response.header | method | v1.3.0+ | API的响应包含额外的header |
+| &nbsp;&nbsp;&nbsp;&nbsp;method.additional.response.header | method | v1.3.0+ | API的响应包含额外的header |
 |  |  |  | {name: "header name",value: "",desc: "",required:false, example:""} |
-| [field.required](rules/field_required.md) | field | v0.7.3+ | 字段是否为必须(即不可为空) |
-| [api.tag](rules/api_tag.md) | method | v0.7.5+ | 标记接口tag |
-| [api.status](rules/api_status.md) | method | v0.8.0+ | 标记接口status(应返回done/undone) |
-| mdoc.class.filter | class | v0.9.5+ | 选择哪些类可以导出方法文档(rpc) |
-| mdoc.method.filter | method | v0.9.5+ | 选择哪些方法可以导出方法文档(rpc) |
-| mdoc.method.path | method | v0.9.5+ | 设置方法文档(rpc)的路径 |
-| mdoc.method.http.method | method | v0.9.5+ | 设置方法文档(rpc)HTTP请求方式 |
-| [class.prefix.path](rules/class_prefix_path.md)  | class | v1.3.0+ | 设置API请求前缀 |
-| [constant.field.ignore](rules/constant_field_ignore.md)  | class | v1.3.0+ | 忽略常量字段 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[field.required](rules/field_required.md) | field | v0.7.3+ | 字段是否为必须(即不可为空) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[api.tag](rules/api_tag.md) | method | v0.7.5+ | 标记接口tag |
+| &nbsp;&nbsp;&nbsp;&nbsp;[api.status](rules/api_status.md) | method | v0.8.0+ | 标记接口status(应返回done/undone) |
+| &nbsp;&nbsp;&nbsp;&nbsp;mdoc.class.filter | class | v0.9.5+ | 选择哪些类可以导出方法文档(rpc) |
+| &nbsp;&nbsp;&nbsp;&nbsp;mdoc.method.filter | method | v0.9.5+ | 选择哪些方法可以导出方法文档(rpc) |
+| &nbsp;&nbsp;&nbsp;&nbsp;mdoc.method.path | method | v0.9.5+ | 设置方法文档(rpc)的路径 |
+| &nbsp;&nbsp;&nbsp;&nbsp;mdoc.method.http.method | method | v0.9.5+ | 设置方法文档(rpc)HTTP请求方式 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[class.prefix.path](rules/class_prefix_path.md)  | class | v1.3.0+ | 设置API请求前缀 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[constant.field.ignore](rules/constant_field_ignore.md)  | class | v1.3.8+ | 忽略常量字段 |
+| ☆[method.return.main](rules/method_return_main.md)  | class | v1.3.8+ | 设置返回值的核心主体 |
 
 # 简单规则
 - \# 读取注释上的tag
