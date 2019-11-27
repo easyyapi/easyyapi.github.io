@@ -42,8 +42,8 @@ public class TestJsonIgnoreBean {
 
 | 名称 | 类型 | 是否必须 | 默认值 | 备注 | 其他信息 |
 | --- | --- | --- | --- | --- | --- |
-| shouldNotIgnoreForGson |	integer | 非必须 |  |  | mock: |
-| shouldNotIgnoreForJackson | integer | 非必须 |  |  | mock: |
+| shouldNotIgnoreForGson |	integer | 非必须 |  |  | mock: @natural(0,10000) |
+| shouldNotIgnoreForJackson | integer | 非必须 |  |  | mock: @natural(0,10000) |
 
 ## 定制化配置示例
 
