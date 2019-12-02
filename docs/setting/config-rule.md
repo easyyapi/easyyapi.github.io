@@ -29,6 +29,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[class.prefix.path](rules/class_prefix_path.md)  | class | v1.3.0+ | 设置API请求前缀 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[constant.field.ignore](rules/constant_field_ignore.md)  | class | v1.3.8+ | 忽略常量字段 |
 | ☆[method.return.main](rules/method_return_main.md)  | class | v1.3.8+ | 设置返回值的核心主体 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[api.name](rules/api_name.md)  | class | v1.4.1+ | 设置api的名称 |
 
 # 简单规则
 - \# 读取注释上的tag

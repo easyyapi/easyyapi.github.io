@@ -28,4 +28,5 @@
     * [&nbsp;&nbsp;&nbsp;&nbsp;class.prefix.path](rules/class_prefix_path.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;constant.field.ignore](rules/constant_field_ignore.md)
     * [☆method.return.main](rules/method_return_main.md)
+    * [&nbsp;&nbsp;&nbsp;&nbsp;api.name](rules/api_name.md)
 * [groovy本地扩展](groovy-ext-config.md)
