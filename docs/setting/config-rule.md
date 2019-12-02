@@ -57,6 +57,7 @@
 | doc("tag") | String | 获取注释tag值(不需要加@) | it.doc("return")| 
 | doc("tag","subTag") | String | 获取二级注释tag值 | it.doc("param","a")| 
 | hasDoc("tag") | String | 是否有指定注释tag | it.hasDoc("ignore")| 
+| contextType() | String | 当前上下文类型 class/field/method/param | it.contextType()| 
 
 ### 不同的应用对象提供额外的方法
 
