@@ -9,7 +9,7 @@
     然后选择要导出的API,选择导出渠道`Postman`
     点击[✔]按钮或者按回车键完成导出
     
-2. 打开项目中的包含api/rpc的文件
+2. 打开项目中的包含api的文件
     右键文件内容选择`Generate...`或者用`[Alt + Insert]/[Ctrl+Enter]`(快捷键可能不一样)"
     然后选择`ExportPostman`
 
