@@ -29,4 +29,4 @@
 | ☆[mdoc.method.path](/setting/rules/mdoc_method_path.html) | method | v0.9.5+ | 设置方法文档(rpc)的路径 |
 | &nbsp;&nbsp;&nbsp;&nbsp;mdoc.method.http.method | method | v0.9.5+ | 设置方法文档(rpc)HTTP请求方式 |
 
-更多规则配置参见: [规则配置](/setting/config-rule.html)
+点击[规则配置](/setting/config-rule.html)查看更多.
