@@ -22,11 +22,11 @@
 
 **rpc相关规则**
 
-| 规则的key | 规则目标(上下文) | 版本 | 规则描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;规则的key | 规则目标(上下文) | 版本 | 规则描述 |
 | ------------ | ------------ | ------------ |------------ |
-| mdoc.class.filter | class | v0.9.5+ | 选择哪些类可以导出方法文档(rpc) |
-| mdoc.method.filter | method | v0.9.5+ | 选择哪些方法可以导出方法文档(rpc) |
-| mdoc.method.path | method | v0.9.5+ | 设置方法文档(rpc)的路径 |
-| mdoc.method.http.method | method | v0.9.5+ | 设置方法文档(rpc)HTTP请求方式 |
+| ☆[mdoc.class.filter](/setting/rules/mdoc_class_filter.html) | class | v0.9.5+ | 选择哪些类可以导出方法文档(rpc) |
+| &nbsp;&nbsp;&nbsp;&nbsp;mdoc.method.filter | method | v0.9.5+ | 选择哪些方法可以导出方法文档(rpc) |
+| ☆[mdoc.method.path](/setting/rules/mdoc_method_path.html) | method | v0.9.5+ | 设置方法文档(rpc)的路径 |
+| &nbsp;&nbsp;&nbsp;&nbsp;mdoc.method.http.method | method | v0.9.5+ | 设置方法文档(rpc)HTTP请求方式 |
 
-详细规则参见:[规则配置](/setting/config-rule.html)
+更多规则配置参见: [规则配置](/setting/config-rule.html)
