@@ -25,7 +25,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[mdoc.class.filter](rules/mdoc_class_filter.md) | class | v0.9.5+ | 选择哪些类可以导出方法文档(rpc) |
 | &nbsp;&nbsp;&nbsp;&nbsp;mdoc.method.filter | method | v0.9.5+ | 选择哪些方法可以导出方法文档(rpc) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[mdoc.method.path](rules/mdoc_method_path.md) | method | v0.9.5+ | 设置方法文档(rpc)的路径 |
-| &nbsp;&nbsp;&nbsp;&nbsp;mdoc.method.http.method | method | v0.9.5+ | 设置方法文档(rpc)HTTP请求方式 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[mdoc.method.http.method](rules/mdoc_method_http_method.md) | method | v0.9.5+ | 设置方法文档(rpc)HTTP请求方式 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[class.prefix.path](rules/class_prefix_path.md)  | class | v1.3.0+ | 设置API请求前缀 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[constant.field.ignore](rules/constant_field_ignore.md)  | class | v1.3.8+ | 忽略常量字段 |
 | ☆[method.return.main](rules/method_return_main.md)  | class | v1.3.8+ | 设置返回值的核心主体 |

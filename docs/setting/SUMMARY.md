@@ -27,6 +27,7 @@
     * [&nbsp;&nbsp;&nbsp;&nbsp;api.status](rules/api_status.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;mdoc.class.filter](rules/mdoc_class_filter.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;mdoc.method.path](rules/mdoc_method_path.md)
+    * [&nbsp;&nbsp;&nbsp;&nbsp;mdoc.method.http.method](rules/mdoc_method_http_method.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;class.prefix.path](rules/class_prefix_path.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;constant.field.ignore](rules/constant_field_ignore.md)
     * [☆method.return.main](rules/method_return_main.md)
