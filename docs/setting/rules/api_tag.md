@@ -59,5 +59,5 @@ public class MockCtrl {
 | 接口名称： Mock String               创 建 人：  admin| 
 | 状  态： 已完成                 更新时间：  2019-12-07 22:31:28 | 
 | Tag ：    swagger, test | 
-| 接口路径： GET/mock/string | 
+| 接口路径： GET /mock/string | 
 | Mock地址： http://127.0.0.1:3000/mock/172/mock/string | 
