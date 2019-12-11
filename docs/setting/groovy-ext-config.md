@@ -6,7 +6,7 @@
 - 相对普通配置来说, 对于开发者有一定的技术要求,包括groovy以及当前插件的结构等都要有一定的了解
 - [wiki](https://en.wikipedia.org/wiki/Apache_Groovy)
 - [offical](http://groovy-lang.org/)
-- [demo](https://github.com/Earth-1610/spring-demo/tree/master/.easyapi/ext)
+- [demo](https://github.com/Earth-1610/spring-demo/tree/feature/ext/.easyapi/ext)
 
 ## 使用步骤
 
