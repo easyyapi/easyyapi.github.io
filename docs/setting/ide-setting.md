@@ -28,6 +28,7 @@
 **Markdown** :
 
  - outputDemo: 导出`markdown`文档时, 为每个API生成一个响应demo
+ - outputCharset: 选择导出`markdown`文档时使用的字符集
 
 **Cache** :
 

@@ -1,8 +1,3 @@
-- 初次使用可能会以弹窗的方式要求输入必要的信息,参见:[yapi配置](/setting/yapi.html)
-- 熟悉后可以尝试:[yapi mock](/setting/yapi-mock.html)
-
-----
-
 **支持以下使用方法**
 
 1. 打开项目中的包含api/rpc的文件或者在IDEA的左边项目文件区域选择文件或者文件夹
@@ -19,3 +14,9 @@
 
 4. 鼠标点击最上方`[Code -> YapiDashBoard]`
     然后就可以用鼠标将左边的API拖动到右边yapi目录中，完成API导出到Yapi
+
+----
+
+- 初次使用可能会以弹窗的方式要求输入必要的信息,参见:[yapi配置](/setting/yapi.html)
+- 熟悉后可以尝试:[yapi mock](/setting/yapi-mock.html)
+

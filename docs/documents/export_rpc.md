@@ -1,9 +1,3 @@
-- 导出rpc方法的功能默认是关闭的 , 开启需要勾选:<kbd>Preferences(Settings)</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > <kbd>Support</kbd> > <kbd>methodDoc</kbd> , 参见:[IDEA配置](/setting/ide-setting.html)
-
-- rpc文档支持导出到`yapi`/`markdown`
-
-----
-
 **支持以下使用方法**
 
 1. 打开项目中的包含rpc的文件或者在IDEA的左边项目文件区域选择文件或者文件夹
@@ -30,3 +24,9 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;mdoc.method.http.method | method | v0.9.5+ | 设置方法文档(rpc)HTTP请求方式 |
 
 点击[规则配置](/setting/config-rule.html)查看更多.
+
+----
+
+- 导出rpc方法的功能默认是关闭的 , 开启需要勾选:<kbd>Preferences(Settings)</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > <kbd>Support</kbd> > <kbd>methodDoc</kbd> , 参见:[IDEA配置](/setting/ide-setting.html)
+
+- rpc文档支持导出到`yapi`/`markdown`

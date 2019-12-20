@@ -12,3 +12,10 @@
 
 3. 在IDEA的左边项目文件区域选择文件或者文件夹
     鼠标点击最上方`[Code -> ExportMarkdown]`
+
+---
+
+**Markdown可用[设置](/setting/ide-setting.html)** :
+
+ - outputDemo: 导出`markdown`文档时, 为每个API生成一个响应demo
+ - outputCharset: 选择导出`markdown`文档时使用的字符集, 当导出文档出现乱码时可尝试修改此配置.
