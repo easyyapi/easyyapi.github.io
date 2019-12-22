@@ -114,7 +114,7 @@ http_url=@pick(["http","https"])://www.@domain()/@string('lower',1,8)?@string('l
 objectId=@string("0123456789abcdef",24,24)
 ```
 
-***可以使用`mockjs`提供的规则与自定义的规则来定制最后输出到`YAPI`的`mock`信息***
+***可以使用 [mockjs](http://mockjs.com/examples.html) 提供的规则与自定义的规则来定制最后输出到`YAPI`的`mock`信息***
 
 ```properties
 #常见的响应mock
