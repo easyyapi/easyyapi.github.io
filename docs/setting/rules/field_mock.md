@@ -2,9 +2,52 @@
 
 - 用于生成`yapi`相关mock信息
 
-## 默认推荐配置有两部分
+## 默认推荐配置有三部分
 
-***通用mock***
+---
+
+### 允许通过注释`@mock`定义`mock`规则
+
+```properties
+#yapi mock
+field.mock=#mock
+```
+
+### demo
+
+***DemoDto.java***
+
+```java
+public class DemoDto {
+
+    /**
+     * @mock tangcent
+     */
+    @NotBlank
+    private String name;//用户名
+
+    /**
+     * 年龄
+     * @mock 1@natural(0,9)
+     */
+    @NotNull
+    private Integer age;
+
+}
+```
+
+***作为API返回值导出:***
+
+| 名称 | 类型 | 是否必须 | 默认值 | 备注 | 其他信息 |
+| --- | --- | --- | --- | --- | --- |
+| name      |	string		|	非必须  |  | 用户名 | mock: tangcent         |
+| age	    |	integer		|	非必须  |  | 年龄   | mock: 1@natural(0,9)     |
+
+
+---
+
+
+### 通用mock
 
 ```properties
 #mock for date
@@ -16,7 +59,35 @@ field.mock[groovy:${java_date_types}.contains(it.type().name())&&it.jsonType().n
 ###set resolveMulti = error
 ```
 
-***`javax.validation`相关mock***
+
+### demo
+
+***DemoDto.java***
+
+```java
+public class DemoDto {
+
+    //生日
+    private LocalDate birthDay;
+
+    //注册时间
+    private LocalDateTime regtime;
+
+}
+```
+
+***作为API返回值导出:***
+
+| 名称 | 类型 | 是否必须 | 默认值 | 备注 | 其他信息 |
+| --- | --- | --- | --- | --- | --- |
+| birthDay      |	string		|	非必须  |  | 生日 | mock: @date         |
+| regtime	    |	string		|	非必须  |  | 注册时间   | mock: @date      |
+
+
+
+---
+
+###  `javax.validation`相关mock
 
 ```properties
 # mock for javax.validation
@@ -70,7 +141,7 @@ field.mock[groovy:it.hasAnn("javax.validation.constraints.DecimalMin")&&${java_f
 ###set resolveMulti = error
 ```
 
-## demo
+### demo
 
 ***ValidationDemoDto.java***
 
@@ -133,7 +204,7 @@ public class ValidationDemoDto {
 ```
 
 
-### 作为API返回值导出:
+***作为API返回值导出:***
 
 | 名称 | 类型 | 是否必须 | 默认值 | 备注 | 其他信息 |
 | --- | --- | --- | --- | --- | --- |
