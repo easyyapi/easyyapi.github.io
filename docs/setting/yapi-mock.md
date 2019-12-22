@@ -1,7 +1,98 @@
-# Yapi配置
+# `Yapi` `mock`规则
 
-## 可增加自定义mock规则(beta)
-例如:
+- 默认对于枚举类型或注释里引用的枚举类型的字段，会`mock`为目标枚举值
+- 有两种额外的配置方式，根据实际情况选择适合的方式配置
+
+---
+
+## 通过合适的注释关联`枚举`/`常量`
+
+### 字段名与关联的枚举值字段名相同
+
+```java
+/**
+* 用户类型
+* @see UserType
+*/
+private String type;
+```
+
+***导出API结果为:***
+
+| 名称 | 类型 | 是否必须 | 默认值 | 备注 | 其他信息 |
+| --- | --- | --- | --- | --- | --- |
+| type | integer | 非必须 | | 用户类型 | 枚举: 1,2,3<br>枚举备注: 1 :管理员 2 :成员 3 :游客<br>mock: @pick([1,2,3]) |
+
+
+### 字段名与关联的枚举值字段名不同
+
+```java
+/**
+* 用户类型
+* @see UserType#type
+*/
+private String userType;
+```
+
+
+***导出API结果为:***
+
+| 名称 | 类型 | 是否必须 | 默认值 | 备注 | 其他信息 |
+| --- | --- | --- | --- | --- | --- |
+| userType | integer | 非必须 | | 用户类型 | 枚举: 1,2,3<br>枚举备注: 1 :管理员 2 :成员 3 :游客<br>mock: @pick([1,2,3]) |
+
+
+### 关联一个类中的所有常量
+
+```java
+/**
+* 用户类型
+* @see com.itangcent.common.constant.UserTypeConstant
+*/
+private String type;
+```
+
+
+***导出API结果为:***
+
+| 名称 | 类型 | 是否必须 | 默认值 | 备注 | 其他信息 |
+| --- | --- | --- | --- | --- | --- |
+| type | integer | 非必须 | | 用户类型 | 枚举: 1,2,3<br>枚举备注: 1 :管理员 2 :成员 3 :游客<br>mock: @pick([1,2,3]) |
+
+### 关联一个类中的部分常量
+
+```java
+/**
+* 用户类型
+* @see com.itangcent.common.constant.UserTypeConstant#ADMIN
+* @see com.itangcent.common.constant.UserTypeConstant#MEMBER
+*/
+private String type;
+```
+
+***导出API结果为:***
+
+| 名称 | 类型 | 是否必须 | 默认值 | 备注 | 其他信息 |
+| --- | --- | --- | --- | --- | --- |
+| type | integer | 非必须 | | 用户类型 | 枚举: 1,2<br>枚举备注: 1 :管理员 2 :成员 <br>mock: @pick([1,2]) |
+
+
+---
+
+### 从代码中获取`mock`规则
+
+- 配置灵活, 但有`代码/注释`侵入性
+- 非常适合有校验框架的情况, 如`javax.validation`
+- 参见:[field.mock](rules/field_mock.md)
+
+---
+
+### 通过字段名及类型等特征来配置`mock`规则
+
+- 配置稍难, 零侵入
+- 非常适合字段名定义很规范的项目
+
+***一般先增加一些自定义mock规则***
 
 ```properties
 ## 增加自定义mock规则
@@ -23,8 +114,7 @@ http_url=@pick(["http","https"])://www.@domain()/@string('lower',1,8)?@string('l
 objectId=@string("0123456789abcdef",24,24)
 ```
 
-## 可以使用mockjs提供的规则与自定义的规则来定制最后输出到YAPI的mock信息
-例如:
+***可以使用`mockjs`提供的规则与自定义的规则来定制最后输出到`YAPI`的`mock`信息***
 
 ```properties
 #常见的响应mock
