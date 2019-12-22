@@ -1,0 +1,155 @@
+# field.mock
+
+- 用于生成`yapi`相关mock信息
+
+## 默认推荐配置有两部分
+
+***通用mock***
+
+```properties
+#mock for date
+
+###set resolveMulti = first
+java_date_types=["java.util.Date","java.sql.Timestamp","java.time.LocalDate","java.time.LocalDateTime"]
+field.mock[groovy:${java_date_types}.contains(it.type().name())&&it.jsonType().name()=="java.lang.String"] = groovy:"@date"
+field.mock[groovy:${java_date_types}.contains(it.type().name())&&it.jsonType().name()=="java.lang.Long"] = groovy:"@timestamp@string(\"number\", 3)"
+###set resolveMulti = error
+```
+
+***`javax.validation`相关mock***
+
+```properties
+# mock for javax.validation
+
+###set resolveMulti = first
+# define var
+number_min=-9999
+number_max=9999
+float_dmin=2
+java_integer_types=["java.lang.Integer","int","java.lang.Long","long","java.lang.Short","short","java.math.BigInteger"]
+java_float_types=["java.lang.Float","float","java.lang.Double","double","java.math.BigDecimal"]
+# mock_integer_or_float=${java_integer_types}.contains(it.type().name())?"@integer":"@float"
+
+# AssertTrue|AssertFalse|Email
+field.mock[@javax.validation.constraints.AssertTrue]=true
+field.mock[@javax.validation.constraints.AssertFalse]=false
+field.mock[@javax.validation.constraints.Email]=groovy:"@email"
+
+# Positive&PositiveOrZero
+field.mock[groovy:it.hasAnn("javax.validation.constraints.Positive")&&${java_integer_types}.contains(it.jsonType().name())]=groovy:"@integer(1,${number_max})"
+field.mock[groovy:it.hasAnn("javax.validation.constraints.PositiveOrZero")&&${java_integer_types}.contains(it.jsonType().name())]=groovy:"@integer(0,${number_max})"
+field.mock[groovy:it.hasAnn("javax.validation.constraints.Positive")&&${java_float_types}.contains(it.jsonType().name())]=groovy:"@float(0.01,${number_max},${float_dmin})"
+field.mock[groovy:it.hasAnn("javax.validation.constraints.PositiveOrZero")&&${java_float_types}.contains(it.jsonType().name())]=groovy:"@float(0,${number_max},${float_dmin})"
+
+# Negative&NegativeOrZero
+field.mock[groovy:it.hasAnn("javax.validation.constraints.Negative")&&${java_integer_types}.contains(it.jsonType().name())]=groovy:"@integer(${number_min},-1)"
+field.mock[groovy:it.hasAnn("javax.validation.constraints.NegativeOrZero")&&${java_integer_types}.contains(it.jsonType().name())]=groovy:"@integer(${number_min},0)"
+field.mock[groovy:it.hasAnn("javax.validation.constraints.Negative")&&${java_float_types}.contains(it.jsonType().name())]=groovy:"@float(${number_min},0.01,${float_dmin})"
+field.mock[groovy:it.hasAnn("javax.validation.constraints.NegativeOrZero")&&${java_float_types}.contains(it.jsonType().name())]=groovy:"@float(${number_min},0,${float_dmin})"
+
+# Max+Min
+field.mock[groovy:it.hasAnn("javax.validation.constraints.Max")&&it.hasAnn("javax.validation.constraints.Min")&&${java_integer_types}.contains(it.jsonType().name())]=groovy:"@integer("+it.ann("javax.validation.constraints.Min")+","+it.ann("javax.validation.constraints.Max")+")"
+field.mock[groovy:it.hasAnn("javax.validation.constraints.Max")&&it.hasAnn("javax.validation.constraints.Min")&&${java_float_types}.contains(it.jsonType().name())]=groovy:"@float("+it.ann("javax.validation.constraints.Min")+","+it.ann("javax.validation.constraints.Max")+",${float_dmin})"
+
+# Max|Min
+field.mock[groovy:it.hasAnn("javax.validation.constraints.Max")&&${java_integer_types}.contains(it.jsonType().name())]=groovy:"@integer(0,"+it.ann("javax.validation.constraints.Max")+")"
+field.mock[groovy:it.hasAnn("javax.validation.constraints.Min")&&${java_integer_types}.contains(it.jsonType().name())]=groovy:"@integer("+it.ann("javax.validation.constraints.Min")+")"
+field.mock[groovy:it.hasAnn("javax.validation.constraints.Max")&&${java_float_types}.contains(it.jsonType().name())]=groovy:"@float(0,"+it.ann("javax.validation.constraints.Max")+")"
+field.mock[groovy:it.hasAnn("javax.validation.constraints.Min")&&${java_float_types}.contains(it.jsonType().name())]=groovy:"@float("+it.ann("javax.validation.constraints.Min")+")"
+
+# DecimalMax+DecimalMin
+field.mock[groovy:it.hasAnn("javax.validation.constraints.DecimalMax")&&it.hasAnn("javax.validation.constraints.DecimalMin")&&${java_integer_types}.contains(it.jsonType().name())]=groovy:"@integer("+it.ann("javax.validation.constraints.DecimalMin")+","+it.ann("javax.validation.constraints.DecimalMax")+")"
+field.mock[groovy:it.hasAnn("javax.validation.constraints.DecimalMax")&&it.hasAnn("javax.validation.constraints.DecimalMin")&&${java_float_types}.contains(it.jsonType().name())]=groovy:"@float("+it.ann("javax.validation.constraints.DecimalMin")+","+it.ann("javax.validation.constraints.DecimalMax")+",${float_dmin})"
+
+# DecimalMax|DecimalMin
+field.mock[groovy:it.hasAnn("javax.validation.constraints.DecimalMax")&&${java_integer_types}.contains(it.jsonType().name())]=groovy:"@integer(0,"+it.ann("javax.validation.constraints.DecimalMax")+")"
+field.mock[groovy:it.hasAnn("javax.validation.constraints.DecimalMin")&&${java_integer_types}.contains(it.jsonType().name())]=groovy:"@integer("+it.ann("javax.validation.constraints.DecimalMin")+")"
+field.mock[groovy:it.hasAnn("javax.validation.constraints.DecimalMax")&&${java_float_types}.contains(it.jsonType().name())]=groovy:"@float(0,"+it.ann("javax.validation.constraints.DecimalMax")+",${float_dmin})"
+field.mock[groovy:it.hasAnn("javax.validation.constraints.DecimalMin")&&${java_float_types}.contains(it.jsonType().name())]=groovy:"@float("+it.ann("javax.validation.constraints.DecimalMin")+",${float_dmin})"
+
+###set resolveMulti = error
+```
+
+## demo
+
+***ValidationDemoDto.java***
+
+```java
+public class ValidationDemoDto {
+
+    @NotNull
+    private String str;
+
+    @Min(666)
+    private Integer minInt;
+
+    @Max(999)
+    private Integer maxInt;
+
+    @Min(666)
+    private Double minDouble;
+
+    @Max(999)
+    private double maxDouble;
+
+    @Min(666)
+    @Max(999)
+    private Integer rangeInt;
+
+    @Min(66)
+    @Max(9999)
+    private float rangeFloat;
+
+    @Negative
+    private Integer negative;
+
+    @NegativeOrZero
+    private Integer negativeOrZero;
+
+    @Positive
+    private Integer positive;
+
+    @PositiveOrZero
+    private Integer positiveOrZero;
+
+    @Positive
+    private Float positiveFloat;
+
+    @PositiveOrZero
+    private float positiveOrZeroFloat;
+
+    @Email
+    private String email;
+
+    @AssertTrue
+    private boolean assertTrue;
+
+    @AssertFalse
+    private boolean assertFalse;
+
+    //getter&setter
+}
+
+```
+
+
+### 作为API返回值导出:
+
+| 名称 | 类型 | 是否必须 | 默认值 | 备注 | 其他信息 |
+| --- | --- | --- | --- | --- | --- |
+| rangeInt              |	integer		|	非必须  |  |  | mock: @integer(666,999)         |
+| positiveOrZeroFloat	|	number		|	非必须  |  |  | mock: @float(0,88888888,6)      |
+| maxInt	            |	integer		|	非必须  |  |  | mock: @integer(0,999)           |
+| minInt	            |	integer		|	非必须  |  |  | mock: @integer(666)             |
+| assertFalse	        |	boolean		|	非必须  |  |  | mock: false                     |
+| maxDouble	            |	number		|	非必须  |  |  | mock: @float(0,999)             |
+| minDouble         	|	number		|	非必须  |  |  | mock: @float(666)               |
+| positive	            |	integer		|	非必须  |  |  | mock: @integer(1,88888888)      |
+| positiveOrZero	    |	integer		|	非必须  |  |  | mock: @integer(0,88888888)      |
+| str                   |	string	    |   必须    |  |  |                                 | 
+| negative          	|	integer		|	非必须  |  |  | mock: @integer(-888888888,-1)   |
+| rangeFloat	        |	number		|	非必须  |  |  | mock: @float(66,9999,6)         |
+| assertTrue	        |	boolean		|	非必须  |  |  | mock: true                      |
+| negativeOrZero    	|	integer		|	非必须  |  |  | mock: @integer(-888888888,0)    |
+| positiveFloat     	|	number		|	非必须  |  |  | mock: @float(0.01,88888888,6)   |
+| email	                |	string	    |	非必须  |  |  | mock: @email                    |
