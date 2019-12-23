@@ -14,7 +14,7 @@
 * 用户类型
 * @see UserType
 */
-private String type;
+private Integer type;
 ```
 
 ***导出API结果为:***
@@ -31,7 +31,7 @@ private String type;
 * 用户类型
 * @see UserType#type
 */
-private String userType;
+private Integer userType;
 ```
 
 
@@ -49,7 +49,7 @@ private String userType;
 * 用户类型
 * @see com.itangcent.common.constant.UserTypeConstant
 */
-private String type;
+private Integer type;
 ```
 
 
@@ -67,7 +67,7 @@ private String type;
 * @see com.itangcent.common.constant.UserTypeConstant#ADMIN
 * @see com.itangcent.common.constant.UserTypeConstant#MEMBER
 */
-private String type;
+private Integer type;
 ```
 
 ***导出API结果为:***
