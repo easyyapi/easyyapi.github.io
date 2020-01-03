@@ -8,3 +8,7 @@
 ## KDoc
 
 - [kotlin-doc](https://kotlinlang.org/docs/reference/kotlin-doc.html)
+
+## ScalaDoc
+
+- [scaladoc](https://docs.scala-lang.org/style/scaladoc.html)
