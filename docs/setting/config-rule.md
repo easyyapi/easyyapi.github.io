@@ -1,4 +1,5 @@
 # 支持的规则
+
 | &nbsp;&nbsp;&nbsp;&nbsp;规则的key | 规则目标(上下文) | 版本 | 规则描述 |
 | ------------ | ------------ | ------------ |------------ |
 | &nbsp;&nbsp;&nbsp;&nbsp;[module](rules/module.md) | class | v0.7.2+ | 为api分组 |
@@ -33,6 +34,7 @@
 | ☆[method.return.main](rules/method_return_main.md)  | method | v1.3.8+ | 设置返回值的核心主体 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[api.name](rules/api_name.md)  | method | v1.4.1+ | 设置api的名称 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[method.default.http.method](rules/method_default_http_method.md)  | method | v1.4.2+ | 设置默认的api的HttpMethod |
+| &nbsp;&nbsp;&nbsp;&nbsp;[postman.host](rules/postman_host.md)  | class | v1.5.2+ | 设置`postman`API的host |
 
 # 简单规则
 - \# 读取注释上的tag

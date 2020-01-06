@@ -35,4 +35,5 @@
     * [☆method.return.main](rules/method_return_main.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;api.name](rules/api_name.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;method.default.http.method](rules/method_default_http_method.md)
+    * [&nbsp;&nbsp;&nbsp;&nbsp;postman.host](rules/postman_host.md)
 * [groovy本地扩展](groovy-ext-config.md)
