@@ -10,11 +10,18 @@ doc.param=js:"类型:"+it.type().name()
 
 ## 在注释中给出参数类型并去掉java包名
 
+- 使用groovy规则:
+
+```properties
+java.to.js.type=def uncapitalize = { type -> type = type.replace("java.lang.",""); type[0].toLowerCase()+type[1..-1] }
+doc.param=groovy:${java.to.js.type};"类型:"+uncapitalize.call(it.type().name())
+```
+- 使用js规则:
+
 ```properties
 java.to.js.type=(function(type){type = type.replace("java.lang.","");return type.replace(type[0],type[0].toLowerCase());})
 doc.param=js:"\n类型:"+${java.to.js.type}(it.type().name())
 ```
-
 
 ### 导出结果如下:
 
