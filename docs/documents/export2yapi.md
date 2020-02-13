@@ -10,9 +10,9 @@
     然后选择`ExportYapi`
 
 3. 在IDEA的左边项目文件区域选择文件或者文件夹
-    鼠标点击最上方`[Code -> ExportYapi]`
+    鼠标点击最上方<kbd>Code</kbd> > <kbd>ExportYapi</kbd>
 
-4. 鼠标点击最上方`[Code -> YapiDashBoard]`
+4. 鼠标点击最上方<kbd>Code</kbd> > <kbd>YapiDashBoard</kbd>
     然后就可以用鼠标将左边的API拖动到右边yapi目录中，完成API导出到Yapi
 
 ----

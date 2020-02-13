@@ -11,7 +11,7 @@
     然后选择`ExportMarkdown`
 
 3. 在IDEA的左边项目文件区域选择文件或者文件夹
-    鼠标点击最上方`[Code -> ExportMarkdown]`
+    鼠标点击最上方<kbd>Code</kbd> > <kbd>ExportMarkdown</kbd>
 
 ---
 
