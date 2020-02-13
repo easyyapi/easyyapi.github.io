@@ -9,5 +9,7 @@
     * [导出到postman](export2postman.md)
     * [导出到markdown](export2markdown.md)
     * [导出rpc文档](export_rpc.md)
+* [进阶使用](advanced_use.md)
+    * [Debug](debug.md)
 * [注释规范](docs.md)
     * [java注释demo](java_doc_demo.md)
