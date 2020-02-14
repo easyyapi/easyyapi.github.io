@@ -35,6 +35,7 @@
 | isMap() | boolean | 是否为Map | it.isMap() |
 | isCollection() | boolean | 是否为集合 | it.isCollection() |
 | isArray() | boolean | 是否为数组 | it.isArray() |
+| toJson(readGetter) | boolean | 获取当前类型的json字符串 | it.toJson(true) |
 
 - method(方法/API)
 
@@ -46,14 +47,16 @@
 | argTypes() | class[] | 方法的所有参数类型 | it.argTypes() |
 | argCnt() | int | 方法参数个数 | it.argCnt() |
 | containingClass() | class | 方法所属类 | it.containingClass() |
+| returnJson(needInfer, readGetter) | class | 当前方法返回对象的json字符串 | it.returnJson(true,true) |
 
 - field(字段/属性)
 
 | 方法  |  返回值  |  描述  |  示例  |
 | ------------ | ------------ | ------------ |------------ |
 | type() | class | 字段类型 | it.type()| 
-| containingClass() | class | 方法所属类 | it.containingClass()| 
-| jsonName() | class | 字段json名 | it.jsonName()| 
+| containingClass() | class | 方法所属类 | it.containingClass() | 
+| jsonName() | string | 字段json名 | it.jsonName() | 
+| jsonType() | class | 字段json类型(被转换过的) | it.jsonType() | 
 
 - arg(参数)
 
