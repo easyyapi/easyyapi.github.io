@@ -29,9 +29,9 @@
 | ------------ | ------------ | ------------ |------------ |
 | methods() | method[] | 类中的所有方法 | it.methods() |
 | methodCnt() | int | 类中的方法数 | it.methodCnt() |
-| field() | int | 类中的所有字段 | it.field() |
+| field() | field[] | 类中的所有字段 | it.field() |
 | fieldCnt() | int | 类中的字段数 | it.fieldCnt() |
-| isExtend() | boolean | 是否继承某个类 | it.isExtend() |
+| isExtend(superClass) | boolean | 是否继承某个类 | it.isExtend("some.class.qualifiedName") |
 | isMap() | boolean | 是否为Map | it.isMap() |
 | isCollection() | boolean | 是否为集合 | it.isCollection() |
 | isArray() | boolean | 是否为数组 | it.isArray() |
@@ -54,7 +54,7 @@
 | 方法  |  返回值  |  描述  |  示例  |
 | ------------ | ------------ | ------------ |------------ |
 | type() | class | 字段类型 | it.type()| 
-| containingClass() | class | 方法所属类 | it.containingClass() | 
+| containingClass() | class | 字段所属类 | it.containingClass() | 
 | jsonName() | string | 字段json名 | it.jsonName() | 
 | jsonType() | class | 字段json类型(被转换过的) | it.jsonType() | 
 
