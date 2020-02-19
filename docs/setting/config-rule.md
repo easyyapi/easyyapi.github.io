@@ -48,3 +48,4 @@
 - groovy规则为 groovy:groovyScript
 - js规则为 js:jsScript
 - 脚本中可以工具/对象: [tools](tools.md)
+- 脚本`Debug`: [Deubg](../documents/debug.html)
