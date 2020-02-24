@@ -1,6 +1,6 @@
-**Yapi Render**
+**Yapi Render(v1.6.1+)**
 
-- 目前`yapi`的`[open api](https://hellosean1025.github.io/yapi/openapi.html)`更新接口并不会渲染接口备注信息，如果接口备注信息中含有`markdown`内容，需要配置`markdown`渲染器
+- 目前`yapi`的[open api](https://hellosean1025.github.io/yapi/openapi.html)更新接口并不会渲染接口备注信息，如果接口备注信息中含有`markdown`内容，需要配置`markdown`渲染器
 
 ## `markdown`渲染器
 
