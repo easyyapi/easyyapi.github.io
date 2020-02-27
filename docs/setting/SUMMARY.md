@@ -33,6 +33,7 @@
     * [&nbsp;&nbsp;&nbsp;&nbsp;class.prefix.path](rules/class_prefix_path.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;constant.field.ignore](rules/constant_field_ignore.md)
     * [☆method.return.main](rules/method_return_main.md)
+    * [☆method.return](rules/method_return.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;api.name](rules/api_name.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;method.default.http.method](rules/method_default_http_method.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;postman.host](rules/postman_host.md)

@@ -1,6 +1,6 @@
 # method.return.main
 
-- 设置返回值的核心主体，使得`@return`的注释落在主体属性上
+- 此配置仅设置返回值的核心主体，使得`@return`的注释落在主体属性上,不影响返回类型及字段.
 
 ## demo
 
@@ -37,7 +37,7 @@ method.return.main[groovy:it.returnType().isExtend("com.itangcent.common.dto.Res
     /**
      * 获取当前用户类型
      *
-     * @return {@link com.itangcent.common.constant.UserTypeConstant}
+     * @return 当前用户类型,{@link com.itangcent.common.constant.UserTypeConstant}
      */
     @GetMapping("/type")
     public Result<Integer> currUserType() {
@@ -51,7 +51,7 @@ method.return.main[groovy:it.returnType().isExtend("com.itangcent.common.dto.Res
 | --- | --- | --- | --- | --- | --- |
 | msg |	string | 非必须 |  | 响应消息 | mock: |
 | code | integer | 非必须 |  | 响应码 | mock: 0 |
-| data | integer | 非必须 |  | 响应数据<br>[用户类型] | 枚举: 1,2,3<br>枚举备注: 1 :管理员 2 :成员 3 :游客<br>mock: @pick([1,2,3]) |
+| data | integer | 非必须 |  | 响应数据<br>当前用户类型,[用户类型] | 枚举: 1,2,3<br>枚举备注: 1 :管理员 2 :成员 3 :游客<br>mock: @pick([1,2,3]) |
 
 
 ### 接口示例2:
