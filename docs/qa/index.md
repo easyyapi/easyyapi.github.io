@@ -264,7 +264,7 @@
    ***配置如下:***
 
    ```properties
-   doc.method[#result]=groovy: it.docs("result").collect{"可能的返回:\n\n```json\n"+helper.resolveLink(it)?.toJson(true)+"\n```\n\n"}.join("\n")
+   doc.method[#result]=groovy: it.docs("result").collect{helper.resolveLink(it)}.grep{it!=null}.collect{"可能的返回:\n\n```json\n"+it.toJson(true)+"\n```\n\n"}.join("\n")
    ```
 
    ***使用如下:***
