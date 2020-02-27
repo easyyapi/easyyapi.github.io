@@ -11,3 +11,4 @@
 * [如何在API描述中声明API需要的权限(spring security)](index.md#如何在api描述中声明api需要的权限spring-security)
 * [如何忽略某些字段?](index.md#如何忽略某些字段)
 * [如何将指定类型转换为另一种类型处理?](index.md#如何将指定类型转换为另一种类型处理)
+* [部分接口可能有不同的返回?](index.md#部分接口可能有不同的返回)

@@ -1,11 +1,14 @@
 
+***此插件配置过于灵活, 以下均为示例, 需根据实际情况做合适的处理。***
+
+---
+
 
 ## 如何添加配置文件
 
    * see [local-file-config](/setting/local-file-config.html)
    
 ---
-
 
 
 ## 如何组织API到指定文件夹
@@ -36,7 +39,6 @@
    ```
 
 ---
-
 
 
 ## 如何忽略API
@@ -85,7 +87,6 @@
    ```
 
 ---
-
 
 
 ## 如何设置API/文件夹的名称/描述
@@ -173,7 +174,7 @@
 
 ## 如何在API描述中声明API需要的权限(spring security)
 
-   * add config for spring security:
+   * 可配置如下:
 
    ```properties
    ## security description
@@ -211,21 +212,21 @@
  
 ## 如何忽略某些字段
 
-   * To ignore the field with special name:
+   * 忽略特定名称的字段:
 
    ```properties
    ## ignore field 'log'
    json.rule.field.ignore=log
    ```
    
-   * To ignore the field with special type:
+   * 忽略特定类型的字段:
 
    ```properties
    ## ignore field 'log' typed xxx.xxx.Log
    json.rule.field.ignore=groovy:it.type().name()=="xxx.xxx.Log"
    ```
    
-   * To ignore the field with special modifier:
+   * 忽略特定限定符的字段:
 
    ```properties
    #ignore transient field
@@ -239,7 +240,7 @@
 
 ## 如何将指定类型转换为另一种类型处理
 
-   * Receive or output `java.time.LocalDateTime` as `yyyy-mm-dd`
+   * 将`java.time.LocalDateTime`作为`yyyy-mm-dd`形式字符串处理
 
    ```properties
    #Resolve 'java.time.LocalDateTime' as 'java.lang.String'
@@ -247,7 +248,7 @@
    json.rule.convert[java.time.LocalDate]=java.lang.String
    ```
    
-   * Receive or output `java.time.LocalDateTime` as `timestamp`
+   * 将`java.time.LocalDateTime`作为`timestamp`处理
    
    ```properties
    #Resolve 'java.time.LocalDateTime' as 'java.lang.Long'
@@ -255,3 +256,26 @@
    json.rule.convert[java.time.LocalDate]=java.lang.Long
    ```
    
+
+## 部分接口可能有不同的返回
+
+   * 可以使用[doc.method](/setting/rules/doc_method.html)将可能的返回放在方法备注中
+
+   ***配置如下:***
+
+   ```properties
+   doc.method[#result]=groovy: it.docs("result").collect{"可能的返回:\n\n```json\n"+helper.resolveLink(it)?.toJson(true)+"\n```\n\n"}.join("\n")
+   ```
+
+   ***使用如下:***
+
+   ```java
+    /**
+     * @result {@link UserInfo}
+     * @result {@link Result<UserInfo>}
+     */
+    public Result mockString() {
+        ...
+    }
+   ```
+
