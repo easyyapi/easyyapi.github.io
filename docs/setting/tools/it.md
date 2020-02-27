@@ -7,19 +7,20 @@
 
 | 方法  |  返回值  |  描述  |  示例  |
 | ------------ | ------------ | ------------ |------------ |
-| name() | String | 名称 | it.name() |
+| name() | string | 名称 | it.name() |
 | hasAnn("annotation_name") | boolean | 是否有指定注解 | it.hasAnn("org.springframework.web.bind.annotation.RequestBody")| 
-| ann("annotation_name") | String | 获取指定注解值(默认value) | it.ann("org.springframework.web.bind.annotation.RequestBody")| 
-| ann("annotation_name","attr") | String | 获取指定注解中的指定参数值 | it.ann("org.springframework.web.bind.annotation.RequestMapping","path")| 
-| doc() | String | 获取注释值 | it.doc()| 
-| doc("tag") | String | 获取注释tag值(不需要加@) | it.doc("return")| 
-| doc("tag","subTag") | String | 获取二级注释tag值 | it.doc("param","a")| 
-| hasDoc("tag") | String | 是否有指定注释tag | it.hasDoc("ignore")| 
-| hasModifier("modifier") | String | 是否有指定修饰 | it.hasModifier("public")| 
-| modifiers() | String | 获取所有指定修饰 | it.modifiers() | 
-| sourceCode() | String | 获取当前对象源码 | it.sourceCode() | 
-| defineCode() | String | 获取当前对象纯定义代码 | it.defineCode() | 
-| contextType() | String | 当前上下文类型 class/field/method/param | it.contextType()| 
+| ann("annotation_name") | string | 获取指定注解值(默认value) | it.ann("org.springframework.web.bind.annotation.RequestBody")| 
+| ann("annotation_name","attr") | string | 获取指定注解中的指定参数值 | it.ann("org.springframework.web.bind.annotation.RequestMapping","path")| 
+| doc() | string | 获取注释值 | it.doc()| 
+| doc("tag") | string | 获取注释tag值(不需要加@) | it.doc("return")| 
+| docs("tag") | array<string> | 获取多个注释tag值(不需要加@) | it.docs("see")| 
+| doc("tag","subTag") | string | 获取二级注释tag值 | it.doc("param","a")| 
+| hasDoc("tag") | string | 是否有指定注释tag | it.hasDoc("ignore")| 
+| hasModifier("modifier") | string | 是否有指定修饰 | it.hasModifier("public")| 
+| modifiers() | string | 获取所有指定修饰 | it.modifiers() | 
+| sourceCode() | string | 获取当前对象源码 | it.sourceCode() | 
+| defineCode() | string | 获取当前对象纯定义代码 | it.defineCode() | 
+| contextType() | string | 当前上下文类型 class/field/method/param | it.contextType()| 
 
 ### 不同的应用对象提供额外的方法
 
