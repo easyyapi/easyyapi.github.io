@@ -225,7 +225,7 @@ public class ValidationDemoDto {
 | positiveFloat     	|	number		|	非必须  |  |  | mock: @float(0.01,88888888,6)   |
 | email	                |	string	    |	非必须  |  |  | mock: @email                    |
 
-
+---
 
 # field.mock.resolveProperty
 
