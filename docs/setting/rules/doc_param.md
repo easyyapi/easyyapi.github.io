@@ -23,6 +23,26 @@ java.to.js.type=(function(type){type = type.replace("java.lang.","");return type
 doc.param=js:"\n类型:"+${java.to.js.type}(it.type().name())
 ```
 
+### API
+
+```java
+    /**
+     * 更新用户名
+     *
+     * @param id      用户id
+     * @param newName 新的用户名
+     * @param slogon  个人签名
+     * @deprecated 改用{@link #update(UserInfo)}
+     */
+    @RequestMapping(value = "/set", method = RequestMethod.PUT)
+    public Object set(long id,
+                      @RequestParam String newName,
+                      @RequestParam(required = false, defaultValue = "haha") String slogon,
+                      @RequestParam(required = false, defaultValue = "10") long times) {
+            ...
+    }
+```
+
 ### 导出结果如下:
 
 ***请求参数:***
