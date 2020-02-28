@@ -39,14 +39,27 @@
 
 # 简单规则
 - \# 读取注释上的tag
+   ```java
+   /**
+    * @fake
+    */
+   ```
 - @ 读取注解
    - @xxx 读取方法或字段上的注解
+   ```java
+   @RequestMapping("path")
+   public class FakeClass{...}
+   ```
    - @xxx#yyy 读取方法或字段上的注解中的attr值
+   ```java
+   @RequestMapping(value = "path")
+   public class FakeClass{...}
+   ```
 
-# 高级脚本规则(beta)
+# 高级脚本规则
 
-- 由于JDK11后js引擎可能缺失，故推荐使用groovy作为首选
-- groovy规则为 groovy:groovyScript
-- js规则为 js:jsScript
+- 由于`JDK11`后`js`引擎可能缺失，故推荐使用`groovy`作为首选
+- `groovy`规则为 `groovy:groovyScript`
+- `js`规则为 `js:jsScript`
 - 脚本中可以工具/对象: [tools](tools.md)
 - 脚本`Debug`: [Deubg](../documents/debug.html)

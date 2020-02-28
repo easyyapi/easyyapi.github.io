@@ -17,7 +17,7 @@
 | doc("tag","subTag") | string | 获取二级注释tag值 | it.doc("param","a")| 
 | hasDoc("tag") | string | 是否有指定注释tag | it.hasDoc("ignore")| 
 | hasModifier("modifier") | string | 是否有指定修饰 | it.hasModifier("public")| 
-| modifiers() | string | 获取所有指定修饰 | it.modifiers() | 
+| modifiers() | string | 获取所有修饰 | it.modifiers() | 
 | sourceCode() | string | 获取当前对象源码 | it.sourceCode() | 
 | defineCode() | string | 获取当前对象纯定义代码 | it.defineCode() | 
 | contextType() | string | 当前上下文类型 class/field/method/param | it.contextType()| 
