@@ -224,3 +224,47 @@ public class ValidationDemoDto {
 | negativeOrZero    	|	integer		|	非必须  |  |  | mock: @integer(-888888888,0)    |
 | positiveFloat     	|	number		|	非必须  |  |  | mock: @float(0.01,88888888,6)   |
 | email	                |	string	    |	非必须  |  |  | mock: @email                    |
+
+
+
+# field.mock.resolveProperty
+
+- 用以开关是否解析`field.mock`规则结果中的占位符如`${float_with_two}`
+- 默认为`true`,如果不希望解析，可以设置为关闭
+```properties
+field.mock.resolveProperty=false
+```
+
+## 使用示例
+
+
+***配置如下***
+
+```properties
+#yapi mock
+field.mock=#mock
+
+#小数点后两位
+float_with_two=@natural(0,10000).@natural(0,100)
+```
+
+***DemoDto.java***
+
+```java
+public class DemoDto {
+
+    /**
+     * 价格
+     * @mock ${float_with_two}
+     */
+    @NotNull
+    private Float price;
+
+}
+```
+
+***导出结果***
+
+| 名称 | 类型 | 是否必须 | 默认值 | 备注 | 其他信息 |
+| --- | --- | --- | --- | --- | --- |
+| price	| number | 必须 |  | 价格	| mock: @natural(0,10000).@natural(0,100) |
