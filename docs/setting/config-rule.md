@@ -24,6 +24,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.required](rules/field_required.md) | field | v0.7.3+ | 字段是否为必须(即不可为空) |
 | ☆[field.mock](rules/field_mock.md) | field | v1.4.2+ | 生成`yapi`mock信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.mock.resolveProperty](rules/field_mock.md#field.mock.resolveProperty) | - | v1.4.2+ | 用以开关是否解析`field.mock`规则结果中的占位符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[field.default.value](rules/field_default_value.md) | - | v1.7.1+ | 用以设置字段的默认值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[api.tag](rules/api_tag.md) | method | v0.7.5+ | 标记接口tag |
 | &nbsp;&nbsp;&nbsp;&nbsp;[api.status](rules/api_status.md) | method | v0.8.0+ | 标记接口status(应返回done/undone) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[mdoc.class.filter](rules/mdoc_class_filter.md) | class | v0.9.5+ | 选择哪些类可以导出方法文档(rpc) |
