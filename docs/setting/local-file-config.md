@@ -5,8 +5,8 @@
 
 | 文件  |  类型  |  适用的操作  |
 | ------------ | ------------ | ------------ |
-| .easy.api.config | property | markdown/postman/yapi |
-| .easy.api.yml/.easy.api.yaml | yml | markdown/postman/yapi |
+| .easy.api.config | property | markdown/postman/yapi/call |
+| .easy.api.yml/.easy.api.yaml | yml | markdown/postman/yapi/call |
 | .postman.config | property | postman |
 | .postman.yml/.postman.yaml | yml | postman |
 | .yapi.config | property | yapi |
@@ -98,3 +98,4 @@ project-root
 - ③: 只对`kotlin(module2)`生效
 - ④/⑤: 与②一样`application.properties/application.yml/application.yaml`都可以被加载
 - ⑥: 对`java(module1)`/`kotlin(module2)`/`springboot-demo(module3)`/`springboot-webflux-demo(module4)`都生效
+- ①/③/④/⑤/⑥均为可选配置. 一般来说尽量在项目根目录下创建配置文件(即⑥)来管理配置即可.
