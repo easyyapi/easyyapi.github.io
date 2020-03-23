@@ -2,6 +2,8 @@
 
 - 优雅的文档来自优雅的注释
 - 基于[javadoc](./docs.md#Javadoc)&[KDoc](./docs.md#KDoc)&[ScalaDoc](./docs.md#ScalaDoc)解析API文档
+- 注意, 你可以在保持代码零侵入的情况下得到相当完整的api文档, 但是特殊的需求还是需要部分特殊的注释/注解配合
+- 与之相对的是, 你可以灵活的运用[配置规则](/setting/index.html)来适应你的项目特性以减少代码侵入.
 
 
 ## 功能特性
