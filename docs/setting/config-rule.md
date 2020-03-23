@@ -38,10 +38,11 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[api.name](rules/api_name.md)  | method | v1.4.1+ | 设置api的名称 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[method.default.http.method](rules/method_default_http_method.md)  | method | v1.4.2+ | 设置默认的api的HttpMethod |
 | &nbsp;&nbsp;&nbsp;&nbsp;[postman.host](rules/postman_host.md)  | class | v1.5.2+ | 设置`postman`API的host |
+| &nbsp;&nbsp;&nbsp;&nbsp;[http.call.before](rules/http_call_before.md)  | request | v1.9.0+ | http请求前回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[http.call.after](rules/http_call_after.md)  | request&response | v1.9.0+ | http请求后回调 |
 
 
 ---
-
 
 # 简单规则
 - \# 读取注释上的tag
