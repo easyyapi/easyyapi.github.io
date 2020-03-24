@@ -15,9 +15,11 @@
 
    * `module`用于分类api
         * 导出`postman`时,每个`module`将作为一个单独的文件夹
-        * 导出`yapi`,每个`module`需要配置相应的`token`,即对应一个`yapi`中的项目
+        * 导出`yapi`时,每个`module`需要配置相应的`token`,即对应一个`yapi`中的项目
 
-   * 增加配置:
+   * 默认情况下取当前模块名(单模块项目取项目名)
+
+   * 默认推荐配置:
 
    ```properties
    #find module from comment tag 
@@ -112,13 +114,14 @@
         }
     }
     ```
+ 
+ * 特殊需求参见:[doc.class](/setting/rules/doc_class.html) | [doc.method](/setting/rules/doc_method.html) | [api.name](/setting/rules/api_name.html)
+
 ---
-
-
 
 ## 如何在API/文件夹的描述中说明API/文件夹被废弃了
 
-*   添加配置:
+*   默认推荐配置如下:
 
     ```properties
     doc.method[#deprecated]=groovy:"\n「deprecated」" + it.doc("deprecated")
@@ -131,20 +134,36 @@
 
     ```
 
+*  使用注解或者注释标记API废弃即可:
+
+    ```java
+    /**
+    * 可以用注解`@Deprecated`来表示api废弃
+    * 也可以用注释`@deprecated`
+    *
+    * @deprecated 改用{@link #methodName3(String)}
+    */
+    @Deprecated
+    @RequestMapping(value = "/pathOfApi2")
+    public Result methodName2(@RequestBody MockDtoOrVo jsonModel){
+        ...
+    }
+    ```
+
 ---
 
 
     
 ## 如何在API描述中声明API需要的权限(javax annotation security)
 
-   * add config for spring security:
+   * 可考虑增加如下配置:
 
    ```properties
    ## security description
    doc.method[@javax.annotation.security.RolesAllowed]=groovy:"require role:"+it.ann("javax.annotation.security.RolesAllowed")
    ```
    
-   * code:
+   * 示例:
 
    ```java
    /**
@@ -174,7 +193,7 @@
 
 ## 如何在API描述中声明API需要的权限(spring security)
 
-   * 可配置如下:
+   * 可考虑增加如下配置:
 
    ```properties
    ## security description
@@ -182,7 +201,7 @@
    doc.method[@org.springframework.security.access.prepost.PreAuthorize]=js:${find_role_in_PreAuthorize}(it.ann("org.springframework.security.access.prepost.PreAuthorize"))
    ```
    
-   * code:
+   * 示例:
 
    ```java
    /**
@@ -211,6 +230,8 @@
 
  
 ## 如何忽略某些字段
+
+* 使用规则:[json.rule.field.ignore](/setting/rules/json_rule_field_ignore.md.html)
 
    * 忽略特定名称的字段:
 

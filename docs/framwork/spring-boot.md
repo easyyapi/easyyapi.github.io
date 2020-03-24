@@ -1,7 +1,7 @@
 # 对spring-boot的支持
 
 ### 在推荐配置中有很多spring-boot相关的配置
-- 加载spring-boot相关配置:
+- 自动加载spring-boot相关配置:
 ```properties
 #Import spring properties
 properties.additional=${module_path}/src/main/resources/application.properties
