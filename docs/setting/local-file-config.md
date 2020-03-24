@@ -1,23 +1,82 @@
 
 # 使用配置文件(当前项目)
 
- - 将配置文件添加到项目或模块根目录中
+## 将配置文件添加到项目或模块根目录中
 
 | 文件  |  类型  |  适用的操作  |
 | ------------ | ------------ | ------------ |
-| .easy.api.config | property | markdown/postman/yapi/call |
+| .easy.api.config | properties | markdown/postman/yapi/call |
 | .easy.api.yml/.easy.api.yaml | yml | markdown/postman/yapi/call |
-| .postman.config | property | postman |
+| .postman.config | properties | postman |
 | .postman.yml/.postman.yaml | yml | postman |
-| .yapi.config | property | yapi |
+| .yapi.config | properties | yapi |
 | .yapi.yml/.yapi.yaml | yml | yapi |
 
+## properties类型配置(推荐)
+
+- 一般的配置是:`key=value`
+
+- 简单的多行配置,以`\`结尾:
+```
+key=value\
+    aaaa\
+    bbb
+key2=value2
+```
+
+- 复杂的多行配置,以\`\`\`结尾开启多行配置,以单独一行\`\`\`表示结束:
+``````
+key=groovy:```
+if(condition){
+    //some script
+}
+```
+``````
+
+- 带`filter`的配置:
+```
+key[filter]=value
+```
+
+- 注意`key[filter]=value`有可能解析错误,可以尝试切换成
+```
+key=groovy:if(filter)value
+```
+
+- 以下三条配置等价:
+``````
+#单行配置
+http.call.before=groovy:logger.info("call:"+request.url())
+#以\接新行
+http.call.before=groovy:\
+logger.info("call:"+request.url())
+#以```包裹多行
+http.call.before=groovy:```
+logger.info("call:"+request.url())
+```
+``````
+
+## yml/yaml (兼容)
+
+- 使用`snakeyaml`解析
+
+- ***参考:***
+[baike](https://baike.baidu.com/item/YAML) | [wiki](https://en.wikipedia.org/wiki/YML)
+
+
+## properties.additional
+
 - 在配置文件中可以使用`properties.additional`来加载额外的配置文件:
+
 ```properties
 properties.additional=$additional_properties_file_path$
 ```
 
-### 配置后的目录结构如下:
+- 常用于需要存放用户相关的配置
+
+---
+
+### 假设配置后的目录结构如下:
 
 ```
 project-root
