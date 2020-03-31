@@ -48,4 +48,5 @@
     * [&nbsp;&nbsp;&nbsp;&nbsp;logger](tools/logger.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;helper](tools/helper.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;httpClient](tools/httpClient.md)
+    * [&nbsp;&nbsp;&nbsp;&nbsp;localStorage](tools/localStorage.md)
 * [groovy本地扩展](groovy-ext-config.md)

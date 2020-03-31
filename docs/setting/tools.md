@@ -8,3 +8,4 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[logger](tools/logger.md) | 日志工具 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[helper](tools/helper.md) | 特殊帮助类 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[httpClient](tools/httpClient.md) | http相关帮助类 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[localStorage](tools/localStorage.md) | 本地存储 |
