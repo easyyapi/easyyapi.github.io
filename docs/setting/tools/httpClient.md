@@ -59,3 +59,16 @@
 | setHeader(string, string) | request | 移除当前`header`名称的所有值,并设置`header` | request.setHeader("Content-type","application/json")|
 | removeHeader(string, string) | request | 移除指定`header`名称的指定值 | request.removeHeader("Content-type","application/json")|
 | removeHeaders(string) | request | 移除当前`header`名称的所有值 | request.removeHeaders("Content-type")|
+
+
+# `cookieStore`,可以从`httpClient.cookieStore()`获得
+
+## 主要方法有:
+
+| 方法  |  返回值  |  描述  |  示例  |
+| ------------ | ------------ | ------------ |------------ |
+| addCookie(cookie) | void | 添加一个cookie | httpClient.cookieStore().addCookie(cookie) |
+| addCookies(cookies) | void | 添加多个cookie | httpClient.cookieStore().addCookies(cookies) |
+| clear() | void | 清除cookie | httpClient.cookieStore().clear() |
+| cookies() | array\<cookie> | 获得当前的cookies | httpClient.cookieStore().cookies() |
+| newCookie() | cookie | 创建一个`cookie`,注意:并不会自动添加到`cookieStore`中，需要手动调用`addCookie`加入 | httpClient.cookieStore().newCookie() |
