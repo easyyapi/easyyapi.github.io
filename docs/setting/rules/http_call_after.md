@@ -25,7 +25,7 @@ if(request.code()==200&&request.url().endsWith("/xxx")){
 ``````
 
 
-***`Call`自动登陆***
+***`Call`自动登陆(Cookie)***
 
 ``````properties
 http.call.after=groovy:```
@@ -36,5 +36,26 @@ if(response.code()==401){
     .call()
     response.discard()//丢弃这一次的请求结果
 }
+```
+``````
+
+***`Call`自动登陆(Token)***
+
+
+``````properties
+http.call.after=groovy:```
+//判断是不是需要登录的接口
+if(response.code()==401){
+    def loginResponse = httpClient.post("http://xxx/login")
+    .body({"username":"xxx","passwd":"xxx"})
+    .call()
+    def token = loginResponse.firstHeader("token")
+    localStorage.set("token",token)
+    response.discard()//丢弃这一次的请求结果
+}
+```
+http.call.before=groovy:```
+//从localStorage取token
+request.header("token",localStorage.get("token"))
 ```
 ``````
