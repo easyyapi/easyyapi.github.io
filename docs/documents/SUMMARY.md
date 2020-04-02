@@ -12,5 +12,6 @@
 * [进阶使用](advanced_use.md)
     * [Debug](debug.md)
     * [Yapi Render](yapi_render.md)
+    * [Call Api](call.md)
 * [注释规范](docs.md)
     * [java注释demo](java_doc_demo.md)
