@@ -1,6 +1,7 @@
 # http.call.before
 
-- http请求前回调,注意，插件所有的`http`请求都将触发此回调
+- http请求前回调
+- 注意:插件所有的`http`请求都将触发此回调
 
 ## demo
 
