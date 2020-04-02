@@ -3,8 +3,8 @@
 - 打开项目中的包含api的文件
     右键文件内容选择`Generate...`或者用`[Alt + Insert]/[Ctrl+Enter]`(快捷键可能不一样)"
     然后选择`Call`
-- 也可以自行配置快捷键
-- 你可以通过[相关配置](/setting/rules/http_call_before.html)实现自动登录
+- 可以自行配置快捷键
+- 可以通过[相关配置](/setting/rules/http_call_before.html)实现自动登录
 
 ![debug](../asset/idea-call.png)
 
