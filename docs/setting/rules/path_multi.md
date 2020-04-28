@@ -46,11 +46,6 @@ path.multi=all
 
 ***也可以由api自行决定选择策略***
 
-
-## demo
-
-***配置如下:***
-
 ```properties
 path.multi=#multi
 ```
