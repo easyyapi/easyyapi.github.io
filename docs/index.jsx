@@ -1,11 +1,11 @@
 ---
 banner:
   name: 'EasyYapi'
-  desc: '优雅的文档来自优雅的注释'
+  desc: '优雅的文档来自优雅的代码'
   btns:
     - { name: 'Start', href: './documents/index.html', primary: true }
     - { name: 'Github >', href: 'https://github.com/tangcent/easy-yapi' }
-  caption: '当前版本: v1.9.0.0'
+  caption: '当前版本: v1.9.3.0'
 features:
   - { name: '多语言', desc: 'Java/Kotlin/Scala' }
   - { name: '多框架', desc: 'Spring MVC/Spring boot/Spring WebFlux' }
