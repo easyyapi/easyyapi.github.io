@@ -39,7 +39,9 @@ markdown.render.server=http://localhost:3000/render
 
 ***目前提供的渲染服务***
 
-不保证此服务长期稳定有效.请尽量自行部署[yapi-markdown-render](https://github.com/easyyapi/yapi-markdown-render)使用
+- 服务保证不以任何途径保存用户上传的内容,服务运行的代码始终与[yapi-markdown-render](https://github.com/easyyapi/yapi-markdown-render)主分支保持一致.
+- 不保证此服务长期稳定有效.请尽量自行部署[yapi-markdown-render](https://github.com/easyyapi/yapi-markdown-render)使用
+- 为防止服务被攻击/滥用,服务可能记录访问ip,亦有可能将异常ip加入黑名单.如有顾虑,请自行部署.
 
 ```properties
 markdown.render.server=http://www.itangcent.com/render
