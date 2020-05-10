@@ -28,6 +28,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.default.value](rules/field_default_value.md) | - | v1.7.1+ | 用以设置字段的默认值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.demo](rules/field_demo.md) | - | v1.9.3+ | 用以设置字段的示例值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[api.tag](rules/api_tag.md) | method | v0.7.5+ | 标记接口tag |
+| &nbsp;&nbsp;&nbsp;&nbsp;[api.open](rules/api_open.md) | method | v1.9.4+ | 标记接口是否公开 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[api.status](rules/api_status.md) | method | v0.8.0+ | 标记接口status(应返回done/undone) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[mdoc.class.filter](rules/mdoc_class_filter.md) | class | v0.9.5+ | 选择哪些类可以导出方法文档(rpc) |
 | &nbsp;&nbsp;&nbsp;&nbsp;mdoc.method.filter | method | v0.9.5+ | 选择哪些方法可以导出方法文档(rpc) |

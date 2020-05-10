@@ -30,6 +30,7 @@
     * [&nbsp;&nbsp;&nbsp;&nbsp;field.default.value](rules/field_default_value.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;field.demo](rules/field_demo.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;api.tag](rules/api_tag.md)
+    * [&nbsp;&nbsp;&nbsp;&nbsp;api.open](rules/api_open.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;api.status](rules/api_status.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;mdoc.class.filter](rules/mdoc_class_filter.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;mdoc.method.path](rules/mdoc_method_path.md)

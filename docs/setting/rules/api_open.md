@@ -1,16 +1,16 @@
-# api.status
+# api.open
 
-- 标记接口`status`
-
-### 默认推荐配置
-
-```properties
-#yapi status
-api.status[#undone]=undone
-api.status[#todo]=undone
-```
+- 标记接口是否公开
 
 ### demo
+
+***配置如下:***
+
+```properties
+api.open=#open
+```
+
+***使用如下:*** 
 
 ```java
 /**
@@ -22,8 +22,9 @@ public class MockCtrl {
 
     /**
     * Mock String
-    * @undone
+    * @open
     */
+    @ApiOperation(value = "mock string", opens = {"swagger", "test"})
     @GetMapping("/string")
     public String mockString() {
         return Result.success("mock string");
