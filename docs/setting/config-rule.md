@@ -43,6 +43,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[path.multi](rules/path_multi.md)  | method | v1.9.2+ | 当API有多个路径时如何选择 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[method.default.http.method](rules/method_default_http_method.md)  | method | v1.4.2+ | 设置默认的api的HttpMethod |
 | &nbsp;&nbsp;&nbsp;&nbsp;[postman.host](rules/postman_host.md)  | class | v1.5.2+ | 设置`postman`API的host |
+| &nbsp;&nbsp;&nbsp;&nbsp;[postman.prerequest](rules/postman_prerequest.md)  | class | v1.9.5+ | 设置`postman`API的[`prerequest`](https://learning.postman.com/docs/postman/scripts/pre-request-scripts/) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[http.call.before](rules/http_call_before.md)  | request | v1.9.0+ | http请求前回调 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[http.call.after](rules/http_call_after.md)  | request&response | v1.9.0+ | http请求后回调 |
 
@@ -51,22 +52,28 @@
 
 # 简单规则
 - \# 读取注释上的tag
-   ```java
-   /**
-    * @fake
-    */
-   ```
+
+   - 如 `#fake`对应取的注释如下:
+
+      ```java
+      /**
+      * @fake
+      */
+      ```
+
 - @ 读取注解
-   - @xxx 读取方法或字段上的注解
-   ```java
-   @RequestMapping("path")
-   public class FakeClass{...}
-   ```
-   - @xxx#yyy 读取方法或字段上的注解中的attr值
-   ```java
-   @RequestMapping(value = "path")
-   public class FakeClass{...}
-   ```
+   - @xxx 读取方法或字段上的注解,如`@org.springframework.web.bind.annotation.RequestMapping`
+
+      ```java
+      @RequestMapping("path")
+      public class FakeClass{...}
+      ```
+   - @xxx#yyy 读取方法或字段上的注解中的attr值,如`@org.springframework.web.bind.annotation.RequestMapping#value`
+
+      ```java
+      @RequestMapping(value = "path")
+      public class FakeClass{...}
+      ```
 
 # 高级脚本规则
 
