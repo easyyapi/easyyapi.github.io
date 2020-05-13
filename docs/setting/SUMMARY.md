@@ -45,6 +45,7 @@
     * [&nbsp;&nbsp;&nbsp;&nbsp;method.default.http.method](rules/method_default_http_method.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;postman.host](rules/postman_host.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;postman.prerequest](rules/postman_prerequest.md)
+    * [&nbsp;&nbsp;&nbsp;&nbsp;postman.test](rules/postman_test.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;http.call.before](rules/http_call_before.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;http.call.after](rules/http_call_after.md)
 * [脚本工具](tools.md)

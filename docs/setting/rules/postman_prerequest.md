@@ -74,7 +74,7 @@ pm.environment.set("variable_key", "variable_value");
 postman.prerequest.groupD=```
 pm.globals.set("variable_key", "variable_value");
 ```
-postman.prerequest[#prerequest]=groovy:config.getValue(it.doc("prerequest"))
+postman.prerequest[#prerequest]=groovy:config.get("postman.prerequest."+it.doc("prerequest"))
 ``````
 
 ***使用如下:***
