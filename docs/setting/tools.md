@@ -9,3 +9,4 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[helper](tools/helper.md) | 特殊帮助类 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[httpClient](tools/httpClient.md) | http相关帮助类 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[localStorage](tools/localStorage.md) | 本地存储 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[config](tools/config.md) | [配置](../local-file-config.md)读取工具 |
