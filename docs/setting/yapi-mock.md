@@ -101,7 +101,7 @@ private Integer type;
 #中国手机号
 phone=1@pick(["34","35","36","37","38","39","50","5","52","58","59","57","82","87","88","70","47","30","3","32","55","56","85","86","33","53","80","89"])@string("number", 8)
 #毫秒时间戳
-mtimestamp=@timestamp@string("number", 3)
+mtimestamp=@now('T')
 #0-9
 digit=@natural(0,9)
 #小于1000的自然数
