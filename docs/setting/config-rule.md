@@ -18,7 +18,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[param.demo](rules/param_demo.md) | - | v1.9.3+ | 用以设置参数的示例值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[method.additional.header](rules/method_additional_header.md) | method | v1.3.0+ | API需要额外的header |
 |  |  |  | {name: "header name",value: "",desc: "",required:false, example:""} |
-| &nbsp;&nbsp;&nbsp;&nbsp;method.additional.param | method | v1.3.0+ | API需要额外的参数 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[method.additional.param](rules/method_additional_param.md) | method | v1.3.0+ | API需要额外的参数 |
 |  |  |  | {name: "param name",value: "defaultValue",desc: "",required:false} |
 | &nbsp;&nbsp;&nbsp;&nbsp;method.additional.response.header | method | v1.3.0+ | API的响应包含额外的header |
 |  |  |  | {name: "header name",value: "",desc: "",required:false, example:""} |

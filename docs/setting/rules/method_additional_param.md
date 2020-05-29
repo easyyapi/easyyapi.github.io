@@ -1,11 +1,12 @@
-# method.additional.header
+# method.additional.param
 
-- API需要额外的`header`
+- API需要额外的`param`
+- 仅适用于url参数,不支持`form`/`body`
 
-### 如JWT, 所有的接口都需要在header中携带token
+### 例如接口都需要在`param`中携带token
 
 ```properties
-method.additional.header={name: "Authorization",value: "",desc: "认证Token",required:true, example:""}
+method.additional.param={name: "Authorization",value: "",desc: "认证Token",required:true}
 ```
 
 ### 如果需要排除指定开放的接口不需要token可以这样配置:
@@ -29,13 +30,13 @@ public @interface Public {
 - 则可如此配置
 
 ```properties
-method.additional.header[!@com.itangcent.common.annotation.Public]={name: "Authorization",value: "",desc: "认证Token",required:true}
+method.additional.param[!@com.itangcent.common.annotation.Public]={name: "Authorization",value: "",desc: "认证Token",required:true, example:""}
 ```
 
 - 等价于
 
 ```properties
-method.additional.header[groovy:!it.hasAnn("com.itangcent.common.annotation.Public")]={name: "Authorization",value: "",desc: "认证Token",required:true}
+method.additional.param[groovy:!it.hasAnn("com.itangcent.common.annotation.Public")]={name: "Authorization",value: "",desc: "认证Token",required:true, example:""}
 ```
 
 

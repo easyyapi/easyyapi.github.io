@@ -24,6 +24,7 @@
     * [&nbsp;&nbsp;&nbsp;&nbsp;param.default.value](rules/param_default_value.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;param.demo](rules/param_demo.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;method.additional.header](rules/method_additional_header.md)
+    * [&nbsp;&nbsp;&nbsp;&nbsp;method.additional.param](rules/method_additional_param.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;field.requierd](rules/field_required.md)
     * [☆field.mock](rules/field_mock.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;field.mock.resolveProperty](rules/field_mock.md#field.mock.resolveProperty)
