@@ -81,5 +81,5 @@
 - 由于`JDK11`后`js`引擎可能缺失，故推荐使用`groovy`作为首选
 - `groovy`规则为 `groovy:groovyScript`
 - `js`规则为 `js:jsScript`
-- 脚本中可以工具/对象: [tools](tools.md)
+- 脚本中可用工具/对象: [tools](tools.md)
 - 脚本`Debug`: [Deubg](../documents/debug.html)
