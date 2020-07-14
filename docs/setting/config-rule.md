@@ -16,6 +16,8 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[param.ignore](rules/param_ignore.md)  | arg | v1.3.0+ | 忽略API参数 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[param.default.value](rules/param_default_value.md) | arg | v1.3.0+ | API参数的默认值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[param.demo](rules/param_demo.md) | - | v1.9.3+ | 用以设置参数的示例值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[method.content.type](rules/method_content_type.md) | - | v1.9.7+ | 用以设置API请求的content-type |
+| &nbsp;&nbsp;&nbsp;&nbsp;[method.default.http.method](rules/method_default_http_method.md)  | method | v1.4.2+ | 设置默认的api的HttpMethod |
 | &nbsp;&nbsp;&nbsp;&nbsp;[method.additional.header](rules/method_additional_header.md) | method | v1.3.0+ | API需要额外的header |
 |  |  |  | {name: "header name",value: "",desc: "",required:false, example:""} |
 | &nbsp;&nbsp;&nbsp;&nbsp;[method.additional.param](rules/method_additional_param.md) | method | v1.3.0+ | API需要额外的参数 |
@@ -41,7 +43,6 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[api.name](rules/api_name.md)  | method | v1.4.1+ | 设置api的名称 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[folder.name](rules/folder_name.md)  | method | v1.9.2+ | 设置api所属文件夹 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[path.multi](rules/path_multi.md)  | method | v1.9.2+ | 当API有多个路径时如何选择 |
-| &nbsp;&nbsp;&nbsp;&nbsp;[method.default.http.method](rules/method_default_http_method.md)  | method | v1.4.2+ | 设置默认的api的HttpMethod |
 | &nbsp;&nbsp;&nbsp;&nbsp;[postman.host](rules/postman_host.md)  | class | v1.5.2+ | 设置`postman`API的host |
 | &nbsp;&nbsp;&nbsp;&nbsp;[postman.prerequest](rules/postman_prerequest.md)  | class | v1.9.5+ | 设置`postman`API的[`prerequest`](https://learning.postman.com/docs/postman/scripts/pre-request-scripts/) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[postman.test](rules/postman_test.md)  | class | v1.9.5+ | 设置`postman`API的[`test`](https://learning.postman.com/docs/postman/scripts/test-scripts/) |
