@@ -13,7 +13,7 @@ param.required=@io.swagger.annotations.ApiParam#required
 param.ignore=@io.swagger.annotations.ApiParam#hidden
 class.doc=@io.swagger.annotations.Api#value
 doc.method=@io.swagger.annotations.ApiOperation#value
-doc.field=@io.swagger.annotations.ApiModelProperty#value
+field.doc=@io.swagger.annotations.ApiModelProperty#value
 api.tag=@io.swagger.annotations.ApiOperation#tags
 
 ``````

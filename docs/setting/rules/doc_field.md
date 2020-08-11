@@ -1,4 +1,4 @@
-# doc.field
+# field.doc
 
 - 字段的额外注释
 
@@ -6,18 +6,18 @@
 
 ```properties
 #deprecated info(java)
-doc.field[#deprecated]=groovy:"\n「已废弃」" + it.doc("deprecated")
-doc.field[@java.lang.Deprecated]=「已废弃」
+field.doc[#deprecated]=groovy:"\n「已废弃」" + it.doc("deprecated")
+field.doc[@java.lang.Deprecated]=「已废弃」
 
 #deprecated info(kotlin)
-doc.field[@kotlin.Deprecated]=groovy:"\n「已废弃」" + it.ann("kotlin.Deprecated","message")
+field.doc[@kotlin.Deprecated]=groovy:"\n「已废弃」" + it.ann("kotlin.Deprecated","message")
 
 ```
 
 ## 添加对swagger @ApiModelProperty支持
 
 ```properties
-doc.field=@io.swagger.annotations.ApiModelProperty#value
+field.doc=@io.swagger.annotations.ApiModelProperty#value
 ```
 
 ## demo
