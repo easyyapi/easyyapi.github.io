@@ -1,17 +1,17 @@
-# doc.param
+# param.doc
 
 - 参数的额外注释
 
 ## 在注释中给出参数类型
 
 ```properties
-doc.param=js:"类型:"+it.type().name()
+param.doc=js:"类型:"+it.type().name()
 ```
 
 ## 在注释中给出参数类型并去掉java包名
 
 ```properties
-doc.param=groovy:"类型:"+tool.uncapitalize(it.type().name().replace("java.lang.",""))
+param.doc=groovy:"类型:"+tool.uncapitalize(it.type().name().replace("java.lang.",""))
 ```
 
 ### 示例API

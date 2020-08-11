@@ -18,7 +18,7 @@
     * [☆field.doc](rules/field_doc.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;doc.method](rules/doc_method.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;class.doc](rules/class_doc.md)
-    * [&nbsp;&nbsp;&nbsp;&nbsp;doc.param](rules/doc_param.md)
+    * [&nbsp;&nbsp;&nbsp;&nbsp;param.doc](rules/param_doc.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;param.requierd](rules/param_required.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;param.ignore](rules/param_ignore.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;param.default.value](rules/param_default_value.md)

@@ -7,7 +7,7 @@
 ``````properties
 
 #swagger
-doc.param=@io.swagger.annotations.ApiParam#value
+param.doc=@io.swagger.annotations.ApiParam#value
 param.default.value=@io.swagger.annotations.ApiParam#defaultValue
 param.required=@io.swagger.annotations.ApiParam#required
 param.ignore=@io.swagger.annotations.ApiParam#hidden
