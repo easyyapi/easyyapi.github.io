@@ -115,7 +115,7 @@
     }
     ```
  
- * 特殊需求参见:[class.doc](/setting/rules/class_doc.html) | [doc.method](/setting/rules/doc_method.html) | [api.name](/setting/rules/api_name.html)
+ * 特殊需求参见:[class.doc](/setting/rules/class_doc.html) | [method.doc](/setting/rules/method_doc.html) | [api.name](/setting/rules/api_name.html)
 
 ---
 
@@ -124,13 +124,13 @@
 *   默认推荐配置如下:
 
     ```properties
-    doc.method[#deprecated]=groovy:"\n「deprecated」" + it.doc("deprecated")
-    doc.method[@java.lang.Deprecated]=「deprecated」
-    doc.method[@kotlin.Deprecated]=groovy:"\n「deprecated」" + it.ann("kotlin.Deprecated","message")
+    method.doc[#deprecated]=groovy:"\n「deprecated」" + it.doc("deprecated")
+    method.doc[@java.lang.Deprecated]=「deprecated」
+    method.doc[@kotlin.Deprecated]=groovy:"\n「deprecated」" + it.ann("kotlin.Deprecated","message")
 
-    doc.method[groovy:it.containingClass().hasDoc("deprecated")]=groovy:"\n「deprecated」" + it.containingClass().doc("deprecated")
-    doc.method[groovy:it.containingClass().hasAnn("java.lang.Deprecated")]=「deprecated」
-    doc.method[groovy:it.containingClass().hasAnn("kotlin.Deprecated")]=groovy:"\n「deprecated」 " + it.containingClass().ann("kotlin.Deprecated","message")
+    method.doc[groovy:it.containingClass().hasDoc("deprecated")]=groovy:"\n「deprecated」" + it.containingClass().doc("deprecated")
+    method.doc[groovy:it.containingClass().hasAnn("java.lang.Deprecated")]=「deprecated」
+    method.doc[groovy:it.containingClass().hasAnn("kotlin.Deprecated")]=groovy:"\n「deprecated」 " + it.containingClass().ann("kotlin.Deprecated","message")
 
     ```
 
@@ -160,7 +160,7 @@
 
    ```properties
    ## security description
-   doc.method[@javax.annotation.security.RolesAllowed]=groovy:"require role:"+it.ann("javax.annotation.security.RolesAllowed")
+   method.doc[@javax.annotation.security.RolesAllowed]=groovy:"require role:"+it.ann("javax.annotation.security.RolesAllowed")
    ```
    
    * 示例:
@@ -198,7 +198,7 @@
    ```properties
    ## security description
    find_role_in_PreAuthorize=(function(exp){var str="";if(exp.indexOf("hasRole")!=-1){var roles=exp.match(/hasRole\\((.*?)\\)/);if(roles&&roles.length>1){str+="require role:"+roles[1];}};return str})
-   doc.method[@org.springframework.security.access.prepost.PreAuthorize]=js:${find_role_in_PreAuthorize}(it.ann("org.springframework.security.access.prepost.PreAuthorize"))
+   method.doc[@org.springframework.security.access.prepost.PreAuthorize]=js:${find_role_in_PreAuthorize}(it.ann("org.springframework.security.access.prepost.PreAuthorize"))
    ```
    
    * 示例:
@@ -280,12 +280,12 @@
 
 ## 部分接口可能有不同的返回
 
-   * 可以使用[doc.method](/setting/rules/doc_method.html)将可能的返回放在方法备注中
+   * 可以使用[method.doc](/setting/rules/method_doc.html)将可能的返回放在方法备注中
 
    ***配置如下:***
 
    ```properties
-   doc.method[#result]=groovy: it.docs("result").collect{helper.resolveLink(it)}.grep{it!=null}.collect{"可能的返回:\n\n```json\n"+it.toJson(true)+"\n```\n\n"}.join("\n")
+   method.doc[#result]=groovy: it.docs("result").collect{helper.resolveLink(it)}.grep{it!=null}.collect{"可能的返回:\n\n```json\n"+it.toJson(true)+"\n```\n\n"}.join("\n")
    ```
 
    ***使用如下:***
