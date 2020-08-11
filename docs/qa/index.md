@@ -115,7 +115,7 @@
     }
     ```
  
- * 特殊需求参见:[doc.class](/setting/rules/doc_class.html) | [doc.method](/setting/rules/doc_method.html) | [api.name](/setting/rules/api_name.html)
+ * 特殊需求参见:[class.doc](/setting/rules/class_doc.html) | [doc.method](/setting/rules/doc_method.html) | [api.name](/setting/rules/api_name.html)
 
 ---
 

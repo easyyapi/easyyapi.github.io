@@ -10,7 +10,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[json.rule.enum.convert](rules/json_rule_enum_convert.md) | class | v1.2.0+ | 用于枚举类型的特殊转换 |
 | ☆[doc.field](rules/doc_field.md) | field | v0.7.2+ | 字段的额外注释 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[doc.method](rules/doc_method.md) | method | v0.7.2+ | 方法(api)的额外注释 |
-| &nbsp;&nbsp;&nbsp;&nbsp;[doc.class](rules/doc_class.md)  | class | v1.3.0+ | 类上的额外注释 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[class.doc](rules/class_doc.md)  | class | v1.3.0+ | 类上的额外注释 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[doc.param](rules/doc_param.md)  | arg | v1.3.0+ | 参数的额外注释 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[param.required](rules/param_required.md) | arg | v0.7.3+ | API参数是否为必须(即不可为空) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[param.ignore](rules/param_ignore.md)  | arg | v1.3.0+ | 忽略API参数 |

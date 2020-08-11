@@ -17,7 +17,7 @@
     * [&nbsp;&nbsp;&nbsp;&nbsp;json.rule.enum.convert](rules/json_rule_enum_convert.md)
     * [☆doc.field](rules/doc_field.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;doc.method](rules/doc_method.md)
-    * [&nbsp;&nbsp;&nbsp;&nbsp;doc.class](rules/doc_class.md)
+    * [&nbsp;&nbsp;&nbsp;&nbsp;class.doc](rules/class_doc.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;doc.param](rules/doc_param.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;param.requierd](rules/param_required.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;param.ignore](rules/param_ignore.md)
