@@ -45,6 +45,8 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[path.multi](rules/path_multi.md)  | method | v1.9.2+ | 当API有多个路径时如何选择 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[postman.host](rules/postman_host.md)  | class | v1.5.2+ | 设置`postman`API的host |
 | &nbsp;&nbsp;&nbsp;&nbsp;[postman.prerequest](rules/postman_prerequest.md)  | class | v1.9.5+ | 设置`postman`API的[`prerequest`](https://learning.postman.com/docs/postman/scripts/pre-request-scripts/) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[class.postman.prerequest](rules/postman_prerequest.md#class.postman.prerequest)  | class | v1.9.5+ | 设置`postman·folder`上的[`prerequest`](https://learning.postman.com/docs/writing-scripts/pre-request-scripts/#re-using-pre-request-scripts) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[collection.postman.prerequest](rules/postman_prerequest.md#collection.postman.prerequest)  | class | v1.9.5+ | 设置`postman·collection`上的[`prerequest`](https://learning.postman.com/docs/writing-scripts/pre-request-scripts/#re-using-pre-request-scripts) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[postman.test](rules/postman_test.md)  | class | v1.9.5+ | 设置`postman`API的[`test`](https://learning.postman.com/docs/postman/scripts/test-scripts/) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[http.call.before](rules/http_call_before.md)  | request | v1.9.0+ | http请求前回调 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[http.call.after](rules/http_call_after.md)  | request&response | v1.9.0+ | http请求后回调 |

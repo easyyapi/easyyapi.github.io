@@ -55,11 +55,7 @@ pm.sendRequest("https://postman-echo.com/get", function (err, response) {
 ```
 ``````
 
-
----
-
-
-# 在配置中提供多个`prerequest`,由代码注释来选择使用哪个
+## 在配置中提供多个`prerequest`,由代码注释来选择使用哪个
 
 ``````
 postman.prerequest.groupA=```
@@ -92,3 +88,23 @@ public IResult list(Integer type) {
     return Result.success(Collections.singletonList(userInfo));
 }
 ```
+
+---
+
+# class.postman.prerequest
+
+- 设置`folder`上的[`prerequest`](https://learning.postman.com/docs/writing-scripts/pre-request-scripts/#re-using-pre-request-scripts)
+
+- 允许设置多条规则
+
+- 上下文为`class`
+
+---
+
+# collection.postman.prerequest
+
+- 设置`collection`上的[`prerequest`](https://learning.postman.com/docs/writing-scripts/pre-request-scripts/#re-using-pre-request-scripts)
+
+- 允许设置多条规则
+
+- 注意`collection.postman.prerequest`无上下文,即`it`为`null`
