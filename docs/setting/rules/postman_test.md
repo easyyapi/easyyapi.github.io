@@ -112,11 +112,7 @@ pm.test('Schema is valid', function() {
 ```
 ``````
 
-
----
-
-
-# 在配置中提供多个`test`,由代码注释来选择使用哪个
+## 在配置中提供多个`test`,由代码注释来选择使用哪个
 
 ``````
 postman.test.groupA=```pm.test("Body is correct", function () {
@@ -138,7 +134,7 @@ pm.test("Successful POST request", function () {
     pm.expect(pm.response.code).to.be.oneOf([201,202]);
 });
 ```
-postman.prerequest[#test]=groovy:config.get("postman.test."+it.doc("test"))
+postman.test[#test]=groovy:config.get("postman.test."+it.doc("test"))
 ``````
 
 ***使用如下:***
@@ -156,3 +152,24 @@ public IResult list(Integer type) {
     return Result.success(Collections.singletonList(userInfo));
 }
 ```
+
+
+---
+
+# class.postman.test
+
+- 设置`folder`上的[`test`](https://learning.postman.com/docs/writing-scripts/test-scripts/#testing-collections-and-folders)
+
+- 允许设置多条规则
+
+- 上下文为`class`
+
+---
+
+# collection.postman.test
+
+- 设置`collection`上的[`test`](https://learning.postman.com/docs/writing-scripts/test-scripts/#testing-collections-and-folders)
+
+- 允许设置多条规则
+
+- 注意`collection.postman.test`无上下文,即`it`为`null`
