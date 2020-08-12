@@ -15,3 +15,15 @@
 - Api DashBoard
 - YApi DashBoard
 
+## Contribution
+
+- 插件: https://github.com/tangcent/easy-yapi
+- 文档: https://github.com/easyyapi/easyyapi.github.io/tree/dev
+
+## Contributors
+
+- [tangcent](https://github.com/tangcent)
+- [echo-layker](https://github.com/echo-layker)
+- [zjz6b6](https://github.com/zjz6b6)
+- [gcdd1993](https://github.com/gcdd1993)
+- [MiZhuo](https://github.com/MiZhuo)
