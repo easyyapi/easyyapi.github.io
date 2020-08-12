@@ -87,4 +87,4 @@
 - `groovy`规则为 `groovy:groovyScript`
 - `js`规则为 `js:jsScript`
 - 脚本中可用工具/对象: [tools](tools.md)
-- 脚本`Debug`: [Deubg](../documents/debug.html)
+- 脚本调试: [script-executor](../documents/script-executor.html)
