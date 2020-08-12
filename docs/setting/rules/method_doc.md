@@ -1,4 +1,4 @@
-# method.doc
+# method.doc(doc.method)
 
 - 方法(API)的额外注释
 
