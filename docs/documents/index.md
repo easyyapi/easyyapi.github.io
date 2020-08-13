@@ -17,8 +17,8 @@
 
 ## Contribution
 
-- 插件: https://github.com/tangcent/easy-yapi
-- 文档: https://github.com/easyyapi/easyyapi.github.io/tree/dev
+- [插件](https://github.com/tangcent/easy-yapi)
+- [文档](https://github.com/easyyapi/easyyapi.github.io/tree/dev)
 
 ## [Contributors](https://github.com/tangcent/easy-yapi/graphs/contributors)
 
