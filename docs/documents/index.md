@@ -20,7 +20,7 @@
 - 插件: https://github.com/tangcent/easy-yapi
 - 文档: https://github.com/easyyapi/easyyapi.github.io/tree/dev
 
-## Contributors
+## [Contributors](https://github.com/tangcent/easy-yapi/graphs/contributors)
 
 - [tangcent](https://github.com/tangcent)
 - [echo-layker](https://github.com/echo-layker)
