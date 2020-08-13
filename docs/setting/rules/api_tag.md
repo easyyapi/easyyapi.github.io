@@ -61,3 +61,13 @@ public class MockCtrl {
 | Tag ：    swagger, test | 
 | 接口路径： GET /mock/string | 
 | Mock地址： http://127.0.0.1:3000/mock/172/mock/string | 
+
+---
+
+# api.tag.delimiter
+
+- 用于分割tags, 默认tag的分隔符是`,\n`
+    - 如规则得到的`tag`是`a,b`,则会被切割为[a,b]
+    - 如希望`a,b`视为一个规则,可以设置`api.tag.delimiter=\n`,则不再对`,`进行切割
+    - 如希望将`a|b|c`切割为[a,b,c],可以设置`api.tag.delimiter=|\n`
+    - 如希望将`a,b|c,d`切割为[a,b,c,d],可以设置`api.tag.delimiter=|,\n`
