@@ -15,6 +15,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[param.required](rules/param_required.md) | arg | v0.7.3+ | API参数是否为必须(即不可为空) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[param.ignore](rules/param_ignore.md)  | arg | v1.3.0+ | 忽略API参数 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[param.default.value](rules/param_default_value.md) | arg | v1.3.0+ | API参数的默认值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[param.http.type](rules/param_http_type.md) | arg | v2.0.0+ | 用于设置API参数在HTTP请求中的类型 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[param.demo](rules/param_demo.md) | - | v1.9.3+ | 用以设置参数的示例值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[method.content.type](rules/method_content_type.md) | - | v1.9.7+ | 用以设置API请求的content-type |
 | &nbsp;&nbsp;&nbsp;&nbsp;[method.default.http.method](rules/method_default_http_method.md)  | method | v1.4.2+ | 设置默认的api的HttpMethod |

@@ -22,6 +22,7 @@
     * [&nbsp;&nbsp;&nbsp;&nbsp;param.requierd](rules/param_required.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;param.ignore](rules/param_ignore.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;param.default.value](rules/param_default_value.md)
+    * [&nbsp;&nbsp;&nbsp;&nbsp;param.http.type](rules/param_http_type.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;param.demo](rules/param_demo.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;method.content.type](rules/method_content_type.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;method.default.http.method](rules/method_default_http_method.md)
