@@ -54,10 +54,16 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[http.call.before](rules/http_call_before.md)  | request | v1.9.0+ | http请求前回调 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[http.call.after](rules/http_call_after.md)  | request&response | v1.9.0+ | http请求后回调 |
 
+---
+
+***NOTES:[本地文件配置](local-file-config.md)***
 
 ---
 
-# 简单规则
+# value的取值规则
+
+## 简单规则
+
 - \# 读取注释上的tag
 
    - 如 `#fake`对应取的注释如下:
@@ -82,7 +88,7 @@
       public class FakeClass{...}
       ```
 
-# 高级脚本规则
+## 高级脚本规则
 
 - 由于`JDK11`后`js`引擎可能缺失，故推荐使用`groovy`作为首选
 - `groovy`规则为 `groovy:groovyScript`
