@@ -1,7 +1,7 @@
 ---
 banner:
   name: 'EasyYapi'
-  desc: '优雅的文档来自优雅的代码'
+  desc: 'For yapi Not only for yapi'
   btns:
     - { name: 'Start', href: './documents/index.html', primary: true }
     - { name: 'Github >', href: 'https://github.com/tangcent/easy-yapi' }
