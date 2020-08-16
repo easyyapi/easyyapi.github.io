@@ -79,7 +79,7 @@ private Integer type;
 
 ---
 
-### 从代码中获取`mock`规则
+## 从代码中获取`mock`规则
 
 - 配置灵活, 但有`代码/注释`侵入性
 - 非常适合有校验框架的情况, 如`javax.validation`
@@ -87,10 +87,11 @@ private Integer type;
 
 ---
 
-### 通过字段名及类型等特征来配置`mock`规则
+## 通过字段名及类型等特征来配置`mock`规则
 
 - 配置稍难, 零侵入
 - 非常适合字段名定义很规范的项目
+- 配置方式为: ```mock.[field|type]=@mock```,参见下方示例.
 
 ***一般先增加一些自定义mock规则***
 
@@ -114,7 +115,7 @@ http_url=@pick(["http","https"])://www.@domain()/@string('lower',1,8)?@string('l
 objectId=@string("0123456789abcdef",24,24)
 ```
 
-***可以使用 [mockjs](http://mockjs.com/examples.html) 提供的规则与自定义的规则来定制最后输出到`YAPI`的`mock`信息***
+***然后使用 [mockjs](http://mockjs.com/examples.html) 提供的规则与自定义的规则来定制最后输出到`YAPI`的`mock`信息***
 
 ```properties
 #常见的响应mock
