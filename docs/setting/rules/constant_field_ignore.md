@@ -3,11 +3,18 @@
 - 忽略常量字段
 
 
-### 默认推荐配置
+### 默认推荐配置(有误,待修复)
 
 ```properties
 #ignore serialVersionUID
 constant.field.ignore=serialVersionUID
+```
+
+使用如下配置代替:
+
+```properties
+#ignore serialVersionUID
+constant.field.ignore=groovy:it.name()=="serialVersionUID"
 ```
 
 ### demo
