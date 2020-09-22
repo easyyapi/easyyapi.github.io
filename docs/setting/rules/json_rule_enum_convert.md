@@ -112,5 +112,5 @@ public enum UserType implements TypeAble {
 - 则可做如下配置,将所有继承`TypeAble`的类转换为`int`处理,给出可用值为枚举中的`type`字段
 
 ```properties
-json.rule.enum.convert[groovy:it.extend("com.itangcent.common.constant.TypeAble")]=~#type
+json.rule.enum.convert[groovy:it.isExtend("com.itangcent.common.constant.TypeAble")]=~#type
 ```
