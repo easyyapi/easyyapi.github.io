@@ -1,16 +1,16 @@
-# json.rule.field.ignore
+# field.ignore
 
 - 忽略字段(设置某些字段不出现在json中,或不需要请求时给出)
-- `deprcated`, see [field.ignore](field_ignore.md)
+
 
 ## 默认推荐配置
 
 ```properties
 #Support for Jackson annotations
-json.rule.field.ignore=@com.fasterxml.jackson.annotation.JsonIgnore#value
+field.ignore=@com.fasterxml.jackson.annotation.JsonIgnore#value
 
 #Support for Gson annotations
-json.rule.field.ignore=!@com.google.gson.annotations.Expose#serialize
+field.ignore=!@com.google.gson.annotations.Expose#serialize
 ```
 
 ## demo
@@ -53,7 +53,7 @@ public class TestJsonIgnoreBean {
 
     ```properties
     # ignore field 'log'
-    json.rule.field.ignore=log
+    field.ignore=log
     ```
 
   - 将忽略如下字段
@@ -68,7 +68,7 @@ public class TestJsonIgnoreBean {
 
     ```properties
     # ignore field 'log' typed xxx.xxx.Log
-    json.rule.field.ignore=groovy:it.type().name()=="xxx.xxx.Log"
+    field.ignore=groovy:it.type().name()=="xxx.xxx.Log"
     ```
 
   - 将忽略如下字段
@@ -82,7 +82,7 @@ public class TestJsonIgnoreBean {
   - 配置如下
     ```properties
     #ignore transient field
-    json.rule.field.ignore=groovy:it.hasModifier("transient")||it.hasModifier("protected")
+    field.ignore=groovy:it.hasModifier("transient")||it.hasModifier("protected")
     ```
 
   - 将忽略如下字段
