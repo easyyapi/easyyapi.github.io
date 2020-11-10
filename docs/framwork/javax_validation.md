@@ -1,14 +1,47 @@
 ## 在推荐配置中有部分javax.validation相关的配置
 
+***默认选择的是不分组模式***
+
 ```properties
+#[javax.validation]*
 #Support for javax.validation annotations
 param.required=@javax.validation.constraints.NotBlank
-field.required=@"javax.validation.constraints.NotBlank
-param.required=@"javax.validation.constraints.NotNull
+field.required=@javax.validation.constraints.NotBlank
+param.required=@javax.validation.constraints.NotNull
 field.required=@javax.validation.constraints.NotNull
 param.required=@javax.validation.constraints.NotEmpty
 field.required=@javax.validation.constraints.NotEmpty
 ```
+
+***分组校验模式默认未选中***
+
+``````properties
+#[javax.validation(grouped)]
+json.cache.disable=true
+param.before=groovy:```
+    logger.info("set curr groups:"+it.annValue("org.springframework.validation.annotation.Validated"))
+    session.set("json-group", it.annValue("org.springframework.validation.annotation.Validated"))
+```
+param.after=groovy:```
+    session.remove("json-group")
+```
+param.required=@javax.validation.constraints.NotBlank
+param.required=@javax.validation.constraints.NotNull
+param.required=@javax.validation.constraints.NotEmpty
+field.required[@javax.validation.constraints.NotBlank]=groovy:```
+    it.annMaps("javax.validation.constraints.NotBlank")?.any{tool.equalOrIntersect(session.get("json-group"),it["groups"])}
+```
+field.required[@javax.validation.constraints.NotNull]=groovy:```
+    it.annMaps("javax.validation.constraints.NotNull")?.any{tool.equalOrIntersect(session.get("json-group"),it["groups"])}
+```
+field.required[@javax.validation.constraints.NotEmpty]=groovy:```
+    it.annMaps("javax.validation.constraints.NotEmpty")?.any{tool.equalOrIntersect(session.get("json-group"),it["groups"])}
+```
+``````
+
+***需要开启分组校验***
+
+可以在 <kbd>Preferences(Settings)</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> ><kbd>Recommend</kbd> 中移除勾选`javax.validation`, 勾选`javax.validation(grouped)`
 
 ---
 
