@@ -14,3 +14,4 @@
 * [部分接口可能有不同的返回?](index.md#部分接口可能有不同的返回)
 * [有的字段可能有不同类型的值?](index.md#有的字段可能有不同类型的值)
 * [如何开启javax_validation分组校验?](index.md#如何开启javax_validation分组校验)
+* [如何激活对com.fasterxml.jackson.annotation.JsonIgnoreProperties的支持?](index.md#如何激活对com.fasterxml.jackson.annotation.JsonIgnoreProperties的支持)
