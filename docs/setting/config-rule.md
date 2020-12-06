@@ -34,6 +34,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[api.tag](rules/api_tag.md) | method | v0.7.5+ | 标记接口tag |
 | &nbsp;&nbsp;&nbsp;&nbsp;[api.open](rules/api_open.md) | method | v1.9.4+ | 标记接口是否公开 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[api.status](rules/api_status.md) | method | v0.8.0+ | 标记接口status(应返回done/undone) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[class.is.ctrl](rules/class_is_ctrl.md) | method | v2.0.8+ | 允许导出指定类中的`api` |
 | &nbsp;&nbsp;&nbsp;&nbsp;[mdoc.class.filter](rules/mdoc_class_filter.md) | class | v0.9.5+ | 选择哪些类可以导出方法文档(rpc) |
 | &nbsp;&nbsp;&nbsp;&nbsp;mdoc.method.filter | method | v0.9.5+ | 选择哪些方法可以导出方法文档(rpc) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[mdoc.method.path](rules/mdoc_method_path.md) | method | v0.9.5+ | 设置方法文档(rpc)的路径 |

@@ -37,6 +37,7 @@
     * [&nbsp;&nbsp;&nbsp;&nbsp;api.tag](rules/api_tag.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;api.open](rules/api_open.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;api.status](rules/api_status.md)
+    * [&nbsp;&nbsp;&nbsp;&nbsp;class.is.ctrl](rules/class_is_ctrl.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;mdoc.class.filter](rules/mdoc_class_filter.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;mdoc.method.path](rules/mdoc_method_path.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;mdoc.method.http.method](rules/mdoc_method_http_method.md)
