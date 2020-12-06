@@ -3,7 +3,7 @@
 - 基于[javadoc](./docs.md#Javadoc)&[KDoc](./docs.md#KDoc)&[ScalaDoc](./docs.md#ScalaDoc)解析API文档
 - 注意, 你可以在保持代码零侵入的情况下得到相当完整的api文档, 但是特殊的需求还是需要部分特殊的注释/注解配合
 - 与之相对的是, 你可以灵活的运用[配置规则](/setting/index.html)来适应你的项目特性以减少代码侵入.
-- 特殊声明: 由于scala插件中提供的openapi变化过于频繁, 不再作为默认支持选项. 需要使用在scala项目的开发者可自行从[easy-yapi/releases](https://github.com/tangcent/easy-yapi/releases)获得支持scala的插件包
+- 特殊声明: 由于scala插件中提供的`openapi`变化过于频繁, 不再作为默认支持选项. 需要使用在scala项目的开发者可自行从[easy-yapi/releases](https://github.com/tangcent/easy-yapi/releases)获得支持scala的插件包
 
 
 ## 功能特性
