@@ -36,7 +36,8 @@
 | isMap() | boolean | 是否为Map | it.isMap() |
 | isCollection() | boolean | 是否为集合 | it.isCollection() |
 | isArray() | boolean | 是否为数组 | it.isArray() |
-| toJson(readGetter) | boolean | 获取当前类型的json字符串 | it.toJson(true) |
+| toJson(readGetter) | string | 获取当前类型的json字符串 | it.toJson(true) |
+| toJson5(readGetter) | string | 获取当前类型的[json5](https://json5.org/)字符串 | it.toJson5(true) |
 
 - method(方法/API)
 
