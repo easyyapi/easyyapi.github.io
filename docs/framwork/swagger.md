@@ -2,27 +2,50 @@
 
 ### 如果需要支持[swagger](https://swagger.io),可自行按需[增加如下配置](/setting/index.html)
 
-- 基础配置
+- [基础配置](https://github.com/tangcent/easy-yapi/blob/master/third/swagger.config)
 
 ``````properties
 
-#swagger
+# swagger
+
+# ApiParam
 param.doc=@io.swagger.annotations.ApiParam#value
 param.default.value=@io.swagger.annotations.ApiParam#defaultValue
 param.required=@io.swagger.annotations.ApiParam#required
 param.ignore=@io.swagger.annotations.ApiParam#hidden
-class.doc=@io.swagger.annotations.Api#value
-method.doc=@io.swagger.annotations.ApiOperation#value
-field.doc=@io.swagger.annotations.ApiModelProperty#value
-api.tag=@io.swagger.annotations.ApiOperation#tags
 
+# Api
+class.doc=@io.swagger.annotations.Api#value
+
+# ApiModel
+class.doc=io.swagger.annotations.ApiModel#value
+class.doc=io.swagger.annotations.ApiModel#description
+
+# ApiModelProperty
+json.rule.field.name=@io.swagger.annotations.ApiModelProperty#name
+field.ignore=@io.swagger.annotations.ApiModelProperty#hidden
+field.doc=@io.swagger.annotations.ApiModelProperty#value
+field.doc=@io.swagger.annotations.ApiModelProperty#notes
+field.required=@io.swagger.annotations.ApiModelProperty#required
+
+# ApiOperation
+method.doc=@io.swagger.annotations.ApiOperation#value
+api.tag=@io.swagger.annotations.ApiOperation#tags
 ``````
 
-- 增强配置, 可根据实际情况修改
+***快速配置***
+
+```properties
+properties.additional=https://raw.githubusercontent.com/tangcent/easy-yapi/master/third/swagger.config
+```
+
+- [增强配置](https://github.com/tangcent/easy-yapi/blob/master/third/swagger.advanced.config), 可根据实际情况修改
 
 ``````properties
 
-# 解析ApiImplicitParam的参数
+# swagger-advanced
+
+# resolve the parameters from ApiImplicitParam
 resolve_api_implicit_param=```
     def desc = map.value
     def allowableValues = map.allowableValues
@@ -43,13 +66,13 @@ resolve_api_implicit_param=```
     }
 ```
 
-# 解析ApiImplicitParam
+# extract map from ApiImplicitParam
 export.after[@io.swagger.annotations.ApiImplicitParam]=groovy:```
     def map = it.annMap("io.swagger.annotations.ApiImplicitParam")
     ${resolve_api_implicit_param}
 ```
 
-# 解析ApiImplicitParams
+# extract maps from ApiImplicitParams
 export.after[@io.swagger.annotations.ApiImplicitParams]=groovy:```
     def maps = it.annMap("io.swagger.annotations.ApiImplicitParams")
     for(map in maps.value){
@@ -58,7 +81,7 @@ export.after[@io.swagger.annotations.ApiImplicitParams]=groovy:```
 ```
 
 
-# 解析ApiResponse的参数到api描述中
+# Resolve the response from `APIResponse` into the API description
 resolve_api_response=```
     def desc = "\\n\\n***响应码***:"+map.code+"\\n\\n"
     desc += map.message+"\\n\\n"
@@ -73,13 +96,13 @@ resolve_api_response=```
 ```
 
 
-# 解析ApiResponse到api描述中
+# Resolve `APIResponse` into the API description
 export.after[@io.swagger.annotations.ApiResponse]=groovy:```
     def map = it.annMap("io.swagger.annotations.ApiResponse")
     ${resolve_api_response}
 ```
 
-# 解析ApiResponses到api描述中
+# Resolve `APIResponses` into the API description
 export.after[@io.swagger.annotations.ApiResponses]=groovy:```
     def maps = it.annMap("io.swagger.annotations.ApiResponses")
     for(map in maps.value){
@@ -88,7 +111,7 @@ export.after[@io.swagger.annotations.ApiResponses]=groovy:```
 ```
 
 
-# 解析单个ApiResponse到已有的Response中
+# Resolve one `APIResponse` into the API description
 export.after[@io.swagger.annotations.ApiResponse]=groovy:```
     def map = it.annMap("io.swagger.annotations.ApiResponse")
 
@@ -107,3 +130,9 @@ export.after[@io.swagger.annotations.ApiResponse]=groovy:```
 ```
 
 ``````
+
+***快速配置***
+
+```properties
+properties.additional=https://raw.githubusercontent.com/tangcent/easy-yapi/master/third/swagger.advanced.config
+```

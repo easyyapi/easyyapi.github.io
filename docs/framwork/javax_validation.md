@@ -45,7 +45,7 @@ field.required[@javax.validation.constraints.NotEmpty]=groovy:```
 
 ---
 
-## 相关mock不在内置推荐中, 有需要的话可自行增加如下[配置](/setting/index.html)
+## [相关mock](https://github.com/tangcent/easy-yapi/blob/master/third/javax.validation.mock.config)不在内置推荐中, 有需要的话可自行增加如下[配置](/setting/index.html)
 
 ```properties
 # mock for javax.validation
@@ -106,3 +106,10 @@ field.mock[groovy:it.hasAnn("javax.validation.constraints.DecimalMin")&&${java_f
 | number_min | 数字最小值 |
 | number_max | 数字最大值 |
 | float_dmin | 浮点数小数位数 |
+
+
+***快速配置***
+
+```properties
+properties.additional=https://raw.githubusercontent.com/tangcent/easy-yapi/master/third/javax.validation.mock.config
+```
