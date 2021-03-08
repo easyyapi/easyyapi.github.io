@@ -8,6 +8,26 @@
 method.additional.header={name: "Authorization",value: "",desc: "认证Token",required:true, example:""}
 ```
 
+### 如果需要针对指定包下添加header
+```properties
+method.additional.header[groovy:it.containingClass().name().startsWith("com.test.api")]={name: "Authorization",value: "",desc: "认证Token",required:true}
+```
+同理如果指定包下不需要添加header则取反就行了
+```properties
+method.additional.header[groovy:!it.containingClass().name().startsWith("com.test.api")]={name: "Authorization",value: "",desc: "认证Token",required:true}
+```
+如果要添加多个header
+```properties
+
+# 不支持此写法 method.additional.header[groovy:it.containingClass().name().startsWith("com.test.api")]=[{name: "a",value: "",desc: "",required:true},{name: "b",value: "",desc: "",required:true}]
+
+# 写两遍就行了
+method.additional.header[groovy:it.containingClass().name().startsWith("com.test.api")]={name: "a",value: "",desc: "",required:true}
+method.additional.header[groovy:it.containingClass().name().startsWith("com.test.api")]={name: "b",value: "",desc: "",required:true}
+```
+参考 [请教如何给某个包下的方法增加自定义header #379](https://github.com/tangcent/easy-yapi/issues/379)
+
+
 ### 如果需要排除指定开放的接口不需要token可以这样配置:
 
 - 假定有如下注解:
