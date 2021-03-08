@@ -17,8 +17,7 @@ method.additional.header[groovy:it.containingClass().name().startsWith("com.test
 method.additional.header[groovy:!it.containingClass().name().startsWith("com.test.api")]={name: "Authorization",value: "",desc: "认证Token",required:true}
 ```
 如果要添加多个header
-```
-properties
+```properties
 
 # 不支持此写法 method.additional.header[groovy:it.containingClass().name().startsWith("com.test.api")]=[{name: "a",value: "",desc: "",required:true},{name: "b",value: "",desc: "",required:true}]
 
