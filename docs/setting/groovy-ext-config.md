@@ -21,6 +21,7 @@
   - `YapiExportAction`
 
 - 在扩展文件中声明扩展类:
+
 ```groovy
 class ActionNameExt implements ActionExt {
 
@@ -37,6 +38,7 @@ class ActionNameExt implements ActionExt {
 ### demo
 
 - `YapiExportActionExt.groovy`
+
 ```groovy
 import com.intellij.psi.*
 import com.itangcent.common.model.Request
@@ -95,7 +97,8 @@ fun Doc.setTags(tags: List<String>?) {
     ...
 }
 ```
-在groovy中使用如下:
+
+- 在groovy中使用如下:
 
 ```groovy
 YapiRequestKitKt.setTags(request,tags)
