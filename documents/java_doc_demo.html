@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="UTF-8"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><link rel="apple-touch-icon" sizes="180x180" href="../ydoc/images/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="../ydoc/images/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="../ydoc/images/favicon-16x16.png"/><link rel="manifest" href="../ydoc/images/manifest.json"/><link rel="mask-icon" href="../ydoc/images/safari-pinned-tab.svg" color="#5bbad5"/><meta name="theme-color" content="#ffffff"/><meta http-equiv="Cache-Control" content="no-transform"/><meta http-equiv="Cache-Control" content="no-siteapp"/><title>文档</title><link rel="stylesheet" href="../ydoc/styles/style.css"/><meta name="author" content="tangcent"/><meta name="keywords"/><meta name="description" content="Simplifies API Development"/><meta id="releativePath" content=".."/><link rel="stylesheet" href="../ydoc/ydoc-plugin-search/search.css"/><link rel="stylesheet" href="../ydoc/ydoc-plugin-copy/clipboard.css"/></head><body><div class="g-doc"><div class="m-aside"><div class="m-summary" id="js-menu"><div class="m-summary-content" id="js-menu-content"><div class="m-summary-block"><div class="m-summary-title">快速上手</div><ul class="m-summary-list indent"><li class="item"><a href="index.html" class="href">介绍</a></li><li class="item"><a href="installation.html" class="href">安装</a></li><li class="item"><div class="m-summary-block"><a href="use.html" class="href">使用</a><ul class="m-summary-list indent"><li class="item"><a href="export2yapi.html" class="href">导出到yapi</a></li><li class="item"><a href="export2postman.html" class="href">导出到postman</a></li><li class="item"><a href="export2markdown.html" class="href">导出到markdown</a></li><li class="item"><a href="export_rpc.html" class="href">导出rpc文档</a></li><li class="item"><a href="login_mode_yapi.html" class="href">旧版本yapi或定制化yapi</a></li></ul></div></li><li class="item"><div class="m-summary-block"><a href="advanced_use.html" class="href">进阶使用</a><ul class="m-summary-list indent"><li class="item"><a href="yapi_render.html" class="href">Yapi Render</a></li><li class="item"><a href="call.html" class="href">Call Api</a></li><li class="item"><a href="script_executor.html" class="href">Script Executor</a></li></ul></div></li><li class="item"><div class="m-summary-block"><a href="docs.html" class="href">注释规范</a><ul class="m-summary-list indent"><li class="item"><a href="" class="href">java注释demo</a></li></ul></div></li></ul></div></div></div><div class="m-summary-switch" id="js-summary-switch"><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="bottom"><g transform="translate(904.92214,-879.1482)"><path d="m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,-55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,-174.6858 c 96.079,-96.07721 175.253196,-174.68583 175.942696,-174.68583 0.6895,0 26.281,25.03215 56.8701,55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864-231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,-104.0616 -231.873,-231.248 z" fill="#fff"></path></g></svg><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="top"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="aaa" fill="#fff" fill-rule="nonzero"><path d="M231.2455,342.502 L0,111.25397 L55.6165,55.62697 C86.2056,25.03212 111.7971,-2.99999998e-05 112.4866,-2.99999998e-05 C113.176,-2.99999998e-05 192.3503,78.60859 288.4293,174.6858 L463.1185,349.3716 L637.8077,174.6858 C733.8867,78.60859 813.060896,-2.99999997e-05 813.750396,-2.99999997e-05 C814.439896,-2.99999997e-05 840.031396,25.03212 870.620496,55.62697 L926.236996,111.25397 L694.9915,342.502 C567.8065,469.6884 463.4636,573.75 463.1185,573.75 C462.7734,573.75 358.4305,469.6884 231.2455,342.502 Z" id="Shape" transform="translate(463.118498, 286.874985) scale(1, -1) translate(-463.118498, -286.874985) "></path></g></g></svg></div></div><div class="m-main" id="js-panel"><header class="m-header" id="js-header"><div class="m-header-title js-logo"><a href="../index.html" target="_self"><h6 class="name">EasyYapi</h6></a></div><div><div class="m-search">
+      <div class="icon">&#xf0fd;</div>
+      <input type="text" class="input js-input" placeholder="搜索" />
+      <div class="m-search-result js-search-result"></div>
+    </div></div><nav class="m-header-nav js-nav"><ul class="m-header-items"><li class="item active"><a class="href" href="index.html">文档</a></li><li class="item "><a class="href" href="../setting/index.html">配置</a></li><li class="item "><a class="href" href="../demo/index.html">demo</a></li><li class="item "><a class="href" href="../framwork/index.html">框架支持</a></li><li class="item "><a class="href" href="../qa/index.html">QA</a></li></ul></nav><div id="js-nav-btn" class="m-header-btn ui-font-ydoc"></div></header><div class="m-content" id="js-content"><div id="markdown-body" class="m-content-container markdown-body"><h3 id="api-demo">api demo</h3>
+<pre><code class="language-java">
+<span class="token comment">/**
+ * 分类名称
+ * 分类备注/描述
+ *
+ * @module 归属项目
+ */</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/pathOfCtrl"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MockCtrl</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">/**
+    * api名称
+    * api描述
+    * @param param1 参数1的名称或描述
+    * @param param2 可以用`@link`来表示当前参数的取值是某个枚举{@link some.enum.or.constant.class}
+    * @param param3 当目标枚举字段与当前字段名不一致,额外指定{@link some.enum.or.constant.class#property1}
+    * @return 响应描述
+    */</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/pathOfApi1"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">Result</span> <span class="token function">methodName1</span><span class="token punctuation">(</span><span class="token keyword">long</span> param1<span class="token punctuation">,</span>
+                      <span class="token annotation punctuation">@RequestParam</span> <span class="token class-name">String</span> param2<span class="token punctuation">,</span>
+                      <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span>required <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">,</span> defaultValue <span class="token operator">=</span> <span class="token string">"defaultValueOfParam3"</span><span class="token punctuation">)</span> <span class="token class-name">String</span> param3<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token comment">/**
+    * 默认使用`application/x-www-form-urlencoded`,
+    * 对于`@RequestBody`将使用`application/json`
+    * 可以用注解`@Deprecated`来表示api废弃
+    * 也可以用注释`@deprecated`
+    *
+    * @deprecated 改用{@link #methodName3(String)}
+    */</span>
+    <span class="token annotation punctuation">@Deprecated</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/pathOfApi2"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">Result</span> <span class="token function">methodName2</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> <span class="token class-name">MockDtoOrVo</span> jsonModel<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+    * 所有注释或者参数描述中都可以使用`@link`来引用另一个API
+    * 例如:
+    * 请先访问{@link #methodName4(String)}
+
+    * 也可以使用`@see`来引用另一个API
+    *
+    * @param param1 参数1的名称或描述 可以从{@link #methodName5(String)}中获得
+    * @see #methodName6(String)
+    * @deprecated 改用{@link #methodName7(String)}
+    */</span>
+    <span class="token annotation punctuation">@Deprecated</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/pathOfApi3"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">Result</span> <span class="token function">methodName3</span><span class="token punctuation">(</span><span class="token keyword">long</span> param1<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="modeldtovo-demo">model(dto/vo) demo</h3>
+<pre><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MockDtoOrVo</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">/**
+     * 字段注释
+     */</span>
+    <span class="token keyword">private</span> <span class="token class-name">Long</span> field1<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">Double</span> field2<span class="token punctuation">;</span><span class="token comment">//注释也可以写在这</span>
+
+    <span class="token comment">/**
+     * 使用@see来说明当前字段的取值是某个枚举
+     * @see some.enum.or.constant.class
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> field3<span class="token punctuation">;</span>
+
+    <span class="token comment">/**
+     * 当目标枚举字段与当前字段名不一致,额外指定
+     * @see some.enum.or.constant.class#property1
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> field4<span class="token punctuation">;</span>
+
+    <span class="token comment">/**
+     * 可以用注解`@Deprecated`来表示字段被废弃
+     * 也可以用注释`@deprecated`
+     * @deprecated It's a secret
+     */</span>
+    <span class="token annotation punctuation">@Deprecated</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> field5<span class="token punctuation">;</span>
+
+    <span class="token comment">/**
+     * 如果使用javax.validation的话
+     * 可以使用@NotBlank/@NotNull表示字段必须
+     */</span>
+    <span class="token annotation punctuation">@NotBlank</span>
+    <span class="token annotation punctuation">@NotNull</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> field6<span class="token punctuation">;</span>
+
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div><div class="m-content-container m-paging"><div class="m-paging-prev m-paging-item"><a href="docs.html" class="href"><span class="ui-font-ydoc"></span>注释规范</a></div></div></div></div></div><div></div><script>
+    var $content = document.getElementById('js-content');
+    var $summaryItems = Array.prototype.slice.call(document.querySelectorAll('#js-menu .href'));
+    var $menu = document.getElementById('js-menu');
+    if (sessionStorage.prevPathname) {
+      sessionStorage.setItem('prevPrevPathname', sessionStorage.prevPathname);
+      sessionStorage.setItem('prevPrevMenuScrollTop', sessionStorage.prevMenuScrollTop);
+      sessionStorage.setItem('prevPrevContentScrollTop', sessionStorage.prevContentScrollTop);
+    }
+    if (sessionStorage.locationPathname) {
+      sessionStorage.setItem('prevPathname', sessionStorage.locationPathname);
+      sessionStorage.setItem('prevMenuScrollTop', sessionStorage.menuScrollTop);
+      sessionStorage.setItem('prevContentScrollTop', sessionStorage.contentScrollTop);
+    }
+    if ($menu && sessionStorage.menuScrollTop) {
+		  $menu.scrollTop = sessionStorage.menuScrollTop;
+    }
+    // 刷新页面但不切换 pathname 的时候，内容区恢复到记忆的高度
+    if ($content && sessionStorage.contentScrollTop && window.location.pathname == sessionStorage.locationPathname) {
+      $content.scrollTop = sessionStorage.contentScrollTop;
+    } else if (sessionStorage.prevPrevPathname && sessionStorage.prevPrevPathname === window.location.pathname) {
+      if ($menu && sessionStorage.prevPrevMenuScrollTop) {
+        $menu.scrollTop = sessionStorage.prevPrevMenuScrollTop;
+      }
+      if ($content && sessionStorage.prevPrevContentScrollTop) {
+        $content.scrollTop = sessionStorage.prevPrevContentScrollTop;
+      }
+    }
+    sessionStorage.setItem('locationPathname', window.location.pathname);
+    </script><script src="../ydoc/scripts/plugins/dollar.min.js"></script><script src="../ydoc/scripts/plugins/responsive-nav.min.js"></script><script src="../ydoc/scripts/plugins/slideout.min.js"></script><script src="../ydoc/scripts/app.js"></script><script src="../ydoc/ydoc-plugin-search/core.js"></script><script src="../ydoc/ydoc-plugin-search/search.js"></script><script src="../ydoc/ydoc-plugin-copy/clipboard.min.js"></script><script src="../ydoc/ydoc-plugin-copy/clipboard.script.js"></script><script src="../search_json.js"></script></body></html>

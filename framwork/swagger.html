@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="UTF-8"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><link rel="apple-touch-icon" sizes="180x180" href="../ydoc/images/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="../ydoc/images/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="../ydoc/images/favicon-16x16.png"/><link rel="manifest" href="../ydoc/images/manifest.json"/><link rel="mask-icon" href="../ydoc/images/safari-pinned-tab.svg" color="#5bbad5"/><meta name="theme-color" content="#ffffff"/><meta http-equiv="Cache-Control" content="no-transform"/><meta http-equiv="Cache-Control" content="no-siteapp"/><title>框架支持</title><link rel="stylesheet" href="../ydoc/styles/style.css"/><meta name="author" content="tangcent"/><meta name="keywords"/><meta name="description" content="Simplifies API Development"/><meta id="releativePath" content=".."/><link rel="stylesheet" href="../ydoc/ydoc-plugin-search/search.css"/><link rel="stylesheet" href="../ydoc/ydoc-plugin-copy/clipboard.css"/></head><body><div class="g-doc"><div class="m-aside"><div class="m-summary" id="js-menu"><div class="m-summary-content" id="js-menu-content"><div class="m-summary-block"><div class="m-summary-title">框架支持</div><ul class="m-summary-list indent"><li class="item"><a href="springboot.html" class="href">springboot</a></li><li class="item"><a href="springboot-webflux.html" class="href">springboot-webflux</a></li><li class="item"><a href="" class="href">swagger</a></li><li class="item"><a href="javax_validation.html" class="href">javax.validation</a></li></ul></div></div></div><div class="m-summary-switch" id="js-summary-switch"><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="bottom"><g transform="translate(904.92214,-879.1482)"><path d="m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,-55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,-174.6858 c 96.079,-96.07721 175.253196,-174.68583 175.942696,-174.68583 0.6895,0 26.281,25.03215 56.8701,55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864-231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,-104.0616 -231.873,-231.248 z" fill="#fff"></path></g></svg><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="top"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="aaa" fill="#fff" fill-rule="nonzero"><path d="M231.2455,342.502 L0,111.25397 L55.6165,55.62697 C86.2056,25.03212 111.7971,-2.99999998e-05 112.4866,-2.99999998e-05 C113.176,-2.99999998e-05 192.3503,78.60859 288.4293,174.6858 L463.1185,349.3716 L637.8077,174.6858 C733.8867,78.60859 813.060896,-2.99999997e-05 813.750396,-2.99999997e-05 C814.439896,-2.99999997e-05 840.031396,25.03212 870.620496,55.62697 L926.236996,111.25397 L694.9915,342.502 C567.8065,469.6884 463.4636,573.75 463.1185,573.75 C462.7734,573.75 358.4305,469.6884 231.2455,342.502 Z" id="Shape" transform="translate(463.118498, 286.874985) scale(1, -1) translate(-463.118498, -286.874985) "></path></g></g></svg></div></div><div class="m-main" id="js-panel"><header class="m-header" id="js-header"><div class="m-header-title js-logo"><a href="../index.html" target="_self"><h6 class="name">EasyYapi</h6></a></div><div><div class="m-search">
+      <div class="icon">&#xf0fd;</div>
+      <input type="text" class="input js-input" placeholder="搜索" />
+      <div class="m-search-result js-search-result"></div>
+    </div></div><nav class="m-header-nav js-nav"><ul class="m-header-items"><li class="item "><a class="href" href="../documents/index.html">文档</a></li><li class="item "><a class="href" href="../setting/index.html">配置</a></li><li class="item "><a class="href" href="../demo/index.html">demo</a></li><li class="item active"><a class="href" href="index.html">框架支持</a></li><li class="item "><a class="href" href="../qa/index.html">QA</a></li></ul></nav><div id="js-nav-btn" class="m-header-btn ui-font-ydoc"></div></header><div class="m-content" id="js-content"><div id="markdown-body" class="m-content-container markdown-body"><h2 id="默认推荐配置中不包含swagger的支持">默认推荐配置中不包含<code>swagger</code>的支持</h2>
+<h3 id="默认推荐配置中不包含swagger的支持-如果需要支持swagger,可自行按需增加如下配置">如果需要支持<a href="https://swagger.io" target="_blank">swagger</a>,可自行按需<a href="/setting/index.html">增加如下配置</a></h3>
+<ul>
+<li><a href="https://github.com/tangcent/easy-yapi/blob/master/third/swagger.config" target="_blank">基础配置</a></li>
+</ul>
+<pre><code class="language-properties">
+<span class="token comment"># swagger</span>
+
+<span class="token comment"># ApiParam</span>
+<span class="token attr-name">param.doc</span><span class="token punctuation">=</span><span class="token attr-value">@io.swagger.annotations.ApiParam#value</span>
+<span class="token attr-name">param.default.value</span><span class="token punctuation">=</span><span class="token attr-value">@io.swagger.annotations.ApiParam#defaultValue</span>
+<span class="token attr-name">param.required</span><span class="token punctuation">=</span><span class="token attr-value">@io.swagger.annotations.ApiParam#required</span>
+<span class="token attr-name">param.ignore</span><span class="token punctuation">=</span><span class="token attr-value">@io.swagger.annotations.ApiParam#hidden</span>
+
+<span class="token comment"># Api</span>
+<span class="token attr-name">class.doc</span><span class="token punctuation">=</span><span class="token attr-value">@io.swagger.annotations.Api#value</span>
+
+<span class="token comment"># ApiModel</span>
+<span class="token attr-name">class.doc</span><span class="token punctuation">=</span><span class="token attr-value">io.swagger.annotations.ApiModel#value</span>
+<span class="token attr-name">class.doc</span><span class="token punctuation">=</span><span class="token attr-value">io.swagger.annotations.ApiModel#description</span>
+
+<span class="token comment"># ApiModelProperty</span>
+<span class="token attr-name">json.rule.field.name</span><span class="token punctuation">=</span><span class="token attr-value">@io.swagger.annotations.ApiModelProperty#name</span>
+<span class="token attr-name">field.ignore</span><span class="token punctuation">=</span><span class="token attr-value">@io.swagger.annotations.ApiModelProperty#hidden</span>
+<span class="token attr-name">field.doc</span><span class="token punctuation">=</span><span class="token attr-value">@io.swagger.annotations.ApiModelProperty#value</span>
+<span class="token attr-name">field.doc</span><span class="token punctuation">=</span><span class="token attr-value">@io.swagger.annotations.ApiModelProperty#notes</span>
+<span class="token attr-name">field.required</span><span class="token punctuation">=</span><span class="token attr-value">@io.swagger.annotations.ApiModelProperty#required</span>
+
+<span class="token comment"># ApiOperation</span>
+<span class="token attr-name">method.doc</span><span class="token punctuation">=</span><span class="token attr-value">@io.swagger.annotations.ApiOperation#value</span>
+<span class="token attr-name">api.tag</span><span class="token punctuation">=</span><span class="token attr-value">@io.swagger.annotations.ApiOperation#tags</span>
+</code></pre>
+<p><em><strong>快速配置</strong></em></p>
+<pre><code class="language-properties"><span class="token attr-name">properties.additional</span><span class="token punctuation">=</span><span class="token attr-value">https://raw.githubusercontent.com/tangcent/easy-yapi/master/third/swagger.config</span>
+</code></pre>
+<ul>
+<li><a href="https://github.com/tangcent/easy-yapi/blob/master/third/swagger.advanced.config" target="_blank">增强配置</a>, 可根据实际情况修改</li>
+</ul>
+<pre><code class="language-properties">
+<span class="token comment"># swagger-advanced</span>
+
+<span class="token comment"># resolve the parameters from ApiImplicitParam</span>
+<span class="token attr-name">resolve_api_implicit_param</span><span class="token punctuation">=</span><span class="token attr-value">```</span>
+<span class="token attr-name">    def</span> <span class="token attr-value">desc = map.value</span>
+<span class="token attr-name">    def</span> <span class="token attr-value">allowableValues = map.allowableValues</span>
+    if(tool.notNullOrBlank(allowableValues)){
+<span class="token attr-name">        desc</span> <span class="token punctuation">=</span> <span class="token attr-value">desc + "\n允许的值:" + allowableValues</span>
+    }
+
+<span class="token attr-name">    def</span> <span class="token attr-value">paramType = map.paramType ?: "query"</span>
+<span class="token attr-name">    def</span> <span class="token attr-value">required = map.required?:true</span>
+<span class="token attr-name">    if(paramType</span><span class="token punctuation">=</span><span class="token attr-value">=""||paramType=="query"){</span>
+        api.setParam(map.name,map.defaultValue,required,desc)
+<span class="token attr-name">    }else</span> <span class="token attr-value">if(paramType=="form"){</span>
+        api.setFormParam(map.name,map.defaultValue,required,desc)
+<span class="token attr-name">    }else</span> <span class="token attr-value">if(paramType=="path"){</span>
+        api.setPathParam(map.name,map.defaultValue,desc)
+<span class="token attr-name">    }else</span> <span class="token attr-value">if(paramType=="header"){</span>
+        api.setHeader(map.name,map.defaultValue,required,desc)
+    }
+```
+
+<span class="token comment"># extract map from ApiImplicitParam</span>
+<span class="token attr-name">export.after[@io.swagger.annotations.ApiImplicitParam]</span><span class="token punctuation">=</span><span class="token attr-value">groovy:```</span>
+<span class="token attr-name">    def</span> <span class="token attr-value">map = it.annMap("io.swagger.annotations.ApiImplicitParam")</span>
+    ${resolve_api_implicit_param}
+```
+
+<span class="token comment"># extract maps from ApiImplicitParams</span>
+<span class="token attr-name">export.after[@io.swagger.annotations.ApiImplicitParams]</span><span class="token punctuation">=</span><span class="token attr-value">groovy:```</span>
+<span class="token attr-name">    def</span> <span class="token attr-value">maps = it.annMap("io.swagger.annotations.ApiImplicitParams")</span>
+<span class="token attr-name">    for(map</span> <span class="token attr-value">in maps.value){</span>
+        ${resolve_api_implicit_param}
+    }
+```
+
+
+<span class="token comment"># Resolve the response from `APIResponse` into the API description</span>
+<span class="token attr-name">resolve_api_response</span><span class="token punctuation">=</span><span class="token attr-value">```</span>
+<span class="token attr-name">    def</span> <span class="token attr-value">desc = "\\n\\n***响应码***:"+map.code+"\\n\\n"</span>
+<span class="token attr-name">    desc</span> <span class="token attr-value">+= map.message+"\\n\\n"</span>
+<span class="token attr-name">    def</span> <span class="token attr-value">response = map.response</span>
+<span class="token attr-name">    if(response!</span><span class="token punctuation">=</span><span class="token attr-value">null){</span>
+<span class="token attr-name">        def</span> <span class="token attr-value">responseClass = helper.findClass(response)</span>
+<span class="token attr-name">        if(responseClass!</span><span class="token punctuation">=</span><span class="token attr-value">null){</span>
+<span class="token attr-name">            desc</span> <span class="token attr-value">+= "响应内容:\\n```json\\n" + responseClass.toJson(true) + "\\n```\\n"</span>
+        }
+    }
+    api.appendDesc(desc)
+```
+
+
+<span class="token comment"># Resolve `APIResponse` into the API description</span>
+<span class="token attr-name">export.after[@io.swagger.annotations.ApiResponse]</span><span class="token punctuation">=</span><span class="token attr-value">groovy:```</span>
+<span class="token attr-name">    def</span> <span class="token attr-value">map = it.annMap("io.swagger.annotations.ApiResponse")</span>
+    ${resolve_api_response}
+```
+
+<span class="token comment"># Resolve `APIResponses` into the API description</span>
+<span class="token attr-name">export.after[@io.swagger.annotations.ApiResponses]</span><span class="token punctuation">=</span><span class="token attr-value">groovy:```</span>
+<span class="token attr-name">    def</span> <span class="token attr-value">maps = it.annMap("io.swagger.annotations.ApiResponses")</span>
+<span class="token attr-name">    for(map</span> <span class="token attr-value">in maps.value){</span>
+        ${resolve_api_response}
+    }
+```
+
+
+<span class="token comment"># Resolve one `APIResponse` into the API description</span>
+<span class="token attr-name">export.after[@io.swagger.annotations.ApiResponse]</span><span class="token punctuation">=</span><span class="token attr-value">groovy:```</span>
+<span class="token attr-name">    def</span> <span class="token attr-value">map = it.annMap("io.swagger.annotations.ApiResponse")</span>
+
+<span class="token attr-name">    api.setResponseCode(map.code?</span><span class="token punctuation">:</span><span class="token attr-value">200)</span>
+    api.appendResponseBodyDesc(map.message)
+<span class="token attr-name">    def</span> <span class="token attr-value">responseHeaders = map.responseHeaders</span>
+<span class="token attr-name">    if(responseHeaders!</span><span class="token punctuation">=</span><span class="token attr-value">null){</span>
+<span class="token attr-name">        for(responseHeader</span> <span class="token attr-value">in responseHeaders) {</span>
+            api.setResponseHeader(responseHeader.name,"",true,responseHeader.description)
+        }
+    }
+<span class="token attr-name">    def</span> <span class="token attr-value">response = map.response</span>
+<span class="token attr-name">    if(response!</span><span class="token punctuation">=</span><span class="token attr-value">null){</span>
+        api.setResponseBodyClass(response)
+    }
+```
+
+</code></pre>
+<p><em><strong>快速配置</strong></em></p>
+<pre><code class="language-properties"><span class="token attr-name">properties.additional</span><span class="token punctuation">=</span><span class="token attr-value">https://raw.githubusercontent.com/tangcent/easy-yapi/master/third/swagger.advanced.config</span>
+</code></pre>
+</div><div class="m-content-container m-paging"><div class="m-paging-prev m-paging-item"><a href="springboot-webflux.html" class="href"><span class="ui-font-ydoc"></span>springboot-webflux</a></div><div class="m-paging-next m-paging-item"><a href="javax_validation.html" class="href">javax.validation<span class="ui-font-ydoc"></span></a></div></div></div></div></div><div></div><script>
+    var $content = document.getElementById('js-content');
+    var $summaryItems = Array.prototype.slice.call(document.querySelectorAll('#js-menu .href'));
+    var $menu = document.getElementById('js-menu');
+    if (sessionStorage.prevPathname) {
+      sessionStorage.setItem('prevPrevPathname', sessionStorage.prevPathname);
+      sessionStorage.setItem('prevPrevMenuScrollTop', sessionStorage.prevMenuScrollTop);
+      sessionStorage.setItem('prevPrevContentScrollTop', sessionStorage.prevContentScrollTop);
+    }
+    if (sessionStorage.locationPathname) {
+      sessionStorage.setItem('prevPathname', sessionStorage.locationPathname);
+      sessionStorage.setItem('prevMenuScrollTop', sessionStorage.menuScrollTop);
+      sessionStorage.setItem('prevContentScrollTop', sessionStorage.contentScrollTop);
+    }
+    if ($menu && sessionStorage.menuScrollTop) {
+		  $menu.scrollTop = sessionStorage.menuScrollTop;
+    }
+    // 刷新页面但不切换 pathname 的时候，内容区恢复到记忆的高度
+    if ($content && sessionStorage.contentScrollTop && window.location.pathname == sessionStorage.locationPathname) {
+      $content.scrollTop = sessionStorage.contentScrollTop;
+    } else if (sessionStorage.prevPrevPathname && sessionStorage.prevPrevPathname === window.location.pathname) {
+      if ($menu && sessionStorage.prevPrevMenuScrollTop) {
+        $menu.scrollTop = sessionStorage.prevPrevMenuScrollTop;
+      }
+      if ($content && sessionStorage.prevPrevContentScrollTop) {
+        $content.scrollTop = sessionStorage.prevPrevContentScrollTop;
+      }
+    }
+    sessionStorage.setItem('locationPathname', window.location.pathname);
+    </script><script src="../ydoc/scripts/plugins/dollar.min.js"></script><script src="../ydoc/scripts/plugins/responsive-nav.min.js"></script><script src="../ydoc/scripts/plugins/slideout.min.js"></script><script src="../ydoc/scripts/app.js"></script><script src="../ydoc/ydoc-plugin-search/core.js"></script><script src="../ydoc/ydoc-plugin-search/search.js"></script><script src="../ydoc/ydoc-plugin-copy/clipboard.min.js"></script><script src="../ydoc/ydoc-plugin-copy/clipboard.script.js"></script><script src="../search_json.js"></script></body></html>

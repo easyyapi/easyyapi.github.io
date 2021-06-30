@@ -1,0 +1,317 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="UTF-8"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><link rel="apple-touch-icon" sizes="180x180" href="../ydoc/images/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="../ydoc/images/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="../ydoc/images/favicon-16x16.png"/><link rel="manifest" href="../ydoc/images/manifest.json"/><link rel="mask-icon" href="../ydoc/images/safari-pinned-tab.svg" color="#5bbad5"/><meta name="theme-color" content="#ffffff"/><meta http-equiv="Cache-Control" content="no-transform"/><meta http-equiv="Cache-Control" content="no-siteapp"/><title>QA</title><link rel="stylesheet" href="../ydoc/styles/style.css"/><meta name="author" content="tangcent"/><meta name="keywords"/><meta name="description" content="Simplifies API Development"/><meta id="releativePath" content=".."/><link rel="stylesheet" href="../ydoc/ydoc-plugin-search/search.css"/><link rel="stylesheet" href="../ydoc/ydoc-plugin-copy/clipboard.css"/></head><body><div class="g-doc"><div class="m-aside"><div class="m-summary" id="js-menu"><div class="m-summary-content" id="js-menu-content"><div class="m-summary-block"><div class="m-summary-title">QA</div><ul class="m-summary-list indent"><li class="item"><a href="index.html#%e5%a6%82%e4%bd%95%e6%b7%bb%e5%8a%a0%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" class="href">如何添加配置文件</a></li><li class="item"><a href="index.html#%e5%a6%82%e4%bd%95%e7%bb%84%e7%bb%87api%e5%88%b0%e6%8c%87%e5%ae%9a%e6%96%87%e4%bb%b6%e5%a4%b9" class="href">如何组织API到指定文件夹</a></li><li class="item"><a href="index.html#%e5%a6%82%e4%bd%95%e5%bf%bd%e7%95%a5api" class="href">如何忽略API?</a></li><li class="item"><a href="index.html#%e5%a6%82%e4%bd%95%e8%ae%be%e7%bd%aeapi%e6%96%87%e4%bb%b6%e5%a4%b9%e7%9a%84%e5%90%8d%e7%a7%b0%e6%8f%8f%e8%bf%b0" class="href">如何设置API/文件夹的名称/描述?</a></li><li class="item"><a href="index.html#%e5%a6%82%e4%bd%95%e5%9c%a8api%e6%96%87%e4%bb%b6%e5%a4%b9%e7%9a%84%e6%8f%8f%e8%bf%b0%e4%b8%ad%e8%af%b4%e6%98%8eapi%e6%96%87%e4%bb%b6%e5%a4%b9%e8%a2%ab%e5%ba%9f%e5%bc%83%e4%ba%86" class="href">如何在API/文件夹的描述中说明API/文件夹被废弃了?</a></li><li class="item"><a href="index.html#%e5%a6%82%e4%bd%95%e5%9c%a8api%e6%8f%8f%e8%bf%b0%e4%b8%ad%e5%a3%b0%e6%98%8eapi%e9%9c%80%e8%a6%81%e7%9a%84%e6%9d%83%e9%99%90javax-annotation-security" class="href">如何在API描述中声明API需要的权限(javax.annotation.security)</a></li><li class="item"><a href="index.html#%e5%a6%82%e4%bd%95%e5%9c%a8api%e6%8f%8f%e8%bf%b0%e4%b8%ad%e5%a3%b0%e6%98%8eapi%e9%9c%80%e8%a6%81%e7%9a%84%e6%9d%83%e9%99%90spring-security" class="href">如何在API描述中声明API需要的权限(spring security)</a></li><li class="item"><a href="index.html#%e5%a6%82%e4%bd%95%e5%bf%bd%e7%95%a5%e6%9f%90%e4%ba%9b%e5%ad%97%e6%ae%b5" class="href">如何忽略某些字段?</a></li><li class="item"><a href="index.html#%e5%a6%82%e4%bd%95%e5%b0%86%e6%8c%87%e5%ae%9a%e7%b1%bb%e5%9e%8b%e8%bd%ac%e6%8d%a2%e4%b8%ba%e5%8f%a6%e4%b8%80%e7%a7%8d%e7%b1%bb%e5%9e%8b%e5%a4%84%e7%90%86" class="href">如何将指定类型转换为另一种类型处理?</a></li><li class="item"><a href="index.html#%e9%83%a8%e5%88%86%e6%8e%a5%e5%8f%a3%e5%8f%af%e8%83%bd%e6%9c%89%e4%b8%8d%e5%90%8c%e7%9a%84%e8%bf%94%e5%9b%9e" class="href">部分接口可能有不同的返回?</a></li><li class="item"><a href="index.html#%e6%9c%89%e7%9a%84%e5%ad%97%e6%ae%b5%e5%8f%af%e8%83%bd%e6%9c%89%e4%b8%8d%e5%90%8c%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%80%bc" class="href">有的字段可能有不同类型的值?</a></li><li class="item"><a href="index.html#%e5%a6%82%e4%bd%95%e5%bc%80%e5%90%afjavax_validation%e5%88%86%e7%bb%84%e6%a0%a1%e9%aa%8c" class="href">如何开启javax_validation分组校验?</a></li><li class="item"><a href="index.html#%e5%a6%82%e4%bd%95%e6%bf%80%e6%b4%bb%e5%af%b9com.fasterxml.jackson.annotation.jsonignoreproperties%e7%9a%84%e6%94%af%e6%8c%81" class="href">如何激活对com.fasterxml.jackson.annotation.JsonIgnoreProperties的支持?</a></li></ul></div></div></div><div class="m-summary-switch" id="js-summary-switch"><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="bottom"><g transform="translate(904.92214,-879.1482)"><path d="m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,-55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,-174.6858 c 96.079,-96.07721 175.253196,-174.68583 175.942696,-174.68583 0.6895,0 26.281,25.03215 56.8701,55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864-231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,-104.0616 -231.873,-231.248 z" fill="#fff"></path></g></svg><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="top"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="aaa" fill="#fff" fill-rule="nonzero"><path d="M231.2455,342.502 L0,111.25397 L55.6165,55.62697 C86.2056,25.03212 111.7971,-2.99999998e-05 112.4866,-2.99999998e-05 C113.176,-2.99999998e-05 192.3503,78.60859 288.4293,174.6858 L463.1185,349.3716 L637.8077,174.6858 C733.8867,78.60859 813.060896,-2.99999997e-05 813.750396,-2.99999997e-05 C814.439896,-2.99999997e-05 840.031396,25.03212 870.620496,55.62697 L926.236996,111.25397 L694.9915,342.502 C567.8065,469.6884 463.4636,573.75 463.1185,573.75 C462.7734,573.75 358.4305,469.6884 231.2455,342.502 Z" id="Shape" transform="translate(463.118498, 286.874985) scale(1, -1) translate(-463.118498, -286.874985) "></path></g></g></svg></div></div><div class="m-main" id="js-panel"><header class="m-header" id="js-header"><div class="m-header-title js-logo"><a href="../index.html" target="_self"><h6 class="name">EasyYapi</h6></a></div><div><div class="m-search">
+      <div class="icon">&#xf0fd;</div>
+      <input type="text" class="input js-input" placeholder="搜索" />
+      <div class="m-search-result js-search-result"></div>
+    </div></div><nav class="m-header-nav js-nav"><ul class="m-header-items"><li class="item "><a class="href" href="../documents/index.html">文档</a></li><li class="item "><a class="href" href="../setting/index.html">配置</a></li><li class="item "><a class="href" href="../demo/index.html">demo</a></li><li class="item "><a class="href" href="../framwork/index.html">框架支持</a></li><li class="item active"><a class="href" href="">QA</a></li></ul></nav><div id="js-nav-btn" class="m-header-btn ui-font-ydoc"></div></header><div class="m-content" id="js-content"><div id="markdown-body" class="m-content-container markdown-body"><p><em><strong>此插件配置过于灵活, 以下均为示例, 需根据实际情况做合适的处理。</strong></em></p>
+<hr>
+<h2 id="如何添加配置文件">如何添加配置文件</h2>
+<ul>
+<li>see <a href="/setting/local-file-config.html">local-file-config</a></li>
+</ul>
+<hr>
+<h2 id="如何组织api到指定文件夹">如何组织API到指定文件夹</h2>
+<ul>
+<li>
+<p><code>module</code>用于分类api</p>
+<ul>
+<li>导出<code>postman</code>时,每个<code>module</code>将作为一个单独的文件夹</li>
+<li>导出<code>yapi</code>时,每个<code>module</code>需要配置相应的<code>token</code>,即对应一个<code>yapi</code>中的项目</li>
+</ul>
+</li>
+<li>
+<p>默认情况下取当前模块名(单模块项目取项目名)</p>
+</li>
+<li>
+<p>默认推荐配置:</p>
+</li>
+</ul>
+<pre><code class="language-properties"><span class="token comment">#find module from comment tag </span>
+<span class="token attr-name">module</span><span class="token punctuation">=</span><span class="token attr-value">#module</span>
+</code></pre>
+<ul>
+<li>在类上这样注释:</li>
+</ul>
+<pre><code class="language-java"><span class="token comment">/**
+ * Mock Apis
+ *
+ * @module mock
+ */</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"mock"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MockCtrl</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<h2 id="如何忽略api">如何忽略API</h2>
+<ul>
+<li>增加配置:</li>
+</ul>
+<pre><code class="language-properties"><span class="token comment">#ignore class or method which has comment tag 'ignore' </span>
+<span class="token attr-name">ignore</span><span class="token punctuation">=</span><span class="token attr-value">#ignore</span>
+</code></pre>
+<ul>
+<li>在类上注释@ignore忽略当前类</li>
+</ul>
+<pre><code class="language-java"><span class="token comment">/**
+ * Mock Apis
+ *
+ * @ignore
+ */</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"mock"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MockCtrl</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>在方法上注释@ignore忽略当前API</li>
+</ul>
+<pre><code class="language-java"><span class="token comment">/**
+ * Mock Apis
+ */</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"mock"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MockCtrl</span> <span class="token punctuation">{</span>
+
+     <span class="token comment">/**
+      * Mock String
+      * @ignore
+      */</span>
+     <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/string"</span><span class="token punctuation">)</span>
+     <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">mockString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token keyword">return</span> <span class="token class-name">Result</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"mock string"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<h2 id="如何设置api文件夹的名称描述">如何设置API/文件夹的名称/描述</h2>
+<ul>
+<li>
+<p>一般来说:</p>
+<pre><code class="language-java"><span class="token comment">/**
+ * 第一行注释作为文件夹的标题
+ * 剩余行注释作为文件夹的描述
+ */</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"mock"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MockCtrl</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">/**
+     * 第一行行注释作为API的标题
+     * 剩余行注释作为API的描述
+     */</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/string"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">mockString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name">Result</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"mock string"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li>
+<p>特殊需求参见:<a href="/setting/rules/class_doc.html">class.doc</a> | <a href="/setting/rules/method_doc.html">method.doc</a> | <a href="/setting/rules/api_name.html">api.name</a></p>
+</li>
+</ul>
+<hr>
+<h2 id="如何在api文件夹的描述中说明api文件夹被废弃了">如何在API/文件夹的描述中说明API/文件夹被废弃了</h2>
+<ul>
+<li>
+<p>默认推荐配置如下:</p>
+<pre><code class="language-properties"><span class="token attr-name">method.doc[#deprecated]</span><span class="token punctuation">=</span><span class="token attr-value">groovy:"\n「deprecated」" + it.doc("deprecated")</span>
+<span class="token attr-name">method.doc[@java.lang.Deprecated]</span><span class="token punctuation">=</span><span class="token attr-value">「deprecated」</span>
+<span class="token attr-name">method.doc[@kotlin.Deprecated]</span><span class="token punctuation">=</span><span class="token attr-value">groovy:"\n「deprecated」" + it.ann("kotlin.Deprecated","message")</span>
+
+<span class="token attr-name">method.doc[groovy</span><span class="token punctuation">:</span><span class="token attr-value">it.containingClass().hasDoc("deprecated")]=groovy:"\n「deprecated」" + it.containingClass().doc("deprecated")</span>
+<span class="token attr-name">method.doc[groovy</span><span class="token punctuation">:</span><span class="token attr-value">it.containingClass().hasAnn("java.lang.Deprecated")]=「deprecated」</span>
+<span class="token attr-name">method.doc[groovy</span><span class="token punctuation">:</span><span class="token attr-value">it.containingClass().hasAnn("kotlin.Deprecated")]=groovy:"\n「deprecated」 " + it.containingClass().ann("kotlin.Deprecated","message")</span>
+
+</code></pre>
+</li>
+<li>
+<p>使用注解或者注释标记API废弃即可:</p>
+<pre><code class="language-java"><span class="token comment">/**
+* 可以用注解`@Deprecated`来表示api废弃
+* 也可以用注释`@deprecated`
+*
+* @deprecated 改用{@link #methodName3(String)}
+*/</span>
+<span class="token annotation punctuation">@Deprecated</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/pathOfApi2"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">Result</span> <span class="token function">methodName2</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> <span class="token class-name">MockDtoOrVo</span> jsonModel<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+<hr>
+<h2 id="如何在api描述中声明api需要的权限javax-annotation-security">如何在API描述中声明API需要的权限(javax annotation security)</h2>
+<ul>
+<li>可考虑增加如下配置:</li>
+</ul>
+<pre><code class="language-properties"><span class="token comment">## security description</span>
+<span class="token attr-name">method.doc[@javax.annotation.security.RolesAllowed]</span><span class="token punctuation">=</span><span class="token attr-value">groovy:"require role:"+it.ann("javax.annotation.security.RolesAllowed")</span>
+</code></pre>
+<ul>
+<li>示例:</li>
+</ul>
+<pre><code class="language-java"><span class="token comment">/**
+ * 第一行注释作为文件夹的标题
+ * 剩余行注释作为文件夹的描述
+ */</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"mock"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MockCtrl</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">/**
+     * 第一行行注释作为API的标题
+     * 剩余行注释作为API的描述
+     */</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/string"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@RolesAllowed</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">mockString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name">Result</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"mock string"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<hr>
+<h2 id="如何在api描述中声明api需要的权限spring-security">如何在API描述中声明API需要的权限(spring security)</h2>
+<ul>
+<li>可考虑增加如下配置:</li>
+</ul>
+<pre><code class="language-properties"><span class="token comment">## security description</span>
+<span class="token attr-name">find_role_in_PreAuthorize</span><span class="token punctuation">=</span><span class="token attr-value">(function(exp){var str="";if(exp.indexOf("hasRole")!=-1){var roles=exp.match(/hasRole\\((.*?)\\)/);if(roles&amp;&amp;roles.length>1){str+="require role:"+roles[1];}};return str})</span>
+<span class="token attr-name">method.doc[@org.springframework.security.access.prepost.PreAuthorize]</span><span class="token punctuation">=</span><span class="token attr-value">js:${find_role_in_PreAuthorize}(it.ann("org.springframework.security.access.prepost.PreAuthorize"))</span>
+</code></pre>
+<ul>
+<li>示例:</li>
+</ul>
+<pre><code class="language-java"><span class="token comment">/**
+ * 第一行注释作为文件夹的标题
+ * 剩余行注释作为文件夹的描述
+ */</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"mock"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MockCtrl</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">/**
+     * 第一行行注释作为API的标题
+     * 剩余行注释作为API的描述
+     */</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/string"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@PreAuthorize</span><span class="token punctuation">(</span><span class="token string">"hasRole('admin')"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">mockString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name">Result</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"mock string"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<hr>
+<h2 id="如何忽略某些字段">如何忽略某些字段</h2>
+<ul>
+<li>
+<p>使用规则:<a href="/setting/rules/json_rule_field_ignore.md.html">json.rule.field.ignore</a></p>
+<ul>
+<li>忽略特定名称的字段:</li>
+</ul>
+<pre><code class="language-properties"><span class="token comment">## ignore field 'log'</span>
+<span class="token attr-name">json.rule.field.ignore</span><span class="token punctuation">=</span><span class="token attr-value">log</span>
+</code></pre>
+<ul>
+<li>忽略特定类型的字段:</li>
+</ul>
+<pre><code class="language-properties"><span class="token comment">## ignore field 'log' typed xxx.xxx.Log</span>
+<span class="token attr-name">json.rule.field.ignore</span><span class="token punctuation">=</span><span class="token attr-value">groovy:it.type().name()=="xxx.xxx.Log"</span>
+</code></pre>
+<ul>
+<li>忽略特定限定符的字段:</li>
+</ul>
+<pre><code class="language-properties"><span class="token comment">#ignore transient field</span>
+<span class="token attr-name">json.rule.field.ignore</span><span class="token punctuation">=</span><span class="token attr-value">groovy:it.hasModifier("transient")</span>
+</code></pre>
+</li>
+</ul>
+<hr>
+<h2 id="如何将指定类型转换为另一种类型处理">如何将指定类型转换为另一种类型处理</h2>
+<ul>
+<li>将<code>java.time.LocalDateTime</code>作为<code>yyyy-mm-dd</code>形式字符串处理</li>
+</ul>
+<pre><code class="language-properties"><span class="token comment">#Resolve 'java.time.LocalDateTime' as 'java.lang.String'</span>
+<span class="token attr-name">json.rule.convert[java.time.LocalDateTime]</span><span class="token punctuation">=</span><span class="token attr-value">java.lang.String</span>
+<span class="token attr-name">json.rule.convert[java.time.LocalDate]</span><span class="token punctuation">=</span><span class="token attr-value">java.lang.String</span>
+</code></pre>
+<ul>
+<li>将<code>java.time.LocalDateTime</code>作为<code>timestamp</code>处理</li>
+</ul>
+<pre><code class="language-properties"><span class="token comment">#Resolve 'java.time.LocalDateTime' as 'java.lang.Long'</span>
+<span class="token attr-name">json.rule.convert[java.time.LocalDateTime]</span><span class="token punctuation">=</span><span class="token attr-value">java.lang.Long</span>
+<span class="token attr-name">json.rule.convert[java.time.LocalDate]</span><span class="token punctuation">=</span><span class="token attr-value">java.lang.Long</span>
+</code></pre>
+<h2 id="部分接口可能有不同的返回">部分接口可能有不同的返回</h2>
+<ul>
+<li>可以使用<a href="/setting/rules/method_doc.html">method.doc</a>将可能的返回放在方法备注中</li>
+</ul>
+<p><em><strong>配置如下:</strong></em></p>
+<pre><code class="language-properties"><span class="token attr-name">method.doc[#result]</span><span class="token punctuation">=</span><span class="token attr-value">groovy: it.docs("result").collect{helper.resolveLink(it)}.grep{it!=null}.collect{"可能的返回:\n\n```json\n"+it.toJson(true)+"\n```\n\n"}.join("\n")</span>
+</code></pre>
+<p><em><strong>使用如下:</strong></em></p>
+<pre><code class="language-java"> <span class="token comment">/**
+  * @result {@link UserInfo}
+  * @result {@link Result&lt;UserInfo>}
+  */</span>
+ <span class="token keyword">public</span> <span class="token class-name">Result</span> <span class="token function">mockString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+ <span class="token punctuation">}</span>
+</code></pre>
+<h2 id="有的字段可能有不同类型的值">有的字段可能有不同类型的值</h2>
+<ul>
+<li>可以使用<a href="/setting/rules/field_doc.html">field.doc</a>将可能的类型值放在字段备注中</li>
+</ul>
+<p><em><strong>配置如下:</strong></em></p>
+<pre><code class="language-properties"><span class="token attr-name"> field.doc[#maybe]</span><span class="token punctuation">=</span><span class="token attr-value">groovy:it.docs("maybe").collect{helper.resolveLink(it)}.collect{"可能是:\n\n```json\n" + it.toJson(true) +"\n```\n\n"}.join("\n")</span>
+</code></pre>
+<p><em><strong>使用如下:</strong></em></p>
+<pre><code class="language-java"> <span class="token comment">/**
+  * @maybe {@link UserInfo}
+  * @maybe {@link java.lang.String}
+  */</span>
+ <span class="token keyword">public</span> <span class="token class-name">Object</span> target<span class="token punctuation">;</span>
+</code></pre>
+<h2 id="如何开启javax_validation分组校验">如何开启javax_validation分组校验</h2>
+<ul>
+<li>参见<a href="/framwork/javax_validation.html">javax_validation</a>,
+在 <kbd>Preferences(Settings)</kbd> &gt; <kbd>Other Settings</kbd> &gt; <kbd>EasyApi</kbd> &gt;<kbd>Recommend</kbd> 中移除勾选<code>javax.validation</code>, 勾选<code>javax.validation(grouped)</code></li>
+</ul>
+<h2 id="如何激活对com.fasterxml.jackson.annotation.jsonignoreproperties的支持">如何激活对com.fasterxml.jackson.annotation.JsonIgnoreProperties的支持</h2>
+<ul>
+<li>在 <kbd>Preferences(Settings)</kbd> &gt; <kbd>Other Settings</kbd> &gt; <kbd>EasyApi</kbd> &gt;<kbd>Recommend</kbd> 中勾选<code>Jackson_JsonIgnoreProperties</code></li>
+</ul>
+</div></div></div></div><div></div><script>
+    var $content = document.getElementById('js-content');
+    var $summaryItems = Array.prototype.slice.call(document.querySelectorAll('#js-menu .href'));
+    var $menu = document.getElementById('js-menu');
+    if (sessionStorage.prevPathname) {
+      sessionStorage.setItem('prevPrevPathname', sessionStorage.prevPathname);
+      sessionStorage.setItem('prevPrevMenuScrollTop', sessionStorage.prevMenuScrollTop);
+      sessionStorage.setItem('prevPrevContentScrollTop', sessionStorage.prevContentScrollTop);
+    }
+    if (sessionStorage.locationPathname) {
+      sessionStorage.setItem('prevPathname', sessionStorage.locationPathname);
+      sessionStorage.setItem('prevMenuScrollTop', sessionStorage.menuScrollTop);
+      sessionStorage.setItem('prevContentScrollTop', sessionStorage.contentScrollTop);
+    }
+    if ($menu && sessionStorage.menuScrollTop) {
+		  $menu.scrollTop = sessionStorage.menuScrollTop;
+    }
+    // 刷新页面但不切换 pathname 的时候，内容区恢复到记忆的高度
+    if ($content && sessionStorage.contentScrollTop && window.location.pathname == sessionStorage.locationPathname) {
+      $content.scrollTop = sessionStorage.contentScrollTop;
+    } else if (sessionStorage.prevPrevPathname && sessionStorage.prevPrevPathname === window.location.pathname) {
+      if ($menu && sessionStorage.prevPrevMenuScrollTop) {
+        $menu.scrollTop = sessionStorage.prevPrevMenuScrollTop;
+      }
+      if ($content && sessionStorage.prevPrevContentScrollTop) {
+        $content.scrollTop = sessionStorage.prevPrevContentScrollTop;
+      }
+    }
+    sessionStorage.setItem('locationPathname', window.location.pathname);
+    </script><script src="../ydoc/scripts/plugins/dollar.min.js"></script><script src="../ydoc/scripts/plugins/responsive-nav.min.js"></script><script src="../ydoc/scripts/plugins/slideout.min.js"></script><script src="../ydoc/scripts/app.js"></script><script src="../ydoc/ydoc-plugin-search/core.js"></script><script src="../ydoc/ydoc-plugin-search/search.js"></script><script src="../ydoc/ydoc-plugin-copy/clipboard.min.js"></script><script src="../ydoc/ydoc-plugin-copy/clipboard.script.js"></script><script src="../search_json.js"></script></body></html>
