@@ -1,7 +1,9 @@
 # Postman相关参数配置
 
-- 在导出过程中如果需要`postman`的`token`，将会以弹窗的方式提供输入
+## token配置
 
-- 也可以在<kbd>Preferences(Settings)</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> 中[手动配置](ide-setting.md#postman)
+- 可在<kbd>Preferences(Settings)</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> 中[配置](ide-setting.md#postman)
 
-- `postman`的`token`,可以从[Postman Integrations Dashboard](https://go.postman.co/integrations/services/pm_pro_api)获得
+- `postman`的`token`, 可以从[Postman Integrations Dashboard](https://go.postman.co/integrations/services/pm_pro_api)获得
+
+- 未配置`token`的情况下，默认导出一个可导入`postman`的`json`文件
