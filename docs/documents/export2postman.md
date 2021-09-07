@@ -17,4 +17,4 @@
 
 ---
 
-- 初次使用可能会以弹窗的方式要求输入必要的信息,参见:[postman配置](/setting/postman.html)
+- [postman配置](/setting/postman.html)
