@@ -4,7 +4,8 @@
 | ------------ | ------------ | ------------ |------------ |
 | &nbsp;&nbsp;&nbsp;&nbsp;[module](rules/module.md) | class | v0.7.2+ | 为api分组 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[ignore](rules/ignore.md) | class/method | v0.7.2+ | 忽略API |
-| &nbsp;&nbsp;&nbsp;&nbsp;[json.rule.field.name](rules/json_rule_field_name.md) | field | v0.7.2+ | 设置输出的字段名(用于json中字段名与类中字段名不一致) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[field.name](rules/field_name.md) | field | v0.7.2+ | 设置输出的字段名(用于json中字段名与类中字段名不一致) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[~~json.rule.field.name~~](rules/json_rule_field_name.md) | field | v0.7.2+ | 设置输出的字段名(用于json中字段名与类中字段名不一致) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[~~json.rule.field.ignore~~](rules/json_rule_field_ignore.md) | field | v0.7.2+ | 忽略字段(设置某些字段不出现在json中,或不需要请求时给出) 已废弃, 使用[field.ignore](rules/field_ignore.md)代替 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.ignore](rules/field_ignore.md) | field | v2.0.0+ | 忽略字段(设置某些字段不出现在json中,或不需要请求时给出) |
 | ☆[json.rule.convert](rules/json_rule_convert.md) | - | v0.7.2+ | 用于设置某些类型转换为其他类型处理，通常用于使用了Spring的自定义类型转换器的情况 |

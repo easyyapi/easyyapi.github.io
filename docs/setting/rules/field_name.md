@@ -1,4 +1,4 @@
-# ~~json.rule.field.name~~
+# field.name
 
 - 用于设置输出/输入的字段名(用于json中字段名与类中字段名不一致)
 
@@ -7,10 +7,10 @@
 
 ```properties
 #Support for Jackson annotations
-json.rule.field.name=@com.fasterxml.jackson.annotation.JsonProperty#value
+field.name=@com.fasterxml.jackson.annotation.JsonProperty#value
 
 #Support for Gson annotations
-json.rule.field.name=@com.google.gson.annotations.SerializedName#value
+field.name=@com.google.gson.annotations.SerializedName#value
 ```
 
 ## demo
@@ -37,3 +37,11 @@ public class TestJsonFieldBean {
 | --- | --- | --- | --- | --- | --- |
 | a |	integer | 非必须 |  |  | mock: @natural(0,10000) |
 | b | integer | 非必须 |  |  | mock: @natural(0,10000) |
+
+
+## 配置驼峰转下划线
+
+```properties
+#convert camel to underline
+field.name=groovy:tool.camel2Underline(it.name())
+```
