@@ -2,6 +2,8 @@
 
 - 目前`yapi`的[open api](https://hellosean1025.github.io/yapi/openapi.html)更新接口并不会渲染接口备注信息，如果接口备注信息中含有`markdown`内容，需要配置`markdown`渲染器
 
+- 插件内置了一个简单的`markdown`渲染器, 如果对渲染效果不满意, 可以按照以下步骤配置自定义的`markdown`渲染器
+
 ## `markdown`渲染器
 
 渲染器目前分为两种，一种是本地渲染器，一种是远程渲染器
