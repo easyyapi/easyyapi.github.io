@@ -14,7 +14,8 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[collection.postman.prerequest](rules/postman_prerequest.md#collection.postman.prerequest)  | class | v1.9.5+ | 设置`postman·collection`上的[`prerequest`](https://learning.postman.com/docs/writing-scripts/pre-request-scripts/#re-using-pre-request-scripts) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[collection.postman.test](rules/postman_test.md#collection.postman.test)  | class | v1.9.5+ | 设置`postman·collection`上的[`test`](https://learning.postman.com/docs/writing-scripts/test-scripts/#testing-collections-and-folders) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[constant.field.ignore](rules/constant_field_ignore.md)  | field | v1.3.8+ | 忽略常量字段 |
-| &nbsp;&nbsp;&nbsp;&nbsp;[field.advanced](rules/field_advanced.md) | field | v2.0.8+ | 提供`yapi`的高级设置信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[export.after](rules/export_after.md)  | api | v2.0.1+ | 每个api导出完成后回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[field.advanced](rules/field_advanced.md) | field | v2.2.8+ | 提供`yapi`的高级设置信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.default.value](rules/field_default_value.md) | - | v1.7.1+ | 用以设置字段的默认值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.demo](rules/field_demo.md) | - | v1.9.3+ | 用以设置字段的示例值 |
 | ☆[field.doc](rules/field_doc.md) | field | v0.7.2+ | 字段的额外注释 |
