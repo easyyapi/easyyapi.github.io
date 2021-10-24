@@ -14,7 +14,6 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[collection.postman.prerequest](rules/postman_prerequest.md#collection.postman.prerequest)  | class | v1.9.5+ | 设置`postman·collection`上的[`prerequest`](https://learning.postman.com/docs/writing-scripts/pre-request-scripts/#re-using-pre-request-scripts) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[collection.postman.test](rules/postman_test.md#collection.postman.test)  | class | v1.9.5+ | 设置`postman·collection`上的[`test`](https://learning.postman.com/docs/writing-scripts/test-scripts/#testing-collections-and-folders) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[constant.field.ignore](rules/constant_field_ignore.md)  | field | v1.3.8+ | 忽略常量字段 |
-| &nbsp;&nbsp;&nbsp;&nbsp;[export.after](rules/export_after.md)  | api | v2.0.1+ | 每个api导出完成后回调 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.advanced](rules/field_advanced.md) | field | v2.2.8+ | 提供`yapi`的高级设置信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.default.value](rules/field_default_value.md) | - | v1.7.1+ | 用以设置字段的默认值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.demo](rules/field_demo.md) | - | v1.9.3+ | 用以设置字段的示例值 |
@@ -25,8 +24,6 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.name](rules/field_name.md) | field | v0.7.2+ | 设置输出的字段名(用于json中字段名与类中字段名不一致) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.required](rules/field_required.md) | field | v0.7.3+ | 字段是否为必须(即不可为空) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[folder.name](rules/folder_name.md)  | method | v1.9.2+ | 设置api所属文件夹 |
-| &nbsp;&nbsp;&nbsp;&nbsp;[http.call.before](rules/http_call_before.md)  | request | v1.9.0+ | http请求前回调 |
-| &nbsp;&nbsp;&nbsp;&nbsp;[http.call.after](rules/http_call_after.md)  | request&response | v1.9.0+ | http请求后回调 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[ignore](rules/ignore.md) | class/method | v0.7.2+ | 忽略API |
 | ☆[json.rule.convert](rules/json_rule_convert.md) | - | v0.7.2+ | 用于设置某些类型转换为其他类型处理，通常用于使用了Spring的自定义类型转换器的情况 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[json.rule.enum.convert](rules/json_rule_enum_convert.md) | class | v1.2.0+ | 用于枚举类型的特殊转换 |
@@ -61,11 +58,37 @@
 
 ---
 
+# 支持的回调
+
+- 大多数回调方法中没有`it`, 但各自有对应的回调对象
+
+| &nbsp;&nbsp;&nbsp;&nbsp;规则的key | 规则目标(上下文) | 版本 | 规则描述 |
+| ------------ | ------------ | ------------ |------------ |
+| &nbsp;&nbsp;&nbsp;&nbsp;[export.after](rules/export_after.md)  | api | v2.0.1+ | 每个api导出完成后回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[yapi.export.before](events/yapi_export_before.md)  | 无 | v2.0.1+ | 导出到yapi之前回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[http.call.before](rules/http_call_before.md)  | request | v1.9.0+ | http请求前回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[http.call.after](rules/http_call_after.md)  | request&response | v1.9.0+ | http请求后回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[json.class.parse.before](events/json_class_parse_before.md)  | class | v2.2.8+ | 解析类型前回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[json.class.parse.after](events/json_class_parse_after.md)  | class | v2.2.8+ | 解析类型后回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[json.field.parse.before](events/json_field_parse_before.md)  | field | v2.2.8+ | 解析类型字段前回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[json.field.parse.after](events/json_field_parse_after.md)  | field | v2.2.8+ | 解析类型字段后回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[json.method.parse.before](events/json_method_parse_before.md)  | method | v2.2.8+ | 解析类型方法(getter|setter)前回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[json.method.parse.after](events/json_method_parse_after.md)  | method | v2.2.8+ | 解析类型方法(getter|setter)后回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[api.class.parse.before](events/api_class_parse_before.md)  | class | v2.2.8+ | 解析`api`前回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[api.class.parse.after](events/api_class_parse_after.md)  | class | v2.2.8+ | 解析`api`后回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[api.method.parse.before](events/api_method_parse_before.md)  | method | v2.2.8+ | 解析`api`方法前回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[api.method.parse.after](events/api_method_parse_after.md)  | method | v2.2.8+ | 解析`api`方法后回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[api.param.parse.before](events/api_param_parse_before.md)  | param | v2.2.8+ | 解析`api`参数前回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[api.param.parse.after](events/api_param_parse_after.md)  | param | v2.2.8+ | 解析`api`参数后回调 |
+
+---
+
 ***NOTES:[本地文件配置](local-file-config.md)***
 
 ---
 
-# value的取值规则
+
+# 规则语法
 
 ## 简单规则
 
@@ -92,6 +115,10 @@
       @RequestMapping(value = "path")
       public class FakeClass{...}
       ```
+- 字面量
+
+   - boolean如: `api.open=true`
+   - string如: `api.status=done`
 
 ## 高级脚本规则
 

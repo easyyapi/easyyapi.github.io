@@ -1,6 +1,6 @@
 **兼容旧版本yapi/定制化yapi**
 
-对于旧版本yapi或定制化yapi等`token`不可用的情况，可按以下步骤改为配置`projectId`
+对于`旧版本yapi或定制化yapi`等`token`不可用的情况，可按以下步骤改为配置`projectId`
 
 1. 开启`loginMode`: 勾选<kbd>Preferences(Settings)</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > <kbd>Yapi</kbd> > <kbd>loginMode</kbd> , 参见:[IDEA配置](/setting/ide-setting.html)
 
