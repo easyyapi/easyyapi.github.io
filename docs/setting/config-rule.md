@@ -60,7 +60,7 @@
 
 # 支持的回调
 
-- 部分回调方法中可能没有`it`, 但各自有对应的回调对象
+- 部分回调方法中可能没有`it`, 但可能会有附加的上下文供使用
 
 | &nbsp;&nbsp;&nbsp;&nbsp;规则的key | 规则目标(上下文it) | 附加上下文 | 版本 | 规则描述 |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -70,9 +70,9 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[api.method.parse.after](events/api_method_parse_after.md)  | method | 无  | v2.2.8+ | 解析`api`方法后回调 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[api.param.parse.before](events/api_param_parse_before.md)  | param | 无  | v2.2.8+ | 解析`api`参数前回调 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[api.param.parse.after](events/api_param_parse_after.md)  | param | 无  | v2.2.8+ | 解析`api`参数后回调 |
-| &nbsp;&nbsp;&nbsp;&nbsp;[export.after](rules/export_after.md)  | method | api | v2.0.1+ | 每个api导出完成后回调 |
-| &nbsp;&nbsp;&nbsp;&nbsp;[http.call.before](rules/http_call_before.md)  | 无  | request | v1.9.0+ | http请求前回调 |
-| &nbsp;&nbsp;&nbsp;&nbsp;[http.call.after](rules/http_call_after.md)  | 无  | request, response | v1.9.0+ | http请求后回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[export.after](rules/export_after.md)  | method | [api](tools/api.html) | v2.0.1+ | 每个api导出完成后回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[http.call.before](rules/http_call_before.md)  | 无  | [request](tools/httpClient.html#request) | v1.9.0+ | http请求前回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[http.call.after](rules/http_call_after.md)  | 无  | [request](tools/httpClient.html#request), [response](tools/httpClient.html#response) | v1.9.0+ | http请求后回调 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[json.class.parse.before](events/json_class_parse_before.md)  | class | 无  |  v2.2.8+ | 解析类型前回调 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[json.class.parse.after](events/json_class_parse_after.md)  | class | 无  | v2.2.8+ | 解析类型后回调 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[json.field.parse.before](events/json_field_parse_before.md)  | field | 无  | v2.2.8+ | 解析类型字段前回调 |

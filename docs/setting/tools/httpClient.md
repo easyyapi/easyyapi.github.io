@@ -23,7 +23,9 @@
 
 ---
 
-# `request`,一般由`httpClient`创建
+# request
+
+- 可以由`httpClient`创建
 
 ## 主要方法有:
 
@@ -36,32 +38,58 @@
 | url(string) | request | 设置当前请求的`url` | request.url("http://www.easyyapi.com")|
 | body() | object | 获取当前请求体 | request.body()|
 | body(object) | request | 设置当前请求体 | request.body({"name":"admin"})|
-| containsHeader(string) | bool | 判断当前请求是否有指定`header` | request.containsHeader("token")|
-| containsParam(string) | bool | 判断当前请求是否有指定请求参数 | request.containsParam("name")|
 | contentType() | string | 获取当前请求的`Content-type` | request.contentType()|
 | contentType(string) | string | 设置当前请求的`Content-type` | request.contentType("application/json")|
-| fileParam(string, string) | request | 设置一个文件参数 | request.contentType("file","/xxx/xxx/xxxx.xxx")|
-| firstHeader(string) | string | 获取一个header参数 | request.firstHeader("Content-type")|
-| firstParam(string) | param | 获取一个请求参数(注意返回值是param,包含参数名/参数值/参数类型[text/file]) | request.firstParam("name")|
-| firstParamValue(string) | param | 获取一个请求参数值 | request.firstParamValue("name")|
+| querys() | request | 获取所有的query参数 | request.querys()|
+| query(string, string) | request | 设置query(请求时将被追加在url后) | request.query("name","Tom")|
+| params() | array\<param> | 获取所有参数 | request.params()|
+| params(string) | array\<param> | 获取指定参数名的所有参数 | request.params("name")|
+| containsParam(string) | bool | 判断当前请求是否有指定请求参数 | request.containsParam("name")|
+| fileParam(string, string) | request | 设置一个文件参数 | request.fileParam("file","/xxx/xxx/xxxx.xxx")|
+| firstParam(string) | param | 获取第一个请求参数(注意返回值是param,包含参数名/参数值/参数类型[text/file]) | request.firstParam("name")|
+| firstParamValue(string) | param | 获取第一个请求参数值 | request.firstParamValue("name")|
+| lastParam(string) | param | 获取最后一个请求参数(注意返回值是param,包含参数名/参数值/参数类型[text/file]) | request.lastParam("name")|
+| lastParamValue(string) | param | 获取最后一个请求参数值 | request.lastParamValue("name")|
+| param(string, string) | request | 设置`param` | request.param("name","Tom")|
+| paramValues(string) | array\<string> | 获取指定参数所有值 | request.paramValues("name")|
 | header(string, string) | request | 设置`header` | request.header("Content-type","application/json")|
 | headers() | array\<header> | 获取所有的`header` | request.headers()|
 | headers(string) | array\<string> | 获取指定`header`所有值 | request.headers("Content-type")|
-| lastHeader(string) | string | 获取一个header参数 | request.lastHeader("Content-type")|
-| lastParam(string) | param | 获取一个请求参数(注意返回值是param,包含参数名/参数值/参数类型[text/file]) | request.lastParam("name")|
-| lastParamValue(string) | param | 获取一个请求参数值 | request.lastParamValue("name")|
-| param(string, string) | request | 设置`param` | request.param("name","Tom")|
-| query(string, string) | request | 设置query(请求时将被追加在url后) | request.query("name","Tom")|
-| querys() | request | 获取所有的query参数 | request.querys()|
-| paramValues(string) | array\<string> | 获取指定参数所有值 | request.paramValues("name")|
-| params() | array\<param> | 获取所有参数 | request.params()|
-| params(string) | array\<param> | 获取指定参数名的所有参数 | request.params("name")|
+| containsHeader(string) | bool | 判断当前请求是否有指定`header` | request.containsHeader("token")|
+| firstHeader(string) | string | 获取第一个header参数 | request.firstHeader("Content-type")|
+| lastHeader(string) | string | 获取最后一个header参数 | request.lastHeader("Content-type")|
 | setHeader(string, string) | request | 移除当前`header`名称的所有值,并设置`header` | request.setHeader("Content-type","application/json")|
 | removeHeader(string, string) | request | 移除指定`header`名称的指定值 | request.removeHeader("Content-type","application/json")|
 | removeHeaders(string) | request | 移除当前`header`名称的所有值 | request.removeHeaders("Content-type")|
 
 
-# `cookieStore`,可以从`httpClient.cookieStore()`获得
+---
+
+# response
+
+- 可以由`request.call()`得到
+
+## 主要方法有:
+
+| 方法  |  返回值  |  描述  |  示例  |
+| ------------ | ------------ | ------------ |------------ |
+| discard() | void | 丢弃这次请求的结果，重新发起此请求 | response.discard()|
+| code() | int | 响应code | response.code()|
+| string() | string | 响应内容 | response.string()|
+| contentType() | string | 响应的contentType | response.contentType()|
+| headers() | array\<header> | 获取所有的`header` | response.headers()|
+| headers(string) | array\<string> | 获取指定`header`所有值 | response.headers("Content-type")|
+| containsHeader(string) | bool | 判断当前响应是否有指定`header` | response.containsHeader("token")|
+| firstHeader(string) | string | 获取第一个header参数 | response.firstHeader("Content-type")|
+| lastHeader(string) | string | 获取第一个header参数 | response.lastHeader("Content-type")|
+| request() | request | 获取得到此响应的`request` | response.request()|
+
+---
+
+
+# cookieStore
+
+- 可以由`httpClient.cookieStore()`获得
 
 ## 主要方法有:
 
