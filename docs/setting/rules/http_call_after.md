@@ -3,6 +3,10 @@
 - http请求后回调
 - 注意:插件所有的`http`请求都将触发此回调
 
+| 规则目标(上下文it) | 附加上下文 |
+| ------------ | ------------ |
+| 无 | [request](../tools/httpClient.html), [response](../tools/httpClient.html)  |
+
 ## demo
 
 ***记录插件所有的请求的响应***

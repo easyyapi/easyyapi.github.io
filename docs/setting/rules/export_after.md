@@ -1,7 +1,10 @@
 # export.after
 
 - 每个api导出完成后回调
-- 可用上下文为: [api](../tools/api.html)
+
+| 规则目标(上下文it) | 附加上下文 |
+| ------------ | ------------ |
+| [method](../tools/it.html) | [api](../tools/api.html)  |
 
 
 ## demo
@@ -29,4 +32,19 @@ export.after=groovy:api.setPath("/pre"+api.path())
 ```properties
 export.after=groovy:api.addResponseHeader("level","","true","当前用户会员等级")
 ```
+
+***将method上的`@version xxx`加入到`url`中***
+
+``````properties
+export.after[#version]=groovy:```
+    def tag = it.doc("version")
+    def url = api.path()
+    if(url.contains("?")){
+        url = url +"&version=" + tag
+    }else{
+        url = url +"?version=" + tag
+    }
+    api.setPath(url)
+```
+``````
 

@@ -1,5 +1,6 @@
 # api.open
 
+- 可用上下文`it`为: [method](../tools/it.html)
 - 标记接口是否公开
 
 ### demo
