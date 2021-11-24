@@ -7,14 +7,21 @@
 
 
 ## 功能特性
-- [导出API文档到`Postman`](export2postman.md)
-- [导出API文档到`Yapi`](export2yapi.md)
-- [导出API文档到`Markdown`](export2markdown.md)
-- [导出RPC文档到`Yapi`](export_rpc.md)
-- [导出RPC文档到`Markdown`](export_rpc.md)
+
+- [导出API文档](use.md)
 - [在`IDEA`中直接发起API请求](call.md)
 - Api DashBoard
 - YApi DashBoard
+
+## 支持项列表
+
+|   |  默认支持  |  额外(配置)支持  |
+| ------------ | ------------ | ------------ |
+| 语言 | java, kotlin | scala |
+| web | [spring](https://spring.io/), [quarkus](https://quarkus.io/) | [dubbo](https://dubbo.apache.org) |
+| 导出到 | [Postman](export2postman.md), [Yapi](export2yapi.md), [Markdown](export2markdown.md) | - |
+| 常用框架 | javax.validation, Jackson, Gson |  [swagger](https://swagger.io/) |
+
 
 ## Contribution
 
