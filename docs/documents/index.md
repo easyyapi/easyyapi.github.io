@@ -18,7 +18,7 @@
 |   |  默认支持  |  额外(配置)支持  |
 | ------------ | ------------ | ------------ |
 | 语言 | java, kotlin | scala |
-| web | [spring](https://spring.io/), [quarkus](https://quarkus.io/) | [dubbo](https://dubbo.apache.org) |
+| web | [spring](https://spring.io/), [feign](https://spring.io/projects/spring-cloud-openfeign), [quarkus](https://quarkus.io/) | [dubbo](https://dubbo.apache.org) |
 | 导出到 | [Postman](export2postman.md), [Yapi](export2yapi.md), [Markdown](export2markdown.md) | - |
 | 常用框架 | javax.validation, Jackson, Gson |  [swagger](https://swagger.io/) |
 
