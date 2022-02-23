@@ -14,9 +14,11 @@
  class.is.ctrl=true
  ```
 
+---
+
 ## 允许导出注释有`ctrl`类中的`api`
 
-- 则可配置
+- 如果配置为`导出所有类中的api`出现卡顿，希望通过注释`@ctrl`来控制哪些类会包含`api`，那可配置为
 
  ```properties
  class.is.ctrl=#ctrl

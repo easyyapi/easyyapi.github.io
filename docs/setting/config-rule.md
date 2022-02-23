@@ -83,7 +83,7 @@
 
 ---
 
-***NOTES:[本地文件配置](local-file-config.md)***
+***NOTES: [本地文件配置](local-file-config.md)***
 
 ---
 

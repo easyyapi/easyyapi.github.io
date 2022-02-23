@@ -14,5 +14,6 @@
     * [Yapi Render](yapi_render.md)
     * [Call Api](call.md)
     * [Script Executor](script_executor.md)
+    * [Generic](generic.md)
 * [注释规范](docs.md)
     * [java注释demo](java_doc_demo.md)
