@@ -5,7 +5,6 @@
 - [基础配置](https://github.com/tangcent/easy-yapi/blob/master/third/swagger.config)
 
 ``````properties
-
 # swagger
 
 # ApiParam
@@ -16,10 +15,12 @@ param.ignore=@io.swagger.annotations.ApiParam#hidden
 
 # Api
 class.doc=@io.swagger.annotations.Api#value
+class.doc=@io.swagger.annotations.Api#tags
+ignore=@io.swagger.annotations.Api#hidden
 
 # ApiModel
-class.doc=io.swagger.annotations.ApiModel#value
-class.doc=io.swagger.annotations.ApiModel#description
+class.doc=@io.swagger.annotations.ApiModel#value
+class.doc=@io.swagger.annotations.ApiModel#description
 
 # ApiModelProperty
 json.rule.field.name=@io.swagger.annotations.ApiModelProperty#name
