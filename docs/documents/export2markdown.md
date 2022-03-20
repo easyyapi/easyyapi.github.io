@@ -15,3 +15,5 @@
 
  - outputDemo: 导出`markdown`文档时, 为每个API生成一个响应demo
  - outputCharset: 选择导出`markdown`文档时使用的字符集, 当导出文档出现乱码时可尝试修改此配置.
+
+**更多自定义配置** : [`Markdown`自定义规则](/setting/markdown.html)
