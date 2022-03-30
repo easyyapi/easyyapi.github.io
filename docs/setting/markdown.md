@@ -27,17 +27,69 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;md.methodDoc.desc | v2.3.4+ | 输出方法描述, 替换默认的\[`**Desc:**`] |
 | &nbsp;&nbsp;&nbsp;&nbsp;md.methodDoc.params | v2.3.4+ | 输出方法参数, 替换默认的\[`**Params:**`] |
 | &nbsp;&nbsp;&nbsp;&nbsp;md.methodDoc.return | v2.3.4+ | 输出方法响应, 替换默认的\[`**Return:**`] |
+| &nbsp;&nbsp;&nbsp;&nbsp;md.bool.true | v2.3.5+ | 表示`是`, 替换默认的\[`YES`] |
+| &nbsp;&nbsp;&nbsp;&nbsp;md.bool.false | v2.3.5+ | 表示`否`, 替换默认的\[`NO`] |
+| &nbsp;&nbsp;&nbsp;&nbsp;md.table.${tableId}.${column}.ignore | v2.3.5+ | 是否隐藏指定表格的指定列 |
+| &nbsp;&nbsp;&nbsp;&nbsp;md.table.${tableId}.${column}.name | v2.3.5+ | 设置指定表格的指定列的列名 |
+| &nbsp;&nbsp;&nbsp;&nbsp;md.table.${tableId}.${column}.align | v2.3.5+ | 设置指定表格的指定列的对齐方式 |
 
+
+## 可用表格信息
+
+| 表格(tableId) | 列(column) | 版本 | 描述 |
+| ------------ | ------------ | ------------ | ------------ |
+| request.pathParams | name | v2.3.5+ | 请求路径参数表格中的`名称` |
+| request.pathParams | value | v2.3.5+ | 请求路径参数表格中的`值` |
+| request.pathParams | desc | v2.3.5+ | 请求路径参数表格中的`描述` |
+| request.headers | name | v2.3.5+ | 请求header表格中的`名称` |
+| request.headers | value | v2.3.5+ | 请求header表格中的`值` |
+| request.headers | required | v2.3.5+ | 请求header表格中的`必须` |
+| request.headers | desc | v2.3.5+ | 请求header表格中的`描述` |
+| request.querys | name | v2.3.5+ | 请求参数表格中的`名称` |
+| request.querys | value | v2.3.5+ | 请求参数表格中的`值` |
+| request.querys | required | v2.3.5+ | 请求参数表格中的`必须` |
+| request.querys | desc | v2.3.5+ | 请求参数表格中的`描述` |
+| request.body | name | v2.3.5+ | 请求Body表格中的`名称` |
+| request.body | type | v2.3.5+ | 请求Body表格中的`类型` |
+| request.body | required | v2.3.5+ | 请求Body表格中的`必须` |
+| request.body | default | v2.3.5+ | 请求Body表格中的`默认值` |
+| request.body | desc | v2.3.5+ | 请求Body表格中的`描述` |
+| request.form | name | v2.3.5+ | 请求表单表格中的`名称` |
+| request.form | value | v2.3.5+ | 请求表单表格中的`值` |
+| request.form | required | v2.3.5+ | 请求表单表格中的`必须` |
+| request.form | type | v2.3.5+ | 请求表单表格中的`类型` |
+| request.form | desc | v2.3.5+ | 请求表单表格中的`描述` |
+| response.headers | name | v2.3.5+ | 请求header表格中的`名称` |
+| response.headers | value | v2.3.5+ | 请求header表格中的`值` |
+| response.headers | required | v2.3.5+ | 请求header表格中的`必须` |
+| response.headers | desc | v2.3.5+ | 请求header表格中的`描述` |
+| response.body | name | v2.3.5+ | 响应Body表格中的`名称` |
+| response.body | type | v2.3.5+ | 响应Body表格中的`类型` |
+| response.body | required | v2.3.5+ | 响应Body表格中的`必须` |
+| response.body | default | v2.3.5+ | 响应Body表格中的`默认值` |
+| response.body | desc | v2.3.5+ | 响应Body表格中的`描述` |
+| methodDoc.params | name | v2.3.5+ | 方法文档中的参数表格中的`名称` |
+| methodDoc.params | type | v2.3.5+ | 方法文档中的参数表格中的`类型` |
+| methodDoc.params | required | v2.3.5+ | 方法文档中的参数表格中的`必须` |
+| methodDoc.params | default | v2.3.5+ | 方法文档中的参数表格中的`默认值` |
+| methodDoc.params | desc | v2.3.5+ | 方法文档中的参数表格中的`描述` |
+| methodDoc.return | name | v2.3.5+ | 方法文档中的返回类型表格中的`名称` |
+| methodDoc.return | type | v2.3.5+ | 方法文档中的返回类型表格中的`类型` |
+| methodDoc.return | required | v2.3.5+ | 方法文档中的返回类型表格中的`必须` |
+| methodDoc.return | default | v2.3.5+ | 方法文档中的返回类型表格中的`默认值` |
+| methodDoc.return | desc | v2.3.5+ | 方法文档中的返回类型表格中的`描述` |
 
 ## 规则上下文
 
 
 | 对象 | 版本 | 描述 |
 | ------------ | ------------ | ------------ |
-| type | v2.3.4+ | "methodDoc"/"request" |
-| doc | v2.3.4+ | methodDoc/request |
+| type | v2.3.4+ | `methodDoc`(方法文档) / `request`(即api) |
+| doc | v2.3.4+ | 当前`API`或`methodDoc` |
+| [api](/setting/tools/api.html) | v2.3.4+ | 当前`API`,仅`type`为`request`时可用 |
+| methodDoc | v2.3.4+ | 当前方法文档,仅`type`为`methodDoc`时可用 |
 | deep | v2.3.4+ | 当前markdown层次 |
-| title| v2.3.4+ | 当前title |
+| title | v2.3.4+ | 当前title |
 
 ---
 
@@ -86,6 +138,61 @@ md.response.body.demo=**响应示例:**
 md.methodDoc.desc=groovy:"**描述:** "+doc.desc
 md.methodDoc.params=**参数:**
 md.methodDoc.return=**返回:**
+
+# for tables(request)
+md.table.request.pathParams.name.name=名称
+md.table.request.pathParams.value.name=值
+md.table.request.pathParams.desc.name=备注
+
+md.table.request.headers.name.name=名称
+md.table.request.headers.value.name=值
+md.table.request.headers.desc.name=备注
+md.table.request.headers.required.name=必须
+
+md.table.request.querys.name.name=名称
+md.table.request.querys.value.name=值
+md.table.request.querys.desc.name=备注
+md.table.request.querys.required.name=必须
+
+md.table.request.form.name.name=名称
+md.table.request.form.value.name=值
+md.table.request.form.desc.name=备注
+md.table.request.form.type.name=类型
+md.table.request.form.required.name=必须
+
+md.table.response.headers.name.name=名称
+md.table.response.headers.value.name=值
+md.table.response.headers.desc.name=备注
+md.table.response.headers.required.name=必须
+
+md.table.request.body.name.name=名称
+md.table.request.body.default.name=默认值
+md.table.request.body.desc.name=备注
+md.table.request.body.type.name=类型
+md.table.request.body.required.name=必须
+
+md.table.response.body.name.name=名称
+md.table.response.body.default.name=默认值
+md.table.response.body.desc.name=备注
+md.table.response.body.type.name=类型
+md.table.response.body.required.name=必须
+
+# for tables(methodDoc)
+md.table.methodDoc.params.name.name=名称
+md.table.methodDoc.params.default.name=默认值
+md.table.methodDoc.params.desc.name=备注
+md.table.methodDoc.params.type.name=类型
+md.table.methodDoc.params.required.name=必须
+
+md.table.methodDoc.return.name.name=名称
+md.table.methodDoc.return.default.name=默认值
+md.table.methodDoc.return.desc.name=备注
+md.table.methodDoc.return.type.name=类型
+md.table.methodDoc.return.required.name=必须
+
+# alias for bool
+md.bool.true=是
+md.bool.false=否
 ``````
 
 ***快速配置***

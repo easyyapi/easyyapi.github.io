@@ -1,7 +1,7 @@
 # `Yapi` `mock`规则
 
-- 默认对于枚举类型或注释里引用的枚举类型的字段，会`mock`为目标枚举值
-- 有两种额外的配置方式，根据实际情况选择适合的方式配置
+- 默认对于枚举类型或注释里引用的枚举类型的字段, 会`mock`为目标枚举值
+- 有两种额外的配置方式, 根据实际情况选择适合的方式配置
 
 ---
 
@@ -83,7 +83,7 @@ private Integer type;
 
 - 配置灵活, 但有`代码/注释`侵入性
 - 非常适合有校验框架的情况, 如`javax.validation`
-- 参见:[field.mock](rules/field_mock.md)
+- 参照:[field.mock](rules/field_mock.md)
 
 ---
 
@@ -91,7 +91,7 @@ private Integer type;
 
 - 配置稍难, 零侵入
 - 非常适合字段名定义很规范的项目
-- 配置方式为: ```mock.[field|type]=@mock```,参见下方示例.
+- 配置方式为: ```mock.[field|type]=@mock```,参照下方示例.
 
 ***一般先增加一些自定义mock规则***
 
@@ -111,7 +111,7 @@ natural_lt_1000=@natural(0,1000)
 float_with_two=@natural(0,10000).@natural(0,100)
 #http url
 http_url=@pick(["http","https"])://www.@domain()/@string('lower',1,8)?@string('lower',2,4)=@string('number',1,2)
-#objectId 只是字符和位数，不满足具体协议
+#objectId 只是字符和位数, 不满足具体协议
 objectId=@string("0123456789abcdef",24,24)
 ```
 

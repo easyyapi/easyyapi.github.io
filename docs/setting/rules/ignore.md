@@ -1,6 +1,6 @@
 # ignore
 
-- 用于忽略`class`/`method`，不进行解析
+- 用于忽略`class`/`method`, 不进行解析
 - 注释在`class`上时,整个类将被忽略
 - 注释在`method`上时,当前方法将被忽略
 

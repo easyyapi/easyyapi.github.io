@@ -11,9 +11,9 @@
 | notNullOrEmpty(obj) | Boolean | 等价于!isNullOrEmpty | tool.notNullOrEmpty(obj)| 
 | asArray(obj) | Array | 将对象转换为数组 | tool.asArray(obj)| 
 | asList(obj) | List | 将对象转换为集合 | tool.asList(obj)| 
-| intersect(any，other) | Array | 取两个对象的交集 | tool.intersect(any，other)| 
-| anyIntersect(any，other) | Boolean | 判断两个对象是否有交集 | tool.anyIntersect(any，other)| 
-| equalOrIntersect(any，other) | Boolean | 判断两个对象是否相同或有交集,与`anyIntersect`不同的是，对于两个空对象，将返回`true` | tool.equalOrIntersect(any，other)| 
+| intersect(any, other) | Array | 取两个对象的交集 | tool.intersect(any, other)| 
+| anyIntersect(any, other) | Boolean | 判断两个对象是否有交集 | tool.anyIntersect(any, other)| 
+| equalOrIntersect(any, other) | Boolean | 判断两个对象是否相同或有交集,与`anyIntersect`不同的是, 对于两个空对象, 将返回`true` | tool.equalOrIntersect(any, other)| 
 | newSet(items...) | Set | 创建Set对象 | tool.newSet("ele1","ele2")| 
 | newList(items...) | List | 创建List对象 | tool.newList("ele1","ele2")| 
 | newMap() | Map | 创建Map对象 | tool.newMap()| 

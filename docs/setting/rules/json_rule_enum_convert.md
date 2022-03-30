@@ -91,7 +91,7 @@ private int type;
 
 ### 统一处理
 
-- 特殊的，声明如下接口:
+- 特殊的, 声明如下接口:
 
 ```java
 package com.itangcent.common.constant;

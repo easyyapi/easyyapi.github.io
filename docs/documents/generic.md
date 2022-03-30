@@ -1,6 +1,6 @@
 # Generic(自定义框架)
 
-- 支持自定义web框架
+插件可以通过配置来支持自定义web框架, 步骤如下:
 - 启用`generic`
 
 ![call](../asset/generic.png)

@@ -23,7 +23,7 @@
 | 常用框架 | javax.validation, Jackson, Gson |  [swagger](https://swagger.io/) |
 
 
-## Contribution
+## Community
 
 * 帮助维护文档: [easyyapi.com](https://github.com/easyyapi/easyyapi.github.io/tree/dev)
   请将您的PR提交到dev分支

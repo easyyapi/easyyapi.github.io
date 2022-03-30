@@ -115,7 +115,7 @@
     }
     ```
  
- * 特殊需求参见:[class.doc](/setting/rules/class_doc.html) | [method.doc](/setting/rules/method_doc.html) | [api.name](/setting/rules/api_name.html)
+ * 特殊需求参照:[class.doc](/setting/rules/class_doc.html) | [method.doc](/setting/rules/method_doc.html) | [api.name](/setting/rules/api_name.html)
 
 ---
 
@@ -324,7 +324,7 @@
 
 ## 如何开启javax_validation分组校验
 
-   * 参见[javax_validation](/framwork/javax_validation.html),
+   * 参照[javax_validation](/framwork/javax_validation.html),
    在 <kbd>Preferences(Settings)</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> ><kbd>Recommend</kbd> 中移除勾选`javax.validation`, 勾选`javax.validation(grouped)`
 
 ## 如何激活对com.fasterxml.jackson.annotation.JsonIgnoreProperties的支持

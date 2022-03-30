@@ -2,7 +2,7 @@
 
 - 用于设置方法文档(rpc)的路径
 - 为了防止重载方法覆盖,默认生成的path后加上了参数信息:`$className/$methodName/$args`
-- 根据项目情况，可自行配置以简化路径长度
+- 根据项目情况, 可自行配置以简化路径长度
 
 
 ## 修改默认行为
@@ -38,7 +38,7 @@ public interface UserClient {
 - 导出的路径为:<br>
     `/com.itangcent.dubbo.demo.client.UserClient/set/long/java.lang.String/java.lang.String/long/`
 
-***如果确认无重载方法，可以尝试去掉参数信息:***
+***如果确认无重载方法, 可以尝试去掉参数信息:***
 
 - 配置如下:
 

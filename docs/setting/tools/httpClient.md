@@ -73,7 +73,7 @@
 
 | 方法  |  返回值  |  描述  |  示例  |
 | ------------ | ------------ | ------------ |------------ |
-| discard() | void | 丢弃这次请求的结果，重新发起此请求 | response.discard()|
+| discard() | void | 丢弃这次请求的结果, 重新发起此请求 | response.discard()|
 | code() | int | 响应code | response.code()|
 | string() | string | 响应内容 | response.string()|
 | contentType() | string | 响应的contentType | response.contentType()|
@@ -99,4 +99,4 @@
 | addCookies(cookies) | void | 添加多个cookie | httpClient.cookieStore().addCookies(cookies) |
 | clear() | void | 清除cookie | httpClient.cookieStore().clear() |
 | cookies() | array\<cookie> | 获得当前的cookies | httpClient.cookieStore().cookies() |
-| newCookie() | cookie | 创建一个`cookie`,注意:并不会自动添加到`cookieStore`中，需要手动调用`addCookie`加入 | httpClient.cookieStore().newCookie() |
+| newCookie() | cookie | 创建一个`cookie`,注意:并不会自动添加到`cookieStore`中, 需要手动调用`addCookie`加入 | httpClient.cookieStore().newCookie() |

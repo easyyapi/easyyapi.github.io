@@ -8,6 +8,7 @@
     * [导出到yapi](export2yapi.md)
     * [导出到postman](export2postman.md)
     * [导出到markdown](export2markdown.md)
+    * [导出普通java method文档](export_methodDoc.md)
     * [导出rpc文档](export_rpc.md)
     * [旧版本yapi或定制化yapi](login_mode_yapi.md)
 * [进阶使用](advanced_use.md)

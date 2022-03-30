@@ -1,6 +1,6 @@
 # `api`即为当前导出的`api`
 
-- 应用对象只提供方法即`api.method()✅`，不提供属性`api.property❎`
+- 应用对象只提供方法即`api.method()✅`, 不提供属性`api.property❎`
 
 ## 主要方法
 

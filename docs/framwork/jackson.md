@@ -14,7 +14,7 @@ field.ignore=@com.fasterxml.jackson.annotation.JsonIgnore#value
 
 ## JsonIgnoreProperties
 
-[推荐配置](https://github.com/tangcent/easy-yapi/blob/master/idea-plugin/src/main/resources/.recommend.easy.api.config)中有提供选项，但默认未选中.
+[推荐配置](https://github.com/tangcent/easy-yapi/blob/master/idea-plugin/src/main/resources/.recommend.easy.api.config)中有提供选项, 但默认未选中.
 
 ``````properties
 

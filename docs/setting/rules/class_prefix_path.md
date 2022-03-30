@@ -11,7 +11,7 @@ class.prefix.path=${server.servlet.context-path}
 ###set ignoreUnresolved = false
 ```
 
-### 使用推荐配置后，可识别如下spring配置
+### 使用推荐配置后, 可识别如下spring配置
 
 - spring application.properties 
 

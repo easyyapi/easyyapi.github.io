@@ -25,7 +25,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.required](rules/field_required.md) | field | v0.7.3+ | 字段是否为必须(即不可为空) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[folder.name](rules/folder_name.md)  | method | v1.9.2+ | 设置api所属文件夹 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[ignore](rules/ignore.md) | class/method | v0.7.2+ | 忽略API |
-| ☆[json.rule.convert](rules/json_rule_convert.md) | - | v0.7.2+ | 用于设置某些类型转换为其他类型处理，通常用于使用了Spring的自定义类型转换器的情况 |
+| ☆[json.rule.convert](rules/json_rule_convert.md) | - | v0.7.2+ | 用于设置某些类型转换为其他类型处理, 通常用于使用了Spring的自定义类型转换器的情况 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[json.rule.enum.convert](rules/json_rule_enum_convert.md) | class | v1.2.0+ | 用于枚举类型的特殊转换 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[~~json.rule.field.ignore~~](rules/json_rule_field_ignore.md) | field | v0.7.2+ | 忽略字段(设置某些字段不出现在json中,或不需要请求时给出) 已废弃, 使用[field.ignore](rules/field_ignore.md)代替 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[~~json.rule.field.name~~](rules/json_rule_field_name.md) | field | v0.7.2+ | 设置输出的字段名(用于json中字段名与类中字段名不一致) |
@@ -122,7 +122,7 @@
 
 ## 高级脚本规则
 
-- 由于`JDK11`后`js`引擎可能缺失，故推荐使用`groovy`作为首选
+- 由于`JDK11`后`js`引擎可能缺失, 故推荐使用`groovy`作为首选
 - `groovy`规则为 `groovy:groovyScript`
 - `js`规则为 `js:jsScript`
 - 脚本中可用工具/对象: [tools](tools.md)

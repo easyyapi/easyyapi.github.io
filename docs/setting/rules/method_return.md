@@ -4,7 +4,7 @@
 - 常用于以下情况:
     - 方法返回Object
     - 方法返回类型中的泛型类型未明确`<Object>`/`<?>`/`<*>`
-    - 方法返回类型与实际响应无关，例如通过操作HttpServletResponse来返回响应
+    - 方法返回类型与实际响应无关, 例如通过操作HttpServletResponse来返回响应
 
 ## 如以下API
 
@@ -46,7 +46,7 @@ method.return=#real_return
 ---
 
 
-为了方便书写，我们可以尝试使用`{@link}`来设置实际响应类型，利用`helper.resolveLink`来解析
+为了方便书写, 我们可以尝试使用`{@link}`来设置实际响应类型, 利用`helper.resolveLink`来解析
 
 ***例如做如下配置:***
 
@@ -66,7 +66,7 @@ method.return[#real_return]=groovy: helper.resolveLink(it.doc("real_return"))
 ---
 
 
-更进一步的，如果所有的响应都由`com.itangcent.common.dto.Result`包装
+更进一步的, 如果所有的响应都由`com.itangcent.common.dto.Result`包装
 
 ***做如下配置:***
 

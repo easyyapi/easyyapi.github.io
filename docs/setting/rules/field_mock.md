@@ -230,7 +230,7 @@ public class ValidationDemoDto {
 # field.mock.resolveProperty
 
 - 用以开关是否解析`field.mock`规则结果中的占位符如`${float_with_two}`
-- 默认为`true`,如果不希望解析，可以设置为关闭
+- 默认为`true`,如果不希望解析, 可以设置为关闭
 ```properties
 field.mock.resolveProperty=false
 ```

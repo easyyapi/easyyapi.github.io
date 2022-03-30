@@ -1,12 +1,12 @@
 **兼容旧版本yapi/定制化yapi**
 
-对于`旧版本yapi或定制化yapi`等`token`不可用的情况，可按以下步骤改为配置`projectId`
+对于`旧版本yapi或定制化yapi`等`token`不可用的情况, 可按以下步骤改为配置`projectId`
 
-1. 开启`loginMode`: 勾选<kbd>Preferences(Settings)</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > <kbd>Yapi</kbd> > <kbd>loginMode</kbd> , 参见:[IDEA配置](/setting/ide-setting.html)
+1. 开启`loginMode`: 勾选<kbd>Preferences(Settings)</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > <kbd>Yapi</kbd> > <kbd>loginMode</kbd> , 参照:[IDEA配置](/setting/ide-setting.html)
 
 2. 在<kbd>Preferences(Settings)</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > <kbd>Built-in config</kbd> 中配置鉴权逻辑:
 
-    - 如登录接口可用，则可以尝试[配置](/setting/local-file-config.html)如下:
+    - 如登录接口可用, 则可以尝试[配置](/setting/local-file-config.html)如下:
     
     ``````
     yapi.export.before=groovy:```
@@ -18,7 +18,7 @@
     ```
     ``````
 
-    - 对于某些sso登录的，可以尝试类似如下[配置](/setting/local-file-config.html):
+    - 对于某些sso登录的, 可以尝试类似如下[配置](/setting/local-file-config.html):
 
     ``````
     yapi.export.before=groovy:```
@@ -27,7 +27,7 @@
                     .contentType("application/json")
                     .body(["name":"xxx","pswd":"xxxx"])
                     .call();
-        //如果发生了域名转换，也进行cookie转换
+        //如果发生了域名转换, 也进行cookie转换
         def cookieStore=httpClient.cookieStore()
         for(cookie in cookieStore.cookies()){
             logger.info(cookie.toString())
@@ -49,7 +49,7 @@
     ```
     ``````
 
-    - 对于无法自动登录的，可以尝试直接[配置](/setting/local-file-config.html)`cookie`:
+    - 对于无法自动登录的, 可以尝试直接[配置](/setting/local-file-config.html)`cookie`:
 
     ``````
     yapi.export.before=groovy:```
