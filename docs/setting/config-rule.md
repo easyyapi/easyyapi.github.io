@@ -56,11 +56,31 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[postman.prerequest](rules/postman_prerequest.md)  | class | v1.9.5+ | 设置`postman`API的[`prerequest`](https://learning.postman.com/docs/postman/scripts/pre-request-scripts/) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[postman.test](rules/postman_test.md)  | class | v1.9.5+ | 设置`postman`API的[`test`](https://learning.postman.com/docs/postman/scripts/test-scripts/) |
 
+
+---
+
+# 支持的简单配置
+
+*简单配置无上下文*
+
+| &nbsp;&nbsp;&nbsp;&nbsp;规则的key | 版本 | 配置类型 | 规则描述 | 示例 |
+| ------------ | ------------ | ------------ | ------------ | ------------ |
+| &nbsp;&nbsp;&nbsp;&nbsp;yapi.server | v2.2.1+ | string | 设置`yapi`地址,优先级高于`setting`. 可用于多个项目要导入不同`yapi`的情况 | yapi.server=http://yapi.itangcent.com/ |
+| &nbsp;&nbsp;&nbsp;&nbsp;dev | v2.2.1+ | bool | 启动开发模式,打印更详细的日志 | dev=true |
+| &nbsp;&nbsp;&nbsp;&nbsp;max.deep | v2.3.6+ | int | 解析`json`时最大深度,默认6 | max.deep=8 |
+| &nbsp;&nbsp;&nbsp;&nbsp;max.elements | v2.3.6+ | int | 解析`json`时最大字段数,默认256 | max.elements=512 |
+| &nbsp;&nbsp;&nbsp;&nbsp;json.cache.disable | v2.1.0+ | bool | 禁用`json`解析缓存 | json.cache.disable=true |
+| &nbsp;&nbsp;&nbsp;&nbsp;http.timeOut | v2.1.0+ | int | `http`请求的超时时间(s),优先级高于`setting` | http.timeOut=5 |
+| &nbsp;&nbsp;&nbsp;&nbsp;auto.format.url | v2.1.0+ | bool | 导入`yapi`时是否格式化`url`,确保`url`以`/`开始，且将[a-zA-Z0-9-/_:.{}?=!]之外的字符替换为`/` | auto.format.url=false |
+| &nbsp;&nbsp;&nbsp;&nbsp;field.mock.resolveProperty | v2.1.0+ | bool | 是否处理`yapi` `mock`信息中的占位符`${xxx}` | field.mock.resolveProperty=true |
+| &nbsp;&nbsp;&nbsp;&nbsp;api.tag.delimiter | v2.1.0+ | string | `yapi` `tag`的分割符, 默认为`,` | api.tag.delimiter=,#| |
+
+
 ---
 
 # 支持的回调
 
-- 部分回调方法中可能没有`it`, 但可能会有附加的上下文供使用
+*部分回调方法中可能没有`it`, 但可能会有附加的上下文供使用*
 
 | &nbsp;&nbsp;&nbsp;&nbsp;规则的key | 规则目标(上下文it) | 附加上下文 | 版本 | 规则描述 |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -77,8 +97,8 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[json.class.parse.after](events/json_class_parse_after.md)  | class | 无  | v2.2.8+ | 解析类型后回调 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[json.field.parse.before](events/json_field_parse_before.md)  | field | 无  | v2.2.8+ | 解析类型字段前回调 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[json.field.parse.after](events/json_field_parse_after.md)  | field | 无  | v2.2.8+ | 解析类型字段后回调 |
-| &nbsp;&nbsp;&nbsp;&nbsp;[json.method.parse.before](events/json_method_parse_before.md)  | method | 无  | v2.2.8+ | 解析类型方法(getter|setter)前回调 |
-| &nbsp;&nbsp;&nbsp;&nbsp;[json.method.parse.after](events/json_method_parse_after.md)  | method | 无  | v2.2.8+ | 解析类型方法(getter|setter)后回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[json.method.parse.before](events/json_method_parse_before.md)  | method | 无  | v2.2.8+ | 解析类型方法 (getter\|setter)前回调 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[json.method.parse.after](events/json_method_parse_after.md)  | method | 无  | v2.2.8+ | 解析类型方法(getter\|setter)后回调 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[yapi.export.before](events/yapi_export_before.md)  | 无 | 无 | v2.0.1+ | 导出到yapi之前回调 |
 
 ---

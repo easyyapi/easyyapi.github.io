@@ -15,3 +15,4 @@
 * [有的字段可能有不同类型的值?](index.md#有的字段可能有不同类型的值)
 * [如何开启javax_validation分组校验?](index.md#如何开启javax_validation分组校验)
 * [如何激活对com.fasterxml.jackson.annotation.JsonIgnoreProperties的支持?](index.md#如何激活对com.fasterxml.jackson.annotation.JsonIgnoreProperties的支持)
+* [导出时出现`com.xxx.Xxx is to complex. Blocked cause by xxx reached xxx`, 如何处理?](index.md#导出时出现com.xxx.Xxx_is_to_complex._Blocked_cause_by_xxx_reached_xxx如何处理)
