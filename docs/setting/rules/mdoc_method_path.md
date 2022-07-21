@@ -1,8 +1,10 @@
 # mdoc.method.path
 
-- 用于设置方法文档(rpc)的路径
-- 为了防止重载方法覆盖,默认生成的path后加上了参数信息:`$className/$methodName/$args`
-- 根据项目情况, 可自行配置以简化路径长度
+> 用于设置方法文档(rpc)的路径
+
+> 为了防止重载方法覆盖,默认生成的path后加上了参数信息:`$className/$methodName/$args`
+
+> 根据项目情况, 可自行配置以简化路径长度
 
 
 ## 修改默认行为

@@ -1,8 +1,8 @@
 # postman.prerequest
 
-- 设置`postman`API的[`prerequest`](https://learning.postman.com/docs/postman/scripts/pre-request-scripts)
+> 设置`postman`API的[`prerequest`](https://learning.postman.com/docs/postman/scripts/pre-request-scripts)
 
-- 允许设置多条规则
+> 允许设置多条规则
 
 ## 固定`prerequest`配置示例如下
 

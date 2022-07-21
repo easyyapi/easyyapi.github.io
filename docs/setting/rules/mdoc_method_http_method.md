@@ -1,6 +1,6 @@
 # mdoc.method.http.method
 
-- 设置方法文档(rpc)HTTP请求方式, 默认`POST`
+> 设置方法文档(rpc)HTTP请求方式, 默认`POST`
 
 
 ## 修改默认行为

@@ -1,7 +1,7 @@
 # json.rule.enum.convert
 
-- 用于设置枚举类型的转换
-- 优先级低于[json.rule.convert](json_rule_convert.md)
+> 用于设置枚举类型的转换
+> 优先级低于[json.rule.convert](json_rule_convert.md)
 
 
 **假定有如下枚举类** 

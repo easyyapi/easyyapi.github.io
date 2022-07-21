@@ -14,7 +14,8 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[collection.postman.prerequest](rules/postman_prerequest.md#collection.postman.prerequest)  | class | v1.9.5+ | 设置`postman·collection`上的[`prerequest`](https://learning.postman.com/docs/writing-scripts/pre-request-scripts/#re-using-pre-request-scripts) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[collection.postman.test](rules/postman_test.md#collection.postman.test)  | class | v1.9.5+ | 设置`postman·collection`上的[`test`](https://learning.postman.com/docs/writing-scripts/test-scripts/#testing-collections-and-folders) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[constant.field.ignore](rules/constant_field_ignore.md)  | field | v1.3.8+ | 忽略常量字段 |
-| &nbsp;&nbsp;&nbsp;&nbsp;[enum.use.custom](rules/enum_use_custom.md) | class | v2.4.1+ | 用于设置使用`@see`枚举类型时的默认取值字段 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[enum.use.custom](rules/enum_use_custom.md) | class | v2.4.1+ | 用于设置使用`@see`枚举类型时的默认取值字段, 优先级高于[enum.use.by.type](rules/enum_use_by_type.md) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[enum.use.by.type](rules/enum_use_by_type.md) | class | v2.4.1+ | 用于设置使用`@see`枚举类型时的默认使用类型一致的字段, 优先级低于[enum.use.custom](rules/enum_use_custom.md) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[enum.use.ordinal](rules/enum_use_ordinal.md) | class | v2.2.1+ | 用于设置使用`@see`枚举类型时的默认使用`ordinal`作为取值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[enum.use.name](rules/enum_use_name.md) | class | v2.2.1+ | 用于设置使用`@see`枚举类型时的默认使用`name`作为取值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.advanced](rules/field_advanced.md) | field | v2.2.8+ | 提供`yapi`的高级设置信息 |

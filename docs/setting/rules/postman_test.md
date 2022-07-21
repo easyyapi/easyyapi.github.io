@@ -1,8 +1,8 @@
 # postman.test
 
-- 设置`postman`API的[`test`](https://learning.postman.com/docs/postman/scripts/test-scripts/)
+> 设置`postman`API的[`test`](https://learning.postman.com/docs/postman/scripts/test-scripts/)
 
-- 允许设置多条规则
+> 允许设置多条规则
 
 ## 固定`test`配置示例如下
 

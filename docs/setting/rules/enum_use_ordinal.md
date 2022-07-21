@@ -1,6 +1,10 @@
 # enum.use.ordinal
 
-- 用于设置使用`@see`枚举类型时的默认使用`ordinal`作为取值
+> 用于设置使用`@see`枚举类型时的默认使用`ordinal`作为取值
+
+> 优先级低于[enum.use.custom](enum_use_custom.md)和[enum.use.by.type](enum_use_by_type.md)
+
+> 所以要使用`enum.use.ordinal`需要先在推荐配置中取消[enum.use.by.type](enum_use_by_type.md)
 
 
 **假定有如下枚举类** 

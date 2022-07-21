@@ -25,6 +25,7 @@
     * [&nbsp;&nbsp;&nbsp;&nbsp;constant.field.ignore](rules/constant_field_ignore.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;field.advanced](rules/field_advanced.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;enum.use.custom](rules/enum_use_custom.md)
+    * [&nbsp;&nbsp;&nbsp;&nbsp;enum.use.by.type](rules/enum_use_by_type.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;enum.use.ordinal](rules/enum_use_ordinal.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;enum.use.name](rules/enum_use_name.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;field.default.value](rules/field_default_value.md)

@@ -1,7 +1,8 @@
 # json.rule.field.ignore
 
-- 忽略字段(设置某些字段不出现在json中,或不需要请求时给出)
-- `deprcated`, see [field.ignore](field_ignore.md)
+> 忽略字段(设置某些字段不出现在json中,或不需要请求时给出)
+
+> `deprcated`, see [field.ignore](field_ignore.md)
 
 ## 默认推荐配置
 

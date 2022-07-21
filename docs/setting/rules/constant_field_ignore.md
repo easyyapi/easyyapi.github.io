@@ -1,9 +1,9 @@
 # constant.field.ignore
 
-- 忽略常量字段
+> 忽略常量字段
 
 
-### 默认推荐配置(有误,待修复)
+### 默认推荐配置
 
 ```properties
 #ignore serialVersionUID

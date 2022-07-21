@@ -195,11 +195,17 @@
 
    * 可考虑增加如下配置:
 
-   ```properties
-   ## security description
-   find_role_in_PreAuthorize=(function(exp){var str="";if(exp.indexOf("hasRole")!=-1){var roles=exp.match(/hasRole\\((.*?)\\)/);if(roles&&roles.length>1){str+="require role:"+roles[1];}};return str})
-   method.doc[@org.springframework.security.access.prepost.PreAuthorize]=js:${find_role_in_PreAuthorize}(it.ann("org.springframework.security.access.prepost.PreAuthorize"))
-   ```
+``````properties
+## security description
+doc.method[@org.springframework.security.access.prepost.PreAuthorize]=groovy:```
+   def preAuthorize = it.ann("org.springframework.security.access.prepost.PreAuthorize")
+   if(tool.nullOrBlank(preAuthorize)){
+        return
+   }
+   def role = regex.getGroup1("hasRole\\('(.*?)'\\)",preAuthorize)
+   return "require role: $role"
+```
+``````
    
    * 示例:
 

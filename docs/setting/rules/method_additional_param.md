@@ -1,7 +1,8 @@
 # method.additional.param
 
-- API需要额外的`param`
-- 仅适用于url参数,不支持`form`/`body`
+> API需要额外的`param`
+
+> 仅适用于url参数,不支持`form`/`body`
 
 ### 例如接口都需要在`param`中携带token
 

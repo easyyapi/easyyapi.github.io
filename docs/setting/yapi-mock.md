@@ -7,11 +7,12 @@
 
 ## 通过合适的注释关联`枚举`/`常量`
 
-### 字段名与关联的枚举值字段名相同
+### 字段名与关联的枚举值字段名相同时
 
 ```java
 /**
 * 用户类型
+*
 * @see UserType
 */
 private Integer type;
@@ -24,11 +25,25 @@ private Integer type;
 | type | integer | 非必须 | | 用户类型 | 枚举: 1,2,3<br>枚举备注: 1 :管理员 2 :成员 3 :游客<br>mock: @pick([1,2,3]) |
 
 
-### 字段名与关联的枚举值字段名不同
+### 字段名与关联的枚举值字段名不同时
+
+- 推荐配置中默认使用了[enum.use.by.type](rules/enum_use_by_type.html), 一般来说可以简单注释为:
 
 ```java
 /**
 * 用户类型
+*
+* @see UserType
+*/
+private Integer userType;
+```
+
+- 但为了防止错误的解析, 依然建议在注释中指明使用的枚举字段
+
+```java
+/**
+* 用户类型
+*
 * @see UserType#type
 */
 private Integer userType;

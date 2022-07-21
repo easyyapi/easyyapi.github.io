@@ -1,6 +1,6 @@
 # method.additional.header
 
-- API需要额外的`header`
+> API需要额外的`header`
 
 ### 如JWT, 所有的接口都需要在header中携带token
 

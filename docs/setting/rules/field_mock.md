@@ -1,6 +1,6 @@
 # field.mock
 
-- 用于生成`yapi`相关mock信息
+> 用于生成`yapi`相关mock信息
 
 ## 默认推荐配置有三部分
 

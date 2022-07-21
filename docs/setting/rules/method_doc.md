@@ -1,6 +1,6 @@
 # method.doc(doc.method)
 
-- 方法(API)的额外注释
+> 方法(API)的额外注释
 
 
 ### 默认推荐配置

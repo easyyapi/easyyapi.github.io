@@ -1,6 +1,6 @@
 # field.advanced
 
-- 提供`yapi`的高级设置信息, 返回一个`json`字符串或者`map`来将信息设置到`yapi`的高级设置中
+> 提供`yapi`的高级设置信息, 返回一个`json`字符串或者`map`来将信息设置到`yapi`的高级设置中
 
 ![avatar](/asset/yapi-advanced.png)
 

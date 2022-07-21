@@ -1,6 +1,6 @@
 # class.prefix.path
 
-- 设置API请求前缀
+> 设置API请求前缀
 
 ### 默认推荐配置
 
