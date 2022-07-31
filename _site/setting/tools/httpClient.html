@@ -1,0 +1,457 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="UTF-8"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><link rel="apple-touch-icon" sizes="180x180" href="../../ydoc/images/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="../../ydoc/images/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="../../ydoc/images/favicon-16x16.png"/><link rel="manifest" href="../../ydoc/images/manifest.json"/><link rel="mask-icon" href="../../ydoc/images/safari-pinned-tab.svg" color="#5bbad5"/><meta name="theme-color" content="#ffffff"/><meta http-equiv="Cache-Control" content="no-transform"/><meta http-equiv="Cache-Control" content="no-siteapp"/><title>httpClient是提供的http相关帮助类(v1.9.0+)requestresponsecookieStore-配置</title><link rel="stylesheet" href="../../ydoc/styles/style.css"/><meta name="author" content="tangcent"/><meta name="keywords"/><meta name="description" content="Simplifies API Development"/><meta id="releativePath" content="../.."/><link rel="stylesheet" href="../../ydoc/ydoc-plugin-search/search.css"/><link rel="stylesheet" href="../../ydoc/ydoc-plugin-copy/clipboard.css"/></head><body><div class="g-doc"><div class="m-aside"><div class="m-summary" id="js-menu"><div class="m-summary-content" id="js-menu-content"><div class="m-summary-block"><div class="m-summary-title">配置</div><ul class="m-summary-list indent"><li class="item"><div class="m-summary-block"><a href="../index.html" class="href">通用配置</a><ul class="m-summary-list indent"><li class="item"><a href="../ide-setting.html" class="href">    在IDEA中设置</a></li><li class="item"><a href="../local-file-config.html" class="href">    使用项目内配置文件</a></li><li class="item"><a href="../yapi.html" class="href">☆yapi相关配置</a></li><li class="item"><a href="../postman.html" class="href">    postman相关配置</a></li><li class="item"><a href="../yapi-mock.html" class="href">☆yapi mock配置</a></li><li class="item"><a href="../markdown.html" class="href">    markdown自定义规则</a></li></ul></div></li><li class="item"><div class="m-summary-block"><a href="../config-rule.html" class="href">可用配置规则</a><ul class="m-summary-list indent"><li class="item"><a href="../rules/api_name.html" class="href">    api.name</a></li><li class="item"><a href="../rules/api_open.html" class="href">    api.open</a></li><li class="item"><a href="../rules/api_status.html" class="href">    api.status</a></li><li class="item"><a href="../rules/api_tag.html" class="href">    api.tag</a></li><li class="item"><a href="../rules/class_doc.html" class="href">    class.doc</a></li><li class="item"><a href="../rules/class_is_ctrl.html" class="href">    class.is.ctrl</a></li><li class="item"><a href="../rules/postman_test.html#class.postman.test" class="href">    class.postman.test</a></li><li class="item"><a href="../rules/postman_prerequest.html#class.postman.prerequest" class="href">    class.postman.prerequest</a></li><li class="item"><a href="../rules/class_prefix_path.html" class="href">    class.prefix.path</a></li><li class="item"><a href="../rules/postman_prerequest.html#collection.postman.prerequest" class="href">    collection.postman.prerequest</a></li><li class="item"><a href="../rules/postman_test.html#collection.postman.test" class="href">    collection.postman.test</a></li><li class="item"><a href="../rules/constant_field_ignore.html" class="href">    constant.field.ignore</a></li><li class="item"><a href="../rules/field_advanced.html" class="href">    field.advanced</a></li><li class="item"><a href="../rules/enum_use_custom.html" class="href">    enum.use.custom</a></li><li class="item"><a href="../rules/enum_use_by_type.html" class="href">    enum.use.by.type</a></li><li class="item"><a href="../rules/enum_use_ordinal.html" class="href">    enum.use.ordinal</a></li><li class="item"><a href="../rules/enum_use_name.html" class="href">    enum.use.name</a></li><li class="item"><a href="../rules/field_default_value.html" class="href">    field.default.value</a></li><li class="item"><a href="../rules/field_demo.html" class="href">    field.demo</a></li><li class="item"><a href="../rules/field_doc.html" class="href">☆field.doc</a></li><li class="item"><a href="../rules/field_ignore.html" class="href">    field.ignore</a></li><li class="item"><a href="../rules/field_mock.html" class="href">☆field.mock</a></li><li class="item"><a href="../rules/field_mock.html#field.mock.resolveproperty" class="href">    field.mock.resolveProperty</a></li><li class="item"><a href="../rules/field_name.html" class="href">    field.name</a></li><li class="item"><a href="../rules/field_required.html" class="href">    field.requierd</a></li><li class="item"><a href="../rules/folder_name.html" class="href">    folder.name</a></li><li class="item"><a href="../rules/ignore.html" class="href">    ignore</a></li><li class="item"><a href="../rules/mdoc_class_filter.html" class="href">    mdoc.class.filter</a></li><li class="item"><a href="../rules/mdoc_method_path.html" class="href">    mdoc.method.path</a></li><li class="item"><a href="../rules/mdoc_method_http_method.html" class="href">    mdoc.method.http.method</a></li><li class="item"><a href="../rules/method_doc.html" class="href">    method.doc</a></li><li class="item"><a href="../rules/method_content_type.html" class="href">    method.content.type</a></li><li class="item"><a href="../rules/method_default_http_method.html" class="href">    method.default.http.method</a></li><li class="item"><a href="../rules/method_additional_header.html" class="href">    method.additional.header</a></li><li class="item"><a href="../rules/method_additional_param.html" class="href">    method.additional.param</a></li><li class="item"><a href="../rules/module.html" class="href">    module</a></li><li class="item"><a href="../rules/method_return.html" class="href">☆method.return</a></li><li class="item"><a href="../rules/method_return_main.html" class="href">☆method.return.main</a></li><li class="item"><a href="../rules/json_rule_convert.html" class="href">☆json.rule.convert</a></li><li class="item"><a href="../rules/json_rule_enum_convert.html" class="href">    json.rule.enum.convert</a></li><li class="item"><a href="../rules/json_rule_field_ignore.html" class="href">    json.rule.field.ignore</a></li><li class="item"><a href="../rules/json_rule_field_name.html" class="href">    json.rule.field.name</a></li><li class="item"><a href="../rules/param_default_value.html" class="href">    param.default.value</a></li><li class="item"><a href="../rules/param_demo.html" class="href">    param.demo</a></li><li class="item"><a href="../rules/param_doc.html" class="href">    param.doc</a></li><li class="item"><a href="../rules/param_http_type.html" class="href">    param.http.type</a></li><li class="item"><a href="../rules/param_ignore.html" class="href">    param.ignore</a></li><li class="item"><a href="../rules/param_required.html" class="href">    param.requierd</a></li><li class="item"><a href="../rules/path_multi.html" class="href">    path.multi</a></li><li class="item"><a href="../rules/postman_host.html" class="href">    postman.host</a></li><li class="item"><a href="../rules/postman_prerequest.html" class="href">    postman.prerequest</a></li><li class="item"><a href="../rules/postman_test.html" class="href">    postman.test</a></li></ul></div></li><li class="item"><div class="m-summary-block"><a href="../config-rule.html#%e6%94%af%e6%8c%81%e7%9a%84%e5%9b%9e%e8%b0%83" class="href">支持的回调</a><ul class="m-summary-list indent"><li class="item"><a href="../rules/export_after.html" class="href">    export.after</a></li><li class="item"><a href="../events/yapi_export_before.html" class="href">    yapi.export.before</a></li><li class="item"><a href="../rules/http_call_after.html" class="href">    http.call.after</a></li><li class="item"><a href="../rules/http_call_before.html" class="href">    http.call.before</a></li><li class="item"><a href="../events/api_class_parse_before.html" class="href">    api.class.parse.before</a></li><li class="item"><a href="../events/api_class_parse_after.html" class="href">    api.class.parse.after</a></li><li class="item"><a href="../events/api_method_parse_before.html" class="href">    api.method.parse.before</a></li><li class="item"><a href="../events/api_method_parse_after.html" class="href">    api.method.parse.after</a></li><li class="item"><a href="../events/api_param_parse_before.html" class="href">    api.param.parse.before</a></li><li class="item"><a href="../events/api_param_parse_after.html" class="href">    api.param.parse.after</a></li><li class="item"><a href="../events/json_class_parse_before.html" class="href">    json.class.parse.before</a></li><li class="item"><a href="../events/json_class_parse_after.html" class="href">    json.class.parse.after</a></li><li class="item"><a href="../events/json_field_parse_before.html" class="href">    json.field.parse.before</a></li><li class="item"><a href="../events/json_field_parse_after.html" class="href">    json.field.parse.after</a></li><li class="item"><a href="../events/json_method_parse_before.html" class="href">    json.method.parse.before</a></li><li class="item"><a href="../events/json_method_parse_after.html" class="href">    json.method.parse.after</a></li></ul></div></li><li class="item"><div class="m-summary-block"><a href="../tools.html" class="href">脚本工具</a><ul class="m-summary-list indent"><li class="item"><a href="it.html" class="href">☆it</a></li><li class="item"><a href="tool.html" class="href">☆tool</a></li><li class="item"><a href="regex.html" class="href">    regex</a></li><li class="item"><a href="logger.html" class="href">    logger</a></li><li class="item"><a href="helper.html" class="href">    helper</a></li><li class="item"><a href="" class="href">    httpClient</a></li><li class="item"><a href="localStorage.html" class="href">    localStorage</a></li><li class="item"><a href="config.html" class="href">    config</a></li><li class="item"><a href="api.html" class="href">    api</a></li></ul></div></li><li class="item"><a href="../groovy-ext-config.html" class="href">groovy本地扩展</a></li></ul></div></div></div><div class="m-summary-switch" id="js-summary-switch"><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="bottom"><g transform="translate(904.92214,-879.1482)"><path d="m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,-55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,-174.6858 c 96.079,-96.07721 175.253196,-174.68583 175.942696,-174.68583 0.6895,0 26.281,25.03215 56.8701,55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864-231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,-104.0616 -231.873,-231.248 z" fill="#fff"></path></g></svg><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="top"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="aaa" fill="#fff" fill-rule="nonzero"><path d="M231.2455,342.502 L0,111.25397 L55.6165,55.62697 C86.2056,25.03212 111.7971,-2.99999998e-05 112.4866,-2.99999998e-05 C113.176,-2.99999998e-05 192.3503,78.60859 288.4293,174.6858 L463.1185,349.3716 L637.8077,174.6858 C733.8867,78.60859 813.060896,-2.99999997e-05 813.750396,-2.99999997e-05 C814.439896,-2.99999997e-05 840.031396,25.03212 870.620496,55.62697 L926.236996,111.25397 L694.9915,342.502 C567.8065,469.6884 463.4636,573.75 463.1185,573.75 C462.7734,573.75 358.4305,469.6884 231.2455,342.502 Z" id="Shape" transform="translate(463.118498, 286.874985) scale(1, -1) translate(-463.118498, -286.874985) "></path></g></g></svg></div></div><div class="m-main" id="js-panel"><header class="m-header" id="js-header"><div class="m-header-title js-logo"><a href="../../index.html" target="_self"><h6 class="name">EasyYapi</h6></a></div><div><div class="m-search">
+      <div class="icon">&#xf0fd;</div>
+      <input type="text" class="input js-input" placeholder="搜索" />
+      <div class="m-search-result js-search-result"></div>
+    </div></div><nav class="m-header-nav js-nav"><ul class="m-header-items"><li class="item "><a class="href" href="../../documents/index.html">文档</a></li><li class="item active"><a class="href" href="../index.html">配置</a></li><li class="item "><a class="href" href="../../demo/index.html">demo</a></li><li class="item "><a class="href" href="../../framwork/index.html">框架支持</a></li><li class="item "><a class="href" href="../../qa/index.html">QA</a></li></ul></nav><div id="js-nav-btn" class="m-header-btn ui-font-ydoc"></div></header><div class="m-content" id="js-content"><div id="markdown-body" class="m-content-container markdown-body"><h1><code>httpClient</code>是提供的http相关帮助类(v1.9.0+)</h1>
+<hr>
+<h2 id="主要方法">主要方法</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>返回值</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cookieStore()</td>
+<td>cookieStore</td>
+<td>获取cookie管理器</td>
+<td>httpClient.cookieStore()</td>
+</tr>
+<tr>
+<td>request()</td>
+<td>request</td>
+<td>创建request</td>
+<td>httpClient.request()</td>
+</tr>
+<tr>
+<td>delete()</td>
+<td>request</td>
+<td>创建<code>request</code>,并设置<code>method</code>为<code>DELETE</code></td>
+<td>httpClient.delete()</td>
+</tr>
+<tr>
+<td>delete(str)</td>
+<td>request</td>
+<td>创建<code>request</code>,并设置<code>method</code>为<code>DELETE</code>、设置<code>url</code></td>
+<td>httpClient.delete(&quot;http://www.easyyapi.com&quot;)</td>
+</tr>
+<tr>
+<td>get()</td>
+<td>request</td>
+<td>创建<code>request</code>,并设置<code>method</code>为<code>GET</code></td>
+<td>httpClient.get()</td>
+</tr>
+<tr>
+<td>get(str)</td>
+<td>request</td>
+<td>创建<code>request</code>,并设置<code>method</code>为<code>GET</code>、设置<code>url</code></td>
+<td>httpClient.get(&quot;http://www.easyyapi.com&quot;)</td>
+</tr>
+<tr>
+<td>options()</td>
+<td>request</td>
+<td>创建<code>request</code>,并设置<code>method</code>为<code>OPTIONS</code></td>
+<td>httpClient.options()</td>
+</tr>
+<tr>
+<td>options(str)</td>
+<td>request</td>
+<td>创建<code>request</code>,并设置<code>method</code>为<code>OPTIONS</code>、设置<code>url</code></td>
+<td>httpClient.options(&quot;http://www.easyyapi.com&quot;)</td>
+</tr>
+<tr>
+<td>post()</td>
+<td>request</td>
+<td>创建<code>request</code>,并设置<code>method</code>为<code>POST</code></td>
+<td>httpClient.post()</td>
+</tr>
+<tr>
+<td>post(str)</td>
+<td>request</td>
+<td>创建<code>request</code>,并设置<code>method</code>为<code>POST</code>、设置<code>url</code></td>
+<td>httpClient.post(&quot;http://www.easyyapi.com&quot;)</td>
+</tr>
+<tr>
+<td>put()</td>
+<td>request</td>
+<td>创建<code>request</code>,并设置<code>method</code>为<code>PUT</code></td>
+<td>httpClient.put()</td>
+</tr>
+<tr>
+<td>put(str)</td>
+<td>request</td>
+<td>创建<code>request</code>,并设置<code>method</code>为<code>PUT</code>、设置<code>url</code></td>
+<td>httpClient.put(&quot;http://www.easyyapi.com&quot;)</td>
+</tr>
+<tr>
+<td>trace()</td>
+<td>request</td>
+<td>创建<code>request</code>,并设置<code>method</code>为<code>TRACE</code></td>
+<td>httpClient.trace()</td>
+</tr>
+<tr>
+<td>trace(str)</td>
+<td>request</td>
+<td>创建<code>request</code>,并设置<code>method</code>为<code>TRACE</code>、设置<code>url</code></td>
+<td>httpClient.trace(&quot;http://www.easyyapi.com&quot;)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1>request</h1>
+<ul>
+<li>可以由<code>httpClient</code>创建</li>
+</ul>
+<h2 id="主要方法有">主要方法有:</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>返回值</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>call()</td>
+<td>response</td>
+<td>发起<code>http</code>请求</td>
+<td>request.call()</td>
+</tr>
+<tr>
+<td>method()</td>
+<td>string</td>
+<td>获取当前请求的<code>method</code></td>
+<td>request.method()</td>
+</tr>
+<tr>
+<td>method(string)</td>
+<td>request</td>
+<td>设置当前请求的<code>method</code></td>
+<td>request.method(&quot;POST&quot;)</td>
+</tr>
+<tr>
+<td>url()</td>
+<td>string</td>
+<td>获取当前请求的<code>url</code></td>
+<td>request.url()</td>
+</tr>
+<tr>
+<td>url(string)</td>
+<td>request</td>
+<td>设置当前请求的<code>url</code></td>
+<td>request.url(&quot;http://www.easyyapi.com&quot;)</td>
+</tr>
+<tr>
+<td>body()</td>
+<td>object</td>
+<td>获取当前请求体</td>
+<td>request.body()</td>
+</tr>
+<tr>
+<td>body(object)</td>
+<td>request</td>
+<td>设置当前请求体</td>
+<td>request.body({&quot;name&quot;:&quot;admin&quot;})</td>
+</tr>
+<tr>
+<td>contentType()</td>
+<td>string</td>
+<td>获取当前请求的<code>Content-type</code></td>
+<td>request.contentType()</td>
+</tr>
+<tr>
+<td>contentType(string)</td>
+<td>string</td>
+<td>设置当前请求的<code>Content-type</code></td>
+<td>request.contentType(&quot;application/json&quot;)</td>
+</tr>
+<tr>
+<td>querys()</td>
+<td>request</td>
+<td>获取所有的query参数</td>
+<td>request.querys()</td>
+</tr>
+<tr>
+<td>query(string, string)</td>
+<td>request</td>
+<td>设置query(请求时将被追加在url后)</td>
+<td>request.query(&quot;name&quot;,&quot;Tom&quot;)</td>
+</tr>
+<tr>
+<td>params()</td>
+<td>array&lt;param&gt;</td>
+<td>获取所有参数</td>
+<td>request.params()</td>
+</tr>
+<tr>
+<td>params(string)</td>
+<td>array&lt;param&gt;</td>
+<td>获取指定参数名的所有参数</td>
+<td>request.params(&quot;name&quot;)</td>
+</tr>
+<tr>
+<td>containsParam(string)</td>
+<td>bool</td>
+<td>判断当前请求是否有指定请求参数</td>
+<td>request.containsParam(&quot;name&quot;)</td>
+</tr>
+<tr>
+<td>fileParam(string, string)</td>
+<td>request</td>
+<td>设置一个文件参数</td>
+<td>request.fileParam(&quot;file&quot;,&quot;/xxx/xxx/xxxx.xxx&quot;)</td>
+</tr>
+<tr>
+<td>firstParam(string)</td>
+<td>param</td>
+<td>获取第一个请求参数(注意返回值是param,包含参数名/参数值/参数类型[text/file])</td>
+<td>request.firstParam(&quot;name&quot;)</td>
+</tr>
+<tr>
+<td>firstParamValue(string)</td>
+<td>param</td>
+<td>获取第一个请求参数值</td>
+<td>request.firstParamValue(&quot;name&quot;)</td>
+</tr>
+<tr>
+<td>lastParam(string)</td>
+<td>param</td>
+<td>获取最后一个请求参数(注意返回值是param,包含参数名/参数值/参数类型[text/file])</td>
+<td>request.lastParam(&quot;name&quot;)</td>
+</tr>
+<tr>
+<td>lastParamValue(string)</td>
+<td>param</td>
+<td>获取最后一个请求参数值</td>
+<td>request.lastParamValue(&quot;name&quot;)</td>
+</tr>
+<tr>
+<td>param(string, string)</td>
+<td>request</td>
+<td>设置<code>param</code></td>
+<td>request.param(&quot;name&quot;,&quot;Tom&quot;)</td>
+</tr>
+<tr>
+<td>paramValues(string)</td>
+<td>array&lt;string&gt;</td>
+<td>获取指定参数所有值</td>
+<td>request.paramValues(&quot;name&quot;)</td>
+</tr>
+<tr>
+<td>header(string, string)</td>
+<td>request</td>
+<td>设置<code>header</code></td>
+<td>request.header(&quot;Content-type&quot;,&quot;application/json&quot;)</td>
+</tr>
+<tr>
+<td>headers()</td>
+<td>array&lt;header&gt;</td>
+<td>获取所有的<code>header</code></td>
+<td>request.headers()</td>
+</tr>
+<tr>
+<td>headers(string)</td>
+<td>array&lt;string&gt;</td>
+<td>获取指定<code>header</code>所有值</td>
+<td>request.headers(&quot;Content-type&quot;)</td>
+</tr>
+<tr>
+<td>containsHeader(string)</td>
+<td>bool</td>
+<td>判断当前请求是否有指定<code>header</code></td>
+<td>request.containsHeader(&quot;token&quot;)</td>
+</tr>
+<tr>
+<td>firstHeader(string)</td>
+<td>string</td>
+<td>获取第一个header参数</td>
+<td>request.firstHeader(&quot;Content-type&quot;)</td>
+</tr>
+<tr>
+<td>lastHeader(string)</td>
+<td>string</td>
+<td>获取最后一个header参数</td>
+<td>request.lastHeader(&quot;Content-type&quot;)</td>
+</tr>
+<tr>
+<td>setHeader(string, string)</td>
+<td>request</td>
+<td>移除当前<code>header</code>名称的所有值,并设置<code>header</code></td>
+<td>request.setHeader(&quot;Content-type&quot;,&quot;application/json&quot;)</td>
+</tr>
+<tr>
+<td>removeHeader(string, string)</td>
+<td>request</td>
+<td>移除指定<code>header</code>名称的指定值</td>
+<td>request.removeHeader(&quot;Content-type&quot;,&quot;application/json&quot;)</td>
+</tr>
+<tr>
+<td>removeHeaders(string)</td>
+<td>request</td>
+<td>移除当前<code>header</code>名称的所有值</td>
+<td>request.removeHeaders(&quot;Content-type&quot;)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1>response</h1>
+<ul>
+<li>可以由<code>request.call()</code>得到</li>
+</ul>
+<h2 id="主要方法有">主要方法有:</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>返回值</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>discard()</td>
+<td>void</td>
+<td>丢弃这次请求的结果, 重新发起此请求</td>
+<td>response.discard()</td>
+</tr>
+<tr>
+<td>code()</td>
+<td>int</td>
+<td>响应code</td>
+<td>response.code()</td>
+</tr>
+<tr>
+<td>string()</td>
+<td>string</td>
+<td>响应内容</td>
+<td>response.string()</td>
+</tr>
+<tr>
+<td>contentType()</td>
+<td>string</td>
+<td>响应的contentType</td>
+<td>response.contentType()</td>
+</tr>
+<tr>
+<td>headers()</td>
+<td>array&lt;header&gt;</td>
+<td>获取所有的<code>header</code></td>
+<td>response.headers()</td>
+</tr>
+<tr>
+<td>headers(string)</td>
+<td>array&lt;string&gt;</td>
+<td>获取指定<code>header</code>所有值</td>
+<td>response.headers(&quot;Content-type&quot;)</td>
+</tr>
+<tr>
+<td>containsHeader(string)</td>
+<td>bool</td>
+<td>判断当前响应是否有指定<code>header</code></td>
+<td>response.containsHeader(&quot;token&quot;)</td>
+</tr>
+<tr>
+<td>firstHeader(string)</td>
+<td>string</td>
+<td>获取第一个header参数</td>
+<td>response.firstHeader(&quot;Content-type&quot;)</td>
+</tr>
+<tr>
+<td>lastHeader(string)</td>
+<td>string</td>
+<td>获取第一个header参数</td>
+<td>response.lastHeader(&quot;Content-type&quot;)</td>
+</tr>
+<tr>
+<td>request()</td>
+<td>request</td>
+<td>获取得到此响应的<code>request</code></td>
+<td>response.request()</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1>cookieStore</h1>
+<ul>
+<li>可以由<code>httpClient.cookieStore()</code>获得</li>
+</ul>
+<h2 id="主要方法有">主要方法有:</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>返回值</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>addCookie(cookie)</td>
+<td>void</td>
+<td>添加一个cookie</td>
+<td>httpClient.cookieStore().addCookie(cookie)</td>
+</tr>
+<tr>
+<td>addCookies(cookies)</td>
+<td>void</td>
+<td>添加多个cookie</td>
+<td>httpClient.cookieStore().addCookies(cookies)</td>
+</tr>
+<tr>
+<td>clear()</td>
+<td>void</td>
+<td>清除cookie</td>
+<td>httpClient.cookieStore().clear()</td>
+</tr>
+<tr>
+<td>cookies()</td>
+<td>array&lt;cookie&gt;</td>
+<td>获得当前的cookies</td>
+<td>httpClient.cookieStore().cookies()</td>
+</tr>
+<tr>
+<td>newCookie()</td>
+<td>cookie</td>
+<td>创建一个<code>cookie</code>,注意:并不会自动添加到<code>cookieStore</code>中, 需要手动调用<code>addCookie</code>加入</td>
+<td>httpClient.cookieStore().newCookie()</td>
+</tr>
+</tbody>
+</table>
+</div><div class="m-content-container m-paging"><div class="m-paging-prev m-paging-item"><a href="helper.html" class="href"><span class="ui-font-ydoc"></span>    helper</a></div><div class="m-paging-next m-paging-item"><a href="localStorage.html" class="href">    localStorage<span class="ui-font-ydoc"></span></a></div></div></div></div></div><div></div><script>
+    var $content = document.getElementById('js-content');
+    var $summaryItems = Array.prototype.slice.call(document.querySelectorAll('#js-menu .href'));
+    var $menu = document.getElementById('js-menu');
+    if (sessionStorage.prevPathname) {
+      sessionStorage.setItem('prevPrevPathname', sessionStorage.prevPathname);
+      sessionStorage.setItem('prevPrevMenuScrollTop', sessionStorage.prevMenuScrollTop);
+      sessionStorage.setItem('prevPrevContentScrollTop', sessionStorage.prevContentScrollTop);
+    }
+    if (sessionStorage.locationPathname) {
+      sessionStorage.setItem('prevPathname', sessionStorage.locationPathname);
+      sessionStorage.setItem('prevMenuScrollTop', sessionStorage.menuScrollTop);
+      sessionStorage.setItem('prevContentScrollTop', sessionStorage.contentScrollTop);
+    }
+    if ($menu && sessionStorage.menuScrollTop) {
+		  $menu.scrollTop = sessionStorage.menuScrollTop;
+    }
+    // 刷新页面但不切换 pathname 的时候，内容区恢复到记忆的高度
+    if ($content && sessionStorage.contentScrollTop && window.location.pathname == sessionStorage.locationPathname) {
+      $content.scrollTop = sessionStorage.contentScrollTop;
+    } else if (sessionStorage.prevPrevPathname && sessionStorage.prevPrevPathname === window.location.pathname) {
+      if ($menu && sessionStorage.prevPrevMenuScrollTop) {
+        $menu.scrollTop = sessionStorage.prevPrevMenuScrollTop;
+      }
+      if ($content && sessionStorage.prevPrevContentScrollTop) {
+        $content.scrollTop = sessionStorage.prevPrevContentScrollTop;
+      }
+    }
+    sessionStorage.setItem('locationPathname', window.location.pathname);
+    </script><script src="../../ydoc/scripts/plugins/dollar.min.js"></script><script src="../../ydoc/scripts/plugins/responsive-nav.min.js"></script><script src="../../ydoc/scripts/plugins/slideout.min.js"></script><script src="../../ydoc/scripts/app.js"></script><script src="../../ydoc/ydoc-plugin-search/core.js"></script><script src="../../ydoc/ydoc-plugin-search/search.js"></script><script src="../../ydoc/ydoc-plugin-copy/clipboard.min.js"></script><script src="../../ydoc/ydoc-plugin-copy/clipboard.script.js"></script><script src="../../search_json.js"></script></body></html>

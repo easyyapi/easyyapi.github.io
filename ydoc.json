@@ -1,0 +1,8 @@
+{
+  "title": "easyyapi",
+  "description": "Simplifies API Development",
+  "author": "tangcent",
+  "plugins": [
+    "copy"
+  ]
+}
