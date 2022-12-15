@@ -5,7 +5,7 @@ banner:
   btns:
     - { name: 'Start', href: './documents/index.html', primary: true }
     - { name: 'Github >', href: 'https://github.com/tangcent/easy-yapi' }
-  caption: '当前版本: v2.4.4'
+  caption: '当前版本: v2.5.0'
 features:
   - { name: '多语言', desc: 'Java/Kotlin/Scala' }
   - { name: '多框架', desc: 'Spring/Feign/Jaxrs(Quarkus or Jersey)' }
