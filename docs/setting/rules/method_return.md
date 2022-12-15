@@ -3,11 +3,46 @@
 > 设置方法的返回值
 
 > 常用于以下情况:
+
+- 方法响应统一封装
 - 方法返回Object
 - 方法返回类型中的泛型类型未明确`<Object>`/`<?>`/`<*>`
 - 方法返回类型与实际响应无关, 例如通过操作HttpServletResponse来返回响应
 
-## 如以下API
+## 方法响应统一封装
+
+***API:***
+
+```java
+/**
+* Mock Apis
+*/
+@RestController
+@RequestMapping(value = "mock")
+public class MockCtrl {
+
+    /**
+        * Mock String
+        * @ignore
+        */
+    @GetMapping("/string")
+    public String mockString() {
+        return Result.success("mock string");
+    }
+
+}
+```
+
+> 这个方法返回的是`String`, 但实际响应的是`com.itangcent.common.dto.Result<String>`, 所以额外做如下配置
+
+
+```properties
+method.return[#real_return]=groovy: "com.itangcent.common.dto.Result<" +  it.returnType() +">"
+```
+
+
+
+## 方法返回值与响应无关
 
 ***API:***
 
@@ -25,7 +60,7 @@
     }
 ```
 
-- 这个方法返回的是`void`,但实际响应的是`Result<UserInfo>`, 所以需要通过额外的途径来表明此`API`的实际响应.
+> 这个方法返回的是`void`,但实际响应的是`Result<UserInfo>`, 所以需要通过额外的途径来表明此`API`的实际响应.
 
 
 ---
