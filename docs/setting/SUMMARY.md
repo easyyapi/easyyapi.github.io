@@ -5,6 +5,7 @@
 * [通用配置](index.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;在IDEA中设置](ide-setting.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;使用项目内配置文件](local-file-config.md)
+    * [&nbsp;&nbsp;&nbsp;&nbsp;使用远程配置文件](remote-config.md)
     * [☆yapi相关配置](yapi.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;postman相关配置](postman.md)
     * [☆yapi mock配置](yapi-mock.md)
