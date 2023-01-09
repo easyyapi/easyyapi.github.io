@@ -5,6 +5,7 @@
 * [springboot](springboot.md)
 * [springboot-webflux](springboot-webflux.md)
 * [swagger](swagger.md)
+* [swagger3](swagger3.md)
 * [JAX-RS](jaxrs.md)
     * [quarkus](jaxrs.md)
     * [jersey](jaxrs.md)
