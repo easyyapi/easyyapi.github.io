@@ -78,6 +78,8 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;auto.format.url | v2.1.0+ | bool | 导入`yapi`时是否格式化`url`,确保`url`以`/`开始，且将[a-zA-Z0-9-/_:.{}?=!]之外的字符替换为`/` | auto.format.url=false |
 | &nbsp;&nbsp;&nbsp;&nbsp;field.mock.resolveProperty | v2.1.0+ | bool | 是否处理`yapi` `mock`信息中的占位符`${xxx}` | field.mock.resolveProperty=true |
 | &nbsp;&nbsp;&nbsp;&nbsp;api.tag.delimiter | v2.1.0+ | string | `yapi` `tag`的分割符, 默认为`,` | api.tag.delimiter=,#| |
+| &nbsp;&nbsp;&nbsp;&nbsp;ignore_static_and_final_field | v2.1.0+ | bool | 插件默认会忽略static final字段, 设置为false可以改变此行为   | ignore_static_and_final_field=false | |
+| &nbsp;&nbsp;&nbsp;&nbsp;ignore_irregular_api_method | v2.5.4+ | bool | 插件默认会忽略方法名与Object中基础方法名相同的API, 设置为false可以改变此行为   | ignore_irregular_api_method=false | |
 
 
 ---
