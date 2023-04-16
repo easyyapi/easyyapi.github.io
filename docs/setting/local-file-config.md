@@ -69,10 +69,10 @@ logger.info("call:"+request.url())
 - 在配置文件中可以使用`properties.additional`来加载额外的配置文件:
 
 ```properties
-properties.additional=$additional_properties_file_path$
+properties.additional=/xxx/xxx/my.properties
 ```
 
-- 常用于需要存放用户相关的配置
+- 常用于存放开发者私有的配置
 
 ---
 
