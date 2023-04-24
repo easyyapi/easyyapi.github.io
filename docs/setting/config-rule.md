@@ -70,6 +70,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;规则的key | 版本 | 配置类型 | 规则描述 | 示例 |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
 | &nbsp;&nbsp;&nbsp;&nbsp;yapi.server | v2.2.1+ | string | 设置`yapi`地址,优先级高于`setting`. 可用于多个项目要导入不同`yapi`的情况 | yapi.server=http://yapi.itangcent.com/ |
+| &nbsp;&nbsp;&nbsp;&nbsp;yapi.token.$module | v2.5.8+ | string | 设置`yapi`模块的token,优先级高于`setting`. 可用于多人共享账号的情况下简化使用 | yapi.token.xxx=01234567890123456789 |
 | &nbsp;&nbsp;&nbsp;&nbsp;dev | v2.2.1+ | bool | 启动开发模式,打印更详细的日志 | dev=true |
 | &nbsp;&nbsp;&nbsp;&nbsp;max.deep | v2.3.6+ | int | 解析`json`时最大深度,默认6 | max.deep=8 |
 | &nbsp;&nbsp;&nbsp;&nbsp;max.elements | v2.3.6+ | int | 解析`json`时最大字段数,默认256 | max.elements=512 |
