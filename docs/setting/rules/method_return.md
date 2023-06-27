@@ -37,7 +37,7 @@ public class MockCtrl {
 
 
 ```properties
-method.return[#real_return]=groovy: "com.itangcent.common.dto.Result<" +  it.returnType() +">"
+method.return=groovy: "com.itangcent.common.dto.Result<" +  it.returnType() +">"
 ```
 
 

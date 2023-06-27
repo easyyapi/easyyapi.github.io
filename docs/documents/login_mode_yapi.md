@@ -6,7 +6,7 @@
 
 2. 在<kbd>Preferences(Settings)</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > <kbd>Built-in config</kbd> 中配置鉴权逻辑:
 
-    - 如登录接口可用, 则可以尝试[配置](/setting/local-file-config.html)如下:
+    - 如登录接口可用, 可以尝试如下[配置](/setting/local-file-config.html):
     
     ``````
     yapi.export.before=groovy:```
@@ -22,12 +22,13 @@
 
     ``````
     yapi.export.before=groovy:```
+        //先进行sso登录
         httpClient.request().url("https://sso.xxx.com/login/")
                     .method("POST")
                     .contentType("application/json")
                     .body(["name":"xxx","pswd":"xxxx"])
                     .call();
-        //如果发生了域名转换, 也进行cookie转换
+        //如果发生了域名转换, 需要进行cookie转换
         def cookieStore=httpClient.cookieStore()
         for(cookie in cookieStore.cookies()){
             logger.info(cookie.toString())
@@ -41,6 +42,7 @@
                 cookieStore.addCookie(sso_cookie)
             }
         }
+        //切换到yapi登录
         httpClient.request().url("https://yapi.xxx.com/api/user/login")
                     .method("POST")
                     .contentType("application/json; charset=utf-8")
