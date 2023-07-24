@@ -16,11 +16,5 @@
 3. 在IDEA的左边项目文件区域选择文件或者文件夹,
     鼠标点击最上方<kbd>Code</kbd> > <kbd>ExportYapi/ExportPostman/ExportMarkdown</kbd>
 
-4. 鼠标点击最上方<kbd>Code</kbd> > <kbd>YapiDashBoard</kbd>,
-    然后就可以用鼠标将左边的API拖动到右边yapi目录中, 完成API导出到Yapi
-
-5. 鼠标点击最上方<kbd>Code</kbd> > <kbd>ApiDashBoard</kbd>,
-    然后就可以用鼠标将左边的API拖动到右边postman目录中, 完成API导出到Postman
-
-6. 打开项目中的包含`api`的文件,
+4. 打开项目中的包含`api`的文件,
     右键文件内容选择`Call`,就可以发起对当前文件中的API的请求

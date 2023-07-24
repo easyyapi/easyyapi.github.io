@@ -10,8 +10,6 @@
 
 - [导出API文档](use.md)
 - [在`IDEA`中直接发起API请求](call.md)
-- Api DashBoard
-- YApi DashBoard
 
 ## 支持项列表
 
