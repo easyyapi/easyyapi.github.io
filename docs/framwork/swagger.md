@@ -8,4 +8,4 @@
 
 ### swagger3
 
-如果需要支持[swagger3](https://swagger.io),可在<kbd>Preferences(Settings)</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > <kbd>Remote</kbd>中添加[swagger2.config](https://raw.githubusercontent.com/tangcent/easy-yapi/master/third/swagger2.config)
+如果需要支持[swagger3](https://swagger.io),可在<kbd>Preferences(Settings)</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > <kbd>Remote</kbd>中添加[swagger3.config](https://raw.githubusercontent.com/tangcent/easy-yapi/master/third/swagger3.config)
