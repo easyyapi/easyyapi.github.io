@@ -16,12 +16,18 @@ obj["a"] == "c" //obj已经被变更为了["a":"c"]
 
 | 方法  |  返回值  |  描述  |  示例  |
 | ------------ | ------------ | ------------ |------------ |
-| set(key,value) | void | 设置一个键值 | session.set("key","value")|
-| set(group,key,value) | void | 设置一个键值(指定分组) | session.set("groupA","key","value")|
+| set(key, value) | void | 设置一个键值 | session.set("key", "value")|
+| set(group, key, value) | void | 设置一个键值(指定分组) | session.set("groupA","key", "value")|
 | get(key) | object | 获取一个设置的键值 | session.get("key")|
-| get(group,key) | object | 获取一个设置的键值(指定分组) | session.get("groupA","key")|
+| get(group, key) | object | 获取一个设置的键值(指定分组) | session.get("groupA", "key")|
+| pop(key) | object | 弹出一个队列中的元素 | session.pop("key")|
+| pop(group, key) | object | 弹出一个队列中的元素(指定分组) | session.pop("groupA", "key")|
+| peek(key) | object | 查看一个队列中的首个元素 | session.peek("key")|
+| peek(group, key) | object | 查看一个队列中的首个元素(指定分组) | session.peek("groupA", "key")|
+| push(key, value) | object | 将一个元素加入到队列中 | session.push("key", value)|
+| push(group, key, value) | object | 将一个元素加入到队列中(指定分组) | session.push("groupA", "key", value)|
 | remove(key) | void | 删除一个设置的键值 | session.remove("key")|
-| remove(group,key) | void | 删除一个设置的键值(指定分组) | session.remove("groupA","key")|
+| remove(group, key) | void | 删除一个设置的键值(指定分组) | session.remove("groupA", "key")|
 | clear() | void | 移除所有设置的键值(仅默认分组) | session.clear()|
 | clear(group) | void | 移除所有设置的键值(指定分组) | session.clear("groupA")|
 | keys() | array\<object> | 获取所有设置的键值(仅默认分组) | session.keys()|

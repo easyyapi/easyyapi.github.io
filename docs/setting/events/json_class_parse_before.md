@@ -11,5 +11,5 @@
 ***增加log***
 
 ```properties
-api.class.parse.before=groovy:logger.info("开始解析类:"+it.name())
+json.class.parse.before=groovy:logger.info("开始解析类:"+it.name())
 ```

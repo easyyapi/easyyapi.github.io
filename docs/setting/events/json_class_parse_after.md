@@ -11,5 +11,5 @@
 ***增加log***
 
 ```properties
-api.class.parse.after=groovy:logger.info("类:"+it.name()+"解析完成")
+json.class.parse.after=groovy:logger.info("类:"+it.name()+"解析完成")
 ```
