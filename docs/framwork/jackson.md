@@ -1,44 +1,13 @@
 # Jackson
 
-## JsonProperty&JsonIgnore
+通过推荐配置提供部分支持, 但出于性能考虑, 部分功能默认未选中, 如果需要开启, 请在[推荐配置](https://easyyapi.com/setting/ide-setting.html#%E5%86%85%E7%BD%AE%E5%8F%AF%E9%80%89%E6%8E%A8%E8%8D%90%E9%85%8D%E7%BD%AE)中选中.
 
-[推荐配置](https://github.com/tangcent/easy-yapi/blob/master/idea-plugin/src/main/resources/.recommend.easy.api.config)中默认支持.
-
-```properties
-#Support for Jackson annotations
-field.name=@com.fasterxml.jackson.annotation.JsonProperty#value
-field.ignore=@com.fasterxml.jackson.annotation.JsonIgnore#value
-```
-
----
-
-## JsonIgnoreProperties
-
-[推荐配置](https://github.com/tangcent/easy-yapi/blob/master/idea-plugin/src/main/resources/.recommend.easy.api.config)中有提供选项, 但默认未选中.
-
-``````properties
-
-#Support for Jackson annotation JsonIgnoreProperties
-
-json.cache.disable=true
-field.ignore=groovy:it.containingClass().annValue("com.fasterxml.jackson.annotation.JsonIgnoreProperties")?.contains(it.name())
-json.group=@com.fasterxml.jackson.annotation.JsonIgnoreProperties
-field.parse.before[@com.fasterxml.jackson.annotation.JsonIgnoreProperties]=groovy:```
-    def properties = it.annValue("com.fasterxml.jackson.annotation.JsonIgnoreProperties")
-    for(property in properties){
-        def path = fieldContext.property(property)
-        session.set("json-ignore", path, true)
-    }
-```
-field.parse.after[@com.fasterxml.jackson.annotation.JsonIgnoreProperties]=groovy:```
-    def properties = it.annValue("com.fasterxml.jackson.annotation.JsonIgnoreProperties")
-    for(property in properties){
-        def path = fieldContext.property(property)
-        session.remove("json-ignore", path)
-    }
-```
-field.ignore=groovy:```
-    return session.get("json-ignore", fieldContext.path())
-```
-
-``````
+| Annotation | 是否支持 | 默认 |
+| ------------ | ------------ | ------------ |
+| JsonProperty | 是 | 是 |
+| JsonIgnore | 是 | 是 |
+| JsonFormat | 是 | 否 |
+| JsonPropertyOrder | 是 | 否 |
+| JsonIgnoreProperties | 是 | 否 |
+| JsonUnwrapped | 是 | 否 |
+| JsonNaming | 是 | 否 |
