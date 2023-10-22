@@ -1,6 +1,7 @@
 # ~~json.rule.field.name~~
 
 > 用于设置输出/输入的字段名(用于json中字段名与类中字段名不一致)
+> `deprcated`, 改用[field.name](field_name.md)
 
 
 ## 默认推荐配置

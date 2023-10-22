@@ -27,6 +27,8 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.mock.resolveProperty](rules/field_mock.md#field.mock.resolveProperty) | - | v1.4.2+ | 用以开关是否解析`field.mock`规则结果中的占位符 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.name](rules/field_name.md) | field | v0.7.2+ | 设置输出的字段名(用于json中字段名与类中字段名不一致) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.required](rules/field_required.md) | field | v0.7.3+ | 字段是否为必须(即不可为空) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[field.order](rules/field_order.md) | field | v2.6.4+ | 用于指定字段顺序 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[field.order.with](rules/field_order_with.md) | field | v2.6.4+ | 用于设置字段顺序 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[folder.name](rules/folder_name.md)  | method | v1.9.2+ | 设置api所属文件夹 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[ignore](rules/ignore.md) | class/method | v0.7.2+ | 忽略API |
 | ☆[json.rule.convert](rules/json_rule_convert.md) | - | v0.7.2+ | 用于设置某些类型转换为其他类型处理, 通常用于使用了Spring的自定义类型转换器的情况 |
