@@ -7,7 +7,7 @@
 ```groovy
 def obj = ["a":"b"]
 session.set("key",obj)
-session.get("key")["a"]="c" //这里对get("key")得到的对象进行赋值不会影响到原始的obj
+session.get("key")["a"]="c" //这里对get("key")得到的对象进行赋值会影响到原始的obj
 obj["a"] == "c" //obj已经被变更为了["a":"c"]
 ```
 

@@ -8,10 +8,10 @@
 
 ```properties
 #Support for Jackson annotations
-json.rule.field.name=@com.fasterxml.jackson.annotation.JsonProperty#value
+field.name=@com.fasterxml.jackson.annotation.JsonProperty#value
 
 #Support for Gson annotations
-json.rule.field.name=@com.google.gson.annotations.SerializedName#value
+field.name=@com.google.gson.annotations.SerializedName#value
 ```
 
 ## demo
