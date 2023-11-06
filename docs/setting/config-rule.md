@@ -83,6 +83,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;api.tag.delimiter | v2.1.0+ | string | `yapi` `tag`的分割符, 默认为`,` | api.tag.delimiter=,#| |
 | &nbsp;&nbsp;&nbsp;&nbsp;ignore_static_and_final_field | v2.1.0+ | bool | 插件默认会忽略static final字段, 设置为false可以改变此行为   | ignore_static_and_final_field=false | |
 | &nbsp;&nbsp;&nbsp;&nbsp;ignore_irregular_api_method | v2.5.4+ | bool | 插件默认会忽略方法名与Object中基础方法名相同的API, 设置为false可以改变此行为   | ignore_irregular_api_method=false | |
+| &nbsp;&nbsp;&nbsp;&nbsp;doc.source.disable | v2.5.5+ | bool | 设置为true可以阻止插件读取注释   | doc.source.disable=true | |
 
 
 ---

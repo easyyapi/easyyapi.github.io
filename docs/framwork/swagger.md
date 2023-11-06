@@ -1,5 +1,6 @@
 ## 默认推荐配置中不包含`swagger`的支持
 
+> 如果完全依赖`swagger`注解提供API相关信息，可以配置`doc.source.disable=true`来阻止插件使用注释
 
 ### swagger2
 
