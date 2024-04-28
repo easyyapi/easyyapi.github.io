@@ -1,15 +1,7 @@
-## 需要对`javax.validation`完整的支持, 可自行增加如下[配置](/setting/index.html)
+## 需要通过`javax.validation`增加mock信息到yapi, 可自行增加如下[配置](/setting/index.html)
 
 ``````properties
 # rules for javax.validation
-
-#Support for javax.validation annotations
-param.required=@javax.validation.constraints.NotBlank
-field.required=@javax.validation.constraints.NotBlank
-param.required=@javax.validation.constraints.NotNull
-field.required=@javax.validation.constraints.NotNull
-param.required=@javax.validation.constraints.NotEmpty
-field.required=@javax.validation.constraints.NotEmpty
 
 # define var
 number_min=-9999
