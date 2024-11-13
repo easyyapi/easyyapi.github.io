@@ -1,30 +1,29 @@
 # `it`表示当前规则的应用对象(少数规则没有应用对象)
 
-- 应用对象只提供方法即`it.method()✅`,不提供属性`it.property❎`
+- 大部分应用对象只提供方法即`it.method()✅`,不提供属性`it.property❎`
 
 ### 对于class(类)、method(方法/API)、field(字段/属性)、param(参数)都支持如下方法
-
 
 | 方法  |  返回值  |  描述  |  示例  |
 | ------------ | ------------ | ------------ |------------ |
 | name() | string | 名称 | it.name() |
-| hasAnn("annotation_name") | boolean | 是否有指定注解 | it.hasAnn("org.springframework.web.bind.annotation.RequestBody") | 
-| ann("annotation_name") | string | 获取指定注解值(默认value) | it.ann("org.springframework.web.bind.annotation.RequestBody") | 
-| ann("annotation_name","attr") | string | 获取指定注解中的指定参数值 | it.ann("org.springframework.web.bind.annotation.RequestMapping","path") | 
-| annMap("annotation_name") | map | 获取指定注解所有的参数 | it.annMap("org.springframework.web.bind.annotation.RequestMapping") | 
-| annMaps("annotation_name") | map[] | 获取指定可重复注解所有的参数 | it.annMaps("javax.validation.constraints.Max") | 
-| annValue("annotation_name") | object | 获取指定注解值(默认value),与ann不同,会保持原有类型,不强制转换为string | it.annValue("org.springframework.web.bind.annotation.RequestBody") | 
-| annValue("annotation_name","attr") | object | 获取指定注解中的指定参数值,与ann不同,会保持原有类型,不强制转换为string | it.annValue("org.springframework.web.bind.annotation.RequestMapping","path") | 
-| doc() | string | 获取注释值 | it.doc() | 
-| doc("tag") | string | 获取注释tag值(不需要加@) | it.doc("return") | 
-| docs("tag") | array<string> | 获取多个注释tag值(不需要加@) | it.docs("see") | 
-| doc("tag","subTag") | string | 获取二级注释tag值 | it.doc("param","a") | 
-| hasDoc("tag") | string | 是否有指定注释tag | it.hasDoc("ignore") | 
-| hasModifier("modifier") | string | 是否有指定修饰 | it.hasModifier("public") | 
-| modifiers() | string | 获取所有修饰 | it.modifiers() | 
-| sourceCode() | string | 获取当前对象源码 | it.sourceCode() | 
-| defineCode() | string | 获取当前对象纯定义代码 | it.defineCode() | 
-| contextType() | string | 当前上下文类型 class/field/method/param | it.contextType() | 
+| hasAnn("annotation_name") | boolean | 是否有指定注解 | it.hasAnn("org.springframework.web.bind.annotation.RequestBody") |
+| ann("annotation_name") | string | 获取指定注解值(默认value) | it.ann("org.springframework.web.bind.annotation.RequestBody") |
+| ann("annotation_name","attr") | string | 获取指定注解中的指定参数值 | it.ann("org.springframework.web.bind.annotation.RequestMapping","path") |
+| annMap("annotation_name") | map | 获取指定注解所有的参数 | it.annMap("org.springframework.web.bind.annotation.RequestMapping") |
+| annMaps("annotation_name") | map[] | 获取指定可重复注解所有的参数 | it.annMaps("javax.validation.constraints.Max") |
+| annValue("annotation_name") | object | 获取指定注解值(默认value),与ann不同,会保持原有类型,不强制转换为string | it.annValue("org.springframework.web.bind.annotation.RequestBody") |
+| annValue("annotation_name","attr") | object | 获取指定注解中的指定参数值,与ann不同,会保持原有类型,不强制转换为string | it.annValue("org.springframework.web.bind.annotation.RequestMapping","path") |
+| doc() | string | 获取注释值 | it.doc() |
+| doc("tag") | string | 获取注释tag值(不需要加@) | it.doc("return") |
+| docs("tag") | array<string> | 获取多个注释tag值(不需要加@) | it.docs("see") |
+| doc("tag","subTag") | string | 获取二级注释tag值 | it.doc("param","a") |
+| hasDoc("tag") | string | 是否有指定注释tag | it.hasDoc("ignore") |
+| hasModifier("modifier") | string | 是否有指定修饰 | it.hasModifier("public") |
+| modifiers() | string | 获取所有修饰 | it.modifiers() |
+| sourceCode() | string | 获取当前对象源码 | it.sourceCode() |
+| defineCode() | string | 获取当前对象纯定义代码 | it.defineCode() |
+| contextType() | string | 当前上下文类型 class/field/method/param | it.contextType() |
 
 ### 不同的应用对象提供额外的方法
 
@@ -42,6 +41,7 @@
 | isArray() | boolean | 是否为数组 | it.isArray() |
 | toJson(readGetter) | string | 获取当前类型的json字符串 | it.toJson(true) |
 | toJson5(readGetter) | string | 获取当前类型的[json5](https://json5.org/)字符串 | it.toJson5(true) |
+| mavenId() | MavenId | 返回 Maven ID 信息 | it.mavenId() |
 
 - method(方法/API)
 
@@ -59,10 +59,10 @@
 
 | 方法  |  返回值  |  描述  |  示例  |
 | ------------ | ------------ | ------------ |------------ |
-| type() | class | 字段类型 | it.type()| 
-| containingClass() | class | 字段所属类 | it.containingClass() | 
-| jsonName() | string | 字段json名 | it.jsonName() | 
-| jsonType() | class | 字段json类型(被转换过的) | it.jsonType() | 
+| type() | class | 字段类型 | it.type()|
+| containingClass() | class | 字段所属类 | it.containingClass() |
+| jsonName() | string | 字段json名 | it.jsonName() |
+| jsonType() | class | 字段json类型(被转换过的) | it.jsonType() |
 
 - param(参数)
 
@@ -70,3 +70,17 @@
 | ------------ | ------------ | ------------ |------------ |
 | type() | class | 参数类型 | it.type() |
 | isVarArgs() | boolean | 是否为不定参 | it.isVarArgs() |
+
+- MavenId
+
+| 方法  |  返回值  |  描述  |  示例  |
+| ------------ | ------------ | ------------ |------------ |
+| groupId | string | groupId | it.groupId() |
+| artifactId | string | artifactId | it.artifactId() |
+| version | string | version | it.version() |
+| maven()    | String    | 生成 Maven 依赖代码片段                  | it.maven()                   |
+| gradle()   | String    | 生成 Gradle 实现依赖代码片段             | it.gradle()                  |
+| gradleShort() | String | 生成 Gradle 实现依赖代码片段（简短格式） | it.gradleShort()             |
+| gradleKotlin() | String | 生成 Gradle Kotlin DSL 依赖代码片段    | it.gradleKotlin()            |
+| sbt()      | String    | 生成 SBT 依赖代码片段                   | it.sbt()                     |
+| ivy()      | String    | 生成 Ivy 依赖代码片段                   | it.ivy()                     |
