@@ -41,11 +41,11 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[mdoc.method.path](rules/mdoc_method_path.md) | method | v0.9.5+ | 设置方法文档(rpc)的路径 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[mdoc.method.http.method](rules/mdoc_method_http_method.md) | method | v0.9.5+ | 设置方法文档(rpc)HTTP请求方式 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[method.additional.header](rules/method_additional_header.md) | method | v1.3.0+ | API需要额外的header |
-|  |  |  | {name: "header name",value: "",desc: "",required:false, example:""} |
+|  |  |  | {name: "header name",value: "",desc: "",required:false, demo:""} |
 | &nbsp;&nbsp;&nbsp;&nbsp;[method.additional.param](rules/method_additional_param.md) | method | v1.3.0+ | API需要额外的参数 |
 |  |  |  | {name: "param name",value: "defaultValue",desc: "",required:false} |
 | &nbsp;&nbsp;&nbsp;&nbsp;method.additional.response.header | method | v1.3.0+ | API的响应包含额外的header |
-|  |  |  | {name: "header name",value: "",desc: "",required:false, example:""} |
+|  |  |  | {name: "header name",value: "",desc: "",required:false, demo:""} |
 | &nbsp;&nbsp;&nbsp;&nbsp;[method.content.type](rules/method_content_type.md) | - | v1.9.7+ | 用以设置API请求的content-type |
 | &nbsp;&nbsp;&nbsp;&nbsp;[method.default.http.method](rules/method_default_http_method.md)  | method | v1.4.2+ | 设置默认的api的HttpMethod |
 | &nbsp;&nbsp;&nbsp;&nbsp;[method.doc](rules/method_doc.md) | method | v0.7.2+ | 方法(api)的额外注释 |

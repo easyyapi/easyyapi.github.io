@@ -5,7 +5,7 @@
 ### 如JWT, 所有的接口都需要在header中携带token
 
 ```properties
-method.additional.header={name: "Authorization",value: "",desc: "认证Token",required:true, example:""}
+method.additional.header={name: "Authorization",value: "",desc: "认证Token",required:true, demo:""}
 ```
 
 ### 如果需要排除指定开放的接口不需要token可以这样配置:

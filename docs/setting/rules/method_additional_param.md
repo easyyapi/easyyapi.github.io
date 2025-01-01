@@ -31,13 +31,13 @@ public @interface Public {
 - 则可如此配置
 
 ```properties
-method.additional.param[!@com.itangcent.common.annotation.Public]={name: "Authorization",value: "",desc: "认证Token",required:true, example:""}
+method.additional.param[!@com.itangcent.common.annotation.Public]={name: "Authorization",value: "",desc: "认证Token",required:true, demo:""}
 ```
 
 - 等价于
 
 ```properties
-method.additional.param[groovy:!it.hasAnn("com.itangcent.common.annotation.Public")]={name: "Authorization",value: "",desc: "认证Token",required:true, example:""}
+method.additional.param[groovy:!it.hasAnn("com.itangcent.common.annotation.Public")]={name: "Authorization",value: "",desc: "认证Token",required:true, demo:""}
 ```
 
 
