@@ -9,3 +9,4 @@
 | get(key) | string | 获取配置中的一个值 | config.get("key")|
 | getValues(key) | array\<string> | 获取配置中的多个值 | config.getValues("key")|
 | resolveProperty(str) | string | 解析字符串中的占位符 | config.resolveProperty("${key}")|
+| resolvePropertyWith(str, placeHolder, context) | string | 使用自定义占位符和上下文解析字符串中的占位符 | config.resolvePropertyWith("${key}", "$", {"key": "value"})|
