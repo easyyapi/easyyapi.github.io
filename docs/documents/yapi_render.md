@@ -1,10 +1,14 @@
 # Yapi Render(v1.6.1+)
 
+> **重要更新**: 最新版本的插件已内嵌`markdown`渲染器，默认情况下无需任何额外配置即可正常使用。以下配置仅在您需要自定义渲染效果时才需要参考。
+
 - 目前`yapi`的[open api](https://hellosean1025.github.io/yapi/openapi.html)更新接口并不会渲染接口备注信息, 如果接口备注信息中含有`markdown`内容, 需要配置`markdown`渲染器
 
 - 插件内置了一个简单的`markdown`渲染器, 如果对渲染效果不满意, 可以按照以下步骤配置自定义的`markdown`渲染器
 
 ## `markdown`渲染器
+
+> **注意**: 由于插件已内嵌高质量的`markdown`渲染器，以下配置仅在您需要替换默认渲染器时才需要设置。大多数用户可以直接使用内嵌渲染器，无需任何额外配置。
 
 渲染器目前分为两种, 一种是本地渲染器, 一种是远程渲染器
 
@@ -41,10 +45,8 @@ markdown.render.server=http://localhost:3000/render
 
 ***目前提供的渲染服务***
 
-- 服务保证不以任何途径保存用户上传的内容,服务运行的代码始终与[yapi-markdown-render](https://github.com/easyyapi/yapi-markdown-render)主分支保持一致.
-- 不保证此服务长期稳定有效.请尽量自行部署[yapi-markdown-render](https://github.com/easyyapi/yapi-markdown-render)使用
-- 为防止服务被攻击/滥用,服务可能记录访问ip,亦有可能将异常ip加入黑名单.如有顾虑,请自行部署.
+> **注意**: 之前提供的渲染服务 `http://www.itangcent.com/render` 已经废弃，不再提供服务。请使用插件内嵌的渲染器或自行部署[yapi-markdown-render](https://github.com/easyyapi/yapi-markdown-render)。
 
-```properties
-markdown.render.server=http://www.itangcent.com/render
-```
+- ~~服务保证不以任何途径保存用户上传的内容,服务运行的代码始终与[yapi-markdown-render](https://github.com/easyyapi/yapi-markdown-render)主分支保持一致.~~
+- ~~不保证此服务长期稳定有效.请尽量自行部署[yapi-markdown-render](https://github.com/easyyapi/yapi-markdown-render)使用~~
+- ~~为防止服务被攻击/滥用,服务可能记录访问ip,亦有可能将异常ip加入黑名单.如有顾虑,请自行部署.~~
