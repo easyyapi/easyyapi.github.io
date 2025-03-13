@@ -28,7 +28,7 @@
 * 讨论 [新的功能](https://github.com/tangcent/easy-yapi/issues?q=label%3Aenhancement) or提交 [BUG](https://github.com/tangcent/easy-yapi/issues?q=label%3Abug): [Issues](https://github.com/tangcent/easy-yapi/issues)
 * 开发 [新的功能](https://github.com/tangcent/easy-yapi/pulls?q=+label%3Aenhancement) or修复 [BUG](https://github.com/tangcent/easy-yapi/pulls?q=label%3Abug): [PR](https://github.com/tangcent/easy-yapi/pulls)
 * 维护推荐配置: [.recommend.easy.api.config](https://github.com/tangcent/easy-yapi/blob/master/idea-plugin/src/main/resources/.recommend.easy.api.config)
-* 丰富demo: [spring-demo](https://github.com/Earth-1610/spring-demo)
+* 丰富demo: [web-demo](https://github.com/Earth-1610/web-demo)
 * 修复IDE兼容问题: [intellij-kotlin](https://github.com/Earth-1610/intellij-kotlin/pulls?q=label%3Acompatibility+)
 
 ## [Contributors](https://github.com/tangcent/easy-yapi/graphs/contributors)
