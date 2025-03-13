@@ -1,0 +1,60 @@
+name: Build and Deploy Documentation
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # This is needed to push to the repository
+    steps:
+      - name: Checkout dev branch
+        uses: actions/checkout@v3
+        with:
+          ref: dev
+          fetch-depth: 0  # Fetch all history for all branches and tags
+          token: ${{ secrets.GITHUB_TOKEN }}  # Use the GitHub token for authentication
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build documentation
+        run: npm run ydoc-build
+
+      - name: Copy built files
+        run: |
+          # Check if _site directory exists
+          if [ -d "_site" ]; then
+            # Copy contents of _site to root directory
+            cp -r _site/* .
+          else
+            echo "Warning: _site directory not found after build"
+            ls -la
+          fi
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and push to master
+        run: |
+          # Add all the built files
+          git add .
+          
+          # Commit the changes
+          git commit -m "Build documentation from dev branch" || echo "No changes to commit"
+          
+          # Create/checkout the master branch
+          git checkout -B master
+          
+          # Force push to master
+          git push -f origin master 
