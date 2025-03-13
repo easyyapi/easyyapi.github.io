@@ -11,7 +11,7 @@ features:
   - { name: '多框架', desc: 'Spring/Feign/Jaxrs(Quarkus or Jersey)' }
   - { name: '多渠道', desc: 'Postman/Markdown/Yapi' }
   - { name: '丰富的扩展性', desc: '支持多种配置与扩展,满足不同框架与代码规范' }
-  - { name: '调试利器', desc: '一个小巧的内置类postman工具' }
+  - { name: '调试利器', desc: '一个小巧的内置API调用工具' }
 
 footer:
   copyRight:
