@@ -18,3 +18,4 @@
     * [Generic](generic.md)
 * [注释规范](docs.md)
     * [java注释demo](java_doc_demo.md)
+* [插件知识库(AI)](knowledge-base.md)
