@@ -9,7 +9,8 @@
     * [☆yapi相关配置](yapi.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;postman相关配置](postman.md)
     * [☆yapi mock配置](yapi-mock.md)
-    * [&nbsp;&nbsp;&nbsp;&nbsp;markdown自定义规则](markdown.md)
+    * [☆markdown模板配置](template.md)
+    * [&nbsp;&nbsp;&nbsp;&nbsp;~~markdown自定义规则~~](markdown.md)
 
 * [可用配置规则](config-rule.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;api.name](rules/api_name.md)
