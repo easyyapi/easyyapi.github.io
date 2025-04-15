@@ -63,6 +63,7 @@
     * [&nbsp;&nbsp;&nbsp;&nbsp;param.doc](rules/param_doc.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;param.http.type](rules/param_http_type.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;param.ignore](rules/param_ignore.md)
+    * [&nbsp;&nbsp;&nbsp;&nbsp;param.name](rules/param_name.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;param.requierd](rules/param_required.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;path.multi](rules/path_multi.md)
     * [&nbsp;&nbsp;&nbsp;&nbsp;postman.host](rules/postman_host.md)

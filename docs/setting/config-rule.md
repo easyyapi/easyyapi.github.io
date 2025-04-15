@@ -57,6 +57,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[param.doc](rules/param_doc.md)  | arg | v1.3.0+ | 参数的额外注释 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[param.http.type](rules/param_http_type.md) | arg | v2.0.0+ | 用于设置API参数在HTTP请求中的类型 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[param.ignore](rules/param_ignore.md)  | arg | v1.3.0+ | 忽略API参数 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[param.name](rules/param_name.md)  | param | v1.3.0+ | 用于修改参数的名称 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[param.required](rules/param_required.md) | arg | v0.7.3+ | API参数是否为必须(即不可为空) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[path.multi](rules/path_multi.md)  | method | v1.9.2+ | 当API有多个路径时如何选择 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[postman.host](rules/postman_host.md)  | class | v1.5.2+ | 设置`postman`API的host |
