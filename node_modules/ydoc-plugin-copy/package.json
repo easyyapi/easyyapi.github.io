@@ -1,0 +1,19 @@
+{
+  "name": "ydoc-plugin-copy",
+  "version": "0.0.3",
+  "description": "ydoc 的插件，用于复制 markdown 生成页面的代码片段。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YMFE/ydoc-plugin-copy.git"
+  },
+  "author": "wenbo.dong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YMFE/ydoc-plugin-copy/issues"
+  },
+  "homepage": "https://github.com/YMFE/ydoc-plugin-copy#readme"
+}

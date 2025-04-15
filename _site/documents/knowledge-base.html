@@ -1,0 +1,695 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="UTF-8"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><link rel="apple-touch-icon" sizes="180x180" href="../ydoc/images/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="../ydoc/images/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="../ydoc/images/favicon-16x16.png"/><link rel="manifest" href="../ydoc/images/manifest.json"/><link rel="mask-icon" href="../ydoc/images/safari-pinned-tab.svg" color="#5bbad5"/><meta name="theme-color" content="#ffffff"/><meta http-equiv="Cache-Control" content="no-transform"/><meta http-equiv="Cache-Control" content="no-siteapp"/><title>Plugin Knowledge Base-文档</title><link rel="stylesheet" href="../ydoc/styles/style.css"/><meta name="author" content="tangcent"/><meta name="keywords"/><meta name="description" content="Simplifies API Development"/><meta id="releativePath" content=".."/><link rel="stylesheet" href="../ydoc/ydoc-plugin-search/search.css"/><link rel="stylesheet" href="../ydoc/ydoc-plugin-copy/clipboard.css"/></head><body><div class="g-doc"><div class="m-aside"><div class="m-summary" id="js-menu"><div class="m-summary-content" id="js-menu-content"><div class="m-summary-block"><div class="m-summary-title">快速上手</div><ul class="m-summary-list indent"><li class="item"><a href="index.html" class="href">介绍</a></li><li class="item"><a href="installation.html" class="href">安装</a></li><li class="item"><div class="m-summary-block"><a href="use.html" class="href">使用</a><ul class="m-summary-list indent"><li class="item"><a href="export2yapi.html" class="href">导出到yapi</a></li><li class="item"><a href="export2postman.html" class="href">导出到postman</a></li><li class="item"><a href="export2markdown.html" class="href">导出到markdown</a></li><li class="item"><a href="export_methodDoc.html" class="href">导出普通java method文档</a></li><li class="item"><a href="export_rpc.html" class="href">导出rpc文档</a></li><li class="item"><a href="login_mode_yapi.html" class="href">旧版本yapi或定制化yapi</a></li></ul></div></li><li class="item"><div class="m-summary-block"><a href="advanced_use.html" class="href">进阶使用</a><ul class="m-summary-list indent"><li class="item"><a href="yapi_render.html" class="href">Yapi Render</a></li><li class="item"><a href="call.html" class="href">Call Api</a></li><li class="item"><a href="script_executor.html" class="href">Script Executor</a></li><li class="item"><a href="generic.html" class="href">Generic</a></li></ul></div></li><li class="item"><div class="m-summary-block"><a href="docs.html" class="href">注释规范</a><ul class="m-summary-list indent"><li class="item"><a href="java_doc_demo.html" class="href">java注释demo</a></li></ul></div></li><li class="item"><a href="" class="href">插件知识库(AI)</a></li></ul></div></div></div><div class="m-summary-switch" id="js-summary-switch"><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="bottom"><g transform="translate(904.92214,-879.1482)"><path d="m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,-55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,-174.6858 c 96.079,-96.07721 175.253196,-174.68583 175.942696,-174.68583 0.6895,0 26.281,25.03215 56.8701,55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864-231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,-104.0616 -231.873,-231.248 z" fill="#fff"></path></g></svg><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="top"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="aaa" fill="#fff" fill-rule="nonzero"><path d="M231.2455,342.502 L0,111.25397 L55.6165,55.62697 C86.2056,25.03212 111.7971,-2.99999998e-05 112.4866,-2.99999998e-05 C113.176,-2.99999998e-05 192.3503,78.60859 288.4293,174.6858 L463.1185,349.3716 L637.8077,174.6858 C733.8867,78.60859 813.060896,-2.99999997e-05 813.750396,-2.99999997e-05 C814.439896,-2.99999997e-05 840.031396,25.03212 870.620496,55.62697 L926.236996,111.25397 L694.9915,342.502 C567.8065,469.6884 463.4636,573.75 463.1185,573.75 C462.7734,573.75 358.4305,469.6884 231.2455,342.502 Z" id="Shape" transform="translate(463.118498, 286.874985) scale(1, -1) translate(-463.118498, -286.874985) "></path></g></g></svg></div></div><div class="m-main" id="js-panel"><header class="m-header" id="js-header"><div class="m-header-title js-logo"><a href="../index.html" target="_self"><h6 class="name">EasyYapi</h6></a></div><div><div class="m-search">
+      <div class="icon">&#xf0fd;</div>
+      <input type="text" class="input js-input" placeholder="搜索" />
+      <div class="m-search-result js-search-result"></div>
+    </div></div><nav class="m-header-nav js-nav"><ul class="m-header-items"><li class="item active"><a class="href" href="index.html">文档</a></li><li class="item "><a class="href" href="../setting/index.html">配置</a></li><li class="item "><a class="href" href="../demo/index.html">demo</a></li><li class="item "><a class="href" href="../framwork/index.html">框架支持</a></li><li class="item "><a class="href" href="../qa/index.html">QA</a></li></ul></nav><div id="js-nav-btn" class="m-header-btn ui-font-ydoc"></div></header><div class="m-content" id="js-content"><div id="markdown-body" class="m-content-container markdown-body"><h1>Plugin Knowledge Base</h1>
+<p>This document contains core knowledge about the EasyYapi plugin to assist AI systems in understanding and using the plugin.</p>
+<h2 id="plugin-overview">Plugin Overview</h2>
+<p>EasyYapi is an IntelliJ platform plugin designed to simplify API documentation generation and management. It supports exporting API interfaces from Java/Kotlin projects to various formats, including YApi, Postman, and Markdown.</p>
+<h2 id="rule-writing-guidelines">Rule Writing Guidelines</h2>
+<h3 id="rule-writing-guidelines-simple-rules">Simple Rules</h3>
+<h4>Rule Types and Syntax</h4>
+<p>There are two main types of rules based on their return values:</p>
+<ol>
+<li>
+<p><strong>Boolean Rules</strong> (return true/false):</p>
+<ul>
+<li>Used for decisions like whether to do something or not, whether to filter or not</li>
+<li>Basic syntax options:
+<ul>
+<li><code>#xxx</code> - Check if tag 'xxx' exists in comments</li>
+<li><code>@xxx</code> - Check if annotation 'xxx' exists</li>
+</ul>
+</li>
+<li>Additional operators:
+<ul>
+<li><code>!</code> - Negate the result of a rule (e.g., <code>!@Deprecated</code> checks if annotation does NOT exist)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>String/Text Rules</strong> (return text content):</p>
+<ul>
+<li>Used for getting content like API names, field descriptions, etc.</li>
+<li>Basic syntax options:
+<ul>
+<li><code>#xxx</code> - Get description from tag 'xxx' in comments</li>
+<li><code>@xxx</code> - Get the 'value' attribute from annotation 'xxx'</li>
+<li><code>@xxx#yyy</code> - Get the 'yyy' attribute from annotation 'xxx'</li>
+</ul>
+</li>
+<li>Additional operators:
+<ul>
+<li><code>~</code> - Append a suffix to the result (e.g., <code>~suffix</code> will append &quot;suffix&quot; to the result)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4>Examples</h4>
+<h5>Boolean Rule Examples:</h5>
+<pre><code class="language-java"><span class="token comment">/**
+ * @ignore
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Example</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Use #ignore to check if @ignore tag exists</span>
+    <span class="token comment">// Returns: true</span>
+    
+    <span class="token comment">// Use !#ignore to check if @ignore tag does NOT exist</span>
+    <span class="token comment">// Returns: false</span>
+<span class="token punctuation">}</span>
+
+<span class="token annotation punctuation">@Deprecated</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Example</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Use @Deprecated to check if @Deprecated annotation exists</span>
+    <span class="token comment">// Returns: true</span>
+    
+    <span class="token comment">// Use !@Deprecated to check if @Deprecated annotation does NOT exist</span>
+    <span class="token comment">// Returns: false</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h5>String Rule Examples:</h5>
+<pre><code class="language-java"><span class="token comment">/**
+ * @description This is an example API
+ */</span>
+<span class="token annotation punctuation">@ApiOperation</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"Example API"</span><span class="token punctuation">,</span> notes <span class="token operator">=</span> <span class="token string">"Detailed notes"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Example</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Use #description to get "This is an example API"</span>
+    <span class="token comment">// Use @ApiOperation to get "Example API" (default value attribute)</span>
+    <span class="token comment">// Use @ApiOperation#notes to get "Detailed notes"</span>
+    <span class="token comment">// Use ~" (v1)" to append " (v1)" to any result</span>
+    <span class="token comment">// e.g., "#description~" (v1)" would return "This is an example API (v1)"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="rule-writing-guidelines-advanced-script-rules">Advanced Script Rules</h3>
+<h4>Groovy Rules</h4>
+<p>Groovy scripts can be specified in two formats:</p>
+<ol>
+<li>Single line:</li>
+</ol>
+<pre><code class="language-properties"><span class="token key attr-name">rule</span><span class="token punctuation">=</span><span class="token value attr-value">groovy:groovyScript</span>
+</code></pre>
+<ol start="2">
+<li>Multi-line:</li>
+</ol>
+<pre><code class="language-properties"><span class="token key attr-name">rule</span><span class="token punctuation">=</span><span class="token value attr-value">groovy:```</span>
+<span class="token key attr-name">def</span> <span class="token value attr-value">result = someOperation()</span>
+<span class="token key attr-name">if</span> <span class="token value attr-value">(result) {</span>
+<span class="token key attr-name">    return</span> <span class="token value attr-value">"success"</span>
+<span class="token key attr-name">}</span> <span class="token value attr-value">else {</span>
+<span class="token key attr-name">    return</span> <span class="token value attr-value">"failure"</span>
+}
+```
+</code></pre>
+<h2 id="ai-assistant-guidelines">AI Assistant Guidelines</h2>
+<p>When providing assistance for EasyYapi plugin questions, follow this structured approach:</p>
+<h3 id="ai-assistant-guidelines-1.-identify-applicable-rules">1. Identify Applicable Rules</h3>
+<ul>
+<li>Determine which EasyYapi rule(s) would address the user's needs</li>
+<li>Review the rule documentation to understand its purpose, context, and return type</li>
+<li>Consider possible combinations of rules if the requirement is complex</li>
+</ul>
+<h3 id="ai-assistant-guidelines-2.-analyze-code-context-and-framework-usage">2. Analyze Code Context and Framework Usage</h3>
+<ul>
+<li>Ask the user about existing frameworks in their project that might already provide necessary annotations</li>
+<li>Look for existing patterns in the user's code that can be leveraged:
+<ul>
+<li>JavaDoc comments (<code>@tag</code> style)</li>
+<li>Annotations from common frameworks (Spring, Jackson, Swagger, etc.)</li>
+<li>Method/class naming conventions</li>
+<li>Structure of existing models/controllers</li>
+</ul>
+</li>
+</ul>
+<h3 id="ai-assistant-guidelines-3.-prioritize-solutions-in-order-of-preference">3. Prioritize Solutions (In Order of Preference)</h3>
+<ul>
+<li>
+<p><strong>First Option</strong>: Leverage existing frameworks</p>
+<pre><code class="language-properties"><span class="token comment"># Example: If user has Jackson in their project</span>
+<span class="token key attr-name">field.ignore</span><span class="token punctuation">=</span><span class="token value attr-value">@com.fasterxml.jackson.annotation.JsonIgnore</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Second Option</strong>: Use JavaDoc tags (preferred over custom annotations)</p>
+<pre><code class="language-properties"><span class="token comment"># Example: Using JavaDoc tags</span>
+<span class="token key attr-name">field.ignore</span><span class="token punctuation">=</span><span class="token value attr-value">#ignore</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Third Option</strong>: Ask if user has any custom annotations for the purpose</p>
+<pre><code class="language-properties"><span class="token comment"># Example: If user has custom annotations</span>
+<span class="token key attr-name">field.ignore</span><span class="token punctuation">=</span><span class="token value attr-value">@com.example.IgnoreField</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Last Option</strong>: Suggest adding one of the above approaches</p>
+</li>
+</ul>
+<h3 id="ai-assistant-guidelines-4.-demonstrate-implementation-with-examples">4. Demonstrate Implementation with Examples</h3>
+<ul>
+<li>Show complete examples with:
+<ul>
+<li>Configuration in .properties format</li>
+<li>Sample Java/Kotlin code showing how to apply the solution</li>
+<li>Explanation of how the rule processes the code</li>
+</ul>
+</li>
+</ul>
+<h3 id="ai-assistant-guidelines-5.-provide-framework-specific-examples">5. Provide Framework-Specific Examples</h3>
+<p>For common tasks, demonstrate solutions using popular frameworks:</p>
+<p><strong>Field Ignoring Example</strong>:</p>
+<pre><code class="language-properties"><span class="token comment"># For Jackson users</span>
+<span class="token key attr-name">field.ignore</span><span class="token punctuation">=</span><span class="token value attr-value">@com.fasterxml.jackson.annotation.JsonIgnore</span>
+
+<span class="token comment"># For Spring users</span>
+<span class="token key attr-name">field.ignore</span><span class="token punctuation">=</span><span class="token value attr-value">@org.springframework.data.annotation.Transient</span>
+
+<span class="token comment"># For Gson users</span>
+<span class="token key attr-name">field.ignore</span><span class="token punctuation">=</span><span class="token value attr-value">@com.google.gson.annotations.Expose#serialize[false]</span>
+
+<span class="token comment"># Framework-agnostic solution (JavaDoc)</span>
+<span class="token key attr-name">field.ignore</span><span class="token punctuation">=</span><span class="token value attr-value">#ignore</span>
+
+<span class="token comment"># By field name (ignores all fields named 'id' across all classes)</span>
+<span class="token key attr-name">field.ignore</span><span class="token punctuation">=</span><span class="token value attr-value">id</span>
+
+<span class="token comment"># By qualified field name (ignores only 'id' field in specific class)</span>
+<span class="token key attr-name">field.ignore</span><span class="token punctuation">=</span><span class="token value attr-value">com.xxx.Xxxx#id</span>
+</code></pre>
+<h3 id="ai-assistant-guidelines-6.-offer-advanced-options-for-complex-requirements">6. Offer Advanced Options for Complex Requirements</h3>
+<ul>
+<li>Suggest Groovy scripts for requirements that can't be solved by simple rules</li>
+<li>Provide sample code with explanations</li>
+</ul>
+<h2 id="example-dialogue">Example Dialogue</h2>
+<p><strong>User</strong>: &quot;How can I ignore specific fields from appearing in my API documentation?&quot;</p>
+<p><strong>AI Response</strong>:
+&quot;I can help you configure field ignoring in EasyYapi.</p>
+<p>First, are you using any frameworks like Jackson, Gson, or Spring in your project? This could help us leverage existing annotations.</p>
+<h3 id="example-dialogue-if-using-jackson">If using Jackson:</h3>
+<pre><code class="language-properties"><span class="token comment"># Leverage existing Jackson annotations</span>
+<span class="token key attr-name">field.ignore</span><span class="token punctuation">=</span><span class="token value attr-value">@com.fasterxml.jackson.annotation.JsonIgnore</span>
+</code></pre>
+<h3 id="example-dialogue-if-not-using-any-framework">If not using any framework:</h3>
+<pre><code class="language-properties"><span class="token comment"># Simple JavaDoc tag approach</span>
+<span class="token key attr-name">field.ignore</span><span class="token punctuation">=</span><span class="token value attr-value">#ignore</span>
+</code></pre>
+<h3 id="example-dialogue-example-usage-with-javadoc-tags">Example usage with JavaDoc tags:</h3>
+<pre><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> username<span class="token punctuation">;</span>
+    
+    <span class="token comment">/**
+     * @ignore
+     */</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> password<span class="token punctuation">;</span>
+    
+    <span class="token comment">// Other fields and methods</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>This configuration will prevent the password field from appearing in your API documentation while keeping the implementation simple with just JavaDoc comments.</p>
+<p>Would you like to know about more advanced configurations for field ignoring?&quot;</p>
+<hr>
+<h2 id="rule-reference">Rule Reference</h2>
+<h3 id="rule-reference-api-rules">API Rules</h3>
+<h4>api.name</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>api.name</code></li>
+<li><strong>Purpose</strong>: Sets the API name for documentation</li>
+<li><strong>Context</strong>: Method level, Class level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>api.tag</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>api.tag</code></li>
+<li><strong>Purpose</strong>: Marks interface tags</li>
+<li><strong>Context</strong>: Method level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>api.open</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>api.open</code></li>
+<li><strong>Purpose</strong>: Marks whether the interface is public</li>
+<li><strong>Context</strong>: Method level</li>
+<li><strong>Return Type</strong>: Boolean</li>
+</ul>
+<h4>api.status</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>api.status</code></li>
+<li><strong>Purpose</strong>: Marks interface status (should return done/undone)</li>
+<li><strong>Context</strong>: Method level</li>
+<li><strong>Return Type</strong>: String (must be either &quot;done&quot; or &quot;undone&quot;)</li>
+</ul>
+<h3 id="rule-reference-class-rules">Class Rules</h3>
+<h4>class.doc</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>class.doc</code></li>
+<li><strong>Purpose</strong>: Additional comments on the class</li>
+<li><strong>Context</strong>: Class level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>class.is.ctrl</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>class.is.ctrl</code></li>
+<li><strong>Purpose</strong>: Allows exporting APIs from specified classes</li>
+<li><strong>Context</strong>: Method level</li>
+<li><strong>Return Type</strong>: Boolean</li>
+</ul>
+<h4>class.prefix.path</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>class.prefix.path</code></li>
+<li><strong>Purpose</strong>: Sets API request prefix</li>
+<li><strong>Context</strong>: Class level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h3 id="rule-reference-field-rules">Field Rules</h3>
+<h4>field.doc</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>field.doc</code></li>
+<li><strong>Purpose</strong>: Additional documentation for fields</li>
+<li><strong>Context</strong>: Field level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>field.ignore</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>field.ignore</code></li>
+<li><strong>Purpose</strong>: Ignores fields (prevents them from appearing in JSON or being required in requests)</li>
+<li><strong>Context</strong>: Field level</li>
+<li><strong>Return Type</strong>: Boolean</li>
+</ul>
+<h4>field.mock</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>field.mock</code></li>
+<li><strong>Purpose</strong>: Sets mock data for fields</li>
+<li><strong>Context</strong>: Field level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>field.name</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>field.name</code></li>
+<li><strong>Purpose</strong>: Sets field name</li>
+<li><strong>Context</strong>: Field level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>field.required</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>field.required</code></li>
+<li><strong>Purpose</strong>: Marks field as required</li>
+<li><strong>Context</strong>: Field level</li>
+<li><strong>Return Type</strong>: Boolean</li>
+</ul>
+<h4>field.advanced</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>field.advanced</code></li>
+<li><strong>Purpose</strong>: Advanced field configuration</li>
+<li><strong>Context</strong>: Field level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>field.default.value</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>field.default.value</code></li>
+<li><strong>Purpose</strong>: Sets default value for fields</li>
+<li><strong>Context</strong>: Field level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>field.demo</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>field.demo</code></li>
+<li><strong>Purpose</strong>: Sets demo value for fields</li>
+<li><strong>Context</strong>: Field level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>field.order</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>field.order</code></li>
+<li><strong>Purpose</strong>: Sets field order in documentation</li>
+<li><strong>Context</strong>: Field level</li>
+<li><strong>Return Type</strong>: Integer</li>
+</ul>
+<h4>field.order.with</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>field.order.with</code></li>
+<li><strong>Purpose</strong>: Sets field order with specific grouping</li>
+<li><strong>Context</strong>: Field level</li>
+<li><strong>Return Type</strong>: Integer</li>
+</ul>
+<h4>field.type</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>field.type</code></li>
+<li><strong>Purpose</strong>: Sets field type in documentation</li>
+<li><strong>Context</strong>: Field level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h3 id="rule-reference-method-rules">Method Rules</h3>
+<h4>method.doc</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>method.doc</code></li>
+<li><strong>Purpose</strong>: Additional documentation for methods</li>
+<li><strong>Context</strong>: Method level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>method.content.type</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>method.content.type</code></li>
+<li><strong>Purpose</strong>: Sets content type for methods</li>
+<li><strong>Context</strong>: Method level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>method.default.http.method</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>method.default.http.method</code></li>
+<li><strong>Purpose</strong>: Sets default HTTP method</li>
+<li><strong>Context</strong>: Method level</li>
+<li><strong>Return Type</strong>: String (HTTP method name: GET, POST, PUT, DELETE, PATCH, OPTIONS, HEAD)</li>
+</ul>
+<h4>method.additional.header</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>method.additional.header</code></li>
+<li><strong>Purpose</strong>: Adds additional headers to the request</li>
+<li><strong>Context</strong>: Method level</li>
+<li><strong>Return Type</strong>: String (JSON format: <code>{name: &quot;header name&quot;, value: &quot;&quot;, desc: &quot;&quot;, required: false, demo: &quot;&quot;}</code>)</li>
+</ul>
+<h4>method.additional.param</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>method.additional.param</code></li>
+<li><strong>Purpose</strong>: Adds additional parameters to the request</li>
+<li><strong>Context</strong>: Method level</li>
+<li><strong>Return Type</strong>: String (JSON format: <code>{name: &quot;param name&quot;, value: &quot;&quot;, desc: &quot;&quot;, required: false, demo: &quot;&quot;}</code>)</li>
+</ul>
+<h4>method.return</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>method.return</code></li>
+<li><strong>Purpose</strong>: Sets return type for methods</li>
+<li><strong>Context</strong>: Method level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>method.return.main</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>method.return.main</code></li>
+<li><strong>Purpose</strong>: Sets main return type for methods</li>
+<li><strong>Context</strong>: Method level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h3 id="rule-reference-parameter-rules">Parameter Rules</h3>
+<h4>param.default.value</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>param.default.value</code></li>
+<li><strong>Purpose</strong>: Sets default value for parameters</li>
+<li><strong>Context</strong>: Parameter level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>param.demo</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>param.demo</code></li>
+<li><strong>Purpose</strong>: Sets demo value for parameters</li>
+<li><strong>Context</strong>: Parameter level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>param.doc</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>param.doc</code></li>
+<li><strong>Purpose</strong>: Additional documentation for parameters</li>
+<li><strong>Context</strong>: Parameter level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>param.http.type</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>param.http.type</code></li>
+<li><strong>Purpose</strong>: Sets HTTP type for parameters</li>
+<li><strong>Context</strong>: Parameter level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>param.ignore</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>param.ignore</code></li>
+<li><strong>Purpose</strong>: Ignores parameters in documentation</li>
+<li><strong>Context</strong>: Parameter level</li>
+<li><strong>Return Type</strong>: Boolean</li>
+</ul>
+<h4>param.required</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>param.required</code></li>
+<li><strong>Purpose</strong>: Marks parameters as required</li>
+<li><strong>Context</strong>: Parameter level</li>
+<li><strong>Return Type</strong>: Boolean</li>
+</ul>
+<h3 id="rule-reference-json-rules">JSON Rules</h3>
+<h4>json.rule.convert</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>json.rule.convert</code></li>
+<li><strong>Purpose</strong>: Sets JSON conversion rules</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>json.rule.enum.convert</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>json.rule.enum.convert</code></li>
+<li><strong>Purpose</strong>: Sets enum conversion rules for how enum types should be converted in JSON. This rule has lower priority than <code>json.rule.convert</code>.</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: String (Format: <code>~#fieldName</code> where fieldName is the enum field to use for conversion)</li>
+</ul>
+<h4>json.rule.field.ignore</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>json.rule.field.ignore</code></li>
+<li><strong>Purpose</strong>: Ignores fields in JSON output (deprecated, use field.ignore instead)</li>
+<li><strong>Context</strong>: Field level</li>
+<li><strong>Return Type</strong>: Boolean</li>
+</ul>
+<h4>json.rule.field.name</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>json.rule.field.name</code></li>
+<li><strong>Purpose</strong>: Sets field name for JSON output</li>
+<li><strong>Context</strong>: Field level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h3 id="rule-reference-enum-rules">Enum Rules</h3>
+<h4>enum.use.by.type</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>enum.use.by.type</code></li>
+<li><strong>Purpose</strong>: Automatically uses fields of the same type when a field references an enum</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: Boolean</li>
+</ul>
+<h4>enum.use.custom</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>enum.use.custom</code></li>
+<li><strong>Purpose</strong>: Customizes which field to use from enum types</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: String (name of the field from enum types to use for JSON conversion)</li>
+</ul>
+<h4>enum.use.name</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>enum.use.name</code></li>
+<li><strong>Purpose</strong>: Uses enum name value in JSON</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: Boolean</li>
+</ul>
+<h4>enum.use.ordinal</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>enum.use.ordinal</code></li>
+<li><strong>Purpose</strong>: Uses enum ordinal value in JSON</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: Boolean</li>
+</ul>
+<h3 id="rule-reference-path-rules">Path Rules</h3>
+<h4>path.multi</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>path.multi</code></li>
+<li><strong>Purpose</strong>: Sets multiple path handling</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h3 id="rule-reference-module-rules">Module Rules</h3>
+<h4>module</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>module</code></li>
+<li><strong>Purpose</strong>: Sets module configuration</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h3 id="rule-reference-documentation-rules">Documentation Rules</h3>
+<h4>folder.name</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>folder.name</code></li>
+<li><strong>Purpose</strong>: Sets folder name for documentation</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>ignore</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>ignore</code></li>
+<li><strong>Purpose</strong>: Sets global ignore rules</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: Boolean</li>
+</ul>
+<h4>mdoc.class.filter</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>mdoc.class.filter</code></li>
+<li><strong>Purpose</strong>: Sets class filtering rules for documentation</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: Boolean</li>
+</ul>
+<h4>mdoc.method.path</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>mdoc.method.path</code></li>
+<li><strong>Purpose</strong>: Sets method path rules for documentation</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>mdoc.method.http.method</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>mdoc.method.http.method</code></li>
+<li><strong>Purpose</strong>: Sets HTTP method rules for documentation</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h3 id="rule-reference-constant-field-rules">Constant Field Rules</h3>
+<h4>constant.field.ignore</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>constant.field.ignore</code></li>
+<li><strong>Purpose</strong>: Ignores constant fields in enumeration extraction</li>
+<li><strong>Context</strong>: Field level</li>
+<li><strong>Return Type</strong>: Boolean</li>
+</ul>
+<h3 id="rule-reference-http-callback-rules">HTTP Callback Rules</h3>
+<h4>http.call.before</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>http.call.before</code></li>
+<li><strong>Purpose</strong>: Callback before every HTTP request made by the plugin</li>
+<li><strong>Context</strong>: None</li>
+<li><strong>Return Type</strong>: Void</li>
+<li><strong>Additional Context</strong>: request</li>
+</ul>
+<h4>http.call.after</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>http.call.after</code></li>
+<li><strong>Purpose</strong>: Callback after every HTTP request made by the plugin</li>
+<li><strong>Context</strong>: None</li>
+<li><strong>Return Type</strong>: Void</li>
+<li><strong>Additional Context</strong>: request, response</li>
+</ul>
+<h3 id="rule-reference-export-rules">Export Rules</h3>
+<h4>export.after</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>export.after</code></li>
+<li><strong>Purpose</strong>: Callback after each API is exported</li>
+<li><strong>Context</strong>: Method level</li>
+<li><strong>Return Type</strong>: Void</li>
+<li><strong>Additional Context</strong>: api</li>
+</ul>
+<h3 id="rule-reference-postman-rules">Postman Rules</h3>
+<h4>postman.host</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>postman.host</code></li>
+<li><strong>Purpose</strong>: Sets the host for Postman collection</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>postman.prerequest</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>postman.prerequest</code></li>
+<li><strong>Purpose</strong>: Sets pre-request script for Postman API requests</li>
+<li><strong>Context</strong>: Method level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>class.postman.prerequest</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>class.postman.prerequest</code></li>
+<li><strong>Purpose</strong>: Sets pre-request script for Postman folders</li>
+<li><strong>Context</strong>: Class level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>collection.postman.prerequest</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>collection.postman.prerequest</code></li>
+<li><strong>Purpose</strong>: Sets pre-request script for Postman collection</li>
+<li><strong>Context</strong>: None</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>postman.test</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>postman.test</code></li>
+<li><strong>Purpose</strong>: Sets test script for Postman API requests</li>
+<li><strong>Context</strong>: Method level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>class.postman.test</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>class.postman.test</code></li>
+<li><strong>Purpose</strong>: Sets test script for Postman folders</li>
+<li><strong>Context</strong>: Class level</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>collection.postman.test</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>collection.postman.test</code></li>
+<li><strong>Purpose</strong>: Sets test script for Postman collection</li>
+<li><strong>Context</strong>: None</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h3 id="rule-reference-simple-configurations">Simple Configurations</h3>
+<h4>yapi.server</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>yapi.server</code></li>
+<li><strong>Purpose</strong>: Sets YApi server address</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>yapi.token.$module</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>yapi.token.$module</code></li>
+<li><strong>Purpose</strong>: Sets YApi module token</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: String</li>
+</ul>
+<h4>dev</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>dev</code></li>
+<li><strong>Purpose</strong>: Enables development mode with detailed logging</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: Boolean</li>
+</ul>
+<h4>max.deep</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>max.deep</code></li>
+<li><strong>Purpose</strong>: Sets maximum depth for JSON parsing</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: Integer</li>
+</ul>
+<h4>max.elements</h4>
+<ul>
+<li><strong>Rule Key</strong>: <code>max.elements</code></li>
+<li><strong>Purpose</strong>: Sets maximum number of fields for JSON parsing</li>
+<li><strong>Context</strong>: Global</li>
+<li><strong>Return Type</strong>: Integer</li>
+</ul>
+</div><div class="m-content-container m-paging"><div class="m-paging-prev m-paging-item"><a href="java_doc_demo.html" class="href"><span class="ui-font-ydoc"></span>java注释demo</a></div></div></div></div></div><div></div><script>
+    var $content = document.getElementById('js-content');
+    var $summaryItems = Array.prototype.slice.call(document.querySelectorAll('#js-menu .href'));
+    var $menu = document.getElementById('js-menu');
+    if (sessionStorage.prevPathname) {
+      sessionStorage.setItem('prevPrevPathname', sessionStorage.prevPathname);
+      sessionStorage.setItem('prevPrevMenuScrollTop', sessionStorage.prevMenuScrollTop);
+      sessionStorage.setItem('prevPrevContentScrollTop', sessionStorage.prevContentScrollTop);
+    }
+    if (sessionStorage.locationPathname) {
+      sessionStorage.setItem('prevPathname', sessionStorage.locationPathname);
+      sessionStorage.setItem('prevMenuScrollTop', sessionStorage.menuScrollTop);
+      sessionStorage.setItem('prevContentScrollTop', sessionStorage.contentScrollTop);
+    }
+    if ($menu && sessionStorage.menuScrollTop) {
+		  $menu.scrollTop = sessionStorage.menuScrollTop;
+    }
+    // 刷新页面但不切换 pathname 的时候，内容区恢复到记忆的高度
+    if ($content && sessionStorage.contentScrollTop && window.location.pathname == sessionStorage.locationPathname) {
+      $content.scrollTop = sessionStorage.contentScrollTop;
+    } else if (sessionStorage.prevPrevPathname && sessionStorage.prevPrevPathname === window.location.pathname) {
+      if ($menu && sessionStorage.prevPrevMenuScrollTop) {
+        $menu.scrollTop = sessionStorage.prevPrevMenuScrollTop;
+      }
+      if ($content && sessionStorage.prevPrevContentScrollTop) {
+        $content.scrollTop = sessionStorage.prevPrevContentScrollTop;
+      }
+    }
+    sessionStorage.setItem('locationPathname', window.location.pathname);
+    </script><script src="../ydoc/scripts/plugins/dollar.min.js"></script><script src="../ydoc/scripts/plugins/responsive-nav.min.js"></script><script src="../ydoc/scripts/plugins/slideout.min.js"></script><script src="../ydoc/scripts/app.js"></script><script src="../ydoc/ydoc-plugin-search/core.js"></script><script src="../ydoc/ydoc-plugin-search/search.js"></script><script src="../ydoc/ydoc-plugin-copy/clipboard.min.js"></script><script src="../ydoc/ydoc-plugin-copy/clipboard.script.js"></script><script src="../search_json.js"></script></body></html>
