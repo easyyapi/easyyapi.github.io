@@ -8,12 +8,16 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[api.status](rules/api_status.md) | method | v0.8.0+ | 标记接口status(应返回done/undone) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[class.doc](rules/class_doc.md)  | class | v1.3.0+ | 类上的额外注释 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[class.is.ctrl](rules/class_is_ctrl.md) | method | v2.0.8+ | 允许导出指定类中的`api` |
+| &nbsp;&nbsp;&nbsp;&nbsp;[class.is.feign.ctrl](rules/class_is_feign_ctrl.md) | class | v2.0.8+ | 标识一个类是否为Feign控制器 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[class.is.jaxrs.ctrl](rules/class_is_jaxrs_ctrl.md) | class | v2.0.8+ | 标识一个类是否为JAX-RS控制器 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[class.is.spring.ctrl](rules/class_is_spring_ctrl.md) | class | v2.0.8+ | 标识一个类是否为Spring控制器 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[class.postman.prerequest](rules/postman_prerequest.md#class.postman.prerequest)  | class | v1.9.5+ | 设置`postman·folder`上的[`prerequest`](https://learning.postman.com/docs/writing-scripts/pre-request-scripts/#re-using-pre-request-scripts) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[class.postman.test](rules/postman_test.md#class.postman.test)  | class | v1.9.5+ | 设置`postman·folder`上的[`test`](https://learning.postman.com/docs/writing-scripts/test-scripts/#testing-collections-and-folders) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[class.prefix.path](rules/class_prefix_path.md)  | class | v1.3.0+ | 设置API请求前缀 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[collection.postman.prerequest](rules/postman_prerequest.md#collection.postman.prerequest)  | class | v1.9.5+ | 设置`postman·collection`上的[`prerequest`](https://learning.postman.com/docs/writing-scripts/pre-request-scripts/#re-using-pre-request-scripts) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[collection.postman.test](rules/postman_test.md#collection.postman.test)  | class | v1.9.5+ | 设置`postman·collection`上的[`test`](https://learning.postman.com/docs/writing-scripts/test-scripts/#testing-collections-and-folders) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[constant.field.ignore](rules/constant_field_ignore.md)  | field | v1.3.8+ | 忽略常量字段 |
+| &nbsp;&nbsp;&nbsp;&nbsp;[endpoint.prefix.path](rules/endpoint_prefix_path.md) | class | v2.0.0+ | 设置端点的请求前缀路径 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[enum.use.custom](rules/enum_use_custom.md) | class | v2.4.1+ | 用于设置使用`@see`枚举类型时的默认取值字段, 优先级高于[enum.use.by.type](rules/enum_use_by_type.md) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[enum.use.by.type](rules/enum_use_by_type.md) | class | v2.4.1+ | 用于设置使用`@see`枚举类型时的默认使用类型一致的字段, 优先级低于[enum.use.custom](rules/enum_use_custom.md) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[enum.use.ordinal](rules/enum_use_ordinal.md) | class | v2.2.1+ | 用于设置使用`@see`枚举类型时的默认使用`ordinal`作为取值 |
@@ -32,19 +36,20 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[field.type](rules/field_type.md) | field | v2.6.4+ | 用于设置字段实际数据类型 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[folder.name](rules/folder_name.md)  | method | v1.9.2+ | 设置api所属文件夹 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[ignore](rules/ignore.md) | class/method | v0.7.2+ | 忽略API |
+| &nbsp;&nbsp;&nbsp;&nbsp;[json.additional.field](rules/json_additional_field.md) | class/method | v2.0.0+ | 用于为JSON对象添加额外字段 |
 | ☆[json.rule.convert](rules/json_rule_convert.md) | - | v0.7.2+ | 用于设置某些类型转换为其他类型处理, 通常用于使用了Spring的自定义类型转换器的情况 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[json.rule.enum.convert](rules/json_rule_enum_convert.md) | class | v1.2.0+ | 用于枚举类型的特殊转换 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[~~json.rule.field.ignore~~](rules/json_rule_field_ignore.md) | field | v0.7.2+ | 忽略字段(设置某些字段不出现在json中,或不需要请求时给出) 已废弃, 使用[field.ignore](rules/field_ignore.md)代替 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[~~json.rule.field.name~~](rules/json_rule_field_name.md) | field | v0.7.2+ | 设置输出的字段名(用于json中字段名与类中字段名不一致) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[mdoc.class.filter](rules/mdoc_class_filter.md) | class | v0.9.5+ | 选择哪些类可以导出方法文档(rpc) |
-| &nbsp;&nbsp;&nbsp;&nbsp;mdoc.method.filter | method | v0.9.5+ | 选择哪些方法可以导出方法文档(rpc) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[mdoc.method.filter](rules/mdoc_method_filter.md) | method | v0.9.5+ | 选择哪些方法可以导出方法文档(rpc) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[mdoc.method.path](rules/mdoc_method_path.md) | method | v0.9.5+ | 设置方法文档(rpc)的路径 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[mdoc.method.http.method](rules/mdoc_method_http_method.md) | method | v0.9.5+ | 设置方法文档(rpc)HTTP请求方式 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[method.additional.header](rules/method_additional_header.md) | method | v1.3.0+ | API需要额外的header |
 |  |  |  | {name: "header name",value: "",desc: "",required:false, demo:""} |
 | &nbsp;&nbsp;&nbsp;&nbsp;[method.additional.param](rules/method_additional_param.md) | method | v1.3.0+ | API需要额外的参数 |
 |  |  |  | {name: "param name",value: "defaultValue",desc: "",required:false} |
-| &nbsp;&nbsp;&nbsp;&nbsp;method.additional.response.header | method | v1.3.0+ | API的响应包含额外的header |
+| &nbsp;&nbsp;&nbsp;&nbsp;[method.additional.response.header](rules/method_additional_response_header.md) | method | v1.3.0+ | API的响应包含额外的header |
 |  |  |  | {name: "header name",value: "",desc: "",required:false, demo:""} |
 | &nbsp;&nbsp;&nbsp;&nbsp;[method.content.type](rules/method_content_type.md) | - | v1.9.7+ | 用以设置API请求的content-type |
 | &nbsp;&nbsp;&nbsp;&nbsp;[method.default.http.method](rules/method_default_http_method.md)  | method | v1.4.2+ | 设置默认的api的HttpMethod |
@@ -59,10 +64,12 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[param.ignore](rules/param_ignore.md)  | arg | v1.3.0+ | 忽略API参数 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[param.name](rules/param_name.md)  | param | v1.3.0+ | 用于修改参数的名称 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[param.required](rules/param_required.md) | arg | v0.7.3+ | API参数是否为必须(即不可为空) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[param.type](rules/param_type.md) | arg | v2.0.0+ | 用于指定参数的类型 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[path.multi](rules/path_multi.md)  | method | v1.9.2+ | 当API有多个路径时如何选择 |
 | &nbsp;&nbsp;&nbsp;&nbsp;[postman.host](rules/postman_host.md)  | class | v1.5.2+ | 设置`postman`API的host |
 | &nbsp;&nbsp;&nbsp;&nbsp;[postman.prerequest](rules/postman_prerequest.md)  | class | v1.9.5+ | 设置`postman`API的[`prerequest`](https://learning.postman.com/docs/postman/scripts/pre-request-scripts/) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[postman.test](rules/postman_test.md)  | class | v1.9.5+ | 设置`postman`API的[`test`](https://learning.postman.com/docs/postman/scripts/test-scripts/) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[properties.prefix](rules/properties_prefix.md) | - | v2.0.0+ | 用于设置属性值的前缀 |
 
 
 ---

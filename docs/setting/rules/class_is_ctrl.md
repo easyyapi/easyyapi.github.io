@@ -1,11 +1,13 @@
 # class.is.ctrl
 
-> 默认的只会导出注解有`org.springframework.stereotype.Controller`或`org.springframework.web.bind.annotation.RestController`
-的类中的`api`.
+> **已废弃**：此规则已废弃，请改用 [class.is.spring.ctrl](./class_is_spring_ctrl.md)
+
+> 默认的只会导出注解有`org.springframework.stereotype.Controller`或
+`org.springframework.web.bind.annotation.RestController`
+> 的类中的`api`.
 
 > 当有导出未注解`org.springframework.stereotype.Controller`或`org.springframework.web.bind.annotation.RestController`
-的类中的`api`的需求时,可以配置此规则
-
+> 的类中的`api`的需求时,可以配置此规则
 
 ## 允许导出所有类中的`api`
 
@@ -26,7 +28,7 @@
  ```
 
 ***Demo***
- 
+
  ```java
  /**
   * @ctrl
