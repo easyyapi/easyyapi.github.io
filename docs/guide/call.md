@@ -38,11 +38,16 @@ See [http.call.before](/settings/rules/http_call_before) and [http.call.after](/
 
 ## gRPC Call
 
-EasyYapi also supports calling gRPC methods directly from the IDE. Enable `grpc.call.enabled` in your configuration:
+EasyYapi also supports calling gRPC methods directly from the IDE. This feature is disabled by default; enable it in your configuration:
 
 ```properties
 grpc.call.enabled=true
 ```
+
+When gRPC call is enabled, the plugin needs gRPC runtime JARs to invoke methods. You can configure the runtime dependencies via:
+
+- **IDE Settings**: Use the **Auto Detect** button in <kbd>Settings</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > gRPC Runtime to automatically detect and resolve dependencies.
+- **Config file**: Use `grpc.artifact.configs`, `grpc.additional.jars`, and `grpc.repositories` properties.
 
 See [gRPC Framework Support](/framework/grpc) for more details on gRPC configuration.
 
