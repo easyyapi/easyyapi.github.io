@@ -14,11 +14,17 @@ The following tools are available in the script executor:
 
 - [it](/settings/tools/it) — Context object
 - [tool](/settings/tools/tool) — Utility methods
+- [regex](/settings/tools/regex) — Regular expression utilities
 - [logger](/settings/tools/logger) — Logging
+- [helper](/settings/tools/helper) — Common operation helpers
 - [httpClient](/settings/tools/httpClient) — HTTP client
-- [localStorage](/settings/tools/localStorage) — Local storage
+- [localStorage](/settings/tools/localStorage) — Persistent local storage
+- [session](/settings/tools/session) — Session-level storage
 - [config](/settings/tools/config) — Configuration access
 - [api](/settings/tools/api) — API utilities
+- [runtime](/settings/tools/runtime) — Runtime information
+- [fieldContext](/settings/tools/fieldContext) — Field context utilities
+- [files](/settings/tools/files) — File operations
 
 ## Example
 

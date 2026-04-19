@@ -1,27 +1,28 @@
-# 脚本工具概述
+# Script Tools Overview
 
-EasyYapi 提供了一组内置工具，可在配置规则的 Groovy 脚本中使用。
+EasyYapi provides a set of built-in tools that can be used in Groovy scripts within configuration rules.
 
-## 可用工具
+## Available Tools
 
-| 工具 | 说明 |
-|------|------|
-| [it](./tools/it) | 当前上下文对象 |
-| [tool](./tools/tool) | 通用工具方法 |
-| [regex](./tools/regex) | 正则表达式工具 |
-| [logger](./tools/logger) | 日志 |
-| [helper](./tools/helper) | 常用操作辅助方法 |
-| [httpClient](./tools/httpClient) | HTTP 客户端 |
-| [localStorage](./tools/localStorage) | 持久化本地存储 |
-| [session](./tools/session) | 会话级存储 |
-| [config](./tools/config) | 配置访问 |
-| [api](./tools/api) | API 工具 |
-| [runtime](./tools/runtime) | 运行时信息 |
-| [fieldContext](./tools/fieldContext) | 字段上下文工具 |
+| Tool | Description |
+|------|-------------|
+| [it](./tools/it) | Current context object |
+| [tool](./tools/tool) | General utility methods |
+| [regex](./tools/regex) | Regular expression utilities |
+| [logger](./tools/logger) | Logging |
+| [helper](./tools/helper) | Common operation helpers |
+| [httpClient](./tools/httpClient) | HTTP client |
+| [localStorage](./tools/localStorage) | Persistent local storage |
+| [session](./tools/session) | Session-level storage |
+| [config](./tools/config) | Configuration access |
+| [api](./tools/api) | API utilities |
+| [runtime](./tools/runtime) | Runtime information |
+| [fieldContext](./tools/fieldContext) | Field context utilities |
+| [files](./tools/files) | File operations |
 
-## 用法
+## Usage
 
-工具在 Groovy 脚本中作为变量使用：
+Tools are available as variables in Groovy scripts:
 
 ```properties
 field.mock=groovy:'''

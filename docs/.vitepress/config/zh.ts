@@ -71,25 +71,18 @@ function sidebarGuide() {
         { text: '导出到 Markdown', link: '/zh/guide/export2markdown' },
         { text: '导出普通 Java Method 文档', link: '/zh/guide/export-method-doc' },
         { text: '导出 RPC 文档', link: '/zh/guide/export-rpc' },
-        { text: '旧版本 YApi 或定制化 YApi', link: '/zh/guide/login-mode-yapi' },
       ],
     },
     {
       text: '进阶',
       items: [
-        { text: '进阶使用', link: '/zh/guide/advanced-use' },
-        { text: 'YApi Render', link: '/zh/guide/yapi-render' },
         { text: 'Call API', link: '/zh/guide/call' },
-        { text: 'Script Executor', link: '/zh/guide/script-executor' },
-        { text: 'Generic', link: '/zh/guide/generic' },
       ],
     },
     {
       text: '参考',
       items: [
         { text: '注释规范', link: '/zh/guide/docs' },
-        { text: 'Java 注释 Demo', link: '/zh/guide/javadoc-demo' },
-        { text: '插件知识库(AI)', link: '/zh/guide/knowledge-base' },
       ],
     },
   ]
@@ -102,13 +95,22 @@ function sidebarFramework() {
       items: [
         { text: '概览', link: '/zh/framework/' },
         { text: 'Spring Boot', link: '/zh/framework/springboot' },
-        { text: 'Spring Boot WebFlux', link: '/zh/framework/springboot-webflux' },
-        { text: 'Swagger', link: '/zh/framework/swagger' },
-        { text: 'Swagger 3', link: '/zh/framework/swagger3' },
+        { text: 'Spring Actuator', link: '/zh/framework/actuator' },
+        { text: 'Spring Configuration', link: '/zh/framework/spring-configuration' },
         { text: 'JAX-RS', link: '/zh/framework/jaxrs' },
+        { text: 'gRPC', link: '/zh/framework/grpc' },
         { text: 'javax.validation', link: '/zh/framework/javax-validation' },
-        { text: 'Jackson', link: '/zh/framework/jackson' },
+        { text: 'Jakarta Validation', link: '/zh/framework/jakarta-validation' },
+        { text: 'Gson', link: '/zh/framework/gson' },
+        { text: 'Fastjson', link: '/zh/framework/fastjson' },
         { text: 'Dubbo', link: '/zh/framework/dubbo' },
+      ],
+    },
+    {
+      text: '内置扩展',
+      items: [
+        { text: '废弃信息与类型转换', link: '/zh/framework/deprecated-converts' },
+        { text: '字段排序', link: '/zh/framework/field-order' },
       ],
     },
   ]
@@ -149,9 +151,11 @@ function sidebarSettings() {
           items: [
             { text: 'class.doc', link: '/zh/settings/rules/class_doc' },
             { text: 'class.is.ctrl', link: '/zh/settings/rules/class_is_ctrl' },
+            { text: 'class.is.spring.ctrl', link: '/zh/settings/rules/class_is_spring_ctrl' },
             { text: 'class.is.feign.ctrl', link: '/zh/settings/rules/class_is_feign_ctrl' },
             { text: 'class.is.jaxrs.ctrl', link: '/zh/settings/rules/class_is_jaxrs_ctrl' },
-            { text: 'class.is.spring.ctrl', link: '/zh/settings/rules/class_is_spring_ctrl' },
+            { text: 'class.is.quarkus.ctrl', link: '/zh/settings/rules/class_is_quarkus_ctrl' },
+            { text: 'class.is.grpc', link: '/zh/settings/rules/class_is_grpc' },
             { text: 'class.prefix.path', link: '/zh/settings/rules/class_prefix_path' },
           ],
         },
@@ -165,11 +169,12 @@ function sidebarSettings() {
             { text: 'field.ignore', link: '/zh/settings/rules/field_ignore' },
             { text: 'field.mock', link: '/zh/settings/rules/field_mock' },
             { text: 'field.name', link: '/zh/settings/rules/field_name' },
+            { text: 'field.name.suffix', link: '/zh/settings/rules/field_name_suffix' },
             { text: 'field.required', link: '/zh/settings/rules/field_required' },
             { text: 'field.order', link: '/zh/settings/rules/field_order' },
             { text: 'field.order.with', link: '/zh/settings/rules/field_order_with' },
-            { text: 'field.type', link: '/zh/settings/rules/field_type' },
             { text: 'field.advanced', link: '/zh/settings/rules/field_advanced' },
+            { text: 'field.max.depth', link: '/zh/settings/rules/field_max_depth' },
           ],
         },
         {
@@ -198,6 +203,8 @@ function sidebarSettings() {
             { text: 'param.name', link: '/zh/settings/rules/param_name' },
             { text: 'param.required', link: '/zh/settings/rules/param_required' },
             { text: 'param.type', link: '/zh/settings/rules/param_type' },
+            { text: 'param.mock', link: '/zh/settings/rules/param_mock' },
+            { text: 'param.max.depth', link: '/zh/settings/rules/param_max_depth' },
           ],
         },
         {
@@ -205,8 +212,6 @@ function sidebarSettings() {
           collapsed: true,
           items: [
             { text: 'enum.use.custom', link: '/zh/settings/rules/enum_use_custom' },
-            { text: 'enum.use.by.type', link: '/zh/settings/rules/enum_use_by_type' },
-            { text: 'enum.use.ordinal', link: '/zh/settings/rules/enum_use_ordinal' },
             { text: 'enum.use.name', link: '/zh/settings/rules/enum_use_name' },
           ],
         },
@@ -215,8 +220,24 @@ function sidebarSettings() {
           collapsed: true,
           items: [
             { text: 'json.rule.convert', link: '/zh/settings/rules/json_rule_convert' },
-            { text: 'json.rule.enum.convert', link: '/zh/settings/rules/json_rule_enum_convert' },
             { text: 'json.additional.field', link: '/zh/settings/rules/json_additional_field' },
+            { text: 'json.unwrapped', link: '/zh/settings/rules/json_unwrapped' },
+            { text: 'json.rule.field.ignore', link: '/zh/settings/rules/json_rule_field_ignore' },
+            { text: 'json.rule.field.name', link: '/zh/settings/rules/json_rule_field_name' },
+          ],
+        },
+        {
+          text: 'Postman 规则',
+          collapsed: true,
+          items: [
+            { text: 'postman.host', link: '/zh/settings/rules/postman_host' },
+            { text: 'postman.prerequest', link: '/zh/settings/rules/postman_prerequest' },
+            { text: 'postman.test', link: '/zh/settings/rules/postman_test' },
+            { text: 'postman.class.prerequest', link: '/zh/settings/rules/postman_class_prerequest' },
+            { text: 'postman.class.test', link: '/zh/settings/rules/postman_class_test' },
+            { text: 'postman.collection.prerequest', link: '/zh/settings/rules/postman_collection_prerequest' },
+            { text: 'postman.collection.test', link: '/zh/settings/rules/postman_collection_test' },
+            { text: 'postman.format.after', link: '/zh/settings/rules/postman_format_after' },
           ],
         },
         {
@@ -261,6 +282,8 @@ function sidebarSettings() {
           items: [
             { text: 'export.after', link: '/zh/settings/rules/export_after' },
             { text: 'yapi.export.before', link: '/zh/settings/events/yapi_export_before' },
+            { text: 'yapi.save.before', link: '/zh/settings/rules/yapi_save_before' },
+            { text: 'yapi.save.after', link: '/zh/settings/rules/yapi_save_after' },
             { text: 'http.call.before', link: '/zh/settings/rules/http_call_before' },
             { text: 'http.call.after', link: '/zh/settings/rules/http_call_after' },
           ],
@@ -283,6 +306,7 @@ function sidebarSettings() {
         { text: 'api', link: '/zh/settings/tools/api' },
         { text: 'runtime', link: '/zh/settings/tools/runtime' },
         { text: 'fieldContext', link: '/zh/settings/tools/fieldContext' },
+        { text: 'files', link: '/zh/settings/tools/files' },
       ],
     },
     {

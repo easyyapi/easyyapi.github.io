@@ -1,6 +1,6 @@
 # Export RPC Doc
 
-EasyYapi supports exporting RPC documentation for documenting remote procedure call interfaces such as Dubbo services.
+EasyYapi supports exporting RPC documentation for documenting remote procedure call interfaces such as Dubbo and gRPC services.
 
 ## Usage
 
@@ -12,3 +12,9 @@ EasyYapi supports exporting RPC documentation for documenting remote procedure c
 ## Dubbo Support
 
 See [Dubbo Framework Support](/framework/dubbo) for more details.
+
+## gRPC Support
+
+EasyYapi can export API documentation from gRPC service implementations. gRPC support is enabled by default.
+
+See [gRPC Framework Support](/framework/grpc) for configuration details.

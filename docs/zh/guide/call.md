@@ -35,3 +35,23 @@ if (it.response().code() == 200) {
 ```
 
 详见 [http.call.before](/zh/settings/rules/http_call_before) 和 [http.call.after](/zh/settings/rules/http_call_after)。
+
+## gRPC 调用
+
+EasyYapi 还支持直接从 IDE 调用 gRPC 方法。在配置中启用 `grpc.call.enabled`：
+
+```properties
+grpc.call.enabled=true
+```
+
+详见 [gRPC 框架支持](/zh/framework/grpc)。
+
+## API Dashboard
+
+EasyYapi 提供了 API Dashboard 工具窗口，方便快速访问 API 测试和管理。可以从 IDEA 底部工具窗口栏打开 Dashboard。
+
+API Dashboard 允许你：
+
+- 浏览当前项目中检测到的所有 API
+- 快速调用任何 API，自动填充参数
+- 以结构化格式查看响应数据

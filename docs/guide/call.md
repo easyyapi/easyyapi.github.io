@@ -35,3 +35,23 @@ if (it.response().code() == 200) {
 ```
 
 See [http.call.before](/settings/rules/http_call_before) and [http.call.after](/settings/rules/http_call_after) for more details.
+
+## gRPC Call
+
+EasyYapi also supports calling gRPC methods directly from the IDE. Enable `grpc.call.enabled` in your configuration:
+
+```properties
+grpc.call.enabled=true
+```
+
+See [gRPC Framework Support](/framework/grpc) for more details on gRPC configuration.
+
+## API Dashboard
+
+EasyYapi provides an API Dashboard tool window for quick access to API testing and management. The dashboard can be opened from the bottom tool window bar in IDEA.
+
+The API Dashboard allows you to:
+
+- Browse all detected APIs in the current project
+- Quickly call any API with auto-filled parameters
+- View response data in a structured format

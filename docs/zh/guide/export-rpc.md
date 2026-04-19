@@ -1,6 +1,6 @@
 # 导出 RPC 文档
 
-EasyYapi 支持导出 RPC 文档，适用于文档化远程过程调用接口，如 Dubbo 服务。
+EasyYapi 支持导出 RPC 文档，适用于文档化远程过程调用接口，如 Dubbo 和 gRPC 服务。
 
 ## 使用方法
 
@@ -12,3 +12,9 @@ EasyYapi 支持导出 RPC 文档，适用于文档化远程过程调用接口，
 ## Dubbo 支持
 
 详见 [Dubbo 框架支持](/zh/framework/dubbo)。
+
+## gRPC 支持
+
+EasyYapi 可以从 gRPC 服务实现导出 API 文档。gRPC 支持默认启用。
+
+详见 [gRPC 框架支持](/zh/framework/grpc)。
