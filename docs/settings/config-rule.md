@@ -90,7 +90,6 @@ it.name() + " - custom suffix"
 
 | Rule | Description |
 |------|-------------|
-| [enum.use.name](./rules/enum_use_name) | Use enum name |
 | [enum.use.custom](./rules/enum_use_custom) | Custom enum value |
 
 ## JSON Rules

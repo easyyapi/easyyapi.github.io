@@ -90,9 +90,6 @@ it.name() + " - 自定义后缀"
 
 | 规则 | 说明 |
 |------|------|
-| [enum.use.name](./rules/enum_use_name) | 使用枚举名称 |
-| [enum.use.ordinal](./rules/enum_use_ordinal) | 使用枚举序号 |
-| [enum.use.by.type](./rules/enum_use_by_type) | 按类型使用枚举 |
 | [enum.use.custom](./rules/enum_use_custom) | 自定义枚举值 |
 
 ## 其他规则
