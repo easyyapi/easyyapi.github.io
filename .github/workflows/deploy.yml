@@ -1,4 +1,4 @@
-name: Deploy VitePress site to Pages
+name: Build and Deploy to gh-pages
 
 on:
   push:
@@ -6,21 +6,20 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
+  group: deploy
   cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout master
         uses: actions/checkout@v4
         with:
+          ref: master
           fetch-depth: 0
 
       - name: Setup Node
@@ -29,28 +28,16 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
       - name: Install dependencies
         run: npm ci
 
       - name: Build with VitePress
         run: npm run docs:build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: docs/.vitepress/dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    name: Deploy
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/.vitepress/dist
+          publish_branch: gh-pages
+          cname: false
