@@ -17,4 +17,4 @@ This is typically used with Jackson's `@JsonUnwrapped` annotation to add suffixe
 ## See Also
 
 - [field.name](./field_name) — Set field name
-- [field.name.prefix](./properties_prefix) — Set field name prefix
+- [field.name.prefix](./field_name_prefix) — Set field name prefix

@@ -105,7 +105,6 @@ function sidebarFramework() {
         { text: 'Jakarta Validation', link: '/zh/framework/jakarta-validation' },
         { text: 'Gson', link: '/zh/framework/gson' },
         { text: 'Fastjson', link: '/zh/framework/fastjson' },
-        { text: 'Dubbo', link: '/zh/framework/dubbo' },
       ],
     },
     {

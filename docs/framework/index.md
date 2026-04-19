@@ -13,12 +13,6 @@ EasyYapi supports multiple Java/Kotlin web frameworks and can automatically reco
 | [JAX-RS](./jaxrs) | Java RESTful Web Services standard |
 | [gRPC](./grpc) | High-performance RPC framework |
 
-## Additional Support
-
-| Framework | Description |
-|-----------|-------------|
-| [Dubbo](./dubbo) | Apache high-performance RPC framework |
-
 ## Common Support
 
 | Framework/Spec | Description |

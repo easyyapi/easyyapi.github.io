@@ -17,4 +17,4 @@ return session.get("field.suffix",parentPath)
 ## 另见
 
 - [field.name](./field_name) — 设置字段名称
-- [field.name.prefix](./properties_prefix) — 设置字段名称前缀
+- [field.name.prefix](./field_name_prefix) — 设置字段名称前缀

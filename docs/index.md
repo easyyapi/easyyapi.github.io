@@ -20,7 +20,7 @@ features:
   - title: Zero Intrusion
     details: Generate API documentation based on Javadoc/KDoc/ScalaDoc without modifying your code.
   - title: Multi-Framework Support
-    details: Support Spring Boot, Feign, JAX-RS, Dubbo and more out of the box.
+    details: Support Spring Boot, Feign, JAX-RS, gRPC and more out of the box.
   - title: Flexible Configuration
     details: Rich configuration rules with Groovy script support for advanced customization.
   - title: Multi-Export Channels

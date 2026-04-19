@@ -13,12 +13,6 @@ EasyYapi 支持多种 Java/Kotlin Web 框架，可以自动识别框架注解并
 | [JAX-RS](./jaxrs) | Java RESTful Web 服务标准 |
 | [gRPC](./grpc) | 高性能 RPC 框架 |
 
-## 额外支持
-
-| 框架 | 说明 |
-|------|------|
-| [Dubbo](./dubbo) | Apache 高性能 RPC 框架 |
-
 ## 通用支持
 
 | 框架/规范 | 说明 |

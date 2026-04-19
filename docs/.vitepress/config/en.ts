@@ -105,7 +105,6 @@ function sidebarFramework() {
         { text: 'Jackson', link: '/framework/jackson' },
         { text: 'Gson', link: '/framework/gson' },
         { text: 'Fastjson', link: '/framework/fastjson' },
-        { text: 'Dubbo', link: '/framework/dubbo' },
       ],
     },
     {
