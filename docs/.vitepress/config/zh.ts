@@ -69,6 +69,8 @@ function sidebarGuide() {
         { text: '导出到 YApi', link: '/zh/guide/export2yapi' },
         { text: '导出到 Postman', link: '/zh/guide/export2postman' },
         { text: '导出到 Markdown', link: '/zh/guide/export2markdown' },
+        { text: '导出到 cURL', link: '/zh/guide/export2curl' },
+        { text: '导出到 HttpClient', link: '/zh/guide/export2httpclient' },
         { text: '导出普通 Java Method 文档', link: '/zh/guide/export-method-doc' },
         { text: '导出 RPC 文档', link: '/zh/guide/export-rpc' },
       ],
@@ -169,6 +171,7 @@ function sidebarSettings() {
             { text: 'field.ignore', link: '/zh/settings/rules/field_ignore' },
             { text: 'field.mock', link: '/zh/settings/rules/field_mock' },
             { text: 'field.name', link: '/zh/settings/rules/field_name' },
+            { text: 'field.name.prefix', link: '/zh/settings/rules/field_name_prefix' },
             { text: 'field.name.suffix', link: '/zh/settings/rules/field_name_suffix' },
             { text: 'field.required', link: '/zh/settings/rules/field_required' },
             { text: 'field.order', link: '/zh/settings/rules/field_order' },
@@ -212,7 +215,6 @@ function sidebarSettings() {
           collapsed: true,
           items: [
             { text: 'enum.use.custom', link: '/zh/settings/rules/enum_use_custom' },
-            { text: 'enum.use.name', link: '/zh/settings/rules/enum_use_name' },
           ],
         },
         {
@@ -246,11 +248,11 @@ function sidebarSettings() {
           items: [
             { text: 'folder.name', link: '/zh/settings/rules/folder_name' },
             { text: 'module', link: '/zh/settings/rules/module' },
+            { text: 'yapi.project', link: '/zh/settings/rules/yapi_project' },
             { text: 'ignore', link: '/zh/settings/rules/ignore' },
             { text: 'constant.field.ignore', link: '/zh/settings/rules/constant_field_ignore' },
             { text: 'endpoint.prefix.path', link: '/zh/settings/rules/endpoint_prefix_path' },
             { text: 'path.multi', link: '/zh/settings/rules/path_multi' },
-            { text: 'properties.prefix', link: '/zh/settings/rules/properties_prefix' },
           ],
         },
       ],

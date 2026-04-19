@@ -51,6 +51,7 @@ it.name() + " - custom suffix"
 | [field.ignore](./rules/field_ignore) | Ignore field |
 | [field.mock](./rules/field_mock) | Set field mock value |
 | [field.name](./rules/field_name) | Set field name |
+| [field.name.prefix](./rules/field_name_prefix) | Set field name prefix |
 | [field.name.suffix](./rules/field_name_suffix) | Set field name suffix |
 | [field.required](./rules/field_required) | Set whether field is required |
 | [field.order](./rules/field_order) | Set field order |
@@ -99,8 +100,6 @@ it.name() + " - custom suffix"
 | [json.rule.convert](./rules/json_rule_convert) | Type conversion |
 | [json.additional.field](./rules/json_additional_field) | Add additional fields |
 | [json.unwrapped](./rules/json_unwrapped) | Handle @JsonUnwrapped |
-| [json.rule.field.ignore](./rules/json_rule_field_ignore) | JSON field ignore rule |
-| [json.rule.field.name](./rules/json_rule_field_name) | JSON field name rule |
 
 ## Other Rules
 
@@ -134,5 +133,7 @@ it.name() + " - custom suffix"
 
 | Rule | Description |
 |------|-------------|
+| [yapi.project](./rules/yapi_project) | Set YApi project |
+| [yapi.export.before](./rules/yapi_export_before) | Pre-export event |
 | [yapi.save.before](./rules/yapi_save_before) | Pre-save event |
 | [yapi.save.after](./rules/yapi_save_after) | Post-save event |

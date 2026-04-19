@@ -37,6 +37,8 @@ it.name() + " - 自定义后缀"
 | [class.is.spring.ctrl](./rules/class_is_spring_ctrl) | 判断是否为 Spring 控制器 |
 | [class.is.feign.ctrl](./rules/class_is_feign_ctrl) | 判断是否为 Feign 客户端 |
 | [class.is.jaxrs.ctrl](./rules/class_is_jaxrs_ctrl) | 判断是否为 JAX-RS 资源 |
+| [class.is.quarkus.ctrl](./rules/class_is_quarkus_ctrl) | 判断是否为 Quarkus 资源 |
+| [class.is.grpc](./rules/class_is_grpc) | 判断是否为 gRPC 服务 |
 | [class.prefix.path](./rules/class_prefix_path) | 设置类前缀路径 |
 
 ## 字段规则
@@ -49,9 +51,13 @@ it.name() + " - 自定义后缀"
 | [field.ignore](./rules/field_ignore) | 忽略字段 |
 | [field.mock](./rules/field_mock) | 设置字段 Mock 值 |
 | [field.name](./rules/field_name) | 设置字段名称 |
+| [field.name.prefix](./rules/field_name_prefix) | 设置字段名称前缀 |
+| [field.name.suffix](./rules/field_name_suffix) | 设置字段名称后缀 |
 | [field.required](./rules/field_required) | 设置字段是否必填 |
 | [field.order](./rules/field_order) | 设置字段顺序 |
-| [field.type](./rules/field_type) | 设置字段类型 |
+| [field.order.with](./rules/field_order_with) | 设置字段排序比较器 |
+| [field.advanced](./rules/field_advanced) | 设置字段高级信息 |
+| [field.max.depth](./rules/field_max_depth) | 设置字段最大递归深度 |
 
 ## 方法规则
 
@@ -64,6 +70,7 @@ it.name() + " - 自定义后缀"
 | [method.default.http.method](./rules/method_default_http_method) | 设置默认 HTTP 方法 |
 | [method.additional.header](./rules/method_additional_header) | 添加额外请求头 |
 | [method.additional.param](./rules/method_additional_param) | 添加额外参数 |
+| [method.additional.response.header](./rules/method_additional_response_header) | 添加额外响应头 |
 
 ## 参数规则
 
@@ -77,20 +84,22 @@ it.name() + " - 自定义后缀"
 | [param.name](./rules/param_name) | 设置参数名称 |
 | [param.required](./rules/param_required) | 设置参数是否必填 |
 | [param.type](./rules/param_type) | 设置参数类型 |
-
-## JSON 规则
-
-| 规则 | 说明 |
-|------|------|
-| [json.rule.convert](./rules/json_rule_convert) | 类型转换 |
-| [json.rule.enum.convert](./rules/json_rule_enum_convert) | 枚举类型转换 |
-| [json.additional.field](./rules/json_additional_field) | 添加额外字段 |
+| [param.mock](./rules/param_mock) | 设置参数 Mock 值 |
+| [param.max.depth](./rules/param_max_depth) | 设置参数最大递归深度 |
 
 ## 枚举规则
 
 | 规则 | 说明 |
 |------|------|
 | [enum.use.custom](./rules/enum_use_custom) | 自定义枚举值 |
+
+## JSON 规则
+
+| 规则 | 说明 |
+|------|------|
+| [json.rule.convert](./rules/json_rule_convert) | 类型转换 |
+| [json.additional.field](./rules/json_additional_field) | 添加额外字段 |
+| [json.unwrapped](./rules/json_unwrapped) | 处理 @JsonUnwrapped |
 
 ## 其他规则
 
@@ -104,3 +113,26 @@ it.name() + " - 自定义后缀"
 | [http.call.before](./rules/http_call_before) | 请求前回调 |
 | [http.call.after](./rules/http_call_after) | 请求后回调 |
 | [constant.field.ignore](./rules/constant_field_ignore) | 忽略常量字段 |
+| [endpoint.prefix.path](./rules/endpoint_prefix_path) | 设置端点前缀路径 |
+
+## Postman 规则
+
+| 规则 | 说明 |
+|------|------|
+| [postman.host](./rules/postman_host) | 设置 Postman 基础 URL |
+| [postman.prerequest](./rules/postman_prerequest) | 前置请求脚本 |
+| [postman.test](./rules/postman_test) | 测试脚本 |
+| [postman.class.prerequest](./rules/postman_class_prerequest) | 类级别前置请求脚本 |
+| [postman.class.test](./rules/postman_class_test) | 类级别测试脚本 |
+| [postman.collection.prerequest](./rules/postman_collection_prerequest) | 集合级别前置请求事件 |
+| [postman.collection.test](./rules/postman_collection_test) | 集合级别测试事件 |
+| [postman.format.after](./rules/postman_format_after) | 格式化后事件 |
+
+## YApi 规则
+
+| 规则 | 说明 |
+|------|------|
+| [yapi.project](./rules/yapi_project) | 设置 YApi 项目 |
+| [yapi.export.before](./rules/yapi_export_before) | 导出前事件 |
+| [yapi.save.before](./rules/yapi_save_before) | 保存前事件 |
+| [yapi.save.after](./rules/yapi_save_after) | 保存后事件 |

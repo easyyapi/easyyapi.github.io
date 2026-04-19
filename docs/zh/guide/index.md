@@ -19,7 +19,7 @@ EasyYapi 是一个 IntelliJ IDEA 插件，基于 [Javadoc](./docs.md#javadoc)、
 |------|---------|---------|
 | 语言 | Java, Kotlin | Scala |
 | Web 框架 | [Spring](https://spring.io/)、[Spring WebFlux](https://docs.spring.io/spring-framework/reference/web/webflux.html)、[Feign](https://spring.io/projects/spring-cloud-openfeign)、[JAX-RS](https://www.oracle.com/technical-resources/articles/java/jax-rs.html) ([Quarkus](https://quarkus.io/) / [Jersey](https://eclipse-ee4j.github.io/jersey/))、[gRPC](https://grpc.io/) | [Dubbo](https://dubbo.apache.org) |
-| 导出渠道 | [Postman](./export2postman.md)、[YApi](./export2yapi.md)、[Markdown](./export2markdown.md) | - |
+| 导出渠道 | [Postman](./export2postman.md)、[YApi](./export2yapi.md)、[Markdown](./export2markdown.md)、[cURL](./export2curl.md)、[HttpClient](./export2httpclient.md) | - |
 | 常用框架 | javax.validation、Jakarta Validation、Jackson、Gson | [Swagger](https://swagger.io/)、Fastjson |
 | 功能特性 | [API 调用](./call.md)、[API Dashboard](./call.md#api-dashboard)、[脚本执行器](./script-executor.md) | Spring Actuator |
 

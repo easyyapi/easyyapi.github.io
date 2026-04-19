@@ -58,6 +58,8 @@ function sidebarGuide() {
         { text: 'Export to YApi', link: '/guide/export2yapi' },
         { text: 'Export to Postman', link: '/guide/export2postman' },
         { text: 'Export to Markdown', link: '/guide/export2markdown' },
+        { text: 'Export to cURL', link: '/guide/export2curl' },
+        { text: 'Export to HttpClient', link: '/guide/export2httpclient' },
         { text: 'Export Method Doc', link: '/guide/export-method-doc' },
         { text: 'Export RPC Doc', link: '/guide/export-rpc' },
         { text: 'Legacy YApi / Custom YApi', link: '/guide/login-mode-yapi' },
@@ -69,7 +71,6 @@ function sidebarGuide() {
         { text: 'Advanced Usage', link: '/guide/advanced-use' },
         { text: 'YApi Render', link: '/guide/yapi-render' },
         { text: 'Call API', link: '/guide/call' },
-        { text: 'Script Executor', link: '/guide/script-executor' },
         { text: 'Generic', link: '/guide/generic' },
       ],
     },
@@ -79,6 +80,7 @@ function sidebarGuide() {
         { text: 'Comment Standards', link: '/guide/docs' },
         { text: 'Javadoc Demo', link: '/guide/javadoc-demo' },
         { text: 'Plugin Knowledge Base (AI)', link: '/guide/knowledge-base' },
+        { text: 'Script Executor', link: '/guide/script-executor' },
       ],
     },
   ]
@@ -169,6 +171,7 @@ function sidebarSettings() {
             { text: 'field.ignore', link: '/settings/rules/field_ignore' },
             { text: 'field.mock', link: '/settings/rules/field_mock' },
             { text: 'field.name', link: '/settings/rules/field_name' },
+            { text: 'field.name.prefix', link: '/settings/rules/field_name_prefix' },
             { text: 'field.name.suffix', link: '/settings/rules/field_name_suffix' },
             { text: 'field.required', link: '/settings/rules/field_required' },
             { text: 'field.order', link: '/settings/rules/field_order' },
@@ -212,7 +215,6 @@ function sidebarSettings() {
           collapsed: true,
           items: [
             { text: 'enum.use.custom', link: '/settings/rules/enum_use_custom' },
-            { text: 'enum.use.name', link: '/settings/rules/enum_use_name' },
           ],
         },
         {
@@ -246,11 +248,11 @@ function sidebarSettings() {
           items: [
             { text: 'folder.name', link: '/settings/rules/folder_name' },
             { text: 'module', link: '/settings/rules/module' },
+            { text: 'yapi.project', link: '/settings/rules/yapi_project' },
             { text: 'ignore', link: '/settings/rules/ignore' },
             { text: 'constant.field.ignore', link: '/settings/rules/constant_field_ignore' },
             { text: 'endpoint.prefix.path', link: '/settings/rules/endpoint_prefix_path' },
             { text: 'path.multi', link: '/settings/rules/path_multi' },
-            { text: 'properties.prefix', link: '/settings/rules/properties_prefix' },
           ],
         },
       ],

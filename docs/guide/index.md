@@ -19,7 +19,7 @@ Since the `openapi` provided by the Scala plugin changes too frequently, Scala i
 |----------|----------------|-------------------|
 | Language | Java, Kotlin | Scala |
 | Web Framework | [Spring](https://spring.io/), [Spring WebFlux](https://docs.spring.io/spring-framework/reference/web/webflux.html), [Feign](https://spring.io/projects/spring-cloud-openfeign), [JAX-RS](https://www.oracle.com/technical-resources/articles/java/jax-rs.html) ([Quarkus](https://quarkus.io/) / [Jersey](https://eclipse-ee4j.github.io/jersey/)), [gRPC](https://grpc.io/) | [Dubbo](https://dubbo.apache.org) |
-| Export Channels | [Postman](./export2postman.md), [YApi](./export2yapi.md), [Markdown](./export2markdown.md) | - |
+| Export Channels | [Postman](./export2postman.md), [YApi](./export2yapi.md), [Markdown](./export2markdown.md), [cURL](./export2curl.md), [HttpClient](./export2httpclient.md) | - |
 | Common Frameworks | javax.validation, Jakarta Validation, Jackson, Gson | [Swagger](https://swagger.io/), Fastjson |
 | Features | [API Call](./call.md), [API Dashboard](./call.md#api-dashboard), [Script Executor](./script-executor.md) | Spring Actuator |
 
