@@ -1,0 +1,29 @@
+---
+layout: home
+
+hero:
+  name: "EasyYapi"
+  text: "简化 API 开发"
+  tagline: 在 IntelliJ IDEA 中从 Java/Kotlin 代码生成 API 文档
+  actions:
+    - theme: brand
+      text: 快速上手
+      link: /zh/guide/
+    - theme: alt
+      text: GitHub
+      link: https://github.com/tangcent/easy-yapi
+
+features:
+  - title: 多语言
+    details: 支持 Java、Kotlin、Scala，从 Javadoc、KDoc、ScalaDoc 解析 API 文档。
+  - title: 多框架
+    details: 内置支持 Spring、Feign、JAX-RS (Quarkus/Jersey) 等。
+  - title: 多渠道导出
+    details: 导出 API 文档到 Postman、YApi、Markdown 等。
+  - title: 丰富的扩展性
+    details: 灵活的配置规则和脚本支持，适应不同框架与代码规范。
+  - title: 内置 API 调试工具
+    details: 轻量级 API 调用工具，直接集成在 IDE 中。
+  - title: 零侵入
+    details: 无需修改源代码即可生成完整的 API 文档。
+---
