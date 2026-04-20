@@ -58,7 +58,3 @@ fun hello(@RequestParam name: String): String {
 ## ScalaDoc
 
 ScalaDoc is the documentation comment format in Scala.
-
-::: warning
-Since the `openapi` provided by the Scala plugin changes too frequently, Scala is no longer a default support option.
-:::

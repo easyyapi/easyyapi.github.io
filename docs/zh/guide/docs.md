@@ -58,7 +58,3 @@ fun hello(@RequestParam name: String): String {
 ## ScalaDoc
 
 ScalaDoc 是 Scala 中的文档注释格式。
-
-::: warning
-由于 Scala 插件中提供的 `openapi` 变化过于频繁，Scala 不再作为默认支持选项。
-:::
