@@ -69,7 +69,6 @@ function sidebarGuide() {
       text: 'Advanced',
       items: [
         { text: 'Advanced Usage', link: '/guide/advanced-use' },
-        { text: 'YApi Render', link: '/guide/yapi-render' },
         { text: 'Call API', link: '/guide/call' },
         { text: 'Generic', link: '/guide/generic' },
       ],
