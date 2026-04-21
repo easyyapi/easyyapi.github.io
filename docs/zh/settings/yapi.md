@@ -1,33 +1,37 @@
 # YApi 配置
 
-## 基本配置
+## IDE 设置
+
+在 IDE 中配置 YApi 设置：
+
+<kbd>Settings</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > <kbd>YApi</kbd>
 
 | 设置项 | 说明 |
 |--------|------|
-| yapi.server | YApi 服务器地址 |
-| yapi.tokens | 项目 Token，格式为 `module=token`（每行一个） |
+| Yapi Server | YApi 服务器地址 |
+| Tokens | 项目 Token，格式为 `module=token`（每行一个） |
+| Export Mode | 导出时如何处理已有 API（见下方） |
+| Request body JSON5 | 请求体使用 JSON5 格式（默认：关闭） |
+| Response body JSON5 | 响应体使用 JSON5 格式（默认：关闭） |
 
-## 获取 YApi Token
+**General** 标签页中的附加选项：
+
+| 设置项 | 默认值 | 说明 |
+|--------|--------|------|
+| Enable URL Templating | `true` | 启用路径参数的 URL 模板化 |
+| Switch Notice | `true` | 切换 YApi 项目时显示通知 |
+
+### 获取 YApi Token
 
 1. 登录 YApi
 2. 进入项目设置
 3. 复制项目 Token
 
-## Token 格式
+### Token 格式
 
-Token 以 `module=token` 的格式指定，每行一个。模块名用于将 API 匹配到正确的 YApi 项目。
+Token 以 `module=token` 的格式指定，在 IDE 的 Tokens 字段中每行输入一个。模块名用于将 API 匹配到正确的 YApi 项目。
 
-```properties
-# 在配置文件中
-yapi.server=http://your-yapi-server.com
-yapi.tokens=user-module=abc123\norder-module=def456
-```
-
-在 IDE 设置中，在 Tokens 字段中每行输入一个 `module=token` 对。
-
-## 导出模式
-
-控制导出到 YApi 时如何处理已有 API：
+### 导出模式
 
 | 模式 | 说明 |
 |------|------|
@@ -36,38 +40,16 @@ yapi.tokens=user-module=abc123\norder-module=def456
 | ALWAYS_ASK | 弹窗询问是否覆盖每个 API |
 | UPDATE_IF_CHANGED | 仅当 API 内容发生变化时更新 |
 
-通过 IDE 设置或配置文件配置：
+## 配置文件规则
 
-```properties
-yapi.export.mode=ALWAYS_UPDATE
-```
+以下规则可以在配置文件（`.easy.api.config`）中设置：
 
-## 其他选项
-
-| 设置项 | 默认值 | 说明 |
-|--------|--------|------|
-| enableUrlTemplating | `true` | 启用路径参数的 URL 模板化 |
-| switchNotice | `true` | 切换 YApi 项目时显示通知 |
-| yapi.req.body.json5 | `false` | 请求体使用 JSON5 格式 |
-| yapi.res.body.json5 | `false` | 响应体使用 JSON5 格式 |
-
-## 配置方式
-
-### 在 IDE 设置中配置
-
-<kbd>Settings</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > <kbd>YApi</kbd>
-
-### 在配置文件中配置
-
-```properties
-yapi.server=http://your-yapi-server.com
-yapi.tokens=my-project=your-project-token
-yapi.export.mode=ALWAYS_UPDATE
-enable.url.templating=true
-switch.notice=true
-yapi.req.body.json5=false
-yapi.res.body.json5=false
-```
+| 规则 | 说明 |
+|------|------|
+| [yapi.project](/zh/settings/rules/yapi_project) | 设置 API 分组所属的 YApi 项目 |
+| [yapi.export.before](/zh/settings/events/yapi_export_before) | YApi 导出前事件 |
+| [yapi.save.before](/zh/settings/rules/yapi_save_before) | 保存到 YApi 前事件 |
+| [yapi.save.after](/zh/settings/rules/yapi_save_after) | 保存到 YApi 后事件 |
 
 ## YApi Mock
 

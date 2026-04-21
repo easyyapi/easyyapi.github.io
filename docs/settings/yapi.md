@@ -1,33 +1,37 @@
 # YApi Settings
 
-## Basic Configuration
+## IDE Settings
+
+Configure YApi settings in the IDE:
+
+<kbd>Settings</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > <kbd>YApi</kbd>
 
 | Setting | Description |
 |---------|-------------|
-| yapi.server | YApi server address |
-| yapi.tokens | Project tokens in `module=token` format (one per line) |
+| Yapi Server | YApi server address |
+| Tokens | Project tokens in `module=token` format (one per line) |
+| Export Mode | How to handle existing APIs on export (see below) |
+| Request body JSON5 | Use JSON5 format for request body (default: off) |
+| Response body JSON5 | Use JSON5 format for response body (default: off) |
 
-## Getting a YApi Token
+Additional options in the **General** tab:
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Enable URL Templating | `true` | Enable URL templating for path parameters |
+| Switch Notice | `true` | Show notification when switching YApi project |
+
+### Getting a YApi Token
 
 1. Log in to YApi
 2. Go to project settings
 3. Copy the project Token
 
-## Token Format
+### Token Format
 
-Tokens are specified as `module=token` pairs, one per line. The module name is used to match APIs to the correct YApi project.
+Tokens are specified as `module=token` pairs, one per line in the IDE Tokens field. The module name is used to match APIs to the correct YApi project.
 
-```properties
-# In config file
-yapi.server=http://your-yapi-server.com
-yapi.tokens=user-module=abc123\norder-module=def456
-```
-
-In IDE settings, enter one `module=token` pair per line in the Tokens field.
-
-## Export Mode
-
-Controls how existing APIs are handled when exporting to YApi:
+### Export Mode
 
 | Mode | Description |
 |------|-------------|
@@ -36,38 +40,16 @@ Controls how existing APIs are handled when exporting to YApi:
 | ALWAYS_ASK | Show a dialog to ask whether to override each API |
 | UPDATE_IF_CHANGED | Update only when the API content has changed |
 
-Configure via IDE settings or config file:
+## Config File Rules
 
-```properties
-yapi.export.mode=ALWAYS_UPDATE
-```
+The following rules can be set in config files (`.easy.api.config`):
 
-## Additional Options
-
-| Setting | Default | Description |
-|---------|---------|-------------|
-| enableUrlTemplating | `true` | Enable URL templating for path parameters |
-| switchNotice | `true` | Show notification when switching YApi project |
-| yapi.req.body.json5 | `false` | Use JSON5 format for request body |
-| yapi.res.body.json5 | `false` | Use JSON5 format for response body |
-
-## Configuration Methods
-
-### Via IDE Settings
-
-<kbd>Settings</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > <kbd>YApi</kbd>
-
-### Via Config File
-
-```properties
-yapi.server=http://your-yapi-server.com
-yapi.tokens=my-project=your-project-token
-yapi.export.mode=ALWAYS_UPDATE
-enable.url.templating=true
-switch.notice=true
-yapi.req.body.json5=false
-yapi.res.body.json5=false
-```
+| Rule | Description |
+|------|-------------|
+| [yapi.project](/settings/rules/yapi_project) | Set the YApi project for API grouping |
+| [yapi.export.before](/settings/events/yapi_export_before) | Event before YApi export |
+| [yapi.save.before](/settings/rules/yapi_save_before) | Event before saving to YApi |
+| [yapi.save.after](/settings/rules/yapi_save_after) | Event after saving to YApi |
 
 ## YApi Mock
 
