@@ -33,7 +33,7 @@ it.name() + " - custom suffix"
 | Rule | Description |
 |------|-------------|
 | [class.doc](./rules/class_doc) | Set class documentation |
-| [class.is.ctrl](./rules/class_is_ctrl) | Determine if class is a controller |
+| [class.is.ctrl](./rules/class_is_ctrl) ~~deprecated~~ | Determine if class is a controller (alias for class.is.spring.ctrl) |
 | [class.is.spring.ctrl](./rules/class_is_spring_ctrl) | Determine if class is a Spring controller |
 | [class.is.feign.ctrl](./rules/class_is_feign_ctrl) | Determine if class is a Feign client |
 | [class.is.jaxrs.ctrl](./rules/class_is_jaxrs_ctrl) | Determine if class is a JAX-RS resource |
@@ -106,7 +106,7 @@ it.name() + " - custom suffix"
 | Rule | Description |
 |------|-------------|
 | [folder.name](./rules/folder_name) | Set folder name |
-| [module](./rules/module) | Set module name |
+| [module](./rules/module) ~~deprecated~~ | Set module name (alias for yapi.project) |
 | [ignore](./rules/ignore) | Ignore API |
 | [path.multi](./rules/path_multi) | Multi-path support |
 | [export.after](./rules/export_after) | Post-export callback |

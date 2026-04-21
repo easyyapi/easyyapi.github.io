@@ -33,7 +33,7 @@ it.name() + " - 自定义后缀"
 | 规则 | 说明 |
 |------|------|
 | [class.doc](./rules/class_doc) | 设置类文档 |
-| [class.is.ctrl](./rules/class_is_ctrl) | 判断是否为控制器 |
+| [class.is.ctrl](./rules/class_is_ctrl) ~~已废弃~~ | 判断是否为控制器（class.is.spring.ctrl 的别名） |
 | [class.is.spring.ctrl](./rules/class_is_spring_ctrl) | 判断是否为 Spring 控制器 |
 | [class.is.feign.ctrl](./rules/class_is_feign_ctrl) | 判断是否为 Feign 客户端 |
 | [class.is.jaxrs.ctrl](./rules/class_is_jaxrs_ctrl) | 判断是否为 JAX-RS 资源 |
@@ -106,7 +106,7 @@ it.name() + " - 自定义后缀"
 | 规则 | 说明 |
 |------|------|
 | [folder.name](./rules/folder_name) | 设置文件夹名称 |
-| [module](./rules/module) | 设置模块名称 |
+| [module](./rules/module) ~~已废弃~~ | 设置模块名称（yapi.project 的别名） |
 | [ignore](./rules/ignore) | 忽略 API |
 | [path.multi](./rules/path_multi) | 多路径支持 |
 | [export.after](./rules/export_after) | 导出后回调 |

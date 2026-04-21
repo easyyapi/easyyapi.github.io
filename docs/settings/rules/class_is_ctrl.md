@@ -1,4 +1,8 @@
-# class.is.ctrl
+# ~~class.is.ctrl~~
+
+::: danger
+This rule is deprecated. Use [class.is.spring.ctrl](./class_is_spring_ctrl) instead. `class.is.ctrl` is now an alias for `class.is.spring.ctrl`.
+:::
 
 Determine if a class is an API controller.
 

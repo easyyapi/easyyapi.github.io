@@ -38,39 +38,25 @@ class.is.grpc=groovy:it.isExtend("io.grpc.BindableService")
 
 ### gRPC 调用
 
-启用 gRPC 调用功能，直接从 IDE 调用 gRPC 方法：
+启用 gRPC 调用功能，直接从 IDE 调用 gRPC 方法。此功能在 IDE 设置中配置：
 
-```properties
-grpc.call.enabled=true
-```
+<kbd>Settings</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > <kbd>gRPC</kbd>
+
+勾选 **Enable gRPC call** 复选框即可启用 gRPC 调用支持。
 
 启用 gRPC 调用后，还需要配置 gRPC 运行时依赖。插件需要 gRPC 运行时 JAR 才能调用方法。可以使用 IDE 设置面板中的 **Auto Detect** 按钮自动检测并解析所需依赖。
 
 ### gRPC Artifact 配置
 
-配置 gRPC artifact 坐标用于运行时依赖解析。格式为 `groupId:artifactId:version:enabled`：
-
-```properties
-grpc.artifact.configs=io.grpc:grpc-netty-shaded:latest:true
-```
+在 IDE 设置中配置 gRPC artifact 坐标用于运行时依赖解析。格式为 `groupId:artifactId:version:enabled`。
 
 ### gRPC 额外 JAR
 
-添加额外的 JAR 文件用于运行时解析：
-
-```properties
-grpc.additional.jars=/path/to/proto.jar
-```
+在 IDE 设置中添加额外的 JAR 文件用于运行时解析。
 
 ### gRPC 仓库
 
-配置 artifact 仓库用于依赖解析。支持的类型为 `maven`、`gradle` 和 `custom`：
-
-```properties
-grpc.repositories=maven:true:/Users/user/.m2/repository
-grpc.repositories=gradle:true:/Users/user/.gradle/caches/modules-2/files-2.1
-grpc.repositories=custom:true:/path/to/custom/repo
-```
+在 IDE 设置中配置 artifact 仓库用于依赖解析。支持的类型为 `maven`、`gradle` 和 `custom`。
 
 ## 另见
 

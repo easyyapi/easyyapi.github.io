@@ -150,7 +150,7 @@ function sidebarSettings() {
           collapsed: true,
           items: [
             { text: 'class.doc', link: '/zh/settings/rules/class_doc' },
-            { text: 'class.is.ctrl', link: '/zh/settings/rules/class_is_ctrl' },
+            { text: 'class.is.ctrl (已废弃)', link: '/zh/settings/rules/class_is_ctrl' },
             { text: 'class.is.spring.ctrl', link: '/zh/settings/rules/class_is_spring_ctrl' },
             { text: 'class.is.feign.ctrl', link: '/zh/settings/rules/class_is_feign_ctrl' },
             { text: 'class.is.jaxrs.ctrl', link: '/zh/settings/rules/class_is_jaxrs_ctrl' },
@@ -222,8 +222,8 @@ function sidebarSettings() {
             { text: 'json.rule.convert', link: '/zh/settings/rules/json_rule_convert' },
             { text: 'json.additional.field', link: '/zh/settings/rules/json_additional_field' },
             { text: 'json.unwrapped', link: '/zh/settings/rules/json_unwrapped' },
-            { text: 'json.rule.field.ignore', link: '/zh/settings/rules/json_rule_field_ignore' },
-            { text: 'json.rule.field.name', link: '/zh/settings/rules/json_rule_field_name' },
+            { text: 'json.rule.field.ignore (已废弃)', link: '/zh/settings/rules/json_rule_field_ignore' },
+            { text: 'json.rule.field.name (已废弃)', link: '/zh/settings/rules/json_rule_field_name' },
           ],
         },
         {
@@ -245,7 +245,7 @@ function sidebarSettings() {
           collapsed: true,
           items: [
             { text: 'folder.name', link: '/zh/settings/rules/folder_name' },
-            { text: 'module', link: '/zh/settings/rules/module' },
+            { text: 'module (已废弃)', link: '/zh/settings/rules/module' },
             { text: 'yapi.project', link: '/zh/settings/rules/yapi_project' },
             { text: 'ignore', link: '/zh/settings/rules/ignore' },
             { text: 'constant.field.ignore', link: '/zh/settings/rules/constant_field_ignore' },

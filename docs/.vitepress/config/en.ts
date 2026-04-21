@@ -149,7 +149,7 @@ function sidebarSettings() {
           collapsed: true,
           items: [
             { text: 'class.doc', link: '/settings/rules/class_doc' },
-            { text: 'class.is.ctrl', link: '/settings/rules/class_is_ctrl' },
+            { text: 'class.is.ctrl (deprecated)', link: '/settings/rules/class_is_ctrl' },
             { text: 'class.is.spring.ctrl', link: '/settings/rules/class_is_spring_ctrl' },
             { text: 'class.is.feign.ctrl', link: '/settings/rules/class_is_feign_ctrl' },
             { text: 'class.is.jaxrs.ctrl', link: '/settings/rules/class_is_jaxrs_ctrl' },
@@ -221,8 +221,8 @@ function sidebarSettings() {
             { text: 'json.rule.convert', link: '/settings/rules/json_rule_convert' },
             { text: 'json.additional.field', link: '/settings/rules/json_additional_field' },
             { text: 'json.unwrapped', link: '/settings/rules/json_unwrapped' },
-            { text: 'json.rule.field.ignore', link: '/settings/rules/json_rule_field_ignore' },
-            { text: 'json.rule.field.name', link: '/settings/rules/json_rule_field_name' },
+            { text: 'json.rule.field.ignore (deprecated)', link: '/settings/rules/json_rule_field_ignore' },
+            { text: 'json.rule.field.name (deprecated)', link: '/settings/rules/json_rule_field_name' },
           ],
         },
         {
@@ -244,7 +244,7 @@ function sidebarSettings() {
           collapsed: true,
           items: [
             { text: 'folder.name', link: '/settings/rules/folder_name' },
-            { text: 'module', link: '/settings/rules/module' },
+            { text: 'module (deprecated)', link: '/settings/rules/module' },
             { text: 'yapi.project', link: '/settings/rules/yapi_project' },
             { text: 'ignore', link: '/settings/rules/ignore' },
             { text: 'constant.field.ignore', link: '/settings/rules/constant_field_ignore' },

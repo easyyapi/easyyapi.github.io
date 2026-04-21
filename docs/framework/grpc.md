@@ -38,39 +38,25 @@ See [class.is.grpc](/settings/rules/class_is_grpc) for more details.
 
 ### gRPC Call
 
-Enable gRPC call functionality to invoke gRPC methods directly from the IDE:
+Enable gRPC call functionality to invoke gRPC methods directly from the IDE. This is configured in IDE settings:
 
-```properties
-grpc.call.enabled=true
-```
+<kbd>Settings</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > <kbd>gRPC</kbd>
+
+Check the **Enable gRPC call** checkbox to enable gRPC call support.
 
 When gRPC call is enabled, you also need to configure the gRPC runtime dependencies. The plugin needs gRPC runtime JARs to invoke methods. You can use the **Auto Detect** button in the IDE settings panel to automatically detect and resolve the required dependencies.
 
 ### gRPC Artifact Configs
 
-Configure gRPC artifact coordinates for runtime dependency resolution. The format is `groupId:artifactId:version:enabled`:
-
-```properties
-grpc.artifact.configs=io.grpc:grpc-netty-shaded:latest:true
-```
+Configure gRPC artifact coordinates for runtime dependency resolution in IDE settings. The format is `groupId:artifactId:version:enabled`.
 
 ### gRPC Additional Jars
 
-Add additional JAR files for runtime resolution:
-
-```properties
-grpc.additional.jars=/path/to/proto.jar
-```
+Add additional JAR files for runtime resolution in IDE settings.
 
 ### gRPC Repositories
 
-Configure artifact repositories for dependency resolution. Supported types are `maven`, `gradle`, and `custom`:
-
-```properties
-grpc.repositories=maven:true:/Users/user/.m2/repository
-grpc.repositories=gradle:true:/Users/user/.gradle/caches/modules-2/files-2.1
-grpc.repositories=custom:true:/path/to/custom/repo
-```
+Configure artifact repositories for dependency resolution in IDE settings. Supported types are `maven`, `gradle`, and `custom`.
 
 ## See Also
 

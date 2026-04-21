@@ -38,16 +38,15 @@ if (it.response().code() == 200) {
 
 ## gRPC 调用
 
-EasyYapi 还支持直接从 IDE 调用 gRPC 方法。此功能默认禁用，需要在配置中启用：
+EasyYapi 还支持直接从 IDE 调用 gRPC 方法。此功能默认禁用，需要在 IDE 设置中启用：
 
-```properties
-grpc.call.enabled=true
-```
+<kbd>Settings</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > <kbd>gRPC</kbd>
+
+勾选 **Enable gRPC call** 复选框即可启用 gRPC 调用支持。
 
 启用 gRPC 调用后，插件需要 gRPC 运行时 JAR 才能调用方法。可以通过以下方式配置运行时依赖：
 
 - **IDE 设置**：在 <kbd>Settings</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > gRPC Runtime 中使用 **Auto Detect** 按钮自动检测并解析依赖。
-- **配置文件**：使用 `grpc.artifact.configs`、`grpc.additional.jars` 和 `grpc.repositories` 属性。
 
 详见 [gRPC 框架支持](/zh/framework/grpc)。
 
