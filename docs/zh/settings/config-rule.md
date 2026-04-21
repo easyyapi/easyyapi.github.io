@@ -65,7 +65,7 @@ it.name() + " - 自定义后缀"
 |------|------|
 | [method.doc](./rules/method_doc) | 设置方法文档 |
 | [method.return](./rules/method_return) | 设置方法返回类型 |
-| [method.return.main](./rules/method_return_main) | 提取主要返回类型 |
+| [method.return.main](./rules/method_return_main) | 指定 @return 文档注释放置的字段 |
 | [method.content.type](./rules/method_content_type) | 设置内容类型 |
 | [method.default.http.method](./rules/method_default_http_method) | 设置默认 HTTP 方法 |
 | [method.additional.header](./rules/method_additional_header) | 添加额外请求头 |

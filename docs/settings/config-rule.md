@@ -65,7 +65,7 @@ it.name() + " - custom suffix"
 |------|-------------|
 | [method.doc](./rules/method_doc) | Set method documentation |
 | [method.return](./rules/method_return) | Set method return type |
-| [method.return.main](./rules/method_return_main) | Extract main return type |
+| [method.return.main](./rules/method_return_main) | Specify field for @return doc placement |
 | [method.content.type](./rules/method_content_type) | Set content type |
 | [method.default.http.method](./rules/method_default_http_method) | Set default HTTP method |
 | [method.additional.header](./rules/method_additional_header) | Add additional request headers |
