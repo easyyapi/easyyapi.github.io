@@ -128,7 +128,6 @@ function sidebarSettings() {
         { text: 'YApi 相关配置', link: '/zh/settings/yapi' },
         { text: 'Postman 相关配置', link: '/zh/settings/postman' },
         { text: 'YApi Mock 配置', link: '/zh/settings/yapi-mock' },
-        { text: 'Markdown 模板配置', link: '/zh/settings/template' },
       ],
     },
     {

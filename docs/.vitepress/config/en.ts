@@ -127,7 +127,6 @@ function sidebarSettings() {
         { text: 'YApi Settings', link: '/settings/yapi' },
         { text: 'Postman Settings', link: '/settings/postman' },
         { text: 'YApi Mock', link: '/settings/yapi-mock' },
-        { text: 'Markdown Template', link: '/settings/template' },
       ],
     },
     {
