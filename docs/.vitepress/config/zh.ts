@@ -71,7 +71,6 @@ function sidebarGuide() {
         { text: '导出到 Markdown', link: '/zh/guide/export2markdown' },
         { text: '导出到 cURL', link: '/zh/guide/export2curl' },
         { text: '导出到 HttpClient', link: '/zh/guide/export2httpclient' },
-        { text: '导出普通 Java Method 文档', link: '/zh/guide/export-method-doc' },
         { text: '导出 RPC 文档', link: '/zh/guide/export-rpc' },
       ],
     },

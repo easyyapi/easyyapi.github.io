@@ -60,7 +60,6 @@ function sidebarGuide() {
         { text: 'Export to Markdown', link: '/guide/export2markdown' },
         { text: 'Export to cURL', link: '/guide/export2curl' },
         { text: 'Export to HttpClient', link: '/guide/export2httpclient' },
-        { text: 'Export Method Doc', link: '/guide/export-method-doc' },
         { text: 'Export RPC Doc', link: '/guide/export-rpc' },
         { text: 'Legacy YApi / Custom YApi', link: '/guide/login-mode-yapi' },
       ],
