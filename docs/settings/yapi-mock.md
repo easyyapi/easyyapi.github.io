@@ -2,17 +2,9 @@
 
 EasyYapi supports syncing field mock rules to the YApi Mock service for frontend development.
 
-## Configuration
+## Usage
 
-### Enable Mock
-
-Add mock rules in your config file:
-
-```properties
-field.mock=@mock
-```
-
-### Mock Rules
+### Custom Mock Values
 
 Use the `@mock` tag in Javadoc:
 

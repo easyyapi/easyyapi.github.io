@@ -2,17 +2,9 @@
 
 EasyYapi 支持将字段 Mock 规则同步到 YApi Mock 服务，方便前端开发使用。
 
-## 配置
+## 使用
 
-### 启用 Mock
-
-在配置文件中添加 Mock 规则：
-
-```properties
-field.mock=@mock
-```
-
-### Mock 规则
+### 自定义 Mock 值
 
 在 Javadoc 中使用 `@mock` 标签：
 
