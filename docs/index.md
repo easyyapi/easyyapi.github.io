@@ -17,16 +17,16 @@ hero:
       link: /settings/
 
 features:
-  - title: Zero Intrusion
-    details: Generate API documentation based on Javadoc/KDoc/ScalaDoc without modifying your code.
-  - title: Multi-Framework Support
-    details: Support Spring Boot, Feign, JAX-RS, gRPC and more out of the box.
-  - title: Flexible Configuration
-    details: Rich configuration rules with Groovy script support for advanced customization.
+  - title: Multi-Language
+    details: Support Java, Kotlin, Scala, parsing API documentation from Javadoc, KDoc, ScalaDoc.
+  - title: Multi-Framework
+    details: Built-in support for Spring, Feign, JAX-RS (Quarkus/Jersey) and more.
   - title: Multi-Export Channels
-    details: Export to YApi, Postman, and Markdown with a single click.
-  - title: Call API
-    details: Send API requests directly from IntelliJ IDEA for quick testing and debugging.
-  - title: i18n Ready
-    details: Full internationalization support for global teams.
+    details: Export API documentation to Postman, YApi, Markdown and more.
+  - title: Rich Extensibility
+    details: Flexible configuration rules and script support for various frameworks and code standards.
+  - title: Built-in API Debugger
+    details: Lightweight API calling tool, directly integrated in the IDE.
+  - title: Zero Intrusion
+    details: Generate complete API documentation without modifying your source code.
 ---
