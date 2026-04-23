@@ -21,11 +21,7 @@ EasyYapi 是一个 IntelliJ IDEA 插件，基于 [Javadoc](./docs.md#javadoc)、
 
 ## 社区
 
-- 帮助维护文档: [easyyapi.com](https://github.com/easyyapi/easyyapi.github.io/tree/dev) — 请将 PR 提交到 dev 分支
 - 讨论[新功能](https://github.com/tangcent/easy-yapi/issues?q=label%3Aenhancement)或提交 [BUG](https://github.com/tangcent/easy-yapi/issues?q=label%3Abug): [Issues](https://github.com/tangcent/easy-yapi/issues)
-- 开发[新功能](https://github.com/tangcent/easy-yapi/pulls?q=+label%3Aenhancement)或修复 [BUG](https://github.com/tangcent/easy-yapi/pulls?q=+label%3Abug): [Pull Requests](https://github.com/tangcent/easy-yapi/pulls)
-- 维护推荐配置: [.recommend.easy.api.config](https://github.com/tangcent/easy-yapi/blob/master/idea-plugin/src/main/resources/.recommend.easy.api.config)
-- 丰富 Demo: [web-demo](https://github.com/Earth-1610/web-demo)
 
 ## 贡献者
 

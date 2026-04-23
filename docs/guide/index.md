@@ -21,11 +21,7 @@ You can get fairly complete API documentation while keeping your code zero-intru
 
 ## Community
 
-- Help maintain documentation: [easyyapi.com](https://github.com/easyyapi/easyyapi.github.io/tree/dev) — Please submit PRs to the dev branch
 - Discuss [new features](https://github.com/tangcent/easy-yapi/issues?q=label%3Aenhancement) or submit [bugs](https://github.com/tangcent/easy-yapi/issues?q=label%3Abug): [Issues](https://github.com/tangcent/easy-yapi/issues)
-- Develop [new features](https://github.com/tangcent/easy-yapi/pulls?q=+label%3Aenhancement) or fix [bugs](https://github.com/tangcent/easy-yapi/pulls?q=+label%3Abug): [Pull Requests](https://github.com/tangcent/easy-yapi/pulls)
-- Maintain recommended configuration: [.recommend.easy.api.config](https://github.com/tangcent/easy-yapi/blob/master/idea-plugin/src/main/resources/.recommend.easy.api.config)
-- Enrich Demo: [web-demo](https://github.com/Earth-1610/web-demo)
 
 ## Contributors
 
