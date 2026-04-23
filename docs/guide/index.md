@@ -22,6 +22,7 @@ You can get fairly complete API documentation while keeping your code zero-intru
 ## Community
 
 - Discuss [new features](https://github.com/tangcent/easy-yapi/issues?q=label%3Aenhancement) or submit [bugs](https://github.com/tangcent/easy-yapi/issues?q=label%3Abug): [Issues](https://github.com/tangcent/easy-yapi/issues)
+- Develop [new features](https://github.com/tangcent/easy-yapi/pulls?q=+label%3Aenhancement) or fix [bugs](https://github.com/tangcent/easy-yapi/pulls?q=+label%3Abug): [Pull Requests](https://github.com/tangcent/easy-yapi/pulls)
 
 ## Contributors
 
