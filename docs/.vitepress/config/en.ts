@@ -23,10 +23,6 @@ export const en = defineConfig({
       copyright: 'Copyright 2019-present tangcent',
     },
 
-    search: {
-      provider: 'local',
-    },
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/tangcent/easy-yapi' },
     ],
