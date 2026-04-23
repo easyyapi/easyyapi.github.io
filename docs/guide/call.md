@@ -5,9 +5,9 @@ EasyYapi supports sending API requests directly from IDEA for quick testing and 
 ## Usage
 
 1. Open a file containing APIs in your project
-2. Right-click on the file content and select `Call`
-3. Configure request parameters in the popup panel
-4. Click the send button to make the request
+2. Click the gutter icon (▶) next to an API method to open it in the API Dashboard
+3. Configure request parameters (host, headers, body, etc.)
+4. Click **Send** to execute the request
 
 ## Configuration
 
