@@ -19,7 +19,7 @@ EasyYapi supports the following usage methods:
 ## Method 3: Call API
 
 1. Open a file containing APIs in your project
-2. Right-click on the file content and select `Call`
+2. Click the gutter icon next to the API method
 3. Send API requests directly from the IDE
 
 See [Call API](./call.md) for more details.
