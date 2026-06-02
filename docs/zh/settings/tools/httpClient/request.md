@@ -26,11 +26,20 @@ HTTP 请求包装对象，在 `http.call.before` 和 `http.call.after` 规则脚
 
 ## 示例
 
-### 查看请求 URL
+### 查看请求详情
 
 ```properties
 http.call.before=groovy:'''
-logger.info("Sending request to: " + request.url())
+logger.info("Sending " + request.method() + " " + request.url())
+if (request.body() != null) {
+    logger.info("Body: " + request.body())
+}
+if (!request.formParams().isEmpty()) {
+    logger.info("Form: " + request.formParams())
+}
+if (!request.query().isEmpty()) {
+    logger.info("Query: " + request.query())
+}
 '''
 ```
 

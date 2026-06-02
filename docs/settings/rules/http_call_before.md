@@ -7,7 +7,16 @@ Pre-request callback for the Call API feature.
 ```properties
 http.call.before=groovy:'''
 // Log request info
-logger.info("Sending " + request.method() + " to " + request.url())
+logger.info("Sending " + request.method() + " " + request.url())
+if (request.body() != null) {
+    logger.info("Body: " + request.body())
+}
+if (!request.formParams().isEmpty()) {
+    logger.info("Form: " + request.formParams())
+}
+if (!request.query().isEmpty()) {
+    logger.info("Query: " + request.query())
+}
 '''
 ```
 
@@ -44,7 +53,16 @@ The following variables are available in the script context:
 
 ```properties
 http.call.before=groovy:'''
-logger.info("Request: " + request.method() + " " + request.url())
+logger.info("Sending " + request.method() + " " + request.url())
+if (request.body() != null) {
+    logger.info("Body: " + request.body())
+}
+if (!request.formParams().isEmpty()) {
+    logger.info("Form: " + request.formParams())
+}
+if (!request.query().isEmpty()) {
+    logger.info("Query: " + request.query())
+}
 '''
 ```
 

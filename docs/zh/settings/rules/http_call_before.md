@@ -7,7 +7,16 @@ Call API 功能的请求前回调。
 ```properties
 http.call.before=groovy:'''
 // 记录请求信息
-logger.info("Sending " + request.method() + " to " + request.url())
+logger.info("Sending " + request.method() + " " + request.url())
+if (request.body() != null) {
+    logger.info("Body: " + request.body())
+}
+if (!request.formParams().isEmpty()) {
+    logger.info("Form: " + request.formParams())
+}
+if (!request.query().isEmpty()) {
+    logger.info("Query: " + request.query())
+}
 '''
 ```
 
@@ -44,7 +53,16 @@ logger.info("Sending " + request.method() + " to " + request.url())
 
 ```properties
 http.call.before=groovy:'''
-logger.info("Request: " + request.method() + " " + request.url())
+logger.info("Sending " + request.method() + " " + request.url())
+if (request.body() != null) {
+    logger.info("Body: " + request.body())
+}
+if (!request.formParams().isEmpty()) {
+    logger.info("Form: " + request.formParams())
+}
+if (!request.query().isEmpty()) {
+    logger.info("Query: " + request.query())
+}
 '''
 ```
 
