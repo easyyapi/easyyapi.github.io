@@ -2,15 +2,6 @@
 
 HTTP 客户端，用于在脚本中发送请求。支持在 API 导出或其他操作期间向外部服务发送 HTTP 请求。
 
-## 用法
-
-```properties
-http.call.before=groovy:'''
-def response = httpClient.get("http://auth-server/token")
-it.header("Authorization", "Bearer " + response.body())
-'''
-```
-
 ## 方法
 
 | 方法 | 返回类型 | 说明 |
@@ -22,13 +13,18 @@ it.header("Authorization", "Bearer " + response.body())
 
 ## 响应对象
 
-响应对象提供以下访问：
+`httpClient` 方法返回的响应对象提供以下访问：
 
 | 属性/方法 | 返回类型 | 说明 |
 |-----------------|-------------|-------------|
 | `response.code()` | `Int` | HTTP 状态码 |
 | `response.body()` | `String` | 响应体字符串 |
 | `response.headers()` | `Map<String, String>` | 响应头 |
+
+## 子页面
+
+- [request](./httpClient/request) - `http.call.before`/`http.call.after` 中可用的 HTTP 请求包装对象
+- [response](./httpClient/response) - `http.call.after` 中可用的 HTTP 响应包装对象
 
 ## 示例
 
@@ -61,7 +57,7 @@ logger.info("Sync result: " + response.code())
 '''
 ```
 
-### 认证
+### 带令牌缓存的认证
 
 ```properties
 http.call.before=groovy:'''
@@ -71,7 +67,7 @@ if (!token) {
         username: config.get("auth.username"),
         password: config.get("auth.password")
     ])
-    
+
     if (loginResponse.code() == 200) {
         def result = new JsonSlurper().parseText(loginResponse.body())
         token = result.token
@@ -80,19 +76,7 @@ if (!token) {
 }
 
 if (token) {
-    it.header("Authorization", "Bearer " + token)
-}
-'''
-```
-
-### 错误处理
-
-```properties
-http.call.after=groovy:'''
-def code = it.response().code()
-if (code >= 400) {
-    logger.error("HTTP error: " + code)
-    logger.error("Response: " + it.response().body())
+    logger.info("Using token for request to: " + request.url())
 }
 '''
 ```
@@ -120,6 +104,8 @@ if (apiUrl) {
 
 ## 相关链接
 
+- [request](./httpClient/request) - `http.call.before`/`http.call.after` 中的请求包装对象
+- [response](./httpClient/response) - `http.call.after` 中的响应包装对象
 - [session](./session) - 用于缓存的会话级存储
 - [localStorage](./localStorage) - 用于缓存的持久化存储
 - [config](./config) - 配置访问

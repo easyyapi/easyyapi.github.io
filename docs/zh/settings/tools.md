@@ -12,6 +12,8 @@ EasyYapi 提供了一组内置工具，可在配置规则的 Groovy 脚本中使
 | [logger](./tools/logger) | 日志工具，用于调试和信息输出 |
 | [helper](./tools/helper) | 常用操作辅助方法，用于类型解析等 |
 | [httpClient](./tools/httpClient) | HTTP 客户端，用于在脚本中发送请求 |
+| [httpClient.request](./tools/httpClient/request) | `http.call.before`/`http.call.after` 中的 HTTP 请求包装对象 |
+| [httpClient.response](./tools/httpClient/response) | `http.call.after` 中的 HTTP 响应包装对象 |
 | [localStorage](./tools/localStorage) | 持久化本地存储，IDE 重启后数据保留 |
 | [session](./tools/session) | 会话级存储，IDE 重启后清空 |
 | [config](./tools/config) | 配置访问，用于读取规则值 |
@@ -58,6 +60,8 @@ logger.info("Generating mock for: " + it.name())
 ### 通信工具
 
 - **httpClient** - HTTP 请求
+- **httpClient.request** - `http.call.before`/`http.call.after` 中的 HTTP 请求包装对象
+- **httpClient.response** - `http.call.after` 中的 HTTP 响应包装对象
 - **config** - 配置访问
 - **api** - API 端点修改
 

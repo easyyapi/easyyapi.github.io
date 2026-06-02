@@ -2,15 +2,6 @@
 
 HTTP client for making requests in scripts. Supports making HTTP calls to external services during API export or other operations.
 
-## Usage
-
-```properties
-http.call.before=groovy:'''
-def response = httpClient.get("http://auth-server/token")
-it.header("Authorization", "Bearer " + response.body())
-'''
-```
-
 ## Methods
 
 | Method | Return Type | Description |
@@ -22,13 +13,18 @@ it.header("Authorization", "Bearer " + response.body())
 
 ## Response Object
 
-The response object provides access to:
+The response object returned by `httpClient` methods provides access to:
 
 | Property/Method | Return Type | Description |
 |-----------------|-------------|-------------|
 | `response.code()` | `Int` | HTTP status code |
 | `response.body()` | `String` | Response body as string |
 | `response.headers()` | `Map<String, String>` | Response headers |
+
+## Sub-pages
+
+- [request](./httpClient/request) - HTTP request wrapper available in `http.call.before`/`http.call.after`
+- [response](./httpClient/response) - HTTP response wrapper available in `http.call.after`
 
 ## Examples
 
@@ -61,7 +57,7 @@ logger.info("Sync result: " + response.code())
 '''
 ```
 
-### Authentication
+### Authentication with token caching
 
 ```properties
 http.call.before=groovy:'''
@@ -71,7 +67,7 @@ if (!token) {
         username: config.get("auth.username"),
         password: config.get("auth.password")
     ])
-    
+
     if (loginResponse.code() == 200) {
         def result = new JsonSlurper().parseText(loginResponse.body())
         token = result.token
@@ -80,19 +76,7 @@ if (!token) {
 }
 
 if (token) {
-    it.header("Authorization", "Bearer " + token)
-}
-'''
-```
-
-### Error Handling
-
-```properties
-http.call.after=groovy:'''
-def code = it.response().code()
-if (code >= 400) {
-    logger.error("HTTP error: " + code)
-    logger.error("Response: " + it.response().body())
+    logger.info("Using token for request to: " + request.url())
 }
 '''
 ```
@@ -120,6 +104,8 @@ if (apiUrl) {
 
 ## See Also
 
+- [request](./httpClient/request) - Request wrapper in `http.call.before`/`http.call.after`
+- [response](./httpClient/response) - Response wrapper in `http.call.after`
 - [session](./session) - Session-level storage for caching
 - [localStorage](./localStorage) - Persistent storage for caching
 - [config](./config) - Configuration access

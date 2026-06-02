@@ -299,6 +299,8 @@ function sidebarSettings() {
         { text: 'logger', link: '/zh/settings/tools/logger' },
         { text: 'helper', link: '/zh/settings/tools/helper' },
         { text: 'httpClient', link: '/zh/settings/tools/httpClient' },
+        { text: 'httpClient.request', link: '/zh/settings/tools/httpClient/request' },
+        { text: 'httpClient.response', link: '/zh/settings/tools/httpClient/response' },
         { text: 'localStorage', link: '/zh/settings/tools/localStorage' },
         { text: 'session', link: '/zh/settings/tools/session' },
         { text: 'config', link: '/zh/settings/tools/config' },

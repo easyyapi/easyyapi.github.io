@@ -12,6 +12,8 @@ EasyYapi provides a set of built-in tools that can be used in Groovy scripts wit
 | [logger](./tools/logger) | Logging utility for debugging and information output |
 | [helper](./tools/helper) | Common operation helpers for type resolution and other utilities |
 | [httpClient](./tools/httpClient) | HTTP client for making requests in scripts |
+| [httpClient.request](./tools/httpClient/request) | HTTP request wrapper in `http.call.before`/`http.call.after` |
+| [httpClient.response](./tools/httpClient/response) | HTTP response wrapper in `http.call.after` |
 | [localStorage](./tools/localStorage) | Persistent local storage that survives IDE restarts |
 | [session](./tools/session) | Session-level storage cleared when IDE is restarted |
 | [config](./tools/config) | Configuration access for reading rule values |
@@ -58,6 +60,8 @@ logger.info("Generating mock for: " + it.name())
 ### Communication Tools
 
 - **httpClient** - HTTP requests
+- **httpClient.request** - HTTP request wrapper in `http.call.before`/`http.call.after`
+- **httpClient.response** - HTTP response wrapper in `http.call.after`
 - **config** - Configuration access
 - **api** - API endpoint modification
 
