@@ -8,5 +8,5 @@ Set the Postman pre-request script.
 class.postman.prerequest=groovy:```
 // Add authorization header
 it.header("Authorization", "Bearer " + localStorage.get("token"))
-'''
+```
 ````

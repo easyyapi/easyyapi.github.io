@@ -8,7 +8,7 @@
 field.name=groovy:```
 def match = regex.find(it.name(), /_(\w)/)
 return match ? match[1].toUpperCase() : it.name()
-'''
+```
 ````
 
 ## 方法
@@ -63,7 +63,7 @@ field.name=groovy:```
 def name = it.name()
 def match = regex.getGroup1("get(\\w+)", name)
 return match ? match.uncapitalize() : name
-'''
+```
 ````
 
 ### 查找所有匹配
@@ -72,7 +72,7 @@ return match ? match.uncapitalize() : name
 method.path=groovy:```
 def paths = regex.findAllGroup1("/(\\w+)", it.ann("RequestMapping", "value"))
 return "/" + paths.join("/")
-'''
+```
 ````
 
 ### 使用组替换
@@ -81,7 +81,7 @@ return "/" + paths.join("/")
 field.name=groovy:```
 def name = it.name()
 return regex.extract("_(\\w)", name, "$1")
-'''
+```
 ````
 
 ### 删除模式
@@ -92,7 +92,7 @@ def name = it.name()
 name = regex.delFirst("^get", name)
 name = regex.delAll("_", name)
 return name
-'''
+```
 ````
 
 ### 计算出现次数
@@ -105,7 +105,7 @@ if (comment) {
     return "Has " + paramCount + " parameters"
 }
 return null
-'''
+```
 ````
 
 ### 转义用户输入
@@ -118,7 +118,7 @@ if (userInput) {
     return "Pattern: " + escaped
 }
 return null
-'''
+```
 ````
 
 ### 复杂提取
@@ -144,7 +144,7 @@ lines.each { line ->
 }
 
 return result.join("\n")
-'''
+```
 ````
 
 ## 模式缓存

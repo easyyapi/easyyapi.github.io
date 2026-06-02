@@ -8,5 +8,5 @@ Add additional headers to a method.
 method.additional.header=groovy:```
 header("Authorization", "Bearer ${token}")
 header("X-Request-Id", UUID.randomUUID().toString())
-'''
+```
 ````

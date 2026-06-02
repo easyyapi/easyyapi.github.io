@@ -7,5 +7,5 @@ Add additional parameters to a method.
 ````properties
 method.additional.param=groovy:```
 param("version", "1.0", "API version")
-'''
+```
 ````

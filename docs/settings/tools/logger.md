@@ -9,7 +9,7 @@ field.mock=groovy:```
 logger.info("Processing field: " + it.name())
 logger.warn("Using default mock for: " + it.type().name())
 return "mock_value"
-'''
+```
 ````
 
 ## Methods
@@ -44,7 +44,7 @@ if (type == "java.lang.String") {
     return "mock_string"
 }
 return null
-'''
+```
 ````
 
 ### Debug Logging
@@ -60,7 +60,7 @@ annotations?.each { ann ->
 }
 
 return name
-'''
+```
 ````
 
 ### Error Handling
@@ -77,7 +77,7 @@ try {
     logger.error("Error getting mock config: " + e.message)
 }
 return "default"
-'''
+```
 ````
 
 ### Conditional Logging
@@ -89,7 +89,7 @@ if (debug) {
     logger.info("Debug mode enabled")
     logger.info("Export settings: " + config.getValues("export.settings"))
 }
-'''
+```
 ````
 
 ### Progress Logging
@@ -97,13 +97,13 @@ if (debug) {
 ````properties
 class.parse.before=groovy:```
 logger.info("Starting to parse class: " + it.name())
-'''
+```
 
 class.parse.after=groovy:```
 logger.info("Finished parsing class: " + it.name())
 logger.info("  Methods: " + it.methodCnt())
 logger.info("  Fields: " + it.fieldCnt())
-'''
+```
 ````
 
 ### Warning for Missing Data
@@ -115,7 +115,7 @@ if (!doc) {
     logger.warn("No documentation for field: " + it.name())
 }
 return doc
-'''
+```
 ````
 
 ## Notes

@@ -7,7 +7,7 @@ Callback executed after parsing a method as an API endpoint.
 ````properties
 api.method.parse.after=groovy:```
 logger.info("Parsed method: " + it.name() + " " + it.httpMethod() + " " + it.path())
-'''
+```
 ````
 
 ## Context

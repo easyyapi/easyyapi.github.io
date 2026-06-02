@@ -8,7 +8,7 @@ Helper methods for common operations. Provides utilities for type resolution and
 method.return=groovy:```
 def resolvedType = helper.resolveType(it.returnType())
 return resolvedType ?: it.returnType().name()
-'''
+```
 ````
 
 ## Methods
@@ -31,7 +31,7 @@ if (returnType) {
     return resolved
 }
 return "void"
-'''
+```
 ````
 
 ### Resolve Field Type
@@ -41,7 +41,7 @@ field.type=groovy:```
 def type = it.type()
 def resolved = helper.resolveType(type)
 return resolved ?: type.name()
-'''
+```
 ````
 
 ### Type Resolution with Generics
@@ -56,7 +56,7 @@ if (type.isCollection()) {
     }
 }
 return helper.resolveType(type)
-'''
+```
 ````
 
 ## Common Use Cases
@@ -75,7 +75,7 @@ if (name.startsWith("java.lang.")) {
     return type.simpleName()
 }
 return name
-'''
+```
 ````
 
 ### Handle Generic Types
@@ -95,7 +95,7 @@ if (type.isArray()) {
 }
 
 return null
-'''
+```
 ````
 
 ## Notes

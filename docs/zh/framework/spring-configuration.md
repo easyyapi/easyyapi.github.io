@@ -43,7 +43,7 @@ field.required=@org.springframework.lang.NonNull
 param.ignore=groovy:it.type().isExtend("org.springframework.validation.BindingResult")
 field.mock[@org.springframework.format.annotation.DateTimeFormat]=groovy:```
     return "@datetime(\"" + it.ann("org.springframework.format.annotation.DateTimeFormat","pattern") + "\")"
-'''
+```
 ````
 
 此扩展在 `org.springframework.lang.NonNull` 在类路径上时默认启用。

@@ -1,13 +1,13 @@
 # request
 
-HTTP 请求包装对象，在 `http.call.before` 和 `http.call.after` 规则脚本中可用。
+HTTP 请求对象，在 `http.call.before` 和 `http.call.after` 规则脚本中可用。
 
 `request` 对象提供对即将发送的 HTTP 请求属性的只读访问。
 
 ## 可用性
 
-| 规则 | 可用变量名 |
-|------|-----------|
+| 规则 | 变量 |
+|------|------|
 | `http.call.before` | `request` |
 | `http.call.after` | `request` |
 
@@ -66,7 +66,7 @@ headers.each { h ->
 
 ## 相关链接
 
-- [response](./response) - HTTP 响应包装对象
+- [response](./response) - HTTP 响应对象
 - [httpClient](./) - HTTP 客户端
 - [http.call.before](../../rules/http_call_before) - 请求前回调规则
 - [http.call.after](../../rules/http_call_after) - 请求后回调规则

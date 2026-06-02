@@ -7,5 +7,5 @@ Add additional response headers to a method.
 ````properties
 method.additional.response.header=groovy:```
 header("X-Rate-Limit", "100")
-'''
+```
 ````

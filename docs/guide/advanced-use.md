@@ -14,7 +14,7 @@ if (it.type().name() == "java.lang.String") {
     return "mock_string"
 }
 return "default"
-'''
+```
 ````
 
 See [Script Tools](/settings/tools) for available tools in scripts.

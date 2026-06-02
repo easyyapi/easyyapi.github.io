@@ -30,22 +30,9 @@ This callback is executed before sending an HTTP request. It can be used for:
 
 The following variables are available in the script context:
 
-| Variable | Type | Description |
-|----------|------|-------------|
-| `request` | `HttpRequestWrapper` | The request about to be sent |
-
-### HttpRequestWrapper Methods
-
-| Method | Return Type | Description |
-|--------|-------------|-------------|
-| `request.url()` | `String` | Request URL |
-| `request.method()` | `String` | HTTP method |
-| `request.headers()` | `List<KeyValue>` | Request headers |
-| `request.query()` | `List<KeyValue>` | Query parameters |
-| `request.body()` | `String?` | Request body |
-| `request.formParams()` | `List<FormParam>` | Form parameters |
-| `request.cookies()` | `List<HttpCookie>` | Cookies |
-| `request.contentType()` | `String?` | Content-Type |
+| Variable | Description |
+|----------|-------------|
+| `request` | The HTTP request about to be sent. See [request](../tools/httpClient/request) for available methods |
 
 ## Examples
 
@@ -79,8 +66,8 @@ if (request.url().contains("/api/")) {
 ## See Also
 
 - [http.call.after](./http_call_after) - Post-request callback
-- [httpClient.request](../tools/httpClient/request) - Request wrapper details
-- [httpClient.response](../tools/httpClient/response) - Response wrapper details
+- [request](../tools/httpClient/request) - Request object details
+- [response](../tools/httpClient/response) - Response object details
 
 ## Available Since
 

@@ -9,7 +9,7 @@ postman.class.test=groovy:```
 pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
 });
-'''
+```
 ````
 
 This script will be applied to all API methods within the class when exporting to Postman.

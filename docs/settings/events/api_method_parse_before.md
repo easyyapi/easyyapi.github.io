@@ -7,7 +7,7 @@ Callback executed before parsing a method as an API endpoint.
 ````properties
 api.method.parse.before=groovy:```
 logger.info("Parsing method: " + it.name())
-'''
+```
 ````
 
 ## Context

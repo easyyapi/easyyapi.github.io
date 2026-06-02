@@ -9,7 +9,7 @@ http.call.after=groovy:```
 if (it.response().code() == 200) {
     localStorage.set("token", it.response().body().token)
 }
-'''
+```
 ````
 
 ## Methods
@@ -70,7 +70,7 @@ if (token == null) {
     localStorage.set("auth", "token", token)
 }
 it.header("Authorization", "Bearer " + token)
-'''
+```
 ````
 
 ### Request Counter
@@ -80,7 +80,7 @@ http.call.after=groovy:```
 def count = localStorage.get("stats", "requestCount") ?: 0
 localStorage.set("stats", "requestCount", count + 1)
 logger.info("Total requests: " + (count + 1))
-'''
+```
 ````
 
 ### Stack-based State
@@ -88,11 +88,11 @@ logger.info("Total requests: " + (count + 1))
 ````properties
 class.parse.before=groovy:```
 localStorage.push("context", "class", it.name())
-'''
+```
 
 class.parse.after=groovy:```
 localStorage.pop("context", "class")
-'''
+```
 ````
 
 ## See Also

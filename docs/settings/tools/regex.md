@@ -8,7 +8,7 @@ Regular expression utilities with pattern caching for performance. Provides comm
 field.name=groovy:```
 def match = regex.find(it.name(), /_(\w)/)
 return match ? match[1].toUpperCase() : it.name()
-'''
+```
 ````
 
 ## Methods
@@ -63,7 +63,7 @@ field.name=groovy:```
 def name = it.name()
 def match = regex.getGroup1("get(\\w+)", name)
 return match ? match.uncapitalize() : name
-'''
+```
 ````
 
 ### Find All Matches
@@ -72,7 +72,7 @@ return match ? match.uncapitalize() : name
 method.path=groovy:```
 def paths = regex.findAllGroup1("/(\\w+)", it.ann("RequestMapping", "value"))
 return "/" + paths.join("/")
-'''
+```
 ````
 
 ### Replace with Groups
@@ -81,7 +81,7 @@ return "/" + paths.join("/")
 field.name=groovy:```
 def name = it.name()
 return regex.extract("_(\\w)", name, "$1")
-'''
+```
 ````
 
 ### Delete Patterns
@@ -92,7 +92,7 @@ def name = it.name()
 name = regex.delFirst("^get", name)
 name = regex.delAll("_", name)
 return name
-'''
+```
 ````
 
 ### Count Occurrences
@@ -105,7 +105,7 @@ if (comment) {
     return "Has " + paramCount + " parameters"
 }
 return null
-'''
+```
 ````
 
 ### Escape User Input
@@ -118,7 +118,7 @@ if (userInput) {
     return "Pattern: " + escaped
 }
 return null
-'''
+```
 ````
 
 ### Complex Extraction
@@ -144,7 +144,7 @@ lines.each { line ->
 }
 
 return result.join("\n")
-'''
+```
 ````
 
 ## Pattern Caching

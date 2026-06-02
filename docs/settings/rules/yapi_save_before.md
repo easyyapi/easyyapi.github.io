@@ -7,7 +7,7 @@ Event triggered before saving data to YApi.
 ````properties
 yapi.save.before=groovy:```
 logger.info("About to save API to YApi: " + it.name())
-'''
+```
 ````
 
 This event is executed before each API is saved to YApi. If an error occurs in this event, it will be thrown (unlike other events which ignore errors).

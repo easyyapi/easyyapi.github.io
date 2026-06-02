@@ -11,7 +11,7 @@ if (path.contains("ignoredField")) {
     return true
 }
 return false
-'''
+```
 ````
 
 ## Methods
@@ -53,7 +53,7 @@ field.ignore=groovy:```
 def ignoredPaths = ["password", "secret", "token", "internal.id"]
 def path = fieldContext.path()
 return ignoredPaths.any { path.endsWith(it) || path.contains("." + it) }
-'''
+```
 ````
 
 ### Conditional Mock Based on Path
@@ -73,7 +73,7 @@ if (path.contains("user.")) {
 }
 
 return null
-'''
+```
 ````
 
 ### Reference Sibling Fields
@@ -84,7 +84,7 @@ def siblingPath = fieldContext.property("status")
 logger.info("Current field: " + fieldContext.path())
 logger.info("Sibling path: " + siblingPath)
 return "mock_value"
-'''
+```
 ````
 
 ### Path-based Validation
@@ -98,7 +98,7 @@ if (requiredPaths.contains(path)) {
     return true
 }
 return false
-'''
+```
 ````
 
 ## Use Cases

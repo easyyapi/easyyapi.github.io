@@ -16,7 +16,7 @@ Some rules support Groovy scripts for advanced customization:
 rule.key=groovy:``` 
 // Groovy script
 it.name() + " - custom suffix"
-'''
+```
 ````
 
 ## API Rules

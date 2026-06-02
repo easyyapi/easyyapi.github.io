@@ -16,7 +16,7 @@ if (token == null) {
     session.set("token", token)
 }
 it.header("Authorization", "Bearer " + token)
-'''
+```
 ````
 
 ## Methods
@@ -84,7 +84,7 @@ if (System.currentTimeMillis() > expiry) {
     session.remove("auth", "tokenExpiry")
 }
 it.header("Authorization", "Bearer " + token)
-'''
+```
 ````
 
 ### Request Tracking
@@ -93,12 +93,12 @@ it.header("Authorization", "Bearer " + token)
 export.before=groovy:```
 session.set("export", "startTime", System.currentTimeMillis())
 session.set("export", "apiCount", 0)
-'''
+```
 
 method.parse.after=groovy:```
 def count = session.get("export", "apiCount") ?: 0
 session.set("export", "apiCount", count + 1)
-'''
+```
 
 export.after=groovy:```
 def startTime = session.get("export", "startTime")
@@ -108,7 +108,7 @@ if (startTime && count) {
     logger.info("Exported " + count + " APIs in " + duration + "ms")
 }
 session.clear("export")
-'''
+```
 ````
 
 ## Difference from localStorage

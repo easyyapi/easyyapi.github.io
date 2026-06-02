@@ -12,7 +12,7 @@ Save content to a file with UTF-8 encoding.
 export.after=groovy:```
 files.save(it.toJson(), "/tmp/api-export.json")
 logger.info("API data saved to /tmp/api-export.json")
-'''
+```
 ````
 
 ### save(content, charset, path)
@@ -22,7 +22,7 @@ Save content to a file with specified encoding.
 ````properties
 export.after=groovy:```
 files.save(it.toJson(), "UTF-8", "/tmp/api-export.json")
-'''
+```
 ````
 
 ## Parameters
@@ -56,7 +56,7 @@ def data = [
 def json = JsonOutput.prettyPrint(JsonOutput.toJson(data))
 files.save(json, "/tmp/api-export-" + System.currentTimeMillis() + ".json")
 logger.info("Exported " + it.apis().size() + " APIs")
-'''
+```
 ````
 
 ### Save Response Data
@@ -69,7 +69,7 @@ if (it.response().code() == 200) {
     files.save(it.response().body(), path)
     logger.info("Response saved to " + path)
 }
-'''
+```
 ````
 
 ### Log Export Results
@@ -83,7 +83,7 @@ log.append("Time: " + new Date().format("yyyy-MM-dd HH:mm:ss") + "\n")
 log.append("APIs: " + it.apis().size() + "\n")
 
 files.save(log.toString(), "/tmp/export-log.txt")
-'''
+```
 ````
 
 ## Notes
@@ -94,7 +94,7 @@ files.save(log.toString(), "/tmp/export-log.txt")
   field.mock=groovy:```
   def content = new File("/path/to/file.txt").text
   return content
-  '''
+```
 ````
 
 ## See Also

@@ -12,7 +12,7 @@
 export.after=groovy:```
 files.save(it.toJson(), "/tmp/api-export.json")
 logger.info("API data saved to /tmp/api-export.json")
-'''
+```
 ````
 
 ### save(content, charset, path)
@@ -22,7 +22,7 @@ logger.info("API data saved to /tmp/api-export.json")
 ````properties
 export.after=groovy:```
 files.save(it.toJson(), "UTF-8", "/tmp/api-export.json")
-'''
+```
 ````
 
 ## 参数
@@ -56,7 +56,7 @@ def data = [
 def json = JsonOutput.prettyPrint(JsonOutput.toJson(data))
 files.save(json, "/tmp/api-export-" + System.currentTimeMillis() + ".json")
 logger.info("Exported " + it.apis().size() + " APIs")
-'''
+```
 ````
 
 ### 保存响应数据
@@ -69,7 +69,7 @@ if (it.response().code() == 200) {
     files.save(it.response().body(), path)
     logger.info("Response saved to " + path)
 }
-'''
+```
 ````
 
 ### 记录导出结果
@@ -83,7 +83,7 @@ log.append("Time: " + new Date().format("yyyy-MM-dd HH:mm:ss") + "\n")
 log.append("APIs: " + it.apis().size() + "\n")
 
 files.save(log.toString(), "/tmp/export-log.txt")
-'''
+```
 ````
 
 ## 注意事项
@@ -94,7 +94,7 @@ files.save(log.toString(), "/tmp/export-log.txt")
   field.mock=groovy:```
   def content = new File("/path/to/file.txt").text
   return content
-  '''
+```
 ````
 
 ## 相关链接

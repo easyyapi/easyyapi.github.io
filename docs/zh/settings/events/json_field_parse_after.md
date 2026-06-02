@@ -9,7 +9,7 @@ json.field.parse.after=groovy:```
 if (it.type().name() == "java.util.Date") {
     it.setJsonType("string")
 }
-'''
+```
 ````
 
 ## Context

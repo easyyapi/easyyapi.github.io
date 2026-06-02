@@ -7,7 +7,7 @@ Post-export callback.
 ````properties
 export.after=groovy:```
 logger.info("Export completed: " + it.size() + " APIs")
-'''
+```
 ````
 
 This callback is executed after the export process completes.

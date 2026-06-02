@@ -8,7 +8,7 @@
 field.mock=groovy:```
 logger.info("Running on: " + runtime.osName())
 logger.info("Plugin version: " + runtime.pluginVersion())
-'''
+```
 ````
 
 ## 方法
@@ -30,7 +30,7 @@ logger.info("OS: " + runtime.osName())
 logger.info("IDE: " + runtime.ideVersion())
 logger.info("Plugin: " + runtime.pluginVersion())
 logger.info("========================")
-'''
+```
 ````
 
 ### 基于 OS 的条件行为
@@ -46,7 +46,7 @@ if (os.contains("windows")) {
     return "linux_default"
 }
 return "default"
-'''
+```
 ````
 
 ### 版本检查
@@ -59,7 +59,7 @@ logger.info("Exporting with EasyYapi version: " + version)
 if (version.startsWith("1.")) {
     logger.warn("Using legacy version - some features may not be available")
 }
-'''
+```
 ````
 
 ### 调试信息
@@ -76,7 +76,7 @@ Plugin: ${runtime.pluginVersion()}
 APIs exported: ${it.apis()?.size() ?: 0}
 """
 logger.info(info)
-'''
+```
 ````
 
 ### 基于环境的配置
@@ -93,7 +93,7 @@ if (ide.contains("IntelliJ IDEA")) {
 }
 
 return "/api"
-'''
+```
 ````
 
 ## 使用场景

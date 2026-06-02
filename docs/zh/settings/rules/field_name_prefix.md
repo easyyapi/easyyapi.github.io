@@ -9,7 +9,7 @@ field.name.prefix=groovy:```
 if (!fieldContext) return null
 def parentPath = tool.substringBeforeLast(fieldContext.path(),".")
 return session.get("field.prefix",parentPath)
-'''
+```
 ````
 
 通常与 Jackson 的 `@JsonUnwrapped` 注解配合使用，为展开的字段添加前缀。

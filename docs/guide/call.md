@@ -17,8 +17,8 @@ Use `http.call.before` to execute custom logic before sending a request:
 
 ````properties
 http.call.before=groovy:```
-it.header("Authorization", "Bearer " + localStorage.get("token"))
-'''
+logger.info("Sending " + request.method() + " " + request.url())
+```
 ````
 
 ### Post-request Callback
@@ -27,11 +27,13 @@ Use `http.call.after` to execute custom logic after receiving a response:
 
 ````properties
 http.call.after=groovy:```
-if (it.response().code() == 200) {
-    def body = it.response().body()
-    localStorage.set("token", body.token)
+if (response.code() == 200) {
+    def body = new JsonSlurper().parseText(response.body())
+    if (body.token) {
+        localStorage.set("token", body.token)
+    }
 }
-'''
+```
 ````
 
 See [http.call.before](/settings/rules/http_call_before) and [http.call.after](/settings/rules/http_call_after) for more details.

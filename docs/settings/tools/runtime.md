@@ -8,7 +8,7 @@ Runtime information tool for scripts. Provides access to environment and system 
 field.mock=groovy:```
 logger.info("Running on: " + runtime.osName())
 logger.info("Plugin version: " + runtime.pluginVersion())
-'''
+```
 ````
 
 ## Methods
@@ -30,7 +30,7 @@ logger.info("OS: " + runtime.osName())
 logger.info("IDE: " + runtime.ideVersion())
 logger.info("Plugin: " + runtime.pluginVersion())
 logger.info("========================")
-'''
+```
 ````
 
 ### Conditional Behavior by OS
@@ -46,7 +46,7 @@ if (os.contains("windows")) {
     return "linux_default"
 }
 return "default"
-'''
+```
 ````
 
 ### Version Check
@@ -59,7 +59,7 @@ logger.info("Exporting with EasyYapi version: " + version)
 if (version.startsWith("1.")) {
     logger.warn("Using legacy version - some features may not be available")
 }
-'''
+```
 ````
 
 ### Debug Information
@@ -76,7 +76,7 @@ Plugin: ${runtime.pluginVersion()}
 APIs exported: ${it.apis()?.size() ?: 0}
 """
 logger.info(info)
-'''
+```
 ````
 
 ### Environment-based Configuration
@@ -93,7 +93,7 @@ if (ide.contains("IntelliJ IDEA")) {
 }
 
 return "/api"
-'''
+```
 ````
 
 ## Use Cases

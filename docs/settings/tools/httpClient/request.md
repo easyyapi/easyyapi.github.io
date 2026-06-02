@@ -1,13 +1,13 @@
 # request
 
-HTTP request wrapper object, available in `http.call.before` and `http.call.after` rule scripts.
+HTTP request object, available in `http.call.before` and `http.call.after` rule scripts.
 
 The `request` object provides read-only access to the HTTP request properties that are about to be sent.
 
 ## Availability
 
-| Rule | Available As |
-|------|-------------|
+| Rule | Variable |
+|------|----------|
 | `http.call.before` | `request` |
 | `http.call.after` | `request` |
 
@@ -66,7 +66,7 @@ headers.each { h ->
 
 ## See Also
 
-- [response](./response) - HTTP response wrapper
+- [response](./response) - HTTP response object
 - [httpClient](./) - HTTP client for making requests
 - [http.call.before](../../rules/http_call_before) - Pre-request callback rule
 - [http.call.after](../../rules/http_call_after) - Post-request callback rule

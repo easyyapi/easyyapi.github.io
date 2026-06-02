@@ -8,7 +8,7 @@ General utility methods for string manipulation, collections, JSON operations, a
 field.name=groovy:```
 def name = tool.capitalize(it.name())
 return tool.removePrefix(name, "get")
-'''
+```
 ````
 
 ## String Methods
@@ -136,7 +136,7 @@ def today = tool.today()
 logger.info("Current time: " + now)
 
 return "mock_" + name
-'''
+```
 ````
 
 ## See Also

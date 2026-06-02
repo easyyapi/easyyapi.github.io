@@ -7,7 +7,7 @@
 ````properties
 postman.collection.test=groovy:```
 console.log("Collection test script")
-'''
+```
 ````
 
 此事件在导出时对整个 Postman 集合执行一次，允许设置集合范围的测试逻辑。

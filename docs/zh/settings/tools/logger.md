@@ -9,7 +9,7 @@ field.mock=groovy:```
 logger.info("Processing field: " + it.name())
 logger.warn("Using default mock for: " + it.type().name())
 return "mock_value"
-'''
+```
 ````
 
 ## 方法
@@ -44,7 +44,7 @@ if (type == "java.lang.String") {
     return "mock_string"
 }
 return null
-'''
+```
 ````
 
 ### 调试日志
@@ -60,7 +60,7 @@ annotations?.each { ann ->
 }
 
 return name
-'''
+```
 ````
 
 ### 错误处理
@@ -77,7 +77,7 @@ try {
     logger.error("Error getting mock config: " + e.message)
 }
 return "default"
-'''
+```
 ````
 
 ### 条件日志
@@ -89,7 +89,7 @@ if (debug) {
     logger.info("Debug mode enabled")
     logger.info("Export settings: " + config.getValues("export.settings"))
 }
-'''
+```
 ````
 
 ### 进度日志
@@ -97,13 +97,13 @@ if (debug) {
 ````properties
 class.parse.before=groovy:```
 logger.info("Starting to parse class: " + it.name())
-'''
+```
 
 class.parse.after=groovy:```
 logger.info("Finished parsing class: " + it.name())
 logger.info("  Methods: " + it.methodCnt())
 logger.info("  Fields: " + it.fieldCnt())
-'''
+```
 ````
 
 ### 缺失数据警告
@@ -115,7 +115,7 @@ if (!doc) {
     logger.warn("No documentation for field: " + it.name())
 }
 return doc
-'''
+```
 ````
 
 ## 注意事项

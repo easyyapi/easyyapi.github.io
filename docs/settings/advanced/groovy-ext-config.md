@@ -34,5 +34,5 @@ tool.register("customMock", this.&customMock)
 ````properties
 field.mock=groovy:```
 tool.customMock(it.type().name()) ?: "default"
-'''
+```
 ````

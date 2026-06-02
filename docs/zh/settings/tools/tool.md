@@ -8,7 +8,7 @@
 field.name=groovy:```
 def name = tool.capitalize(it.name())
 return tool.removePrefix(name, "get")
-'''
+```
 ````
 
 ## 字符串方法
@@ -136,7 +136,7 @@ def today = tool.today()
 logger.info("Current time: " + now)
 
 return "mock_" + name
-'''
+```
 ````
 
 ## 相关链接

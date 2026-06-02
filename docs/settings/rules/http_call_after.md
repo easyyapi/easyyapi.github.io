@@ -29,21 +29,10 @@ This callback is executed after receiving an HTTP response. It can be used for:
 
 The following variables are available in the script context:
 
-| Variable | Type | Description |
-|----------|------|-------------|
-| `request` | `HttpRequestWrapper` | The request that was sent |
-| `response` | `HttpResponseWrapper` | The response that was received |
-
-### HttpResponseWrapper Methods
-
-| Method | Return Type | Description |
-|--------|-------------|-------------|
-| `response.code()` | `Int` | HTTP status code |
-| `response.headers()` | `Map<String, List<String>>` | Response headers |
-| `response.body()` | `String?` | Response body |
-| `response.request()` | `HttpRequestWrapper` | The associated request |
-| `response.discard()` | `void` | Discard response and retry the request |
-| `response.isDiscarded()` | `Boolean` | Check if response has been discarded |
+| Variable | Description |
+|----------|-------------|
+| `request` | The HTTP request that was sent. See [request](../tools/httpClient/request) for available methods |
+| `response` | The HTTP response received. See [response](../tools/httpClient/response) for available methods |
 
 ## Retry Mechanism
 
@@ -88,8 +77,8 @@ logger.info(request.method() + " " + request.url() + " -> " + response.code())
 ## See Also
 
 - [http.call.before](./http_call_before) - Pre-request callback
-- [httpClient.request](../tools/httpClient/request) - Request wrapper details
-- [httpClient.response](../tools/httpClient/response) - Response wrapper details
+- [request](../tools/httpClient/request) - Request object details
+- [response](../tools/httpClient/response) - Response object details
 
 ## Available Since
 

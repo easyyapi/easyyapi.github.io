@@ -11,7 +11,7 @@ if (path.contains("ignoredField")) {
     return true
 }
 return false
-'''
+```
 ````
 
 ## 方法
@@ -53,7 +53,7 @@ field.ignore=groovy:```
 def ignoredPaths = ["password", "secret", "token", "internal.id"]
 def path = fieldContext.path()
 return ignoredPaths.any { path.endsWith(it) || path.contains("." + it) }
-'''
+```
 ````
 
 ### 基于路径的条件 Mock
@@ -73,7 +73,7 @@ if (path.contains("user.")) {
 }
 
 return null
-'''
+```
 ````
 
 ### 引用兄弟字段
@@ -84,7 +84,7 @@ def siblingPath = fieldContext.property("status")
 logger.info("Current field: " + fieldContext.path())
 logger.info("Sibling path: " + siblingPath)
 return "mock_value"
-'''
+```
 ````
 
 ### 基于路径的验证
@@ -98,7 +98,7 @@ if (requiredPaths.contains(path)) {
     return true
 }
 return false
-'''
+```
 ````
 
 ## 使用场景

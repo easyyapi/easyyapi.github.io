@@ -29,21 +29,10 @@ if (response.code() == 200) {
 
 脚本上下文中可用的变量：
 
-| 变量 | 类型 | 说明 |
-|------|------|------|
-| `request` | `HttpRequestWrapper` | 已发送的请求 |
-| `response` | `HttpResponseWrapper` | 收到的响应 |
-
-### HttpResponseWrapper 方法
-
-| 方法 | 返回类型 | 说明 |
-|--------|-------------|-------------|
-| `response.code()` | `Int` | HTTP 状态码 |
-| `response.headers()` | `Map<String, List<String>>` | 响应头 |
-| `response.body()` | `String?` | 响应体 |
-| `response.request()` | `HttpRequestWrapper` | 关联的请求 |
-| `response.discard()` | `void` | 丢弃响应并重试请求 |
-| `response.isDiscarded()` | `Boolean` | 检查响应是否已被丢弃 |
+| 变量 | 说明 |
+|------|------|
+| `request` | 已发送的 HTTP 请求。可用方法见 [request](../tools/httpClient/request) |
+| `response` | 收到的 HTTP 响应。可用方法见 [response](../tools/httpClient/response) |
 
 ## 重试机制
 
@@ -88,8 +77,8 @@ logger.info(request.method() + " " + request.url() + " -> " + response.code())
 ## 相关链接
 
 - [http.call.before](./http_call_before) - 请求前回调
-- [httpClient.request](../tools/httpClient/request) - 请求包装对象详情
-- [httpClient.response](../tools/httpClient/response) - 响应包装对象详情
+- [request](../tools/httpClient/request) - 请求对象详情
+- [response](../tools/httpClient/response) - 响应对象详情
 
 ## 可用版本
 

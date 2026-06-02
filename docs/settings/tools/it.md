@@ -268,7 +268,7 @@ if (it.isExtend("java.lang.Exception")) {
     return it.simpleName() + "Exception"
 }
 return it.name()
-'''
+```
 ````
 
 ### Method Rule Example
@@ -281,7 +281,7 @@ if (it.hasAnn("org.springframework.web.bind.annotation.GetMapping")) {
     return path ?: name
 }
 return name
-'''
+```
 ````
 
 ### Field Rule Example
@@ -299,7 +299,7 @@ if (type.isCollection()) {
     return "[]"
 }
 return null
-'''
+```
 ````
 
 ### Parameter Rule Example
@@ -311,7 +311,7 @@ if (it.hasAnn("org.springframework.web.bind.annotation.RequestParam")) {
     return it.ann("RequestParam", "value") ?: name
 }
 return name
-'''
+```
 ````
 
 ## See Also

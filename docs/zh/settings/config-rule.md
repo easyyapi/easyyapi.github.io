@@ -16,7 +16,7 @@ rule.key=rule_value
 rule.key=groovy:``` 
 // Groovy 脚本
 it.name() + " - 自定义后缀"
-'''
+```
 ````
 
 ## API 规则

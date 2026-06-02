@@ -12,7 +12,7 @@ Fields ordered alphabetically in ascending order:
 # Extension: field-order-alphabetically (disabled by default)
 field.order.with=groovy:```
     return a.name().compareTo(b.name())
-'''
+```
 ````
 
 ### Alphabetical Descending (Z-A)
@@ -23,7 +23,7 @@ Fields ordered alphabetically in descending order:
 # Extension: field-order-alphabetically-desc (disabled by default)
 field.order.with=groovy:```
     return -a.name().compareTo(b.name())
-'''
+```
 ````
 
 ### Parent Fields First
@@ -42,7 +42,7 @@ field.order.with=groovy:```
     }else{
         return -1
     }
-'''
+```
 ````
 
 ### Child Fields First
@@ -61,7 +61,7 @@ field.order.with=groovy:```
     }else{
         return 1
     }
-'''
+```
 ````
 
 ## Enabling Extensions

@@ -1,13 +1,13 @@
 # response
 
-HTTP response wrapper object, available in `http.call.after` rule scripts.
+HTTP response object, available in `http.call.after` rule scripts.
 
 The `response` object provides access to the HTTP response data and supports retry control via `discard()`.
 
 ## Availability
 
-| Rule | Available As |
-|------|-------------|
+| Rule | Variable |
+|------|----------|
 | `http.call.after` | `response` |
 
 ## Methods
@@ -17,7 +17,7 @@ The `response` object provides access to the HTTP response data and supports ret
 | `response.code()` | `Int` | HTTP status code |
 | `response.headers()` | `Map<String, List<String>>` | Response headers |
 | `response.body()` | `String?` | Response body (nullable) |
-| `response.request()` | `HttpRequestWrapper` | The associated request object |
+| `response.request()` | `request` | The associated request object |
 | `response.discard()` | `void` | Discard this response and retry the request |
 | `response.isDiscarded()` | `Boolean` | Check if this response has been discarded |
 
@@ -85,6 +85,6 @@ logger.info("Request to " + response.request().url() + " returned " + response.c
 
 ## See Also
 
-- [request](./request) - HTTP request wrapper
+- [request](./request) - HTTP request object
 - [httpClient](./) - HTTP client for making requests
 - [http.call.after](../../rules/http_call_after) - Post-request callback rule

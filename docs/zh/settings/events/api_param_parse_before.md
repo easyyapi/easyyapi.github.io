@@ -7,7 +7,7 @@ Callback executed before parsing a parameter.
 ````properties
 api.param.parse.before=groovy:```
 logger.info("Parsing param: " + it.name())
-'''
+```
 ````
 
 ## Context

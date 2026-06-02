@@ -30,22 +30,9 @@ if (!request.query().isEmpty()) {
 
 脚本上下文中可用的变量：
 
-| 变量 | 类型 | 说明 |
-|------|------|------|
-| `request` | `HttpRequestWrapper` | 即将发送的请求 |
-
-### HttpRequestWrapper 方法
-
-| 方法 | 返回类型 | 说明 |
-|--------|-------------|-------------|
-| `request.url()` | `String` | 请求 URL |
-| `request.method()` | `String` | HTTP 方法 |
-| `request.headers()` | `List<KeyValue>` | 请求头 |
-| `request.query()` | `List<KeyValue>` | 查询参数 |
-| `request.body()` | `String?` | 请求体 |
-| `request.formParams()` | `List<FormParam>` | 表单参数 |
-| `request.cookies()` | `List<HttpCookie>` | Cookie |
-| `request.contentType()` | `String?` | Content-Type |
+| 变量 | 说明 |
+|------|------|
+| `request` | 即将发送的 HTTP 请求。可用方法见 [request](../tools/httpClient/request) |
 
 ## 示例
 
@@ -79,8 +66,8 @@ if (request.url().contains("/api/")) {
 ## 相关链接
 
 - [http.call.after](./http_call_after) - 请求后回调
-- [httpClient.request](../tools/httpClient/request) - 请求包装对象详情
-- [httpClient.response](../tools/httpClient/response) - 响应包装对象详情
+- [request](../tools/httpClient/request) - 请求对象详情
+- [response](../tools/httpClient/response) - 响应对象详情
 
 ## 可用版本
 

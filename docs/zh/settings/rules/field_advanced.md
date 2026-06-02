@@ -10,5 +10,5 @@ if (it.type().name() == "java.util.Date") {
     it.setJsonType("string")
     it.setFormat("date-time")
 }
-'''
+```
 ````

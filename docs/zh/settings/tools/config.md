@@ -8,7 +8,7 @@
 field.mock=groovy:```
 def mockValue = config.get("custom.mock." + it.name())
 return mockValue ?: "default_mock"
-'''
+```
 ````
 
 ## 方法
@@ -37,7 +37,7 @@ field.mock=groovy:```
 def prefix = config.get("mock.prefix")
 def value = config.get("mock." + it.type().simpleName())
 return prefix ? prefix + value : value
-'''
+```
 ````
 
 ### 获取所有值
@@ -49,7 +49,7 @@ return headers.collect { h ->
     def parts = h.split(":")
     [name: parts[0], value: parts[1]]
 }
-'''
+```
 ````
 
 ### 解析占位符
@@ -61,7 +61,7 @@ if (template && template.contains("\${")) {
     return config.resolveProperty(template)
 }
 return template
-'''
+```
 ````
 
 ### 基于环境的配置
@@ -70,7 +70,7 @@ return template
 api.path.prefix=groovy:```
 def env = config.get("env") ?: "dev"
 return config.get("api.prefix." + env) ?: "/"
-'''
+```
 ````
 
 ## 配置文件示例

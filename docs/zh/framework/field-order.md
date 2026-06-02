@@ -12,7 +12,7 @@ EasyYapi 提供了多个扩展来控制 API 文档中的字段顺序。
 # 扩展：field-order-alphabetically（默认禁用）
 field.order.with=groovy:```
     return a.name().compareTo(b.name())
-'''
+```
 ````
 
 ### 字母降序 (Z-A)
@@ -23,7 +23,7 @@ field.order.with=groovy:```
 # 扩展：field-order-alphabetically-desc（默认禁用）
 field.order.with=groovy:```
     return -a.name().compareTo(b.name())
-'''
+```
 ````
 
 ### 父类字段优先
@@ -42,7 +42,7 @@ field.order.with=groovy:```
     }else{
         return -1
     }
-'''
+```
 ````
 
 ### 子类字段优先
@@ -61,7 +61,7 @@ field.order.with=groovy:```
     }else{
         return 1
     }
-'''
+```
 ````
 
 ## 启用扩展

@@ -8,7 +8,7 @@ Event triggered after Postman collection formatting is complete.
 postman.format.after=groovy:```
 // Modify the formatted Postman collection before it is exported
 logger.info("Postman collection formatted successfully")
-'''
+```
 ````
 
 This event allows you to modify the Postman collection after it has been formatted but before it is exported. If an error occurs in this event, it will be thrown (unlike other events which ignore errors).

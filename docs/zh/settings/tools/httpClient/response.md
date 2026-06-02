@@ -1,13 +1,13 @@
 # response
 
-HTTP 响应包装对象，在 `http.call.after` 规则脚本中可用。
+HTTP 响应对象，在 `http.call.after` 规则脚本中可用。
 
 `response` 对象提供对 HTTP 响应数据的访问，并支持通过 `discard()` 控制重试。
 
 ## 可用性
 
-| 规则 | 可用变量名 |
-|------|-----------|
+| 规则 | 变量 |
+|------|------|
 | `http.call.after` | `response` |
 
 ## 方法
@@ -17,7 +17,7 @@ HTTP 响应包装对象，在 `http.call.after` 规则脚本中可用。
 | `response.code()` | `Int` | HTTP 状态码 |
 | `response.headers()` | `Map<String, List<String>>` | 响应头 |
 | `response.body()` | `String?` | 响应体（可空） |
-| `response.request()` | `HttpRequestWrapper` | 关联的请求对象 |
+| `response.request()` | `request` | 关联的请求对象 |
 | `response.discard()` | `void` | 丢弃此响应并重试请求 |
 | `response.isDiscarded()` | `Boolean` | 检查此响应是否已被丢弃 |
 
@@ -85,6 +85,6 @@ logger.info("Request to " + response.request().url() + " returned " + response.c
 
 ## 相关链接
 
-- [request](./request) - HTTP 请求包装对象
+- [request](./request) - HTTP 请求对象
 - [httpClient](./) - HTTP 客户端
 - [http.call.after](../../rules/http_call_after) - 请求后回调规则

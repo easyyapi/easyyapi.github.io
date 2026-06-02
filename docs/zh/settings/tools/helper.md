@@ -8,7 +8,7 @@
 method.return=groovy:```
 def resolvedType = helper.resolveType(it.returnType())
 return resolvedType ?: it.returnType().name()
-'''
+```
 ````
 
 ## 方法
@@ -31,7 +31,7 @@ if (returnType) {
     return resolved
 }
 return "void"
-'''
+```
 ````
 
 ### 解析字段类型
@@ -41,7 +41,7 @@ field.type=groovy:```
 def type = it.type()
 def resolved = helper.resolveType(type)
 return resolved ?: type.name()
-'''
+```
 ````
 
 ### 带泛型的类型解析
@@ -56,7 +56,7 @@ if (type.isCollection()) {
     }
 }
 return helper.resolveType(type)
-'''
+```
 ````
 
 ## 常见用例
@@ -75,7 +75,7 @@ if (name.startsWith("java.lang.")) {
     return type.simpleName()
 }
 return name
-'''
+```
 ````
 
 ### 处理泛型类型
@@ -95,7 +95,7 @@ if (type.isArray()) {
 }
 
 return null
-'''
+```
 ````
 
 ## 注意事项
