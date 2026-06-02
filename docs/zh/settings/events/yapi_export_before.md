@@ -4,11 +4,11 @@ Callback executed before exporting to YApi.
 
 ## Usage
 
-```properties
-yapi.export.before=groovy:'''
+````properties
+yapi.export.before=groovy:```
 logger.info("Exporting " + it.size() + " APIs to YApi")
 '''
-```
+````
 
 ## Context
 

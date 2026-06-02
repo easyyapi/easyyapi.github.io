@@ -4,11 +4,11 @@ Callback executed before parsing a parameter.
 
 ## Usage
 
-```properties
-api.param.parse.before=groovy:'''
+````properties
+api.param.parse.before=groovy:```
 logger.info("Parsing param: " + it.name())
 '''
-```
+````
 
 ## Context
 

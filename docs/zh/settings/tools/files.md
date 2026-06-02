@@ -8,22 +8,22 @@
 
 使用 UTF-8 编码保存内容到文件。
 
-```properties
-export.after=groovy:'''
+````properties
+export.after=groovy:```
 files.save(it.toJson(), "/tmp/api-export.json")
 logger.info("API data saved to /tmp/api-export.json")
 '''
-```
+````
 
 ### save(content, charset, path)
 
 使用指定编码保存内容到文件。
 
-```properties
-export.after=groovy:'''
+````properties
+export.after=groovy:```
 files.save(it.toJson(), "UTF-8", "/tmp/api-export.json")
 '''
-```
+````
 
 ## 参数
 
@@ -43,8 +43,8 @@ files.save(it.toJson(), "UTF-8", "/tmp/api-export.json")
 
 ### 导出 API 数据
 
-```properties
-export.after=groovy:'''
+````properties
+export.after=groovy:```
 import groovy.json.JsonSlurper
 import groovy.json.JsonOutput
 
@@ -57,12 +57,12 @@ def json = JsonOutput.prettyPrint(JsonOutput.toJson(data))
 files.save(json, "/tmp/api-export-" + System.currentTimeMillis() + ".json")
 logger.info("Exported " + it.apis().size() + " APIs")
 '''
-```
+````
 
 ### 保存响应数据
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 if (it.response().code() == 200) {
     def timestamp = new Date().format("yyyyMMdd_HHmmss")
     def path = "/tmp/response_" + timestamp + ".json"
@@ -70,12 +70,12 @@ if (it.response().code() == 200) {
     logger.info("Response saved to " + path)
 }
 '''
-```
+````
 
 ### 记录导出结果
 
-```properties
-export.after=groovy:'''
+````properties
+export.after=groovy:```
 def log = new StringBuilder()
 log.append("Export Log\n")
 log.append("==========\n")
@@ -84,18 +84,18 @@ log.append("APIs: " + it.apis().size() + "\n")
 
 files.save(log.toString(), "/tmp/export-log.txt")
 '''
-```
+````
 
 ## 注意事项
 
 - `files` 工具只支持写入文件
 - 对于读取文件，使用标准 Groovy I/O：
-  ```properties
-  field.mock=groovy:'''
+````properties
+  field.mock=groovy:```
   def content = new File("/path/to/file.txt").text
   return content
   '''
-  ```
+````
 
 ## 相关链接
 

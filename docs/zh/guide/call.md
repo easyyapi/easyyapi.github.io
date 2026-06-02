@@ -15,24 +15,24 @@ EasyYapi 支持在 IDEA 中直接发起 API 请求，方便快速测试和调试
 
 使用 `http.call.before` 在发送请求前执行自定义逻辑：
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 it.header("Authorization", "Bearer " + localStorage.get("token"))
 '''
-```
+````
 
 ### 请求后回调
 
 使用 `http.call.after` 在收到响应后执行自定义逻辑：
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 if (it.response().code() == 200) {
     def body = it.response().body()
     localStorage.set("token", body.token)
 }
 '''
-```
+````
 
 详见 [http.call.before](/zh/settings/rules/http_call_before) 和 [http.call.after](/zh/settings/rules/http_call_after)。
 

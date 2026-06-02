@@ -4,12 +4,12 @@ Regular expression utilities with pattern caching for performance. Provides comm
 
 ## Usage
 
-```properties
-field.name=groovy:'''
+````properties
+field.name=groovy:```
 def match = regex.find(it.name(), /_(\w)/)
 return match ? match[1].toUpperCase() : it.name()
 '''
-```
+````
 
 ## Methods
 
@@ -58,47 +58,47 @@ return match ? match[1].toUpperCase() : it.name()
 
 ### Extract First Match
 
-```properties
-field.name=groovy:'''
+````properties
+field.name=groovy:```
 def name = it.name()
 def match = regex.getGroup1("get(\\w+)", name)
 return match ? match.uncapitalize() : name
 '''
-```
+````
 
 ### Find All Matches
 
-```properties
-method.path=groovy:'''
+````properties
+method.path=groovy:```
 def paths = regex.findAllGroup1("/(\\w+)", it.ann("RequestMapping", "value"))
 return "/" + paths.join("/")
 '''
-```
+````
 
 ### Replace with Groups
 
-```properties
-field.name=groovy:'''
+````properties
+field.name=groovy:```
 def name = it.name()
 return regex.extract("_(\\w)", name, "$1")
 '''
-```
+````
 
 ### Delete Patterns
 
-```properties
-field.name=groovy:'''
+````properties
+field.name=groovy:```
 def name = it.name()
 name = regex.delFirst("^get", name)
 name = regex.delAll("_", name)
 return name
 '''
-```
+````
 
 ### Count Occurrences
 
-```properties
-field.description=groovy:'''
+````properties
+field.description=groovy:```
 def comment = it.doc()
 if (comment) {
     def paramCount = regex.count("@param", comment)
@@ -106,12 +106,12 @@ if (comment) {
 }
 return null
 '''
-```
+````
 
 ### Escape User Input
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 def userInput = config.get("mock.pattern")
 if (userInput) {
     def escaped = regex.escape(userInput)
@@ -119,12 +119,12 @@ if (userInput) {
 }
 return null
 '''
-```
+````
 
 ### Complex Extraction
 
-```properties
-method.description=groovy:'''
+````properties
+method.description=groovy:```
 def doc = it.doc()
 if (!doc) return null
 
@@ -145,7 +145,7 @@ lines.each { line ->
 
 return result.join("\n")
 '''
-```
+````
 
 ## Pattern Caching
 

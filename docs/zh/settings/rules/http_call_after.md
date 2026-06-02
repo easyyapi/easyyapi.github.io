@@ -4,8 +4,8 @@ Call API 功能的请求后回调。
 
 ## 用法
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 // 记录响应
 logger.info("Response code: " + response.code())
 
@@ -16,8 +16,8 @@ if (response.code() == 200) {
         localStorage.set("token", body.token)
     }
 }
-'''
 ```
+````
 
 此回调在收到 HTTP 响应后执行。可用于：
 - 响应数据处理
@@ -49,22 +49,22 @@ if (response.code() == 200) {
 
 调用 `response.discard()` 会导致请求被重试（最多 3 次）。适用于处理过期令牌或临时错误：
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 if (response.code() == 401) {
     // 令牌过期，清除缓存并重试
     localStorage.remove("auth_token")
     response.discard()
 }
-'''
 ```
+````
 
 ## 示例
 
 ### 错误处理与重试
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 def code = response.code()
 if (code >= 500) {
     logger.error("Server error: " + code)
@@ -74,16 +74,16 @@ if (code >= 500) {
     session.remove("token")
     response.discard()
 }
-'''
 ```
+````
 
 ### 记录请求和响应
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 logger.info(request.method() + " " + request.url() + " -> " + response.code())
-'''
 ```
+````
 
 ## 相关链接
 

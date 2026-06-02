@@ -4,12 +4,12 @@ Runtime information tool for scripts. Provides access to environment and system 
 
 ## Usage
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 logger.info("Running on: " + runtime.osName())
 logger.info("Plugin version: " + runtime.pluginVersion())
 '''
-```
+````
 
 ## Methods
 
@@ -23,20 +23,20 @@ logger.info("Plugin version: " + runtime.pluginVersion())
 
 ### Log Environment Info
 
-```properties
-export.before=groovy:'''
+````properties
+export.before=groovy:```
 logger.info("=== Export Environment ===")
 logger.info("OS: " + runtime.osName())
 logger.info("IDE: " + runtime.ideVersion())
 logger.info("Plugin: " + runtime.pluginVersion())
 logger.info("========================")
 '''
-```
+````
 
 ### Conditional Behavior by OS
 
-```properties
-field.default=groovy:'''
+````properties
+field.default=groovy:```
 def os = runtime.osName().toLowerCase()
 if (os.contains("windows")) {
     return "windows_default"
@@ -47,12 +47,12 @@ if (os.contains("windows")) {
 }
 return "default"
 '''
-```
+````
 
 ### Version Check
 
-```properties
-export.before=groovy:'''
+````properties
+export.before=groovy:```
 def version = runtime.pluginVersion()
 logger.info("Exporting with EasyYapi version: " + version)
 
@@ -60,12 +60,12 @@ if (version.startsWith("1.")) {
     logger.warn("Using legacy version - some features may not be available")
 }
 '''
-```
+````
 
 ### Debug Information
 
-```properties
-export.after=groovy:'''
+````properties
+export.after=groovy:```
 def info = """
 Export completed
 ================
@@ -77,12 +77,12 @@ APIs exported: ${it.apis()?.size() ?: 0}
 """
 logger.info(info)
 '''
-```
+````
 
 ### Environment-based Configuration
 
-```properties
-api.path.prefix=groovy:'''
+````properties
+api.path.prefix=groovy:```
 def os = runtime.osName().toLowerCase()
 def ide = runtime.ideVersion()
 
@@ -94,7 +94,7 @@ if (ide.contains("IntelliJ IDEA")) {
 
 return "/api"
 '''
-```
+````
 
 ## Use Cases
 

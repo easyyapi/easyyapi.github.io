@@ -28,8 +28,8 @@ HTTP 请求包装对象，在 `http.call.before` 和 `http.call.after` 规则脚
 
 ### 查看请求详情
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 logger.info("Sending " + request.method() + " " + request.url())
 if (request.body() != null) {
     logger.info("Body: " + request.body())
@@ -40,29 +40,29 @@ if (!request.formParams().isEmpty()) {
 if (!request.query().isEmpty()) {
     logger.info("Query: " + request.query())
 }
-'''
 ```
+````
 
 ### 检查请求方法
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 if (request.method() == "POST") {
     logger.info("POST body: " + request.body())
 }
-'''
 ```
+````
 
 ### 读取请求头
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 def headers = request.headers()
 headers.each { h ->
     logger.info(h.key() + ": " + h.value())
 }
-'''
 ```
+````
 
 ## 相关链接
 

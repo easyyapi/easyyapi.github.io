@@ -30,20 +30,20 @@ The response object returned by `httpClient` methods provides access to:
 
 ### GET Request
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 def response = httpClient.get("http://config-server/api/config")
 if (response.code() == 200) {
     def config = new JsonSlurper().parseText(response.body())
     logger.info("Config loaded: " + config)
 }
-'''
 ```
+````
 
 ### POST Request with JSON
 
-```properties
-export.before=groovy:'''
+````properties
+export.before=groovy:```
 import groovy.json.JsonOutput
 
 def data = [
@@ -54,13 +54,13 @@ def data = [
 def json = JsonOutput.toJson(data)
 def response = httpClient.post("http://api-server/sync", json)
 logger.info("Sync result: " + response.code())
-'''
 ```
+````
 
 ### Authentication with token caching
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 def token = session.get("auth_token")
 if (!token) {
     def loginResponse = httpClient.post("http://auth-server/login", [
@@ -78,13 +78,13 @@ if (!token) {
 if (token) {
     logger.info("Using token for request to: " + request.url())
 }
-'''
 ```
+````
 
 ### Conditional Request
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 def apiUrl = config.get("api.url")
 if (apiUrl) {
     def healthCheck = httpClient.get(apiUrl + "/health")
@@ -92,8 +92,8 @@ if (apiUrl) {
         logger.warn("API server health check failed")
     }
 }
-'''
 ```
+````
 
 ## Notes
 

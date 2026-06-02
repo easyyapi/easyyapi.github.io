@@ -25,44 +25,44 @@ The `response` object provides access to the HTTP response data and supports ret
 
 Calling `response.discard()` marks the response for retry. The request will be re-executed up to **3 times** (MAX_RETRY). This is useful when the response indicates an expired token or other recoverable error.
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 if (response.code() == 401) {
     // Token expired, clear cached token and retry
     localStorage.remove("auth_token")
     response.discard()
 }
-'''
 ```
+````
 
 ## Examples
 
 ### Log response info
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 logger.info("Response code: " + response.code())
 logger.info("Response body: " + response.body())
-'''
 ```
+````
 
 ### Save token from response
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 if (response.code() == 200) {
     def body = new JsonSlurper().parseText(response.body())
     if (body.token) {
         localStorage.set("auth_token", body.token)
     }
 }
-'''
 ```
+````
 
 ### Error handling with retry
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 def code = response.code()
 if (code >= 500) {
     logger.error("Server error: " + code)
@@ -72,16 +72,16 @@ if (code >= 500) {
     session.remove("token")
     response.discard()
 }
-'''
 ```
+````
 
 ### Access request from response
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 logger.info("Request to " + response.request().url() + " returned " + response.code())
-'''
 ```
+````
 
 ## See Also
 

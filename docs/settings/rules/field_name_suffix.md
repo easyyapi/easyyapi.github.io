@@ -4,13 +4,13 @@ Set a suffix to append to field names in API documentation.
 
 ## Usage
 
-```properties
-field.name.suffix=groovy:'''
+````properties
+field.name.suffix=groovy:```
 if (!fieldContext) return null
 def parentPath = tool.substringBeforeLast(fieldContext.path(),".")
 return session.get("field.suffix",parentPath)
 '''
-```
+````
 
 This is typically used with Jackson's `@JsonUnwrapped` annotation to add suffixes to unwrapped fields.
 

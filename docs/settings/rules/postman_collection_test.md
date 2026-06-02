@@ -4,11 +4,11 @@ Set a test script at the collection level for Postman export.
 
 ## Usage
 
-```properties
-postman.collection.test=groovy:'''
+````properties
+postman.collection.test=groovy:```
 console.log("Collection test script")
 '''
-```
+````
 
 This event is executed once for the entire Postman collection during export, allowing you to set up collection-wide test logic.
 

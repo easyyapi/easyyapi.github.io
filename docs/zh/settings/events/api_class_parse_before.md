@@ -4,11 +4,11 @@ Callback executed before parsing a class as an API controller.
 
 ## Usage
 
-```properties
-api.class.parse.before=groovy:'''
+````properties
+api.class.parse.before=groovy:```
 logger.info("Parsing class: " + it.name())
 '''
-```
+````
 
 ## Context
 

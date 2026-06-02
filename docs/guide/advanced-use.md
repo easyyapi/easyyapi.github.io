@@ -8,14 +8,14 @@ EasyYapi provides a rich set of configuration rules to customize API documentati
 
 Many rules support Groovy scripts for advanced customization:
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 if (it.type().name() == "java.lang.String") {
     return "mock_string"
 }
 return "default"
 '''
-```
+````
 
 See [Script Tools](/settings/tools) for available tools in scripts.
 

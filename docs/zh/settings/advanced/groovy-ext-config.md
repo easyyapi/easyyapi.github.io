@@ -31,8 +31,8 @@ tool.register("customMock", this.&customMock)
 
 ## Use in Rules
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 tool.customMock(it.type().name()) ?: "default"
 '''
-```
+````

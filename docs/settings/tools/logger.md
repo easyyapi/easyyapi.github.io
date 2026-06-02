@@ -4,13 +4,13 @@ Logging utility for scripts. Provides methods to output messages to the IDE cons
 
 ## Usage
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 logger.info("Processing field: " + it.name())
 logger.warn("Using default mock for: " + it.type().name())
 return "mock_value"
 '''
-```
+````
 
 ## Methods
 
@@ -32,8 +32,8 @@ return "mock_value"
 
 ### Basic Logging
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 def name = it.name()
 def type = it.type().name()
 
@@ -45,12 +45,12 @@ if (type == "java.lang.String") {
 }
 return null
 '''
-```
+````
 
 ### Debug Logging
 
-```properties
-method.name=groovy:'''
+````properties
+method.name=groovy:```
 def name = it.name()
 def annotations = it.annMaps("org.springframework.web.bind.annotation.RequestMapping")
 
@@ -61,12 +61,12 @@ annotations?.each { ann ->
 
 return name
 '''
-```
+````
 
 ### Error Handling
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 try {
     def value = config.get("mock." + it.name())
     if (value) {
@@ -78,45 +78,45 @@ try {
 }
 return "default"
 '''
-```
+````
 
 ### Conditional Logging
 
-```properties
-export.before=groovy:'''
+````properties
+export.before=groovy:```
 def debug = config.get("debug") == "true"
 if (debug) {
     logger.info("Debug mode enabled")
     logger.info("Export settings: " + config.getValues("export.settings"))
 }
 '''
-```
+````
 
 ### Progress Logging
 
-```properties
-class.parse.before=groovy:'''
+````properties
+class.parse.before=groovy:```
 logger.info("Starting to parse class: " + it.name())
 '''
 
-class.parse.after=groovy:'''
+class.parse.after=groovy:```
 logger.info("Finished parsing class: " + it.name())
 logger.info("  Methods: " + it.methodCnt())
 logger.info("  Fields: " + it.fieldCnt())
 '''
-```
+````
 
 ### Warning for Missing Data
 
-```properties
-field.description=groovy:'''
+````properties
+field.description=groovy:```
 def doc = it.doc()
 if (!doc) {
     logger.warn("No documentation for field: " + it.name())
 }
 return doc
 '''
-```
+````
 
 ## Notes
 

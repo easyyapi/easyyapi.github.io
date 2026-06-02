@@ -12,12 +12,12 @@ rule.key=rule_value
 
 Some rules support Groovy scripts for advanced customization:
 
-```properties
-rule.key=groovy:''' 
+````properties
+rule.key=groovy:``` 
 // Groovy script
 it.name() + " - custom suffix"
 '''
-```
+````
 
 ## API Rules
 

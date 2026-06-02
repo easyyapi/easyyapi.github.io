@@ -8,31 +8,31 @@ EasyYapi provides several extensions for controlling field order in API document
 
 Fields ordered alphabetically in ascending order:
 
-```properties
+````properties
 # Extension: field-order-alphabetically (disabled by default)
-field.order.with=groovy:'''
+field.order.with=groovy:```
     return a.name().compareTo(b.name())
 '''
-```
+````
 
 ### Alphabetical Descending (Z-A)
 
 Fields ordered alphabetically in descending order:
 
-```properties
+````properties
 # Extension: field-order-alphabetically-desc (disabled by default)
-field.order.with=groovy:'''
+field.order.with=groovy:```
     return -a.name().compareTo(b.name())
 '''
-```
+````
 
 ### Parent Fields First
 
 Parent class fields appear before child class fields:
 
-```properties
+````properties
 # Extension: field-order-parent-first (disabled by default)
-field.order.with=groovy:'''
+field.order.with=groovy:```
     def aDefineClass = a.defineClass()
     def bDefineClass = b.defineClass()
     if(aDefineClass == bDefineClass){
@@ -43,15 +43,15 @@ field.order.with=groovy:'''
         return -1
     }
 '''
-```
+````
 
 ### Child Fields First
 
 Child class fields appear before parent class fields:
 
-```properties
+````properties
 # Extension: field-order-child-first (disabled by default)
-field.order.with=groovy:'''
+field.order.with=groovy:```
     def aDefineClass = a.defineClass()
     def bDefineClass = b.defineClass()
     if(aDefineClass == bDefineClass){
@@ -62,7 +62,7 @@ field.order.with=groovy:'''
         return 1
     }
 '''
-```
+````
 
 ## Enabling Extensions
 

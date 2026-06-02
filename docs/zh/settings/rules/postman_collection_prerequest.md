@@ -4,11 +4,11 @@
 
 ## 用法
 
-```properties
-postman.collection.prerequest=groovy:'''
+````properties
+postman.collection.prerequest=groovy:```
 console.log("Collection pre-request script")
 '''
-```
+````
 
 此事件在导出时对整个 Postman 集合执行一次，允许设置集合范围的预请求逻辑，如认证令牌。
 

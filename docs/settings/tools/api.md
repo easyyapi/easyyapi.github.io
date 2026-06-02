@@ -4,11 +4,11 @@ API utilities for scripts. Provides methods to modify API endpoint metadata duri
 
 ## Usage
 
-```properties
-method.additional.param=groovy:'''
+````properties
+method.additional.param=groovy:```
 api.setParam("version", "1.0", true, "API version")
 '''
-```
+````
 
 ## Methods
 
@@ -52,69 +52,69 @@ api.setParam("version", "1.0", true, "API version")
 
 ### Add Common Parameters
 
-```properties
-method.additional.param=groovy:'''
+````properties
+method.additional.param=groovy:```
 api.setParam("version", "1.0", true, "API version")
 api.setParam("timestamp", "", false, "Request timestamp")
 '''
-```
+````
 
 ### Add Headers
 
-```properties
-method.additional.header=groovy:'''
+````properties
+method.additional.header=groovy:```
 api.setHeader("X-Request-ID", "", false, "Unique request identifier")
 api.setHeader("Authorization", "", true, "Bearer token")
 '''
-```
+````
 
 ### Modify API Path
 
-```properties
-method.path=groovy:'''
+````properties
+method.path=groovy:```
 def originalPath = api.path()
 if (originalPath && !originalPath.startsWith("/api")) {
     api.setPath("/api" + originalPath)
 }
 return api.path()
 '''
-```
+````
 
 ### Add Response Info
 
-```properties
-method.additional.response=groovy:'''
+````properties
+method.additional.response=groovy:```
 api.setResponseCode(200)
 api.appendResponseBodyDesc("Returns the created resource")
 api.setResponseHeader("X-Resource-ID", "", true, "ID of the created resource")
 '''
-```
+````
 
 ### Conditional Parameter Addition
 
-```properties
-method.additional.param=groovy:'''
+````properties
+method.additional.param=groovy:```
 if (it.hasAnn("org.springframework.web.bind.annotation.GetMapping")) {
     api.setParam("page", "1", false, "Page number")
     api.setParam("size", "20", false, "Page size")
 }
 '''
-```
+````
 
 ### Append Description
 
-```properties
-method.description=groovy:'''
+````properties
+method.description=groovy:```
 def baseDesc = it.doc() ?: ""
 api.setDescription(baseDesc)
 api.appendDesc("\n\n**Note:** This API requires authentication.")
 '''
-```
+````
 
 ### Complete API Setup
 
-```properties
-method.after=groovy:'''
+````properties
+method.after=groovy:```
 def name = it.name()
 
 if (name.startsWith("create")) {
@@ -135,7 +135,7 @@ if (name.startsWith("create")) {
 api.setHeader("Content-Type", "application/json", true, "Content type")
 api.setHeader("Accept", "application/json", true, "Accepted response type")
 '''
-```
+````
 
 ## Notes
 

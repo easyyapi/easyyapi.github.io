@@ -8,31 +8,31 @@ EasyYapi 提供了多个扩展来控制 API 文档中的字段顺序。
 
 字段按字母升序排列：
 
-```properties
+````properties
 # 扩展：field-order-alphabetically（默认禁用）
-field.order.with=groovy:'''
+field.order.with=groovy:```
     return a.name().compareTo(b.name())
 '''
-```
+````
 
 ### 字母降序 (Z-A)
 
 字段按字母降序排列：
 
-```properties
+````properties
 # 扩展：field-order-alphabetically-desc（默认禁用）
-field.order.with=groovy:'''
+field.order.with=groovy:```
     return -a.name().compareTo(b.name())
 '''
-```
+````
 
 ### 父类字段优先
 
 父类字段排在子类字段之前：
 
-```properties
+````properties
 # 扩展：field-order-parent-first（默认禁用）
-field.order.with=groovy:'''
+field.order.with=groovy:```
     def aDefineClass = a.defineClass()
     def bDefineClass = b.defineClass()
     if(aDefineClass == bDefineClass){
@@ -43,15 +43,15 @@ field.order.with=groovy:'''
         return -1
     }
 '''
-```
+````
 
 ### 子类字段优先
 
 子类字段排在父类字段之前：
 
-```properties
+````properties
 # 扩展：field-order-child-first（默认禁用）
-field.order.with=groovy:'''
+field.order.with=groovy:```
     def aDefineClass = a.defineClass()
     def bDefineClass = b.defineClass()
     if(aDefineClass == bDefineClass){
@@ -62,7 +62,7 @@ field.order.with=groovy:'''
         return 1
     }
 '''
-```
+````
 
 ## 启用扩展
 

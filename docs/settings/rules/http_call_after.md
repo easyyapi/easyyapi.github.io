@@ -4,8 +4,8 @@ Post-request callback for the Call API feature.
 
 ## Usage
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 // Log response
 logger.info("Response code: " + response.code())
 
@@ -16,8 +16,8 @@ if (response.code() == 200) {
         localStorage.set("token", body.token)
     }
 }
-'''
 ```
+````
 
 This callback is executed after receiving an HTTP response. It can be used for:
 - Response data processing
@@ -49,22 +49,22 @@ The following variables are available in the script context:
 
 Calling `response.discard()` will cause the request to be retried (up to 3 times). This is useful for handling expired tokens or transient errors:
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 if (response.code() == 401) {
     // Token expired, clear cache and retry
     localStorage.remove("auth_token")
     response.discard()
 }
-'''
 ```
+````
 
 ## Examples
 
 ### Error handling with retry
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 def code = response.code()
 if (code >= 500) {
     logger.error("Server error: " + code)
@@ -74,16 +74,16 @@ if (code >= 500) {
     session.remove("token")
     response.discard()
 }
-'''
 ```
+````
 
 ### Log request and response
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 logger.info(request.method() + " " + request.url() + " -> " + response.code())
-'''
 ```
+````
 
 ## See Also
 

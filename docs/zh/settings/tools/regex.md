@@ -4,12 +4,12 @@
 
 ## 用法
 
-```properties
-field.name=groovy:'''
+````properties
+field.name=groovy:```
 def match = regex.find(it.name(), /_(\w)/)
 return match ? match[1].toUpperCase() : it.name()
 '''
-```
+````
 
 ## 方法
 
@@ -58,47 +58,47 @@ return match ? match[1].toUpperCase() : it.name()
 
 ### 提取第一个匹配
 
-```properties
-field.name=groovy:'''
+````properties
+field.name=groovy:```
 def name = it.name()
 def match = regex.getGroup1("get(\\w+)", name)
 return match ? match.uncapitalize() : name
 '''
-```
+````
 
 ### 查找所有匹配
 
-```properties
-method.path=groovy:'''
+````properties
+method.path=groovy:```
 def paths = regex.findAllGroup1("/(\\w+)", it.ann("RequestMapping", "value"))
 return "/" + paths.join("/")
 '''
-```
+````
 
 ### 使用组替换
 
-```properties
-field.name=groovy:'''
+````properties
+field.name=groovy:```
 def name = it.name()
 return regex.extract("_(\\w)", name, "$1")
 '''
-```
+````
 
 ### 删除模式
 
-```properties
-field.name=groovy:'''
+````properties
+field.name=groovy:```
 def name = it.name()
 name = regex.delFirst("^get", name)
 name = regex.delAll("_", name)
 return name
 '''
-```
+````
 
 ### 计算出现次数
 
-```properties
-field.description=groovy:'''
+````properties
+field.description=groovy:```
 def comment = it.doc()
 if (comment) {
     def paramCount = regex.count("@param", comment)
@@ -106,12 +106,12 @@ if (comment) {
 }
 return null
 '''
-```
+````
 
 ### 转义用户输入
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 def userInput = config.get("mock.pattern")
 if (userInput) {
     def escaped = regex.escape(userInput)
@@ -119,12 +119,12 @@ if (userInput) {
 }
 return null
 '''
-```
+````
 
 ### 复杂提取
 
-```properties
-method.description=groovy:'''
+````properties
+method.description=groovy:```
 def doc = it.doc()
 if (!doc) return null
 
@@ -145,7 +145,7 @@ lines.each { line ->
 
 return result.join("\n")
 '''
-```
+````
 
 ## 模式缓存
 

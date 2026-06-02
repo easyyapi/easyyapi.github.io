@@ -262,19 +262,19 @@ Available when `it` is a `ScriptTypeContext`:
 
 ### Class Rule Example
 
-```properties
-class.name=groovy:'''
+````properties
+class.name=groovy:```
 if (it.isExtend("java.lang.Exception")) {
     return it.simpleName() + "Exception"
 }
 return it.name()
 '''
-```
+````
 
 ### Method Rule Example
 
-```properties
-method.name=groovy:'''
+````properties
+method.name=groovy:```
 def name = it.name()
 if (it.hasAnn("org.springframework.web.bind.annotation.GetMapping")) {
     def path = it.ann("GetMapping", "value")
@@ -282,12 +282,12 @@ if (it.hasAnn("org.springframework.web.bind.annotation.GetMapping")) {
 }
 return name
 '''
-```
+````
 
 ### Field Rule Example
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 def type = it.type()
 if (type.isExtend("java.lang.Number")) {
     return "0"
@@ -300,19 +300,19 @@ if (type.isCollection()) {
 }
 return null
 '''
-```
+````
 
 ### Parameter Rule Example
 
-```properties
-param.name=groovy:'''
+````properties
+param.name=groovy:```
 def name = it.name()
 if (it.hasAnn("org.springframework.web.bind.annotation.RequestParam")) {
     return it.ann("RequestParam", "value") ?: name
 }
 return name
 '''
-```
+````
 
 ## See Also
 

@@ -26,14 +26,14 @@ EasyYapi provides a set of built-in tools that can be used in Groovy scripts wit
 
 Tools are available as variables in Groovy scripts:
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 if (it.type().name() == "java.lang.String") {
     return "mock_string"
 }
 logger.info("Generating mock for: " + it.name())
-'''
 ```
+````
 
 ## Tool Categories
 

@@ -4,12 +4,12 @@
 
 ## 用法
 
-```properties
-field.name=groovy:'''
+````properties
+field.name=groovy:```
 def name = tool.capitalize(it.name())
 return tool.removePrefix(name, "get")
 '''
-```
+````
 
 ## 字符串方法
 
@@ -112,8 +112,8 @@ return tool.removePrefix(name, "get")
 
 ## 示例
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 def name = it.name()
 
 // 字符串操作
@@ -137,7 +137,7 @@ logger.info("Current time: " + now)
 
 return "mock_" + name
 '''
-```
+````
 
 ## 相关链接
 

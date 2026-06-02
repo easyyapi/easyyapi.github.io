@@ -4,11 +4,11 @@
 
 ## 用法
 
-```properties
-postman.class.prerequest=groovy:'''
+````properties
+postman.class.prerequest=groovy:```
 console.log("Pre-request for class: " + it.name())
 '''
-```
+````
 
 导出到 Postman 时，此脚本将应用于该类中的所有 API 方法。
 

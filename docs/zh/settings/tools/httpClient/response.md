@@ -25,44 +25,44 @@ HTTP 响应包装对象，在 `http.call.after` 规则脚本中可用。
 
 调用 `response.discard()` 会标记响应进行重试。请求将最多重新执行 **3 次**（MAX_RETRY）。当响应指示令牌过期或其他可恢复的错误时，此功能非常有用。
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 if (response.code() == 401) {
     // 令牌过期，清除缓存的令牌并重试
     localStorage.remove("auth_token")
     response.discard()
 }
-'''
 ```
+````
 
 ## 示例
 
 ### 记录响应信息
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 logger.info("Response code: " + response.code())
 logger.info("Response body: " + response.body())
-'''
 ```
+````
 
 ### 从响应中保存令牌
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 if (response.code() == 200) {
     def body = new JsonSlurper().parseText(response.body())
     if (body.token) {
         localStorage.set("auth_token", body.token)
     }
 }
-'''
 ```
+````
 
 ### 错误处理与重试
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 def code = response.code()
 if (code >= 500) {
     logger.error("Server error: " + code)
@@ -72,16 +72,16 @@ if (code >= 500) {
     session.remove("token")
     response.discard()
 }
-'''
 ```
+````
 
 ### 从响应访问请求
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 logger.info("Request to " + response.request().url() + " returned " + response.code())
-'''
 ```
+````
 
 ## 相关链接
 

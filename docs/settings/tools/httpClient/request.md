@@ -26,10 +26,10 @@ The `request` object provides read-only access to the HTTP request properties th
 
 ## Examples
 
-### Inspect request URL
+### Inspect request details
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 logger.info("Sending " + request.method() + " " + request.url())
 if (request.body() != null) {
     logger.info("Body: " + request.body())
@@ -40,29 +40,29 @@ if (!request.formParams().isEmpty()) {
 if (!request.query().isEmpty()) {
     logger.info("Query: " + request.query())
 }
-'''
 ```
+````
 
 ### Check request method
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 if (request.method() == "POST") {
     logger.info("POST body: " + request.body())
 }
-'''
 ```
+````
 
 ### Read request headers
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 def headers = request.headers()
 headers.each { h ->
     logger.info(h.key() + ": " + h.value())
 }
-'''
 ```
+````
 
 ## See Also
 

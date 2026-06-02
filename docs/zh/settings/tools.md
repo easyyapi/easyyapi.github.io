@@ -26,14 +26,14 @@ EasyYapi 提供了一组内置工具，可在配置规则的 Groovy 脚本中使
 
 工具在 Groovy 脚本中作为变量使用：
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 if (it.type().name() == "java.lang.String") {
     return "mock_string"
 }
 logger.info("Generating mock for: " + it.name())
-'''
 ```
+````
 
 ## 工具分类
 

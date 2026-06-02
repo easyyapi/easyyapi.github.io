@@ -262,19 +262,19 @@
 
 ### 类规则示例
 
-```properties
-class.name=groovy:'''
+````properties
+class.name=groovy:```
 if (it.isExtend("java.lang.Exception")) {
     return it.simpleName() + "Exception"
 }
 return it.name()
 '''
-```
+````
 
 ### 方法规则示例
 
-```properties
-method.name=groovy:'''
+````properties
+method.name=groovy:```
 def name = it.name()
 if (it.hasAnn("org.springframework.web.bind.annotation.GetMapping")) {
     def path = it.ann("GetMapping", "value")
@@ -282,12 +282,12 @@ if (it.hasAnn("org.springframework.web.bind.annotation.GetMapping")) {
 }
 return name
 '''
-```
+````
 
 ### 字段规则示例
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 def type = it.type()
 if (type.isExtend("java.lang.Number")) {
     return "0"
@@ -300,19 +300,19 @@ if (type.isCollection()) {
 }
 return null
 '''
-```
+````
 
 ### 参数规则示例
 
-```properties
-param.name=groovy:'''
+````properties
+param.name=groovy:```
 def name = it.name()
 if (it.hasAnn("org.springframework.web.bind.annotation.RequestParam")) {
     return it.ann("RequestParam", "value") ?: name
 }
 return name
 '''
-```
+````
 
 ## 相关链接
 

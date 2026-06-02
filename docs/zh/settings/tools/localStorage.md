@@ -4,13 +4,13 @@
 
 ## 用法
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 if (it.response().code() == 200) {
     localStorage.set("token", it.response().body().token)
 }
 '''
-```
+````
 
 ## 方法
 
@@ -58,8 +58,8 @@ if (it.response().code() == 200) {
 
 ### 令牌存储
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 def token = localStorage.get("auth", "token")
 if (token == null) {
     def response = httpClient.post("http://auth-server/login", [
@@ -71,29 +71,29 @@ if (token == null) {
 }
 it.header("Authorization", "Bearer " + token)
 '''
-```
+````
 
 ### 请求计数器
 
-```properties
-http.call.after=groovy:'''
+````properties
+http.call.after=groovy:```
 def count = localStorage.get("stats", "requestCount") ?: 0
 localStorage.set("stats", "requestCount", count + 1)
 logger.info("Total requests: " + (count + 1))
 '''
-```
+````
 
 ### 基于栈的状态
 
-```properties
-class.parse.before=groovy:'''
+````properties
+class.parse.before=groovy:```
 localStorage.push("context", "class", it.name())
 '''
 
-class.parse.after=groovy:'''
+class.parse.after=groovy:```
 localStorage.pop("context", "class")
 '''
-```
+````
 
 ## 相关链接
 

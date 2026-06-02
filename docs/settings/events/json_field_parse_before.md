@@ -4,11 +4,11 @@ Callback executed before parsing a field for JSON serialization.
 
 ## Usage
 
-```properties
-json.field.parse.before=groovy:'''
+````properties
+json.field.parse.before=groovy:```
 logger.info("Parsing JSON field: " + it.name())
 '''
-```
+````
 
 ## Context
 

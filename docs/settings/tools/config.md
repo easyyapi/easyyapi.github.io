@@ -4,12 +4,12 @@ Configuration access tool for scripts. Provides read access to configuration val
 
 ## Usage
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 def mockValue = config.get("custom.mock." + it.name())
 return mockValue ?: "default_mock"
 '''
-```
+````
 
 ## Methods
 
@@ -32,46 +32,46 @@ Configuration values are loaded from multiple sources in priority order:
 
 ### Get Single Value
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 def prefix = config.get("mock.prefix")
 def value = config.get("mock." + it.type().simpleName())
 return prefix ? prefix + value : value
 '''
-```
+````
 
 ### Get All Values
 
-```properties
-method.additional.header=groovy:'''
+````properties
+method.additional.header=groovy:```
 def headers = config.getValues("default.headers")
 return headers.collect { h ->
     def parts = h.split(":")
     [name: parts[0], value: parts[1]]
 }
 '''
-```
+````
 
 ### Resolve Placeholders
 
-```properties
-field.default=groovy:'''
+````properties
+field.default=groovy:```
 def template = config.get("field.default.template")
 if (template && template.contains("\${")) {
     return config.resolveProperty(template)
 }
 return template
 '''
-```
+````
 
 ### Environment-based Configuration
 
-```properties
-api.path.prefix=groovy:'''
+````properties
+api.path.prefix=groovy:```
 def env = config.get("env") ?: "dev"
 return config.get("api.prefix." + env) ?: "/"
 '''
-```
+````
 
 ## Configuration File Example
 

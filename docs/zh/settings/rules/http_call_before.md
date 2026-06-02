@@ -4,8 +4,8 @@ Call API 功能的请求前回调。
 
 ## 用法
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 // 记录请求信息
 logger.info("Sending " + request.method() + " " + request.url())
 if (request.body() != null) {
@@ -17,8 +17,8 @@ if (!request.formParams().isEmpty()) {
 if (!request.query().isEmpty()) {
     logger.info("Query: " + request.query())
 }
-'''
 ```
+````
 
 此回调在发送 HTTP 请求之前执行。可用于：
 - 自动登录
@@ -51,8 +51,8 @@ if (!request.query().isEmpty()) {
 
 ### 记录请求详情
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 logger.info("Sending " + request.method() + " " + request.url())
 if (request.body() != null) {
     logger.info("Body: " + request.body())
@@ -63,18 +63,18 @@ if (!request.formParams().isEmpty()) {
 if (!request.query().isEmpty()) {
     logger.info("Query: " + request.query())
 }
-'''
 ```
+````
 
 ### 基于 URL 的条件逻辑
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 if (request.url().contains("/api/")) {
     logger.info("API request detected")
 }
-'''
 ```
+````
 
 ## 相关链接
 

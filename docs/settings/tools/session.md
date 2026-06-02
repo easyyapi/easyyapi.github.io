@@ -4,8 +4,8 @@ Session-scoped storage for scripts. Data stored in `session` is cleared when the
 
 ## Usage
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 def token = session.get("token")
 if (token == null) {
     def response = httpClient.post("http://auth-server/login", [
@@ -17,7 +17,7 @@ if (token == null) {
 }
 it.header("Authorization", "Bearer " + token)
 '''
-```
+````
 
 ## Methods
 
@@ -65,8 +65,8 @@ Useful for maintaining state across multiple calls:
 
 ### Temporary Token Cache
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 def token = session.get("auth", "token")
 if (token == null) {
     def response = httpClient.post("http://auth-server/login", [
@@ -85,22 +85,22 @@ if (System.currentTimeMillis() > expiry) {
 }
 it.header("Authorization", "Bearer " + token)
 '''
-```
+````
 
 ### Request Tracking
 
-```properties
-export.before=groovy:'''
+````properties
+export.before=groovy:```
 session.set("export", "startTime", System.currentTimeMillis())
 session.set("export", "apiCount", 0)
 '''
 
-method.parse.after=groovy:'''
+method.parse.after=groovy:```
 def count = session.get("export", "apiCount") ?: 0
 session.set("export", "apiCount", count + 1)
 '''
 
-export.after=groovy:'''
+export.after=groovy:```
 def startTime = session.get("export", "startTime")
 def count = session.get("export", "apiCount")
 if (startTime && count) {
@@ -109,7 +109,7 @@ if (startTime && count) {
 }
 session.clear("export")
 '''
-```
+````
 
 ## Difference from localStorage
 

@@ -4,12 +4,12 @@ Helper methods for common operations. Provides utilities for type resolution and
 
 ## Usage
 
-```properties
-method.return=groovy:'''
+````properties
+method.return=groovy:```
 def resolvedType = helper.resolveType(it.returnType())
 return resolvedType ?: it.returnType().name()
 '''
-```
+````
 
 ## Methods
 
@@ -22,8 +22,8 @@ return resolvedType ?: it.returnType().name()
 
 ### Resolve Return Type
 
-```properties
-method.return=groovy:'''
+````properties
+method.return=groovy:```
 def returnType = it.returnType()
 if (returnType) {
     def resolved = helper.resolveType(returnType)
@@ -32,22 +32,22 @@ if (returnType) {
 }
 return "void"
 '''
-```
+````
 
 ### Resolve Field Type
 
-```properties
-field.type=groovy:'''
+````properties
+field.type=groovy:```
 def type = it.type()
 def resolved = helper.resolveType(type)
 return resolved ?: type.name()
 '''
-```
+````
 
 ### Type Resolution with Generics
 
-```properties
-field.type=groovy:'''
+````properties
+field.type=groovy:```
 def type = it.type()
 if (type.isCollection()) {
     def elementType = type.typeArgs()?.get(0)
@@ -57,14 +57,14 @@ if (type.isCollection()) {
 }
 return helper.resolveType(type)
 '''
-```
+````
 
 ## Common Use Cases
 
 ### Simplify Complex Types
 
-```properties
-field.type=groovy:'''
+````properties
+field.type=groovy:```
 def type = it.type()
 def name = type.name()
 
@@ -76,12 +76,12 @@ if (name.startsWith("java.lang.")) {
 }
 return name
 '''
-```
+````
 
 ### Handle Generic Types
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 def type = it.type()
 
 if (type.isMap()) {
@@ -96,7 +96,7 @@ if (type.isArray()) {
 
 return null
 '''
-```
+````
 
 ## Notes
 

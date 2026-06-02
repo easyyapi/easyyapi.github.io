@@ -4,8 +4,8 @@ Pre-request callback for the Call API feature.
 
 ## Usage
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 // Log request info
 logger.info("Sending " + request.method() + " " + request.url())
 if (request.body() != null) {
@@ -17,8 +17,8 @@ if (!request.formParams().isEmpty()) {
 if (!request.query().isEmpty()) {
     logger.info("Query: " + request.query())
 }
-'''
 ```
+````
 
 This callback is executed before sending an HTTP request. It can be used for:
 - Auto-login
@@ -51,8 +51,8 @@ The following variables are available in the script context:
 
 ### Log request details
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 logger.info("Sending " + request.method() + " " + request.url())
 if (request.body() != null) {
     logger.info("Body: " + request.body())
@@ -63,18 +63,18 @@ if (!request.formParams().isEmpty()) {
 if (!request.query().isEmpty()) {
     logger.info("Query: " + request.query())
 }
-'''
 ```
+````
 
 ### Conditional logic based on URL
 
-```properties
-http.call.before=groovy:'''
+````properties
+http.call.before=groovy:```
 if (request.url().contains("/api/")) {
     logger.info("API request detected")
 }
-'''
 ```
+````
 
 ## See Also
 

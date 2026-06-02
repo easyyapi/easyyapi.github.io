@@ -4,15 +4,15 @@
 
 ## 用法
 
-```properties
-field.ignore=groovy:'''
+````properties
+field.ignore=groovy:```
 def path = fieldContext.path()
 if (path.contains("ignoredField")) {
     return true
 }
 return false
 '''
-```
+````
 
 ## 方法
 
@@ -48,18 +48,18 @@ return false
 
 ### 忽略特定路径
 
-```properties
-field.ignore=groovy:'''
+````properties
+field.ignore=groovy:```
 def ignoredPaths = ["password", "secret", "token", "internal.id"]
 def path = fieldContext.path()
 return ignoredPaths.any { path.endsWith(it) || path.contains("." + it) }
 '''
-```
+````
 
 ### 基于路径的条件 Mock
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 def path = fieldContext.path()
 
 if (path.endsWith(".id")) {
@@ -74,23 +74,23 @@ if (path.contains("user.")) {
 
 return null
 '''
-```
+````
 
 ### 引用兄弟字段
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 def siblingPath = fieldContext.property("status")
 logger.info("Current field: " + fieldContext.path())
 logger.info("Sibling path: " + siblingPath)
 return "mock_value"
 '''
-```
+````
 
 ### 基于路径的验证
 
-```properties
-field.required=groovy:'''
+````properties
+field.required=groovy:```
 def path = fieldContext.path()
 def requiredPaths = ["user.id", "user.name", "order.orderId"]
 
@@ -99,7 +99,7 @@ if (requiredPaths.contains(path)) {
 }
 return false
 '''
-```
+````
 
 ## 使用场景
 

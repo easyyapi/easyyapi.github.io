@@ -4,12 +4,12 @@
 
 ## 用法
 
-```properties
-method.return=groovy:'''
+````properties
+method.return=groovy:```
 def resolvedType = helper.resolveType(it.returnType())
 return resolvedType ?: it.returnType().name()
 '''
-```
+````
 
 ## 方法
 
@@ -22,8 +22,8 @@ return resolvedType ?: it.returnType().name()
 
 ### 解析返回类型
 
-```properties
-method.return=groovy:'''
+````properties
+method.return=groovy:```
 def returnType = it.returnType()
 if (returnType) {
     def resolved = helper.resolveType(returnType)
@@ -32,22 +32,22 @@ if (returnType) {
 }
 return "void"
 '''
-```
+````
 
 ### 解析字段类型
 
-```properties
-field.type=groovy:'''
+````properties
+field.type=groovy:```
 def type = it.type()
 def resolved = helper.resolveType(type)
 return resolved ?: type.name()
 '''
-```
+````
 
 ### 带泛型的类型解析
 
-```properties
-field.type=groovy:'''
+````properties
+field.type=groovy:```
 def type = it.type()
 if (type.isCollection()) {
     def elementType = type.typeArgs()?.get(0)
@@ -57,14 +57,14 @@ if (type.isCollection()) {
 }
 return helper.resolveType(type)
 '''
-```
+````
 
 ## 常见用例
 
 ### 简化复杂类型
 
-```properties
-field.type=groovy:'''
+````properties
+field.type=groovy:```
 def type = it.type()
 def name = type.name()
 
@@ -76,12 +76,12 @@ if (name.startsWith("java.lang.")) {
 }
 return name
 '''
-```
+````
 
 ### 处理泛型类型
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 def type = it.type()
 
 if (type.isMap()) {
@@ -96,7 +96,7 @@ if (type.isArray()) {
 
 return null
 '''
-```
+````
 
 ## 注意事项
 

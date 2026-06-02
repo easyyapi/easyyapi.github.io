@@ -4,13 +4,13 @@
 
 ## 用法
 
-```properties
-postman.class.test=groovy:'''
+````properties
+postman.class.test=groovy:```
 pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
 });
 '''
-```
+````
 
 导出到 Postman 时，此脚本将应用于该类中的所有 API 方法。
 

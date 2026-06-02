@@ -4,15 +4,15 @@ Field context utilities for scripts. Provides helpers for working with JSON fiel
 
 ## Usage
 
-```properties
-field.ignore=groovy:'''
+````properties
+field.ignore=groovy:```
 def path = fieldContext.path()
 if (path.contains("ignoredField")) {
     return true
 }
 return false
 '''
-```
+````
 
 ## Methods
 
@@ -48,18 +48,18 @@ The `property(name)` method returns a path relative to the parent of the current
 
 ### Ignore Specific Paths
 
-```properties
-field.ignore=groovy:'''
+````properties
+field.ignore=groovy:```
 def ignoredPaths = ["password", "secret", "token", "internal.id"]
 def path = fieldContext.path()
 return ignoredPaths.any { path.endsWith(it) || path.contains("." + it) }
 '''
-```
+````
 
 ### Conditional Mock Based on Path
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 def path = fieldContext.path()
 
 if (path.endsWith(".id")) {
@@ -74,23 +74,23 @@ if (path.contains("user.")) {
 
 return null
 '''
-```
+````
 
 ### Reference Sibling Fields
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 def siblingPath = fieldContext.property("status")
 logger.info("Current field: " + fieldContext.path())
 logger.info("Sibling path: " + siblingPath)
 return "mock_value"
 '''
-```
+````
 
 ### Path-based Validation
 
-```properties
-field.required=groovy:'''
+````properties
+field.required=groovy:```
 def path = fieldContext.path()
 def requiredPaths = ["user.id", "user.name", "order.orderId"]
 
@@ -99,7 +99,7 @@ if (requiredPaths.contains(path)) {
 }
 return false
 '''
-```
+````
 
 ## Use Cases
 

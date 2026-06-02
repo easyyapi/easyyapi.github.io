@@ -4,13 +4,13 @@ Callback executed after parsing a parameter.
 
 ## Usage
 
-```properties
-api.param.parse.after=groovy:'''
+````properties
+api.param.parse.after=groovy:```
 if (it.type().name() == "java.util.Date") {
     it.setType("string")
 }
 '''
-```
+````
 
 ## Context
 

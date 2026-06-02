@@ -12,12 +12,12 @@ rule.key=rule_value
 
 部分规则支持 Groovy 脚本进行高级自定义：
 
-```properties
-rule.key=groovy:''' 
+````properties
+rule.key=groovy:``` 
 // Groovy 脚本
 it.name() + " - 自定义后缀"
 '''
-```
+````
 
 ## API 规则
 

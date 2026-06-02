@@ -4,12 +4,12 @@ General utility methods for string manipulation, collections, JSON operations, a
 
 ## Usage
 
-```properties
-field.name=groovy:'''
+````properties
+field.name=groovy:```
 def name = tool.capitalize(it.name())
 return tool.removePrefix(name, "get")
 '''
-```
+````
 
 ## String Methods
 
@@ -112,8 +112,8 @@ return tool.removePrefix(name, "get")
 
 ## Example
 
-```properties
-field.mock=groovy:'''
+````properties
+field.mock=groovy:```
 def name = it.name()
 
 // String manipulation
@@ -137,7 +137,7 @@ logger.info("Current time: " + now)
 
 return "mock_" + name
 '''
-```
+````
 
 ## See Also
 
