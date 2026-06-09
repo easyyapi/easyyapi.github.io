@@ -1,8 +1,8 @@
 # method.doc
 
-Set the method documentation.
+设置方法的文档说明。
 
-## Usage
+## 用法
 
 ```properties
 method.doc=groovy:it.comment()

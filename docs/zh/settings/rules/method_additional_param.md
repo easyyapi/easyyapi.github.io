@@ -1,11 +1,11 @@
 # method.additional.param
 
-Add additional parameters to a method.
+为方法添加额外的参数。
 
-## Usage
+## 用法
 
 ````properties
 method.additional.param=groovy:```
-param("version", "1.0", "API version")
+param("version", "1.0", "API 版本")
 ```
 ````

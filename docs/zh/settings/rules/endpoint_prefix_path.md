@@ -1,11 +1,11 @@
 # endpoint.prefix.path
 
-Set the prefix path for all API endpoints.
+设置所有 API 端点的前缀路径。
 
-## Usage
+## 用法
 
 ```properties
 endpoint.prefix.path=/api/v1
 ```
 
-This prefix will be prepended to all API paths.
+此前缀将添加到所有 API 路径之前。

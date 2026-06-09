@@ -1,8 +1,8 @@
 # field.order.with
 
-Set field ordering strategy.
+设置字段排序策略。
 
-## Usage
+## 用法
 
 ```properties
 field.order.with=groovy:it.type().fields().sort{ a,b -> a.order() <=> b.order() }

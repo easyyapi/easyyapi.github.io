@@ -1,108 +1,39 @@
 # helper
 
-Helper methods for common operations. Provides utilities for type resolution and other frequently needed operations in scripts.
-
-## Usage
-
-````properties
-method.return=groovy:```
-def resolvedType = helper.resolveType(it.returnType())
-return resolvedType ?: it.returnType().name()
-```
-````
+Helper methods for common operations. Provides utilities for class lookup and link resolution in scripts.
 
 ## Methods
 
 | Method | Return Type | Description |
 |--------|-------------|-------------|
-| `helper.resolveType(type)` | `String?` | Resolve a type to its simple name with generics |
-| `helper.resolveType(type, context)` | `String?` | Resolve a type with additional context |
+| `helper.findClass(canonicalText)` | `ClassContext?` | Find a class by its fully qualified name |
+| `helper.resolveLink(canonicalText)` | `ElementContext?` | Resolve a single link reference (class, method, or field) |
+| `helper.resolveLinks(canonicalText)` | `List<ElementContext>` | Resolve all link references |
 
 ## Examples
 
-### Resolve Return Type
+### Find a class by name
 
 ````properties
 method.return=groovy:```
-def returnType = it.returnType()
-if (returnType) {
-    def resolved = helper.resolveType(returnType)
-    logger.info("Return type: " + resolved)
-    return resolved
-}
-return "void"
+def cls = helper.findClass("com.example.Result")
+return cls ? cls.name() : it.returnType().name()
 ```
 ````
 
-### Resolve Field Type
+### Resolve a link reference
 
 ````properties
-field.type=groovy:```
-def type = it.type()
-def resolved = helper.resolveType(type)
-return resolved ?: type.name()
-```
-````
-
-### Type Resolution with Generics
-
-````properties
-field.type=groovy:```
-def type = it.type()
-if (type.isCollection()) {
-    def elementType = type.typeArgs()?.get(0)
-    if (elementType) {
-        return "List<" + helper.resolveType(elementType) + ">"
-    }
-}
-return helper.resolveType(type)
-```
-````
-
-## Common Use Cases
-
-### Simplify Complex Types
-
-````properties
-field.type=groovy:```
-def type = it.type()
-def name = type.name()
-
-if (name.startsWith("java.util.")) {
-    return helper.resolveType(type)
-}
-if (name.startsWith("java.lang.")) {
-    return type.simpleName()
-}
-return name
-```
-````
-
-### Handle Generic Types
-
-````properties
-field.mock=groovy:```
-def type = it.type()
-
-if (type.isMap()) {
-    return "{}"
-}
-if (type.isCollection()) {
-    return "[]"
-}
-if (type.isArray()) {
-    return "[]"
-}
-
-return null
+method.return=groovy:```
+def linked = helper.resolveLink("com.example.User")
+return linked ? linked.name() : null
 ```
 ````
 
 ## Notes
 
-- The `helper` tool provides convenience methods that simplify common operations
-- Use `helper` in combination with `it.type()` for type-related operations
-- The `resolveType` method handles generic type parameters automatically
+- The `helper` tool provides convenience methods for class lookup and link resolution
+- Use `helper` in combination with `it.type()` / `it.returnType()` for type-related operations
 
 ## See Also
 

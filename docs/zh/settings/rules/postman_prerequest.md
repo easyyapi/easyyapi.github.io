@@ -1,12 +1,12 @@
 # postman.prerequest
 
-Set the Postman pre-request script.
+设置 Postman 预请求脚本。
 
-## Usage
+## 用法
 
 ````properties
 class.postman.prerequest=groovy:```
-// Add authorization header
+// 添加授权头
 it.header("Authorization", "Bearer " + localStorage.get("token"))
 ```
 ````

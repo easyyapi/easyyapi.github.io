@@ -1,8 +1,8 @@
 # param.type
 
-Set the parameter type.
+设置参数类型。
 
-## Usage
+## 用法
 
 ```properties
 param.type=groovy:it.type().name()

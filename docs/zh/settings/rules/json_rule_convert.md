@@ -1,20 +1,20 @@
 # json.rule.convert
 
-Type conversion during JSON serialization.
+JSON 序列化时的类型转换。
 
-This is one of the most commonly used rules. It allows you to convert one type to another during JSON serialization.
+这是最常用的规则之一，允许你在 JSON 序列化过程中将一种类型转换为另一种类型。
 
-## Usage
+## 用法
 
 ```properties
-# Convert Date to String
+# 将 Date 转换为 String
 json.rule.convert=groovy:it.type().name()=="java.util.Date" => java.lang.String
 
-# Convert custom type to Map
+# 将自定义类型转换为 Map
 json.rule.convert=groovy:it.type().name()=="com.example.CustomObject" => java.util.Map
 ```
 
-## Common Conversions
+## 常见转换
 
 ```properties
 json.rule.convert=groovy:it.type().name()=="java.util.Date" => java.lang.String

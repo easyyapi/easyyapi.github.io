@@ -1,8 +1,8 @@
 # method.additional.header
 
-Add additional headers to a method.
+为方法添加额外的请求头。
 
-## Usage
+## 用法
 
 ````properties
 method.additional.header=groovy:```

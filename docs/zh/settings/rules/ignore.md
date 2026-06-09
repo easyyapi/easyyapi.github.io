@@ -1,8 +1,8 @@
 # ignore
 
-Ignore APIs or fields.
+忽略 API 或字段。
 
-## Usage
+## 用法
 
 ```properties
 ignore=groovy:it.hasAnn("java.lang.Deprecated")

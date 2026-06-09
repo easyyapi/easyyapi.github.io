@@ -1,8 +1,8 @@
 # field.default.value
 
-Set the default value for a field.
+设置字段的默认值。
 
-## Usage
+## 用法
 
 ```properties
 field.default.value=groovy:it.ann("javax.validation.constraints.NotNull") != null ? "required" : null

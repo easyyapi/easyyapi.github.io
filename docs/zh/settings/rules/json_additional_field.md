@@ -1,8 +1,8 @@
 # json.additional.field
 
-Add additional fields to the JSON output.
+向 JSON 输出中添加额外字段。
 
-## Usage
+## 用法
 
 ````properties
 json.additional.field=groovy:```

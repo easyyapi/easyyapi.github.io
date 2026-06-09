@@ -1,108 +1,39 @@
 # helper
 
-常用操作辅助方法。提供类型解析和脚本中其他常用操作的实用工具。
-
-## 用法
-
-````properties
-method.return=groovy:```
-def resolvedType = helper.resolveType(it.returnType())
-return resolvedType ?: it.returnType().name()
-```
-````
+常用操作辅助方法。提供类查找和链接解析的实用工具。
 
 ## 方法
 
 | 方法 | 返回类型 | 说明 |
 |--------|-------------|-------------|
-| `helper.resolveType(type)` | `String?` | 将类型解析为带泛型的简单名称 |
-| `helper.resolveType(type, context)` | `String?` | 使用额外上下文解析类型 |
+| `helper.findClass(canonicalText)` | `ClassContext?` | 通过全限定名查找类 |
+| `helper.resolveLink(canonicalText)` | `ElementContext?` | 解析单个链接引用（类、方法或字段） |
+| `helper.resolveLinks(canonicalText)` | `List<ElementContext>` | 解析所有链接引用 |
 
 ## 示例
 
-### 解析返回类型
+### 通过名称查找类
 
 ````properties
 method.return=groovy:```
-def returnType = it.returnType()
-if (returnType) {
-    def resolved = helper.resolveType(returnType)
-    logger.info("Return type: " + resolved)
-    return resolved
-}
-return "void"
+def cls = helper.findClass("com.example.Result")
+return cls ? cls.name() : it.returnType().name()
 ```
 ````
 
-### 解析字段类型
+### 解析链接引用
 
 ````properties
-field.type=groovy:```
-def type = it.type()
-def resolved = helper.resolveType(type)
-return resolved ?: type.name()
-```
-````
-
-### 带泛型的类型解析
-
-````properties
-field.type=groovy:```
-def type = it.type()
-if (type.isCollection()) {
-    def elementType = type.typeArgs()?.get(0)
-    if (elementType) {
-        return "List<" + helper.resolveType(elementType) + ">"
-    }
-}
-return helper.resolveType(type)
-```
-````
-
-## 常见用例
-
-### 简化复杂类型
-
-````properties
-field.type=groovy:```
-def type = it.type()
-def name = type.name()
-
-if (name.startsWith("java.util.")) {
-    return helper.resolveType(type)
-}
-if (name.startsWith("java.lang.")) {
-    return type.simpleName()
-}
-return name
-```
-````
-
-### 处理泛型类型
-
-````properties
-field.mock=groovy:```
-def type = it.type()
-
-if (type.isMap()) {
-    return "{}"
-}
-if (type.isCollection()) {
-    return "[]"
-}
-if (type.isArray()) {
-    return "[]"
-}
-
-return null
+method.return=groovy:```
+def linked = helper.resolveLink("com.example.User")
+return linked ? linked.name() : null
 ```
 ````
 
 ## 注意事项
 
-- `helper` 工具提供简化常用操作的便捷方法
-- 将 `helper` 与 `it.type()` 结合使用进行类型相关操作
-- `resolveType` 方法自动处理泛型类型参数
+- `helper` 工具提供类查找和链接解析的便捷方法
+- 将 `helper` 与 `it.type()` / `it.returnType()` 结合使用进行类型相关操作
 
 ## 相关链接
 

@@ -1,8 +1,8 @@
 # param.http.type
 
-Set the HTTP parameter type (query, path, header, body, cookie).
+设置 HTTP 参数类型（query、path、header、body、cookie）。
 
-## Usage
+## 用法
 
 ```properties
 param.http.type=groovy:it.ann("org.springframework.web.bind.annotation.RequestBody") != null ? "body" : "query"

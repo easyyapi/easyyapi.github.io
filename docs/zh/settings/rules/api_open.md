@@ -1,14 +1,14 @@
 # api.open
 
-Set the API visibility (open/closed).
+设置 API 的可见性（开放/关闭）。
 
-## Usage
+## 用法
 
 ```properties
 api.open=true
 ```
 
-## Example
+## 示例
 
 ```properties
 api.open=true

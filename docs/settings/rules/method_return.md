@@ -10,9 +10,20 @@ This is one of the most commonly used rules. It allows you to customize the retu
 method.return=groovy:it.returnType()
 ```
 
-## Example
+## Examples
+
+### Wrap return type in a generic wrapper
+
+When all APIs return a raw type and you want to wrap them in a common response class (e.g., `Result<T>`):
 
 ```properties
-# Unwrap generic types
-method.return=groovy:it.returnType().resolve("com.example.Result<T>", "T")
+method.return=groovy:"com.example.Result<" + it.returnType() + ">"
+```
+
+For a method returning `User`, this produces `com.example.Result<com.example.User>`.
+
+### Override return type with a fixed type
+
+```properties
+method.return=groovy:"com.example.Result"
 ```

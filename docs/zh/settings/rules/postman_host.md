@@ -1,11 +1,11 @@
 # postman.host
 
-Set the Postman host URL.
+设置 Postman 主机 URL。
 
-## Usage
+## 用法
 
 ```properties
 postman.host=http://localhost:8080
 ```
 
-This URL is used as the base URL for API requests in the exported Postman collection.
+此 URL 用作导出的 Postman 集合中 API 请求的基础 URL。

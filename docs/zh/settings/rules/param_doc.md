@@ -1,8 +1,8 @@
 # param.doc
 
-Set the parameter documentation.
+设置参数的文档说明。
 
-## Usage
+## 用法
 
 ```properties
 param.doc=groovy:it.comment()

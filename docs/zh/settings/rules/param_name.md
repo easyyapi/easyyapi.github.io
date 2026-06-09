@@ -1,8 +1,8 @@
 # param.name
 
-Set the parameter name.
+设置参数名称。
 
-## Usage
+## 用法
 
 ```properties
 param.name=groovy:it.ann("org.springframework.web.bind.annotation.RequestParam")?.value("value") ?: it.name()

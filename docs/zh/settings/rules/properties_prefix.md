@@ -1,11 +1,11 @@
 # properties.prefix
 
-Set the prefix for properties resolution.
+设置属性解析的前缀。
 
-## Usage
+## 用法
 
 ```properties
 properties.prefix=groovy:it.containingClass().name().replace(".", "_") + "_"
 ```
 
-This rule is used to resolve property placeholders in configuration values.
+此规则用于解析配置值中的属性占位符。

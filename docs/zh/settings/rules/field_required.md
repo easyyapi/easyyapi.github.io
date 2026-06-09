@@ -1,11 +1,11 @@
 # field.required
 
-Set whether a field is required.
+设置字段是否为必填。
 
-## Usage
+## 用法
 
 ```properties
 field.required=groovy:it.hasAnn("javax.validation.constraints.NotNull") || it.hasAnn("javax.validation.constraints.NotBlank")
 ```
 
-Fields marked as required will be indicated in the API documentation.
+标记为必填的字段将在 API 文档中标注。

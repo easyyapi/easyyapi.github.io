@@ -1,11 +1,11 @@
 # path.multi
 
-Handle multiple HTTP paths for a single method.
+处理单个方法的多个 HTTP 路径。
 
-## Usage
+## 用法
 
 ```properties
 path.multi=true
 ```
 
-When enabled, methods with multiple path mappings will generate separate API entries for each path.
+启用后，具有多个路径映射的方法将为每个路径生成单独的 API 条目。

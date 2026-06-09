@@ -1,8 +1,8 @@
 # folder.name
 
-Set the folder name for API grouping.
+设置 API 分组的文件夹名称。
 
-## Usage
+## 用法
 
 ```properties
 folder.name=groovy:it.doc("module") ?: it.name()

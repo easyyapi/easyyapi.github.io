@@ -1,11 +1,11 @@
 # class.doc
 
-Set the class documentation.
+设置类的文档说明。
 
-## Usage
+## 用法
 
 ```properties
 class.doc=groovy:it.comment()
 ```
 
-The class documentation is used as the API group/folder description.
+类的文档说明将作为 API 分组/文件夹的描述。

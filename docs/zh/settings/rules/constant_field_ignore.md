@@ -1,11 +1,11 @@
 # constant.field.ignore
 
-Ignore constant fields in API documentation.
+在 API 文档中忽略常量字段。
 
-## Usage
+## 用法
 
 ```properties
 constant.field.ignore=true
 ```
 
-When enabled, static final fields (constants) will be excluded from the API documentation.
+启用后，static final 字段（常量）将从 API 文档中排除。

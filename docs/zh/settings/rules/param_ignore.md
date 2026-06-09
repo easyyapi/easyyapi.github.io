@@ -1,8 +1,8 @@
 # param.ignore
 
-Ignore a parameter in API documentation.
+在 API 文档中忽略参数。
 
-## Usage
+## 用法
 
 ```properties
 param.ignore=groovy:it.hasAnn("org.springframework.web.bind.annotation.SessionAttribute")

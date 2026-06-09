@@ -1,7 +1,7 @@
 # ~~json.rule.field.ignore~~
 
 ::: danger
-This rule is deprecated. Use [field.ignore](./field_ignore) instead.
+此规则已废弃，请使用 [field.ignore](./field_ignore) 代替。
 :::
 
-Ignore fields during JSON serialization.
+JSON 序列化时忽略字段。

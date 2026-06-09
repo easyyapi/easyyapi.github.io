@@ -1,8 +1,8 @@
 # param.demo
 
-Set the demo value for a parameter.
+设置参数的示例值。
 
-## Usage
+## 用法
 
 ```properties
 param.demo=@demo

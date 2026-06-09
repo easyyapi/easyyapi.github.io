@@ -1,13 +1,13 @@
 # export.after
 
-Post-export callback.
+导出完成后的回调。
 
-## Usage
+## 用法
 
 ````properties
 export.after=groovy:```
-logger.info("Export completed: " + it.size() + " APIs")
+logger.info("导出完成: " + it.size() + " 个 API")
 ```
 ````
 
-This callback is executed after the export process completes.
+此回调在导出过程完成后执行。

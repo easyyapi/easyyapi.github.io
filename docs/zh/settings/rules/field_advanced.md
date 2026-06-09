@@ -1,8 +1,8 @@
 # field.advanced
 
-Advanced field configuration.
+字段高级配置。
 
-## Usage
+## 用法
 
 ````properties
 field.advanced=groovy:```

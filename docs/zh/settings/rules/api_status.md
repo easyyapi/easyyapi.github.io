@@ -1,14 +1,14 @@
 # api.status
 
-Set the API status (undone/done).
+设置 API 状态（undone/done）。
 
-## Usage
+## 用法
 
 ```properties
 api.status=done
 ```
 
-## Example
+## 示例
 
 ```properties
 api.status=done

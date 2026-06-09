@@ -1,21 +1,21 @@
 # field.demo
 
-Set the demo value for a field.
+设置字段的示例值。
 
-## Usage
+## 用法
 
 ```properties
 field.demo=@demo
 ```
 
-The demo value is used in the API documentation to show an example value.
+示例值用于 API 文档中展示一个示例。
 
-## Example
+## 示例
 
 ```java
 public class User {
     /**
-     * Username
+     * 用户名
      * @demo admin
      */
     private String name;

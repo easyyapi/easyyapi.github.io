@@ -1,7 +1,7 @@
 # ~~json.rule.field.name~~
 
 ::: danger
-This rule is deprecated. Use [field.name](./field_name) instead.
+此规则已废弃，请使用 [field.name](./field_name) 代替。
 :::
 
-Set field name during JSON serialization.
+JSON 序列化时设置字段名称。

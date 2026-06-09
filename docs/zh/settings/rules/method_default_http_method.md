@@ -1,11 +1,11 @@
 # method.default.http.method
 
-Set the default HTTP method for methods without explicit method annotations.
+为没有显式 HTTP 方法注解的方法设置默认 HTTP 方法。
 
-## Usage
+## 用法
 
 ```properties
 method.default.http.method=POST
 ```
 
-This is useful for RPC-style APIs where all methods use the same HTTP method.
+适用于所有方法使用相同 HTTP 方法的 RPC 风格 API。

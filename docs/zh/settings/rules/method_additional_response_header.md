@@ -1,8 +1,8 @@
 # method.additional.response.header
 
-Add additional response headers to a method.
+为方法添加额外的响应头。
 
-## Usage
+## 用法
 
 ````properties
 method.additional.response.header=groovy:```

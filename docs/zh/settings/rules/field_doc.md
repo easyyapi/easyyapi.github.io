@@ -1,11 +1,11 @@
 # field.doc
 
-Set the field documentation.
+设置字段的文档说明。
 
-## Usage
+## 用法
 
 ```properties
 field.doc=groovy:it.comment()
 ```
 
-This is one of the most commonly used rules. It determines how field descriptions are extracted.
+这是最常用的规则之一，用于决定如何提取字段描述。

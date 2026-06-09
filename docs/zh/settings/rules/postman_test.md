@@ -1,12 +1,12 @@
 # postman.test
 
-Set the Postman test script.
+设置 Postman 测试脚本。
 
-## Usage
+## 用法
 
 ````properties
 class.postman.test=groovy:```
-// Verify response status
+// 验证响应状态
 pm.test("Status code is 200", function() {
     pm.response.to.have.status(200)
 })

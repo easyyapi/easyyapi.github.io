@@ -1,24 +1,24 @@
 # field.ignore
 
-Ignore a field in API documentation.
+在 API 文档中忽略字段。
 
-## Usage
+## 用法
 
 ```properties
-# Ignore fields by annotation
+# 根据注解忽略字段
 field.ignore=groovy:it.hasAnn("com.fasterxml.jackson.annotation.JsonIgnore")
 
-# Ignore fields by name
+# 根据名称忽略字段
 field.ignore=groovy:it.name() == "password"
 ```
 
-## Example
+## 示例
 
 ```java
 public class User {
     private String name;
 
     @JsonIgnore
-    private String password;  // This field will be ignored
+    private String password;  // 此字段将被忽略
 }
 ```
