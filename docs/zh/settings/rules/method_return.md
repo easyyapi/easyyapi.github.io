@@ -1,28 +1,28 @@
 # method.return
 
-Set the return type for a method.
+设置方法的返回类型。
 
-This is one of the most commonly used rules. It allows you to customize the return type resolution.
+这是最常用的规则之一，允许你自定义返回类型的解析方式。
 
-## Usage
+## 用法
 
 ```properties
 method.return=groovy:it.returnType()
 ```
 
-## Examples
+## 示例
 
-### Wrap return type in a generic wrapper
+### 将返回类型包装为泛型包装类
 
-When all APIs return a raw type and you want to wrap them in a common response class (e.g., `Result<T>`):
+当所有 API 返回原始类型，需要自动包装为通用响应类（如 `Result<T>`）时：
 
 ```properties
 method.return=groovy:"com.example.Result<" + it.returnType() + ">"
 ```
 
-For a method returning `User`, this produces `com.example.Result<com.example.User>`.
+对于返回 `User` 的方法，将生成 `com.example.Result<com.example.User>`。
 
-### Override return type with a fixed type
+### 使用固定类型覆盖返回类型
 
 ```properties
 method.return=groovy:"com.example.Result"
