@@ -305,12 +305,6 @@ function sidebarSettings() {
         { text: 'files', link: '/settings/tools/files' },
       ],
     },
-    {
-      text: 'Advanced',
-      items: [
-        { text: 'Groovy Local Extension', link: '/settings/advanced/groovy-ext-config' },
-      ],
-    },
   ]
 }
 

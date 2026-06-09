@@ -310,12 +310,6 @@ function sidebarSettings() {
         { text: 'files', link: '/zh/settings/tools/files' },
       ],
     },
-    {
-      text: '高级',
-      items: [
-        { text: 'Groovy 本地扩展', link: '/zh/settings/advanced/groovy-ext-config' },
-      ],
-    },
   ]
 }
 
