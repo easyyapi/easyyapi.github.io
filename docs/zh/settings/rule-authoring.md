@@ -1,141 +1,90 @@
 # 规则编写
 
-EasyApi 开箱即用地支持标准 HTTP 框架（Spring MVC、WebFlux、JAX-RS、Feign）—— **大多数项目无需自定义规则**。对于扫描器无法察觉的自定义框架行为（例如要求添加请求头的 `jakarta.servlet.Filter`，或将每个响应包装在信封中的 `ResponseBodyAdvice`），可使用内置的 AI 助手或外部 skill 来检测并生成规则。完整的自定义模式目录请参见 [Rule Authoring Guide](https://github.com/tangcent/easy-yapi/blob/master/docs/knowledge-base/rule-guide.md)。
+EasyApi 开箱即用地支持标准 HTTP 框架（Spring MVC、WebFlux、JAX-RS、Feign）—— **大多数项目无需自定义规则**。对于扫描器无法察觉的自定义框架行为（例如要求添加请求头的 `jakarta.servlet.Filter`，或将每个响应包装在信封中的 `ResponseBodyAdvice`），可使用内置的 AI 助手或外部 skill 来检测并生成规则。完整的规则键目录请参见 [可用配置规则](./config-rule)。
 
-本页介绍 EasyYapi 3.x 中编写规则的**三种方式**，请根据你的工作流选择。
+EasyYapi 3.x 提供 **两种方式** 来编写规则。两种方式都写入同一位置——项目级（`<project>/.easyapi/`）或全局级（`~/.easyapi/`）的 `.easyapi/*.rules` 文件。文件夹模型请参见 [使用项目内配置文件](./local-file-config)。
 
-| 方式 | 适用场景 | 位置 |
-|------|----------|------|
-| [基于文件夹的规则文件](#基于文件夹的规则文件) | 希望以纯文本方式纳入版本控制的团队 | `.easyapi/*.rules` |
-| [内置 AI 助手](#内置-ai-助手) | 快速编写单条规则，或扫描项目中隐藏的框架行为 | Settings → EasyApi → Rules → Chat / Magic |
-| [外部 `easy-yapi-assistant` skill](#外部-easy-yapi-assistant-skill) | 通过外部 AI 工具（CLI / IDE agent）驱动规则编写 | 已随插件打包 |
-
----
-
-## 基于文件夹的规则文件
-
-从 EasyYapi 3.0 起，规则文件按**文件夹**自动发现，取代了旧的单 `.easy.api.config` 文件工作流（旧文件仍会被读取以保持向后兼容）。
-
-### 规则文件位置
-
-| 范围 | 文件夹 | 作用于 |
-|------|--------|--------|
-| **项目** | `<project>/.easyapi/*.rules`（或 `*.properties`） | 仅当前项目 |
-| **全局** | `~/.easyapi/*.rules` | 本机所有项目 |
-| **内置** | 随插件打包 | 始终加载 |
-| **远程** | 在 Settings → Remote 中配置的 URL | 重新加载时拉取 |
-
-文件夹中的每个常规文件都会被自动加载——无需维护文件列表。文件夹是唯一的真相来源。
-
-### 文件格式
-
-规则文件是 UTF-8 文本文件，每行一条规则：
-
-```properties
-# 格式: <key>[<filter>]=<value>
-#   key      — 规则键（参见 可用配置规则）
-#   filter   — 可选；放在 key 之后的 [...] 中
-#   value    — 字面文本、表达式或 Groovy 脚本
-
-# 没有过滤器的规则对所有元素生效：
-api.status=disabled
-
-# 带过滤器的规则只对匹配元素生效：
-api.tag[$class:com.example.UserController]=user
-
-# Groovy 脚本以 "groovy:" 前缀标识：
-field.ignore[groovy: it.name() == "internalCache"]=true
-```
-
-### 在 IDE 中管理文件
-
-打开 **Settings → EasyApi → Rules**。该标签页包含三个子标签——**Project**、**Global**、**Remote**：
-
-- 可直接在对话框中添加 / 编辑 / 重命名 / 删除文件。
-- 取消文件旁的 **Enabled** 复选框可在不删除文件的情况下禁用它。被禁用的路径保存在 `Settings.disabledAutoRuleFiles`（项目级）或 `Settings.disabledGlobalRuleFiles`（全局级）中。
-- 保存即重新加载，无需重启 IDE。
-
-### 过滤器语法速查
-
-过滤器位于 key 之后的 `[...]` 中，限制规则只对匹配的元素生效：
-
-| 前缀 | 含义 | 示例 |
-|------|------|------|
-| `$class:` | 全限定类名精确匹配 | `$class:com.example.UserController` |
-| `@` | 匹配带有指定注解的元素 | `@org.springframework.web.bind.annotation.RestController` |
-| `#regex:` | 正则匹配；捕获组可用 `${1}`、`${2}` | `#regex:Mono<(.*?)>` |
-| `#` | 标签匹配（来自注释或注解） | `#internal` |
-| `!` | 对后续表达式取反 | `!@java.lang.Deprecated` |
-| `groovy:` | 返回真值的 Groovy 脚本 | `groovy: it.hasAnn("X")` |
-| *(无)* | 字面值，总是匹配 | `api.status=disabled` |
-
-> **迁移提示：** 2.x 中的 `class:com.example.Foo` 与 `~regex` 形式在 3.x 中无效。请改用 `$class:`（精确匹配）或 `groovy:`（模式匹配）。完整规则键目录参见 [可用配置规则](./config-rule)。
+| 方式 | 适用场景 |
+|------|---------|
+| [内置 AI 助手](#内置-ai-助手) | 在 IDE 内快速生成；扫描当前项目中隐藏的框架行为 |
+| [外部 `easy-yapi-assistant` skill](#外部-easy-yapi-assistant-skill) | 从外部 AI 工具（CLI / IDE agent / CI）驱动规则编写；需自行安装该 skill |
 
 ---
 
 ## 内置 AI 助手
 
-EasyYapi 3.0 内置了与供应商无关的 AI 助手，可用自然语言为你编写规则。它集成在 Rules 标签页中，使用与外部 skill 相同的知识库。
+EasyYapi 3.0 内置了一个与提供商无关的 AI 助手（基于 LangChain4j），嵌入在 Rules 标签页中。它会读取你现有的规则、用自然语言推理你的请求、提出规则内容，并保存到你选择的 `.easyapi/*.rules` 文件中。助手**绝不会在未经你明确批准的情况下写入文件**——每个会改变状态的操作都需要点击 Approve。
 
-### 前置条件
+### 前置准备
 
 1. 打开 **Settings → EasyApi → AI**（独立的顶级标签页）。
-2. 选择供应商（`OPENAI`、`ANTHROPIC`、`GEMINI`、`OLLAMA`、`AZURE_OPENAI` 或 `CUSTOM`）。
-3. 输入 API key（安全存储在 IntelliJ 的 `PasswordSafe` 中）、base URL（已知供应商会自动填充）和模型名。
-4. 点击 **Test Connection** 验证。该测试使用界面上的字段值，因此可在点击 Apply/OK 之前先验证。
-5. 点击 **Auto-detect** 让 EasyYapi 从环境变量（`OPENAI_API_KEY`、`ANTHROPIC_API_KEY`、`OLLAMA_HOST` 等）推断供应商。
+2. 选择提供商：`OPENAI`、`ANTHROPIC`、`GEMINI`、`OLLAMA`、`AZURE_OPENAI` 或 `CUSTOM`。
+3. 输入 API key（安全存储在 IntelliJ 的 `PasswordSafe` 中）、base URL（已知提供商会自动填充）和模型名称。
+4. 点击 **Test Connection** 验证。测试使用界面上的字段值，因此你可以在点击 Apply/OK 之前先验证。
+5. （可选）点击 **Auto-detect**，让 EasyYapi 从环境变量（`OPENAI_API_KEY`、`ANTHROPIC_API_KEY`、`OLLAMA_HOST`……）推断提供商。
 
-### 工作流
+### 编写规则
 
 1. 打开 **Settings → EasyApi → Rules**。
-2. 点击底部操作栏的 **Chat** 打开内嵌 AI 面板，或点击 **Magic** 运行内置的"审查并检测"指令。
-3. 用自然语言输入请求，例如：
-   - "将 `UserController` 中所有端点重命名为以 `fetch_` 开头。"
-   - "为 `internal` 包中所有类添加 `internal` 标签。"
-   - "检测需要请求头的自定义 Filter 并为我生成规则。"
-4. 助手会读取你现有的规则、推理你的请求，并提出规则内容。
-5. 在提案卡片中审阅，可在保存前 **Edit** 内容。
-6. 点击 **Save…**——选择 Global（`~/.easyapi/`）或 Project（`<project>/.easyapi/`）范围及文件名。
-7. 规则文件写入所选文件夹，配置立即重新加载。
+2. 点击 **Chat**（底部操作栏）展开内联 AI 面板。
+3. 用自然语言描述你的需求。示例：
+   - "将 `UserController` 中所有端点的名称改为以 `fetch_` 开头。"
+   - "给 `internal` 包下所有类添加标签 `internal`。"
+   - "忽略 `UserDto` 中名为 `internalCache` 的字段。"
+4. 助手会读取你现有的规则（`list_rule_keys`、`get_existing_rules`、`read_rule_file`），推理请求，并提出规则内容。
+5. 在提案卡片中查看。保存前你可以 **Edit** 修改内容。
+6. 点击 **Save…**——选择 Global（`~/.easyapi/`）或 Project（`<project>/.easyapi/`）范围 + 文件名。
+7. 规则文件会写入所选文件夹，配置立即重新加载（文件夹是唯一真相来源——无需在设置列表中登记）。
 
-助手**永远不会在未经你明确批准的情况下写文件**——每个会改变状态的动作工具都需要点击 Approve。
+### 检测隐藏的框架行为（Magic）
 
-### Magic 按钮
+点击 **Magic**（底部操作栏）而不是 **Chat**，可运行内置的审查与检测指令。Magic 会：
 
-**Magic** 会运行一条内置指令，用于：
+1. 审查你现有规则的缺口。
+2. 扫描项目中扫描器无法察觉的自定义框架模式——要求添加请求头的 Filter / Interceptor、`ResponseBodyAdvice` 包装器、`HandlerMethodArgumentResolver` 注入、元注解、自定义安全注解。
+3. 为每个检测结果提出规则。
 
-1. 审查现有规则的缺口。
-2. 扫描项目中缺少规则的自定义框架模式（Filter、Interceptor、`ResponseBodyAdvice`、`HandlerMethodArgumentResolver`、元注解）。
-3. 依据 [Custom-Pattern Catalog](https://github.com/tangcent/easy-yapi/blob/master/docs/knowledge-base/rule-guide.md#custom-pattern-catalog) 为每个检测结果提出规则。
+每个提案仍然经过与 Chat 相同的 Approve → Save 流程。写入什么完全由你掌控。
+
+### 提示
+
+- 助手可通过 `get_plugin_doc` 工具访问插件的知识库，因此它知道完整的规则键目录。
+- 在提出修改前，可以让它"列出我当前的规则"——有助于了解起始状态。
+- 助手通过**名称**（如 `security.rules`）而非绝对路径来定位规则文件。它会根据已跟踪的 `.easyapi/` 文件夹解析名称。
 
 ---
 
 ## 外部 `easy-yapi-assistant` skill
 
-对于希望通过外部 AI 工具（CLI agent、IDE 助手、CI 辅助）驱动规则编写的团队，EasyYapi 打包了 `easy-yapi-assistant` skill。该 skill 随插件发布，使用与内置助手相同的知识库，确保外部工具与内置助手始终从同一真相来源编写规则。
+对于从外部 AI 工具驱动规则编写的团队——基于终端的 agent、IDE 助手或 CI 辅助工具——可以安装 `easy-yapi-assistant` skill。该 skill 使用与 IDE 内助手**相同的知识库**，因此外部工具和内置助手始终基于同一真相来源编写规则。
 
-该 skill 提供：
+### 该 skill 暴露的内容
 
-- **Rule-key catalog** — 受支持规则键的权威清单。
-- **Custom-Pattern Catalog** — 与 Magic 按钮相同的检测模式。
-- **辅助脚本** — `list_rule_files.sh`、`read_rule_file.sh`、`get_existing_rules_for_key.sh`，用于检查 `.easyapi/` 文件夹中的现有规则。
+- **规则键目录**——支持规则键及其聚合模式的权威列表。
+- **自定义模式目录**——Magic 按钮检测的相同模式（Filter / Interceptor / ResponseBodyAdvice / HandlerMethodArgumentResolver / 元注解），每个模式带有检测信号和规则配方。
+- **辅助脚本**——`list_rule_files.sh`、`read_rule_file.sh`、`get_existing_rules_for_key.sh`，无需打开 IDE 即可检查 `.easyapi/` 文件夹中的现有规则。
 
-适用于以下场景：
+### 何时使用该 skill
 
-- 通过终端 AI 工具编写规则。
+- 从有文件访问权限但没有 IntelliJ PSI 的终端 AI 工具编写规则。
 - 在 CI 中跨多个仓库批量检测自定义框架行为。
-- 生成规则草稿，再由人工在 IDE 中最终确认。
+- 生成规则桩，再由人工审查者在 IDE 中定稿。
+- 当部分团队成员使用 IDE 助手、其他人使用外部工具时，保持规则编写的一致性。
 
----
+### 如何使用
 
-## 3.1.x 新特性
+1. 全局安装该 skill：
 
-近期值得了解的变更：
+   ```bash
+   npx skills add tangcent/easy-yapi -g -y
+   ```
 
-- **基于文件夹的规则管理** (`#1398`)——项目级和全局级的 `.easyapi/*.rules` 文件夹模型，取代旧的单文件工作流。旧 `.easy.api.config*` 文件仍会被读取以保持向后兼容。
-- **内置 AI 助手** (`#1398`)——与供应商无关的 AI 服务（基于 LangChain4j），内嵌在 Rules 标签页的规则编写 agent。AI 设置已提升为独立的顶级标签页。
-- **Postman 环境同步** (`#722`)——将 Postman 环境同步到 API Dashboard，可在端点详情面板内联编辑。
-- **日志规范** (`#1393`、`#1394`、`#1396`)——EasyAPI 控制台默认 `SILENT`，当日志级别为 `SILENT` 时隐藏。插件失败时会显示自解释通知，而不是静默堆栈。
-- **AI key 存储** (`#1403`)——AI 供应商密钥通过独立的 `AiApiKeyStore` 存储在 IntelliJ 的 `PasswordSafe` 中，不再以明文形式存于设置。
+   这会安装 `easy-yapi-assistant` skill。安装后，你的 AI 编程助手（Trae、Cursor、Cline、Continue 等）会在你要求添加或修改 EasyApi 规则时自动调用它。
+2. 在 AI 编程助手中描述你想要的规则——例如"添加一条规则，忽略所有标注了 `@Internal` 的字段"。助手会使用 skill 捆绑的知识库（规则指南的同步副本）来编写规则。
+3. （可选）在提出修改前，使用 skill 的辅助脚本检查 `.easyapi/` 文件夹的当前状态：
+   - `list_rule_files.sh`——列出项目/全局 `.easyapi/` 文件夹中的规则文件。
+   - `read_rule_file.sh <name>`——读取指定名称的规则文件。
+   - `get_existing_rules_for_key.sh <key>`——查找给定规则键的现有规则。
+4. 助手将提议的规则写入项目中的 `.easyapi/*.rules` 文件（或全局的 `~/.easyapi/`）。IDE 会在保存时重新加载。
 
-完整发布说明请参见 [changelog](https://github.com/tangcent/easy-yapi/blob/master/CHANGELOG.md)。
+由于 skill 和 IDE 内助手共享同一知识库，一方编写的规则可立即被另一方理解和编辑。
