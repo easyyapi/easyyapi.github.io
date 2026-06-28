@@ -1,5 +1,7 @@
 # Framework Support
 
+EasyApi understands standard HTTP frameworks (Spring MVC, WebFlux, JAX-RS, Feign) out of the box — **most projects need no custom rules**. For custom framework behaviour the scanner can't see (e.g. a `jakarta.servlet.Filter` that requires a header, or a `ResponseBodyAdvice` that wraps every response in an envelope), use the built-in AI Assistant or the external skill to detect it and generate the rule. See the [Rule Authoring Guide](https://github.com/tangcent/easy-yapi/blob/master/docs/knowledge-base/rule-guide.md) for the full Custom-Pattern Catalog.
+
 EasyYapi supports multiple Java/Kotlin web frameworks and can automatically recognize framework annotations to generate corresponding API documentation.
 
 ## Default Support

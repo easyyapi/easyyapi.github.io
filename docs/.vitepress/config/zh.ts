@@ -122,6 +122,7 @@ function sidebarSettings() {
       text: '配置',
       items: [
         { text: '概览', link: '/zh/settings/' },
+        { text: '规则编写', link: '/zh/settings/rule-authoring' },
         { text: '在 IDEA 中设置', link: '/zh/settings/ide-setting' },
         { text: '使用项目内配置文件', link: '/zh/settings/local-file-config' },
         { text: '使用远程配置文件', link: '/zh/settings/remote-config' },

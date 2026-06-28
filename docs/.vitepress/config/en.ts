@@ -117,6 +117,7 @@ function sidebarSettings() {
       text: 'Configuration',
       items: [
         { text: 'Overview', link: '/settings/' },
+        { text: 'Rule Authoring', link: '/settings/rule-authoring' },
         { text: 'IDE Settings', link: '/settings/ide-setting' },
         { text: 'Local Config File', link: '/settings/local-file-config' },
         { text: 'Remote Config File', link: '/settings/remote-config' },

@@ -1,6 +1,6 @@
 # 本地配置文件
 
-EasyYapi 使用 `.easy.api.config` 文件作为本地配置文件。
+EasyYapi 使用 `.easy.api.config` 文件作为本地配置文件。从 EasyYapi 3.0 起推荐使用 [`.easyapi/` 文件夹模型](./rule-authoring#基于文件夹的规则文件)，`.easyapi/` 中的每个常规文件都会被自动加载。下方旧的 `.easy.api.config*` 文件仍会被读取以保持向后兼容。
 
 ## 文件位置
 
@@ -25,6 +25,22 @@ your-project/
 │   └── src/
 └── pom.xml
 ```
+
+### 3.0+ 文件夹模型（推荐）
+
+在 `.easyapi/` 文件夹中放置任意数量的 `.rules`（或 `.properties`）文件。每个常规文件都会被加载——无需维护文件列表。
+
+```
+your-project/
+├── .easyapi/
+│   ├── naming.rules
+│   ├── security.rules
+│   └── postman.rules
+├── src/
+└── pom.xml
+```
+
+全局范围同样适用此模型：`~/.easyapi/*.rules` 会为本机所有项目加载。可在 **Settings → EasyApi → Rules**（Project / Global / Remote 子标签页）中以可视化方式管理文件。
 
 ## 文件格式
 
