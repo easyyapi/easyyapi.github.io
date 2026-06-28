@@ -19,7 +19,7 @@ EasyYapi 3.x 提供 **两种方式** 来编写规则。两种方式都写入 `.e
 
 ### 本地配置文件
 
-在项目根目录或模块根目录创建 `.easy.api.config` 文件（旧版，仍支持）。新项目应使用 [`.easyapi/` 文件夹模型](./local-file-config)。
+在项目根目录（你在 IDE 中打开的文件夹）创建 `.easy.api.config` 文件（旧版，仍支持）。新项目应使用 [`.easyapi/` 文件夹模型](./local-file-config)。规则文件仅基于工程根目录解析，不存在按模块划分的配置层。
 
 ```properties
 # 忽略特定字段
@@ -58,7 +58,7 @@ remote.url=http://your-config-server.com/easy-api.config
 
 ## 配置优先级
 
-1. 远程配置（最高优先级）
-2. 模块根目录配置
-3. 项目根目录配置
-4. IDE 设置（最低优先级）
+1. 工程规则 —— `<project>/.easyapi/` + 从工程根目录向上查找的旧版 `.easy.api.config*`（最高优先级）
+2. 扩展规则 —— 内置框架预设（Spring、Jackson、Validation……）
+3. 远程配置 —— 来自 `remote.url` 的 URL
+4. 全局规则 —— `~/.easyapi/`（最低优先级）

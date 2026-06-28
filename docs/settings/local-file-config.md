@@ -4,7 +4,20 @@ EasyYapi uses `.easy.api.config` files as local configuration files. Starting wi
 
 ## File Location
 
+Rule files are resolved from the **IntelliJ project base path** — the folder you
+opened in the IDE (`project.basePath`). Discovery never walks *down* into child
+directories, so config files placed in nested module folders are **not** loaded
+when the parent is opened as the project.
+
+> **Heads-up for multi-module projects:** there is no per-module config tier.
+> If you open `your-project/` as the project, only `.easy.api.config` / `.easyapi/`
+> at `your-project/` and its *ancestor* directories are read. To give a single
+> module its own rules, open that module's folder as its own IntelliJ project,
+> or keep everything in the shared `<project>/.easyapi/` folder.
+
 ### Project Root
+
+The folder you opened in the IDE:
 
 ```
 your-project/
@@ -13,18 +26,9 @@ your-project/
 └── pom.xml
 ```
 
-### Module Root
-
-```
-your-project/
-├── module-a/
-│   ├── .easy.api.config
-│   └── src/
-├── module-b/
-│   ├── .easy.api.config
-│   └── src/
-└── pom.xml
-```
+Legacy `.easy.api.config[.properties|.yml|.yaml]` files are also picked up by
+walking **up** from the project base to its ancestors (e.g. a config in a parent
+directory shared by several projects).
 
 ### 3.0+ Folder Model (recommended)
 
@@ -61,4 +65,16 @@ json.rule.convert=groovy:it.type().name()=="java.util.Date" => java.lang.String
 
 ## Config Merging
 
-Multiple config files are merged by priority. Higher priority configs override lower priority ones.
+Configuration is merged from several sources by priority. Within the same
+source, files in `.easyapi/` are read in sorted name order and appended in
+sequence. Higher-priority sources override lower-priority ones for the same key.
+
+| Priority | Source | Loaded from |
+|:---:|---|---|
+| 4 | **Project rules** | `<project>/.easyapi/*` (all regular files) + legacy `.easy.api.config*` walked up from `<project>` |
+| 3 | Extension rules | Bundled framework presets (Spring, Jackson, Validation, Swagger, …) toggleable in Settings → Extensions |
+| 3 | Remote rules | URLs from `remote.url` (Settings → Rules → Remote) |
+| 2 | Global rules | `~/.easyapi/*` (all regular files) |
+
+Project rules win over everything else; global rules are the lowest-tier
+fallback. There is no separate module-level tier.

@@ -12,17 +12,17 @@ remote.url=http://your-config-server.com/easy-api.config
 
 ## Features
 
-- Remote config has the highest priority
+- Remote config overrides extension and global rules, but project rules (`.easyapi/` / `.easy.api.config*` at the project root) take precedence over it
 - Supports multiple remote URLs (one per line)
 - Supports auto-refresh
 
 ## Example
 
 ```properties
-# Remote config
+# Remote config (lower priority than project rules)
 remote.url=http://config-server.com/common.easy.api.config
 remote.url=http://config-server.com/project-specific.easy.api.config
 
-# Local config (lower priority than remote)
+# Local config
 field.mock=@mock
 ```

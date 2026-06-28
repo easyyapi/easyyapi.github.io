@@ -72,18 +72,24 @@ function sidebarGuide() {
         { text: '导出到 cURL', link: '/zh/guide/export2curl' },
         { text: '导出到 HttpClient', link: '/zh/guide/export2httpclient' },
         { text: '导出 RPC 文档', link: '/zh/guide/export-rpc' },
+        { text: '传统 YApi / 自定义 YApi', link: '/zh/guide/login-mode-yapi' },
       ],
     },
     {
       text: '进阶',
       items: [
+        { text: '进阶用法', link: '/zh/guide/advanced-use' },
         { text: 'Call API', link: '/zh/guide/call' },
+        { text: '泛型类型', link: '/zh/guide/generic' },
       ],
     },
     {
       text: '参考',
       items: [
         { text: '注释规范', link: '/zh/guide/docs' },
+        { text: 'Javadoc 示例', link: '/zh/guide/javadoc-demo' },
+        { text: '插件知识库 (AI)', link: '/zh/guide/knowledge-base' },
+        { text: '脚本执行器', link: '/zh/guide/script-executor' },
       ],
     },
   ]
@@ -96,12 +102,16 @@ function sidebarFramework() {
       items: [
         { text: '概览', link: '/zh/framework/' },
         { text: 'Spring Boot', link: '/zh/framework/springboot' },
+        { text: 'Spring Boot WebFlux', link: '/zh/framework/springboot-webflux' },
         { text: 'Spring Actuator', link: '/zh/framework/actuator' },
         { text: 'Spring Configuration', link: '/zh/framework/spring-configuration' },
+        { text: 'Swagger', link: '/zh/framework/swagger' },
+        { text: 'Swagger 3', link: '/zh/framework/swagger3' },
         { text: 'JAX-RS', link: '/zh/framework/jaxrs' },
         { text: 'gRPC', link: '/zh/framework/grpc' },
         { text: 'javax.validation', link: '/zh/framework/javax-validation' },
         { text: 'Jakarta Validation', link: '/zh/framework/jakarta-validation' },
+        { text: 'Jackson', link: '/zh/framework/jackson' },
         { text: 'Gson', link: '/zh/framework/gson' },
         { text: 'Fastjson', link: '/zh/framework/fastjson' },
       ],

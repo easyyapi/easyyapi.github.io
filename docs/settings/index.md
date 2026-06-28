@@ -19,7 +19,7 @@ EasyYapi 3.x offers **two ways** to author rules. Both write to `.easyapi/*.rule
 
 ### Local Config File
 
-Create a `.easy.api.config` file in your project root or module root directory (legacy, still supported). New projects should use the [`.easyapi/` folder model](./local-file-config).
+Create a `.easy.api.config` file in your project root directory — the folder you opened in the IDE (legacy, still supported). New projects should use the [`.easyapi/` folder model](./local-file-config). Rule files are resolved from the project base path only; there is no per-module config tier.
 
 ```properties
 # Ignore specific fields
@@ -58,7 +58,7 @@ See [IDE Settings](./ide-setting).
 
 ## Configuration Priority
 
-1. Remote config (highest priority)
-2. Module root config
-3. Project root config
-4. IDE settings (lowest priority)
+1. Project rules — `<project>/.easyapi/` + legacy `.easy.api.config*` walked up from the project root (highest priority)
+2. Extension rules — bundled framework presets (Spring, Jackson, Validation, …)
+3. Remote config — URLs from `remote.url`
+4. Global rules — `~/.easyapi/` (lowest priority)

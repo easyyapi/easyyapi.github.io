@@ -21,11 +21,14 @@ See [Script Tools](/settings/tools) for available tools in scripts.
 
 ## Multiple Config Files
 
-You can use multiple configuration files with different priorities:
+Configuration is merged from several sources by priority (highest first):
 
-1. Remote config (highest priority)
-2. Module root config
-3. Project root config
-4. IDE settings (lowest priority)
+1. Project rules — `<project>/.easyapi/` + legacy `.easy.api.config*` walked up from the project root
+2. Extension rules — bundled framework presets (Spring, Jackson, Validation, …)
+3. Remote config — URLs from `remote.url`
+4. Global rules — `~/.easyapi/` (lowest priority)
+
+There is no per-module config tier; rule files are resolved from the IntelliJ
+project base path only.
 
 See [Configuration](/settings/) for more details.
