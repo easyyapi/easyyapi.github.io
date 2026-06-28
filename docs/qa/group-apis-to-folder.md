@@ -3,7 +3,7 @@
 There are two distinct concepts to keep in mind:
 
 - **`folder.name`** — the folder/group name shown in the exported tree (Postman folder, YApi cat menu, Markdown section, …). Use this to organize APIs into folders.
-- **`yapi.project`** — the **YApi project token** that determines which YApi project the APIs are exported to. `module` and `project` are legacy aliases for `yapi.project`; they do **not** set the folder.
+- **`yapi.project`** — the **YApi project token** that determines which YApi project the APIs are exported to. It is selected by the `@project` doc tag; it does **not** set the folder.
 
 ## Using the `folder.name` rule
 
@@ -19,15 +19,15 @@ folder.name=groovy:it.containingClass().doc("folder") ?: it.containingClass().na
 
 The rule is evaluated against the API method (`it` is the method); `it.containingClass()` returns the controller class.
 
-## Using the `@module` / `@project` tag (YApi project only)
+## Using the `@project` tag (YApi project only)
 
-The `@module` and `@project` tags resolve to the `yapi.project` rule and select **which YApi project** the API belongs to — they are *not* for grouping APIs into folders:
+The `@project` tag resolves to the `yapi.project` rule and selects **which YApi project** the API belongs to — it is *not* for grouping APIs into folders:
 
 ```java
 /**
  * User Management API
  *
- * @module user-management
+ * @project user-management
  */
 @RestController
 @RequestMapping("/api/users")
@@ -39,7 +39,6 @@ public class UserController {
 ```properties
 # Default built-in rule (already provided by the yapi.project extension):
 yapi.project=#project
-yapi.project=#module
 ```
 
 See [yapi.project](../settings/rules/yapi_project) for details.
