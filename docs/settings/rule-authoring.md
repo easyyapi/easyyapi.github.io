@@ -31,7 +31,7 @@ EasyYapi 3.0 ships a provider-neutral AI assistant (LangChain4j-backed) embedded
    - "Rename all endpoints in `UserController` to start with `fetch_`."
    - "Add the tag `internal` to all classes in the `internal` package."
    - "Ignore all fields named `internalCache` in `UserDto`."
-4. The assistant reads your existing rules (`list_rule_keys`, `get_existing_rules`, `read_rule_file`), reasons about the request, and proposes rule content.
+4. The assistant reads your existing rules, reasons about the request, and proposes rule content.
 5. Review the proposal card. You can **Edit** the content before saving.
 6. Click **Save…** — choose Global (`~/.easyapi/`) or Project (`<project>/.easyapi/`) scope + filename.
 7. The rule file is written into the chosen folder and the config is reloaded immediately (the folder is the source of truth — no settings-list registration needed).
@@ -48,7 +48,7 @@ Each proposal still goes through the same Approve → Save flow as Chat. You sta
 
 ### Tips
 
-- The assistant has access to the plugin's knowledge base via its `get_plugin_doc` tool, so it knows the full rule key catalog.
+- The assistant has access to the plugin's knowledge base, so it knows the full rule key catalog.
 - Ask it to "list my current rules" before proposing changes — useful for understanding the starting state.
 - The assistant addresses rule files by **name** (e.g. `security.rules`), not absolute path. It resolves the name against the tracked `.easyapi/` folders.
 
@@ -62,7 +62,7 @@ For teams that drive rule authoring from an external AI tool — a terminal-base
 
 - **Rule-key catalog** — the canonical list of supported rule keys and their aggregation modes.
 - **Custom-Pattern Catalog** — the same patterns the Magic button detects (Filter / Interceptor / ResponseBodyAdvice / HandlerMethodArgumentResolver / meta-annotations), with detection signals and rule recipes for each.
-- **Helper scripts** — `list_rule_files.sh`, `read_rule_file.sh`, `get_existing_rules_for_key.sh` for inspecting existing rules in `.easyapi/` folders without opening the IDE.
+- **Helper scripts** — for inspecting existing rules in `.easyapi/` folders without opening the IDE (listing rule files, reading a named file, finding rules for a given key).
 
 ### When to use the skill
 
@@ -81,10 +81,7 @@ For teams that drive rule authoring from an external AI tool — a terminal-base
 
    This installs the `easy-yapi-assistant` skill. Once installed, your AI coding assistant (Trae, Cursor, Cline, Continue, etc.) will automatically invoke it when you ask to add or modify EasyApi rules.
 2. In your AI coding assistant, ask for the rule you want — e.g. "Add a rule that ignores all fields annotated with `@Internal`." The assistant uses the skill's bundled knowledge base (a synced copy of the rule guide) to author the rule.
-3. (Optional) Use the skill's helper scripts to inspect the current state of `.easyapi/` folders before proposing changes:
-   - `list_rule_files.sh` — list rule files in project/global `.easyapi/` folders.
-   - `read_rule_file.sh <name>` — read a named rule file.
-   - `get_existing_rules_for_key.sh <key>` — find existing rules for a given rule key.
+3. (Optional) The skill can inspect the current state of your `.easyapi/` folders (list rule files, read a named file, find rules for a given key) before proposing changes. Your AI assistant calls these helpers automatically when needed.
 4. The assistant writes the proposed rules into a `.easyapi/*.rules` file in your project (or `~/.easyapi/` for global rules). The IDE reloads on save.
 
 Because the skill and the in-IDE assistant share the same knowledge base, a rule authored by one is immediately understood and editable by the other.

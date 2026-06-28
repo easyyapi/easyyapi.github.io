@@ -31,7 +31,7 @@ EasyYapi 3.0 内置了一个与提供商无关的 AI 助手（基于 LangChain4j
    - "将 `UserController` 中所有端点的名称改为以 `fetch_` 开头。"
    - "给 `internal` 包下所有类添加标签 `internal`。"
    - "忽略 `UserDto` 中名为 `internalCache` 的字段。"
-4. 助手会读取你现有的规则（`list_rule_keys`、`get_existing_rules`、`read_rule_file`），推理请求，并提出规则内容。
+4. 助手会读取你现有的规则，推理请求，并提出规则内容。
 5. 在提案卡片中查看。保存前你可以 **Edit** 修改内容。
 6. 点击 **Save…**——选择 Global（`~/.easyapi/`）或 Project（`<project>/.easyapi/`）范围 + 文件名。
 7. 规则文件会写入所选文件夹，配置立即重新加载（文件夹是唯一真相来源——无需在设置列表中登记）。
@@ -48,7 +48,7 @@ EasyYapi 3.0 内置了一个与提供商无关的 AI 助手（基于 LangChain4j
 
 ### 提示
 
-- 助手可通过 `get_plugin_doc` 工具访问插件的知识库，因此它知道完整的规则键目录。
+- 助手可访问插件的知识库，因此它知道完整的规则键目录。
 - 在提出修改前，可以让它"列出我当前的规则"——有助于了解起始状态。
 - 助手通过**名称**（如 `security.rules`）而非绝对路径来定位规则文件。它会根据已跟踪的 `.easyapi/` 文件夹解析名称。
 
@@ -62,7 +62,7 @@ EasyYapi 3.0 内置了一个与提供商无关的 AI 助手（基于 LangChain4j
 
 - **规则键目录**——支持规则键及其聚合模式的权威列表。
 - **自定义模式目录**——Magic 按钮检测的相同模式（Filter / Interceptor / ResponseBodyAdvice / HandlerMethodArgumentResolver / 元注解），每个模式带有检测信号和规则配方。
-- **辅助脚本**——`list_rule_files.sh`、`read_rule_file.sh`、`get_existing_rules_for_key.sh`，无需打开 IDE 即可检查 `.easyapi/` 文件夹中的现有规则。
+- **辅助脚本**——无需打开 IDE 即可检查 `.easyapi/` 文件夹中的现有规则（列出规则文件、读取指定文件、按规则键查找规则）。
 
 ### 何时使用该 skill
 
@@ -81,10 +81,7 @@ EasyYapi 3.0 内置了一个与提供商无关的 AI 助手（基于 LangChain4j
 
    这会安装 `easy-yapi-assistant` skill。安装后，你的 AI 编程助手（Trae、Cursor、Cline、Continue 等）会在你要求添加或修改 EasyApi 规则时自动调用它。
 2. 在 AI 编程助手中描述你想要的规则——例如"添加一条规则，忽略所有标注了 `@Internal` 的字段"。助手会使用 skill 捆绑的知识库（规则指南的同步副本）来编写规则。
-3. （可选）在提出修改前，使用 skill 的辅助脚本检查 `.easyapi/` 文件夹的当前状态：
-   - `list_rule_files.sh`——列出项目/全局 `.easyapi/` 文件夹中的规则文件。
-   - `read_rule_file.sh <name>`——读取指定名称的规则文件。
-   - `get_existing_rules_for_key.sh <key>`——查找给定规则键的现有规则。
+3. （可选）skill 可以检查 `.easyapi/` 文件夹的当前状态（列出规则文件、读取指定文件、按规则键查找规则），在提出修改前了解现状。你的 AI 助手会在需要时自动调用这些辅助功能。
 4. 助手将提议的规则写入项目中的 `.easyapi/*.rules` 文件（或全局的 `~/.easyapi/`）。IDE 会在保存时重新加载。
 
 由于 skill 和 IDE 内助手共享同一知识库，一方编写的规则可立即被另一方理解和编辑。
