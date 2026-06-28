@@ -1,13 +1,21 @@
 # How to declare API permission (Spring Security)
 
-You can use Spring Security annotations to declare API permissions.
+EasyYapi does **not** ship built-in extraction for Spring Security annotations (`@PreAuthorize`, `@PostAuthorize`, `@Secured`, `@RolesAllowed`). To surface these in the API documentation, write custom rules that read the annotations and feed them into `api.tag`, `api.status`, or `method.doc`.
 
-## Supported annotations
+## Suggested rules
 
-- `@PreAuthorize` — pre-authorization check
-- `@PostAuthorize` — post-authorization check
-- `@Secured` — role-based security
-- `@RolesAllowed` — JSR-250 role-based security
+```properties
+# Surface the @PreAuthorize expression as a tag like "auth:hasRole('ADMIN')"
+api.tag[@org.springframework.security.access.prepost.PreAuthorize]=groovy:"auth:" + it.annValue("org.springframework.security.access.prepost.PreAuthorize")
+
+# Surface @Secured roles as a tag like "auth:secured:ADMIN"
+api.tag[@org.springframework.security.access.annotation.Secured]=groovy:"auth:secured:" + it.annValue("org.springframework.security.access.annotation.Secured")
+
+# Append a line to the method description
+method.doc[@org.springframework.security.access.prepost.PreAuthorize]=groovy:"Pre-authorize: " + it.annValue("org.springframework.security.access.prepost.PreAuthorize")
+```
+
+> Filters in `[...]` make the rule fire only when the annotation is present. The `api.tag` key is `MERGE_DISTINCT`, so multiple `api.tag` rules accumulate.
 
 ## Example
 
@@ -26,6 +34,4 @@ public class AdminController {
 }
 ```
 
-## Configuration
-
-EasyYapi automatically extracts permission information from these annotations and includes it in the API documentation.
+With the rules above, `listUsers` gets the tag `auth:hasRole('ADMIN')` and `getUser` gets `auth:hasAuthority('user:read')`, and both methods get an extra description line.

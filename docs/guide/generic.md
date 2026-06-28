@@ -1,18 +1,28 @@
 # Generic Types
 
-EasyYapi supports generic types in API documentation.
+EasyYapi resolves generic types in API documentation automatically — `Result<User>` is expanded into a `Result` object whose `data` field has the structure of `User`, without any extra configuration.
 
-## Generic Return Types
+## Overriding the return type
 
-For methods returning generic wrapper types like `Result<T>`, use `method.return.main` to extract the main type:
+If the declared return type doesn't reflect what you want documented (e.g. the method returns `Object` or a raw type), use `method.return` to override it with a concrete generic type:
 
 ```properties
-method.return.main=groovy:it.returnType().typeArgs()[0]
+method.return=groovy:"com.example.Result<" + it.returnType().name() + ">"
 ```
+
+## Attaching `@return` to a wrapper field
+
+`method.return.main` does **not** change the return type — it specifies the **field name** inside the response type where the method's `@return` doc comment should be attached:
+
+```properties
+method.return.main=groovy:"data"
+```
+
+With `Result<User>` and the rule above, the `@return` comment lands on the `data` field instead of the root `Result` object.
 
 ## Type Conversion
 
-Use `json.rule.convert` to convert generic types:
+Use `json.rule.convert` to convert types:
 
 ```properties
 json.rule.convert=groovy:it.type().name()=="java.util.Date" => java.lang.String

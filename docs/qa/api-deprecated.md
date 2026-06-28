@@ -1,20 +1,25 @@
 # How to mark API as deprecated
 
-You can use the Java `@Deprecated` annotation or the Javadoc `@deprecated` tag to mark an API as deprecated.
+EasyYapi automatically marks deprecated APIs — **no configuration needed** for the common cases below.
 
-## Using the @Deprecated annotation
+## Built-in behavior
 
-```java
-/**
- * Get user by ID
- * @deprecated use getUserV2 instead
- */
-@Deprecated
-@GetMapping("/user/{id}")
-public User getUser(@PathVariable Long id) {}
+The built-in `yapi` extension adds a `deprecated` tag to the API when it detects any of the following:
+
+- The method or its containing class is annotated `@java.lang.Deprecated`
+- The method's Javadoc contains a `@deprecated` tag
+- (Kotlin) The method or its containing class is annotated `@kotlin.Deprecated`
+
+Underlying rules (already shipped, shown for reference):
+
+```properties
+api.tag[@java.lang.Deprecated]=deprecated
+api.tag[#deprecated]=deprecated
+api.tag[groovy:it.containingClass().hasAnn("java.lang.Deprecated")]=deprecated
+api.tag[groovy:it.containingClass().hasDoc("deprecated")]=deprecated
 ```
 
-## Using the @deprecated tag
+## Example
 
 ```java
 /**
@@ -22,14 +27,13 @@ public User getUser(@PathVariable Long id) {}
  *
  * @deprecated use getUserV2 instead
  */
+@Deprecated
 @GetMapping("/user/{id}")
 public User getUser(@PathVariable Long id) {}
 ```
 
-## Configuration
+This endpoint is automatically tagged `deprecated` and exported with the deprecated description appended to its doc.
 
-Use the `api.status` rule to set the API status:
+## Status vs. tag
 
-```properties
-api.status=groovy:it.hasAnn("java.lang.Deprecated") ? "deprecated" : "done"
-```
+`api.status` is a separate rule used for the `@undone` / `@todo` doc tags (exported as the `undone` status), **not** for deprecation. Deprecated APIs are surfaced via `api.tag`, not `api.status`.
