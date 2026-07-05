@@ -23,3 +23,9 @@ EasyYapi supports the following usage methods:
 3. Send API requests directly from the IDE
 
 See [Call API](./call.md) for more details.
+
+## Export Only Selected Methods
+
+Since v3.2.0, EasyYapi respects method-level selection when exporting. Select one or more methods in the editor (either by caret or by selecting a text range that spans them) before triggering an export — only the endpoints whose source method matches (or overrides) the selection are exported, instead of every endpoint in the containing class.
+
+This works for every export channel (YApi, Postman, Markdown, cURL, HttpClient). If no methods are selected, the whole containing class is exported as before.

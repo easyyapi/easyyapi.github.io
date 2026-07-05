@@ -78,3 +78,65 @@ sequence. Higher-priority sources override lower-priority ones for the same key.
 
 Project rules win over everything else; global rules are the lowest-tier
 fallback. There is no separate module-level tier.
+
+## Including Other Config Files
+
+::: tip New in v3.2.0
+The `###include <path-or-url>` directive (since v3.2.0, #1410) lets a rule
+file pull in another local file or remote URL. It is the **preferred** way
+to compose configs; the legacy `properties.additional` key is kept for
+backward compatibility and behaves identically.
+:::
+
+A rule file can include another config source by writing the `###include`
+directive on its **own line**:
+
+```properties
+# Load a shared rule file relative to this file's directory
+###include ./shared/security.rules
+
+# Absolute path
+###include /etc/easyapi/team.rules
+
+# Home-relative path
+###include ~/easyapi/personal.rules
+
+# Remote URL (http/https)
+###include https://raw.githubusercontent.com/org/repo/main/easyapi/common.rules
+```
+
+### Behavior
+
+- The directive must be on its own line. The argument is the path or URL to
+  load (whitespace-trimmed).
+- **Local paths** are resolved relative to the *including file's* directory
+  (or `~/` home, or as an absolute path). **Remote URLs** (`http://` /
+  `https://`) are fetched via the cached resource resolver.
+- The included file is parsed with the **caller's directive state**, so
+  `###set` options in effect before the include carry into the included
+  file (e.g. `###set ignoreUnresolved = true` is inherited).
+- Relative paths inside an included file resolve against the **included
+  file's** directory (for remote includes, against the same host).
+- If the resource cannot be resolved, EasyYapi raises an error — unless you
+  silence it with `###set ignoreNotFoundFile = true` before the include:
+
+```properties
+# Optional include: missing file is silently ignored
+###set ignoreNotFoundFile = true
+###include ./optional/local-overrides.rules
+###set ignoreNotFoundFile = false
+```
+
+### Legacy form: `properties.additional`
+
+The older `properties.additional=<path-or-url>` key (one entry per line) is
+the legacy equivalent of `###include`. It behaves identically — same
+resolution rules, same directive-state inheritance, same
+`ignoreNotFoundFile` gating. `###include` is now preferred for clarity;
+`properties.additional` remains supported so existing configs keep working.
+
+```properties
+# Legacy form (still supported, identical behavior to ###include)
+properties.additional=./shared/security.rules
+properties.additional=https://raw.githubusercontent.com/org/repo/main/easyapi/common.rules
+```

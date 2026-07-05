@@ -73,3 +73,50 @@ json.rule.convert=groovy:it.type().name()=="java.util.Date" => java.lang.String
 | 2 | 全局规则 | `~/.easyapi/*`（全部常规文件） |
 
 工程规则优先级最高，全局规则为最低的兜底层。不存在单独的“模块级”配置层。
+
+## 包含其他配置文件
+
+::: tip v3.2.0 新增
+`###include <path-or-url>` 指令（自 v3.2.0 起，#1410）允许规则文件引入其他本地文件或远程 URL。这是组合配置的**首选**方式；旧版的 `properties.additional` key 保留向后兼容，行为完全一致。
+:::
+
+在规则文件中独占一行写入 `###include` 指令即可引入另一个配置源：
+
+```properties
+# 相对当前文件目录加载共享规则文件
+###include ./shared/security.rules
+
+# 绝对路径
+###include /etc/easyapi/team.rules
+
+# 家目录相对路径
+###include ~/easyapi/personal.rules
+
+# 远程 URL（http/https）
+###include https://raw.githubusercontent.com/org/repo/main/easyapi/common.rules
+```
+
+### 行为说明
+
+- 指令必须独占一行。参数为要加载的路径或 URL（自动去除首尾空白）。
+- **本地路径**相对于*包含该指令的文件所在目录*解析（或 `~/` 家目录，或绝对路径）。**远程 URL**（`http://` / `https://`）通过带缓存的资源解析器拉取。
+- 被包含的文件使用**调用方的指令状态**解析，因此 include 之前生效的 `###set` 选项会延续到被包含文件中（例如 `###set ignoreUnresolved = true` 会被继承）。
+- 被包含文件中的相对路径相对于*被包含文件自身*的目录解析（远程 include 则相对于同一 host）。
+- 若资源无法解析，EasyYapi 会抛出错误——除非在 include 之前用 `###set ignoreNotFoundFile = true` 静默：
+
+```properties
+# 可选 include：文件缺失时静默跳过
+###set ignoreNotFoundFile = true
+###include ./optional/local-overrides.rules
+###set ignoreNotFoundFile = false
+```
+
+### 旧版形式：`properties.additional`
+
+旧版的 `properties.additional=<path-or-url>` key（每行一条）是 `###include` 的旧版等价物，行为完全一致——相同的解析规则、相同的指令状态继承、相同的 `ignoreNotFoundFile` 门控。推荐使用 `###include` 以获得更好的可读性；`properties.additional` 继续支持以保持现有配置可用。
+
+```properties
+# 旧版形式（仍受支持，行为与 ###include 完全一致）
+properties.additional=./shared/security.rules
+properties.additional=https://raw.githubusercontent.com/org/repo/main/easyapi/common.rules
+```
