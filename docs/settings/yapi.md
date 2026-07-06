@@ -27,6 +27,16 @@ Additional options in the **General** tab:
 2. Go to project settings
 3. Copy the project Token
 
+::: tip No need to fill tokens manually
+You do **not** have to enter tokens (or the server address) in Settings
+before exporting. When you export APIs, the plugin automatically pops up a
+dialog prompting for the YApi server URL and the project token for the
+target module. Enter them there and the plugin saves them for next time.
+
+The **Tokens** field above is just a convenience for pre-filling tokens for
+multiple modules at once; it is optional.
+:::
+
 ### Token Format
 
 Tokens are specified as `module=token` pairs, one per line in the IDE Tokens field. The module name is used to match APIs to the correct YApi project.

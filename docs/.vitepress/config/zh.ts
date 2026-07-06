@@ -72,7 +72,6 @@ function sidebarGuide() {
         { text: '导出到 cURL', link: '/zh/guide/export2curl' },
         { text: '导出到 HttpClient', link: '/zh/guide/export2httpclient' },
         { text: '导出 RPC 文档', link: '/zh/guide/export-rpc' },
-        { text: '传统 YApi / 自定义 YApi', link: '/zh/guide/login-mode-yapi' },
       ],
     },
     {

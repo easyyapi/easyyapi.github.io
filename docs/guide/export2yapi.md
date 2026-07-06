@@ -17,5 +17,5 @@
 
 ## Next Steps
 
-- On first use, you may be prompted to enter required information. See [YApi Settings](/settings/yapi)
+- On first export, the plugin pops up a dialog asking for the **YApi server URL** and the **project token** for the target module. You don't need to configure them in Settings beforehand — see [YApi Settings](/settings/yapi).
 - Once familiar, you can try [YApi Mock](/settings/yapi-mock)

@@ -17,5 +17,5 @@
 
 ## 后续步骤
 
-- 初次使用可能会以弹窗的方式要求输入必要的信息，参照 [YApi 配置](/zh/settings/yapi)
+- 首次导出时，插件会弹窗要求输入 **YApi 服务器地址**以及目标模块对应的**项目 Token**。无需事先在设置中配置，详见 [YApi 配置](/zh/settings/yapi)
 - 熟悉后可以尝试 [YApi Mock](/zh/settings/yapi-mock)
