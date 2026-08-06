@@ -14,6 +14,7 @@ EasyYapi 支持多种 Java/Kotlin Web 框架，可以自动识别框架注解并
 | [Spring Actuator](./actuator) | Spring Boot Actuator 端点 |
 | [JAX-RS](./jaxrs) | Java RESTful Web 服务标准 |
 | [gRPC](./grpc) | 高性能 RPC 框架 |
+| [Custom](./custom) | 通过规则支持项目自定义 API 约定 |
 
 ## 通用支持
 

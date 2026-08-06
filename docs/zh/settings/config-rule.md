@@ -136,3 +136,31 @@ it.name() + " - 自定义后缀"
 | [yapi.export.before](./rules/yapi_export_before) | 导出前事件 |
 | [yapi.save.before](./rules/yapi_save_before) | 保存前事件 |
 | [yapi.save.after](./rules/yapi_save_after) | 保存后事件 |
+
+## 渠道专用规则
+
+### OpenAPI
+
+| 规则 | 说明 |
+|------|------|
+| `openapi.info.title` | 文档标题 |
+| `openapi.info.version` | 文档版本 |
+| `openapi.info.description` | 文档描述 |
+| `openapi.server.url` | OpenAPI `servers` 中的地址 |
+| `openapi.host` | 服务器地址的旧别名 |
+| `openapi.format.after` | 格式化完成、序列化之前执行的事件 |
+
+### Hoppscotch
+
+| 规则 | 说明 |
+|------|------|
+| `hopp.host` | 覆盖集合 Host |
+| `hopp.prerequest`、`hopp.class.prerequest`、`hopp.collection.prerequest` | 接口、类、集合级请求前脚本 |
+| `hopp.test`、`hopp.class.test`、`hopp.collection.test` | 接口、类、集合级响应测试 |
+| `hopp.format.after` | 集合格式化后执行的事件 |
+
+### Custom 框架
+
+Custom 是默认关闭的框架，提取逻辑由 `custom.*` 规则控制。主要规则包括 `custom.class.is.api`、`custom.method.is.api`、`custom.http.method`、`custom.path` 和 `custom.param.*` 绑定/命名规则；同时提供 `custom.class.parse.before`、`custom.class.parse.after`、`custom.method.parse.before`、`custom.method.parse.after` 和 `custom.export.after` 生命周期钩子。
+
+详见 [Custom 框架](/zh/framework/custom)，其中包含完整示例以及从旧版 `mdoc.*` 通用导出规则迁移的方法。

@@ -15,13 +15,15 @@ EasyYapi 是一个 IntelliJ IDEA 插件，基于 [Javadoc](./docs.md#javadoc)、
 
 EasyApi 开箱即用地支持标准 HTTP 框架（Spring MVC、WebFlux、JAX-RS、Feign）—— **大多数项目无需自定义规则**。对于扫描器无法察觉的自定义框架行为（例如要求添加请求头的 `jakarta.servlet.Filter`，或将每个响应包装在信封中的 `ResponseBodyAdvice`），可使用内置的 AI 助手或外部 skill 来检测并生成规则。完整指南请参见 [规则编写](/zh/settings/rule-authoring)。
 
+大部分插件能力都可以在 **Settings** > **Other Settings** > **EasyApi** 中启用或关闭。使用 **Features** 标签页管理框架识别器、导出渠道和字段格式化渠道；General 标签页还提供扫描和编辑器行为开关。你可以只保留当前项目需要的能力。
+
 ## 支持项列表
 
 | 类别 | 默认支持 | 额外支持 |
 |------|---------|---------|
 | 语言 | Java, Kotlin | Scala |
 | Web 框架 | [Spring](https://spring.io/)、[Spring WebFlux](https://docs.spring.io/spring-framework/reference/web/webflux.html)、[Feign](https://spring.io/projects/spring-cloud-openfeign)、[JAX-RS](https://www.oracle.com/technical-resources/articles/java/jax-rs.html) ([Quarkus](https://quarkus.io/) / [Jersey](https://eclipse-ee4j.github.io/jersey/))、[gRPC](https://grpc.io/) | - |
-| 导出渠道 | [Postman](./export2postman.md)、[YApi](./export2yapi.md)、[Markdown](./export2markdown.md)、[cURL](./export2curl.md)、[HttpClient](./export2httpclient.md) | - |
+| 导出渠道 | [Postman](./export2postman.md)、[YApi](./export2yapi.md)、[Markdown](./export2markdown.md)、[cURL](./export2curl.md)、[HttpClient](./export2httpclient.md)、[Hoppscotch](./export-hoppscotch.md)、[OpenAPI](./export-openapi.md) | - |
 | 常用框架 | javax.validation、Jakarta Validation、Jackson、Gson | [Swagger](https://swagger.io/)、Fastjson |
 | 功能特性 | [API 调用](./call.md)、[API Dashboard](./call.md#api-dashboard)、[编辑器行标记导航](./call.md#编辑器行标记导航)、[脚本执行器](./script-executor.md)、[AI 辅助规则编写](/zh/settings/rule-authoring) | Spring Actuator |
 

@@ -14,6 +14,7 @@ EasyYapi supports multiple Java/Kotlin web frameworks and can automatically reco
 | [Spring Actuator](./actuator) | Spring Boot Actuator endpoints |
 | [JAX-RS](./jaxrs) | Java RESTful Web Services standard |
 | [gRPC](./grpc) | High-performance RPC framework |
+| [Custom](./custom) | Rule-driven support for project-specific API conventions |
 
 ## Common Support
 

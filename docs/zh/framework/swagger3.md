@@ -6,7 +6,7 @@ EasyYapi 支持 Swagger 3 / OpenAPI 3 注解。
 
 - `@Tag` — 替代 `@Api`
 - `@Operation` — 替代 `@ApiOperation`
-- `@Parameter` — 替代 `@ApiParam`
+- `@Parameter` — 替代 `@ApiParam`；`example` 属性会作为参数示例导出
 - `@Schema` — 替代 `@ApiModel` / `@ApiModelProperty`
 
 ## 示例
@@ -20,7 +20,7 @@ public class UserController {
     @Operation(summary = "根据 ID 获取用户", description = "返回单个用户")
     @GetMapping("/{id}")
     public User getUser(
-            @Parameter(description = "用户 ID", required = true)
+            @Parameter(description = "用户 ID", required = true, example = "42")
             @PathVariable Long id) {
         // ...
     }

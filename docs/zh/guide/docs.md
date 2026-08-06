@@ -55,6 +55,8 @@ fun hello(@RequestParam name: String): String {
 }
 ```
 
+KDoc 的描述文本也会作为 API 标题使用，并作为 API 文件夹名称的候选值。为接口或类写清晰的第一段 KDoc，可以同时改善导出的名称和分组；如果项目规则显式设置了名称或文件夹，则以规则为准。
+
 ## ScalaDoc
 
 ScalaDoc 是 Scala 中的文档注释格式。

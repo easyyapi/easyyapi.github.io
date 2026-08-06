@@ -6,7 +6,7 @@ EasyYapi supports Swagger 3 / OpenAPI 3 annotations.
 
 - `@Tag` — Replaces `@Api`
 - `@Operation` — Replaces `@ApiOperation`
-- `@Parameter` — Replaces `@ApiParam`
+- `@Parameter` — Replaces `@ApiParam`; its `example` value is exported as the parameter example
 - `@Schema` — Replaces `@ApiModel` / `@ApiModelProperty`
 
 ## Example
@@ -20,7 +20,7 @@ public class UserController {
     @Operation(summary = "Get user by ID", description = "Returns a single user")
     @GetMapping("/{id}")
     public User getUser(
-            @Parameter(description = "User ID", required = true)
+            @Parameter(description = "User ID", required = true, example = "42")
             @PathVariable Long id) {
         // ...
     }

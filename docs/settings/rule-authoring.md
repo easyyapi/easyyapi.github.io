@@ -85,3 +85,9 @@ For teams that drive rule authoring from an external AI tool — a terminal-base
 4. The assistant writes the proposed rules into a `.easyapi/*.rules` file in your project (or `~/.easyapi/` for global rules). The IDE reloads on save.
 
 Because the skill and the in-IDE assistant share the same knowledge base, a rule authored by one is immediately understood and editable by the other.
+
+## Workflow and multi-application guidance
+
+The newer rule-authoring agent can inspect resolved type names and method bodies, retry a failed chat turn, and isolate independent tasks in sub-agents. These capabilities improve detection, but the proposed rule still requires your review and explicit approval before it is saved.
+
+When a workspace contains several applications, propose a complete bundle for each application: the host, the producer response script, the consumer header, and the environment variables it uses. Namespace host and token variables with the normalized module or application name so one service cannot overwrite another service's environment values. Resolve the application identity before writing the rule, ask for clarification when names collide, and never put credentials directly in a rule value.

@@ -15,13 +15,15 @@ You can get fairly complete API documentation while keeping your code zero-intru
 
 EasyApi understands standard HTTP frameworks (Spring MVC, WebFlux, JAX-RS, Feign) out of the box — **most projects need no custom rules**. For custom framework behaviour the scanner can't see (e.g. a `jakarta.servlet.Filter` that requires a header, or a `ResponseBodyAdvice` that wraps every response in an envelope), use the built-in AI Assistant or the external skill to detect it and generate the rule. See [Rule Authoring](/settings/rule-authoring) for the guide.
 
+Most plugin capabilities can be enabled or disabled from **Settings** > **Other Settings** > **EasyApi**. Use the **Features** tab for framework recognizers, export channels, and field-format channels; the General tab provides additional scanning and editor switches. Keep only the capabilities relevant to the current project enabled.
+
 ## Supported Items
 
 | Category | Default Support | Additional Support |
 |----------|----------------|-------------------|
 | Language | Java, Kotlin | Scala |
 | Web Framework | [Spring](https://spring.io/), [Spring WebFlux](https://docs.spring.io/spring-framework/reference/web/webflux.html), [Feign](https://spring.io/projects/spring-cloud-openfeign), [JAX-RS](https://www.oracle.com/technical-resources/articles/java/jax-rs.html) ([Quarkus](https://quarkus.io/) / [Jersey](https://eclipse-ee4j.github.io/jersey/)), [gRPC](https://grpc.io/) | - |
-| Export Channels | [Postman](./export2postman.md), [YApi](./export2yapi.md), [Markdown](./export2markdown.md), [cURL](./export2curl.md), [HttpClient](./export2httpclient.md) | - |
+| Export Channels | [Postman](./export2postman.md), [YApi](./export2yapi.md), [Markdown](./export2markdown.md), [cURL](./export2curl.md), [HttpClient](./export2httpclient.md), [Hoppscotch](./export-hoppscotch.md), [OpenAPI](./export-openapi.md) | - |
 | Common Frameworks | javax.validation, Jakarta Validation, Jackson, Gson | [Swagger](https://swagger.io/), Fastjson |
 | Features | [API Call](./call.md), [API Dashboard](./call.md#api-dashboard), [Gutter Icon Navigation](./call.md#gutter-icon-navigation), [Script Executor](./script-executor.md), [AI-assisted Rule Authoring](/settings/rule-authoring) | Spring Actuator |
 

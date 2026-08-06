@@ -55,6 +55,8 @@ fun hello(@RequestParam name: String): String {
 }
 ```
 
+KDoc descriptions are also used as API titles and as candidates for API folder names. Writing a clear first paragraph for a Kotlin API or class therefore improves both exported naming and grouping; explicit name or folder rules still take precedence.
+
 ## ScalaDoc
 
 ScalaDoc is the documentation comment format in Scala.

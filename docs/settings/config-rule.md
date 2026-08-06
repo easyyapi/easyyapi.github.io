@@ -137,3 +137,31 @@ it.name() + " - custom suffix"
 | [yapi.export.before](./rules/yapi_export_before) | Pre-export event |
 | [yapi.save.before](./rules/yapi_save_before) | Pre-save event |
 | [yapi.save.after](./rules/yapi_save_after) | Post-save event |
+
+## Channel-specific rules
+
+### OpenAPI
+
+| Rule | Description |
+|------|-------------|
+| `openapi.info.title` | Document title |
+| `openapi.info.version` | Document version |
+| `openapi.info.description` | Document description |
+| `openapi.server.url` | URL for the OpenAPI `servers` entry |
+| `openapi.host` | Legacy alias for the server URL |
+| `openapi.format.after` | Event that runs after formatting and before serialization |
+
+### Hoppscotch
+
+| Rule | Description |
+|------|-------------|
+| `hopp.host` | Collection host override |
+| `hopp.prerequest`, `hopp.class.prerequest`, `hopp.collection.prerequest` | Endpoint, class, and collection pre-request scripts |
+| `hopp.test`, `hopp.class.test`, `hopp.collection.test` | Endpoint, class, and collection response tests |
+| `hopp.format.after` | Event that runs after collection formatting |
+
+### Custom framework
+
+Custom is a disabled-by-default framework whose extraction is controlled by `custom.*` rules. The main keys are `custom.class.is.api`, `custom.method.is.api`, `custom.http.method`, `custom.path`, and the `custom.param.*` binding/name rules. It also provides `custom.class.parse.before`, `custom.class.parse.after`, `custom.method.parse.before`, `custom.method.parse.after`, and `custom.export.after` lifecycle hooks.
+
+See [Custom Framework](/framework/custom) for a worked example and the migration from the old `mdoc.*` generic-export keys.
