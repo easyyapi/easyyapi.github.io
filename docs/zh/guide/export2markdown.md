@@ -26,15 +26,22 @@
 
 ::: tip v3.2.0 新增
 自由格式的 Markdown 导出模板（支持国际化 i18n 与远程源）在 v3.2.0 中引入（#1411）。
-下文所述的 Markdown 导出对话框与 `markdown.template*` 配置规则描述了完整体系。
+下文所述的持久化 Markdown 设置标签页与 `markdown.template*` 配置规则描述了完整体系。
 :::
 
-触发 Markdown 导出时，EasyYapi 会打开一个对话框，允许你覆盖输出位置与渲染文档所用的模板。该对话框提供以下字段：
+触发 Markdown 导出时，EasyYapi 会打开一个对话框，允许你覆盖本次导出的输出位置与文件名。渲染文档所用的模板在持久化的 **Markdown** 设置标签页（<kbd>Settings</kbd> > <kbd>Other Settings</kbd> > <kbd>EasyApi</kbd> > <kbd>Markdown</kbd>）中配置，并在每次导出时复用。
+
+该对话框提供以下字段：
 
 | 字段 | 说明 |
 |-------|-------------|
 | 输出目录（Output Directory） | 生成 `.md` 文件的目标文件夹。留空则使用默认输出目录。 |
 | 文件名（File Name） | 输出文件名（不含扩展名）。留空则使用默认名称。 |
+
+以下模板字段位于持久化的 Markdown 设置标签页中，并在每次导出时复用：
+
+| 字段 | 说明 |
+|-------|-------------|
 | 模板文件（Template File） | 本地模板文件路径（`.tpl` 或 `.md.tpl`）。 |
 | 模板 URL（Template URL） | 提供模板的远程 `http(s)` URL。响应会被缓存 10 分钟；**不**跟随重定向。 |
 | 语言（Language） | 内置语言模板的下拉框（如 `zh-CN`、`ja`、`en`）。选择某个内置语言即以该语言模板渲染文档。 |
@@ -45,9 +52,9 @@
 
 解析器按以下层级依次查找，**首个非空且成功的层级胜出**。空值或失败（文件缺失、HTTP 错误、响应超限）的层级会被跳过，继续尝试下一层级。
 
-1. 对话框中的**内联模板**（多行文本框）。
-2. 对话框中的**本地模板文件**（Template File 字段）。
-3. 对话框中的**远程模板 URL**（Template URL 字段）。
+1. Markdown 设置标签页中的**内联模板**（多行文本框）。
+2. Markdown 设置标签页中的**本地模板文件**（Template File 字段）。
+3. Markdown 设置标签页中的**远程模板 URL**（Template URL 字段）。
 4. **`markdown.template` 配置规则**。其值会被自动检测：
    - `http(s)` URL 会远程拉取，
    - 单行路径会作为本地文件读取，

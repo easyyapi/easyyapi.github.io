@@ -11,7 +11,7 @@ Use [`json.rule.convert`](../settings/rules/json_rule_convert) to replace a type
 json.rule.convert=groovy:it.type().name()=="com.example.DynamicField" => java.lang.Object
 
 # Treat a raw Map field as a concrete DTO
-json.rule.convert=groovy:it.type().name()=="java.util.Map" && it.name()=="data" && it.containingClass().name()=="com.example.Response" => com.example.User
+json.rule.convert=groovy:it.type().name()=="java.util.Map" && it.name()=="data" && it.containingClass()?.qualifiedName()=="com.example.Response" => com.example.User
 ```
 
 ## Conditional conversion with filters
@@ -20,7 +20,7 @@ json.rule.convert=groovy:it.type().name()=="java.util.Map" && it.name()=="data" 
 
 ```properties
 # Only convert the "data" field of Response
-json.rule.convert[groovy:it.containingClass().name()=="com.example.Response" && it.name()=="data"]=groovy:"com.example.User"
+json.rule.convert[groovy:it.containingClass()?.qualifiedName()=="com.example.Response" && it.name()=="data"]=groovy:"com.example.User"
 ```
 
 ## Override the response type

@@ -65,4 +65,4 @@ remote.url=http://your-config-server.com/easy-api.config
 
 ## Features 与渠道设置
 
-使用[IDE 设置](./ide-setting)中的 **Features** 标签页管理框架识别器、导出渠道和字段格式化渠道。实验性的 **Hoppscotch** 和 **OpenAPI** 渠道默认关闭。大部分扩展点在项目不需要时都可以关闭；General 标签页还可以管理 API 扫描和编辑器行为。启用后的渠道选项可以在 EasyApi 设置树中配置。
+使用[IDE 设置](./ide-setting)中的 **Features** 标签页管理框架识别器、导出渠道和字段格式化渠道。实验性的 **Hoppscotch** 和 **OpenAPI** 渠道默认关闭。大部分扩展点在项目不需要时都可以关闭；Features 标签页还可以管理 API 扫描（含自动和并发选项）和编辑器集成，所有更改立即生效，无需重启 IDE。启用后的渠道选项可以在 EasyApi 设置树中配置。

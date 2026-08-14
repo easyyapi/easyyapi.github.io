@@ -26,18 +26,29 @@ See [IDE Settings](/settings/ide-setting) for more details.
 
 ::: tip New in v3.2.0
 Free-form Markdown export templates with internationalization (i18n) and
-remote source support landed in v3.2.0 (#1411). The Markdown export dialog
-and the `markdown.template*` config rules below describe the full system.
+remote source support landed in v3.2.0 (#1411). The persistent Markdown
+settings tab and the `markdown.template*` config rules below describe the
+full system.
 :::
 
 When you trigger a Markdown export, EasyYapi opens a dialog that lets you
-override the output location and the template used to render the document.
-The dialog exposes the following fields:
+override the output location and file name for this export. The template
+used to render the document is configured on the persistent **Markdown**
+settings tab (<kbd>Settings</kbd> > <kbd>Other Settings</kbd> >
+<kbd>EasyApi</kbd> > <kbd>Markdown</kbd>) and is reused across every export.
+
+The export dialog exposes the following fields:
 
 | Field | Description |
 |-------|-------------|
 | Output Directory | Target folder for the generated `.md` file. Blank uses the default output directory. |
 | File Name | Output file name (without extension). Blank uses the default name. |
+
+The following template fields live on the persistent Markdown settings tab
+and are reused across every export:
+
+| Field | Description |
+|-------|-------------|
 | Template File | Path to a local template file (`.tpl` or `.md.tpl`). |
 | Template URL | Remote `http(s)` URL serving a template. Responses are cached for 10 minutes; redirects are **not** followed. |
 | Language | Combo box of bundled locale templates (e.g. `zh-CN`, `ja`, `en`). Selecting a bundled locale renders the document with that locale's template. |
@@ -50,9 +61,9 @@ The resolver walks the tiers below; the **first non-blank tier that
 succeeds wins**. A tier that is blank or fails (missing file, HTTP error,
 oversize response) is skipped and the next tier is tried.
 
-1. **Inline template** from the dialog (the multi-line text area).
-2. **Local template file** from the dialog (Template File field).
-3. **Remote template URL** from the dialog (Template URL field).
+1. **Inline template** from the Markdown settings tab (the multi-line text area).
+2. **Local template file** from the Markdown settings tab (Template File field).
+3. **Remote template URL** from the Markdown settings tab (Template URL field).
 4. The **`markdown.template` config rule**. Its value is auto-detected:
    - an `http(s)` URL is fetched remotely,
    - a single-line path is read as a local file,

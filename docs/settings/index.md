@@ -65,4 +65,4 @@ See [IDE Settings](./ide-setting).
 
 ## Features and channel settings
 
-Use [IDE Settings](./ide-setting) > **Features** to control framework recognizers, export channels, and field-format channels. Experimental **Hoppscotch** and **OpenAPI** channels are disabled by default. Most of these extension points can be turned off when they are not relevant to a project; the General tab also controls API scanning and editor behavior. Their channel-specific settings are available from the EasyApi settings tree.
+Use [IDE Settings](./ide-setting) > **Features** to control framework recognizers, export channels, and field-format channels. Experimental **Hoppscotch** and **OpenAPI** channels are disabled by default. Most of these extension points can be turned off when they are not relevant to a project; the Features tab also controls API scanning (with automatic and concurrent options) and editor integration, all of which take effect immediately without an IDE restart. Their channel-specific settings are available from the EasyApi settings tree.

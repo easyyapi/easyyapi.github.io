@@ -5,7 +5,7 @@ Set the prefix for properties resolution.
 ## Usage
 
 ```properties
-properties.prefix=groovy:it.containingClass().name().replace(".", "_") + "_"
+properties.prefix=groovy:it.containingClass()?.qualifiedName().replace(".", "_") + "_"
 ```
 
 This rule is used to resolve property placeholders in configuration values.

@@ -11,7 +11,7 @@
 json.rule.convert=groovy:it.type().name()=="com.example.DynamicField" => java.lang.Object
 
 # 把原始 Map 字段当作具体 DTO
-json.rule.convert=groovy:it.type().name()=="java.util.Map" && it.name()=="data" && it.containingClass().name()=="com.example.Response" => com.example.User
+json.rule.convert=groovy:it.type().name()=="java.util.Map" && it.name()=="data" && it.containingClass()?.qualifiedName()=="com.example.Response" => com.example.User
 ```
 
 ## 带过滤器的条件转换
@@ -20,7 +20,7 @@ json.rule.convert=groovy:it.type().name()=="java.util.Map" && it.name()=="data" 
 
 ```properties
 # 只转换 Response 的 "data" 字段
-json.rule.convert[groovy:it.containingClass().name()=="com.example.Response" && it.name()=="data"]=groovy:"com.example.User"
+json.rule.convert[groovy:it.containingClass()?.qualifiedName()=="com.example.Response" && it.name()=="data"]=groovy:"com.example.User"
 ```
 
 ## 覆盖响应类型

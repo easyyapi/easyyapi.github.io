@@ -30,6 +30,10 @@ These methods are available on all context types:
 | `it.hasDoc(tag)` | `Boolean` | Check if a doc tag exists |
 | `it.doc(tag, subTag)` | `String?` | Get a doc tag with sub-tag (e.g., `@param name desc`) |
 
+::: tip Class name vs. qualified name
+On a class context, `name()` returns the **simple** class name (e.g. `UserController`); use `qualifiedName()` for the fully-qualified name.
+:::
+
 ### Annotations
 
 | Method | Return Type | Description |
@@ -153,8 +157,8 @@ Available when `it` is a `ScriptPsiMethodContext` (method rules):
 
 | Method | Return Type | Description |
 |--------|-------------|-------------|
-| `it.containingClass()` | `ScriptPsiClassContext?` | Get the containing class |
-| `it.defineClass()` | `ScriptPsiClassContext?` | Alias for containingClass() |
+| `it.containingClass()` | `ScriptPsiClassContext?` | The class currently being exported |
+| `it.defineClass()` | `ScriptPsiClassContext?` | The class that originally declared the method (differs from containingClass() for inherited methods) |
 
 ### Method Properties
 
@@ -183,8 +187,8 @@ Available when `it` is a `ScriptPsiFieldContext` (field rules):
 
 | Method | Return Type | Description |
 |--------|-------------|-------------|
-| `it.containingClass()` | `ScriptPsiClassContext?` | Get the containing class |
-| `it.defineClass()` | `ScriptPsiClassContext?` | Alias for containingClass() |
+| `it.containingClass()` | `ScriptPsiClassContext?` | The class currently being exported |
+| `it.defineClass()` | `ScriptPsiClassContext?` | The class that originally declared the field (differs from containingClass() for inherited fields) |
 
 ### Field Properties
 
@@ -257,6 +261,20 @@ Available when `it` is a `ScriptTypeContext`:
 |--------|-------------|-------------|
 | `it.methods()` | `Array<ScriptPsiMethodContext>` | Get all methods |
 | `it.fields()` | `Array<ScriptPsiFieldContext>` | Get all fields |
+
+### Class identity in rule scripts
+
+When you compare or branch on class identity in a rule, keep the following in
+mind:
+
+- Use `qualifiedName()` for fully-qualified-name or package comparisons
+  (e.g. `it.containingClass()?.qualifiedName().startsWith("com.example.")`).
+  On a class context, `name()` returns only the **simple** name.
+- `containingClass()` is the class currently being exported, while
+  `defineClass()` is the class that originally declared the member — they
+  differ for inherited methods and fields.
+- Prefer `?.` null-safe navigation (e.g. `it.containingClass()?.qualifiedName()`)
+  because `containingClass()` / `defineClass()` can return `null`.
 
 ## Examples
 

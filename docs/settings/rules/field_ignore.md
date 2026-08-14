@@ -22,3 +22,10 @@ public class User {
     private String password;  // This field will be ignored
 }
 ```
+
+## Ignore fields from a base class
+
+```properties
+# Ignore fields declared by a specific base class
+field.ignore=groovy:it.defineClass()?.qualifiedName()=="com.example.dto.TraceBean"
+```

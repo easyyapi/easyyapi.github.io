@@ -44,13 +44,14 @@ EasyYapi 3.2 使用 **Features** 标签页统一管理扩展点的启用状态�
 
 | 分区 | 控制内容 |
 |------|----------|
+| **API Features** | API 扫描（总开关，默认开启），包含嵌套的自动 API 扫描（默认开启）和并发 API 扫描（默认关闭），以及编辑器集成（行标记图标，默认开启，依赖 API 扫描）。 |
 | **Framework Support** | Feign、JAX-RS、Actuator、gRPC 和 Custom 等框架识别器。 |
 | **Export Channels** | YApi、Postman、Markdown、cURL、HttpClient、Hoppscotch (Beta) 和 OpenAPI (Beta) 等导出渠道。实验性渠道默认关闭。 |
 | **Field Format Channels** | JSON、JSON5、Properties、YAML 等字段格式化渠道。 |
 
-大部分框架识别器、导出渠道、字段格式化渠道和扩展配置都可以在 Settings 中启用或关闭。General 标签页还提供 API 扫描、自动/并发扫描和编辑器行标记等开关。
+大部分框架识别器、导出渠道、字段格式化渠道和扩展配置都可以在 Settings 中启用或关闭。API 扫描、自动/并发扫描和编辑器集成现在在 **Features** 标签页（API Features 分组）中控制。**Features** 标签页中的 **API Scanning** 开关是 API 发现的总开关。功能更改立即生效，无需重启 IDE。
 
-General 标签页中的 **Enable API scanning** 是 API 发现的总开关。关闭后，自动扫描、并发扫描和 API 行标记都会被关闭。
+关闭自动 API 扫描后，手动重新扫描仍然可用。禁用 API 扫描会自动禁用自动 API 扫描、并发 API 扫描和编辑器集成。
 
 ## cURL
 
@@ -74,6 +75,20 @@ cURL 设置页控制变量渲染，以及批量导出和 Dashboard **Copy as cUR
 OpenAPI 导出默认关闭。通过 **Features** 启用后，OpenAPI 设置页可以选择 **JSON**、**YAML** 或 **Ask each export**。默认文件名为 `openapi.json` 和 `openapi.yaml`。
 
 文档级元数据通过 `openapi.info.title`、`openapi.info.version`、`openapi.info.description` 和 `openapi.server.url` 规则配置，也兼容旧的 `openapi.host`。详见[导出到 OpenAPI](/zh/guide/export-openapi)。
+
+## Markdown
+
+Markdown 设置标签页是一个持久化的渠道标签页，用于控制 Markdown 导出所用的模板。这些设置在每次导出时复用——导出对话框只询问输出目录和文件名。
+
+| 设置项 | 说明 |
+|--------|------|
+| **Template File（模板文件）** | 本地模板文件路径（`.tpl` 或 `.md.tpl`）。 |
+| **Template URL（模板 URL）** | 提供模板的远程 `http(s)` URL。响应会被缓存 10 分钟；**不**跟随重定向。 |
+| **Language（语言）** | 内置语言模板的下拉框（如 `zh-CN`、`ja`、`en`）。选择某个内置语言即以该语言模板渲染文档。 |
+| **Show inline template（显示内联模板）** | 切换内联模板编辑器——一个多行文本框，可直接输入模板内容。 |
+| **Copy default template（复制默认模板）** | 将内置默认模板保存到文件，作为编辑起点。 |
+
+模板解析顺序与 `markdown.template*` 配置规则详见[导出到 Markdown](/zh/guide/export2markdown)。
 
 ## Custom 框架
 

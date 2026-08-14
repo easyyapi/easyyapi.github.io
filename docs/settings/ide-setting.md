@@ -44,13 +44,14 @@ In EasyYapi 3.2, the **Features** tab is the single place to enable or disable e
 
 | Section | What it controls |
 |---------|------------------|
+| **API Features** | API Scanning (master switch, default on), with nested Automatic API Scanning (default on) and Concurrent API Scanning (default off), plus Editor Integration (gutter icons/line markers, default on, requires API Scanning). |
 | **Framework Support** | Framework recognizers such as Feign, JAX-RS, Actuator, gRPC, and Custom. |
 | **Export Channels** | YApi, Postman, Markdown, cURL, HttpClient, Hoppscotch (Beta), and OpenAPI (Beta). Experimental channels are disabled by default. |
 | **Field Format Channels** | Field serializers such as JSON, JSON5, Properties, and YAML. |
 
-Most framework recognizers, export channels, field-format channels, and extension configs can be enabled or disabled from Settings. The General tab provides additional switches for API scanning, automatic/concurrent scanning, and editor gutter navigation.
+Most framework recognizers, export channels, field-format channels, and extension configs can be enabled or disabled from Settings. API scanning, automatic/concurrent scanning, and editor integration are now controlled from the **Features** tab (API Features group). The **API Scanning** toggle in the Features tab is the master switch for API discovery. Features take effect immediately without restarting the IDE.
 
-The **Enable API scanning** checkbox in the General tab is the master switch for API discovery. When it is off, automatic scanning, concurrent scanning, and the API gutter icon are all disabled.
+Manual rescan stays available even when Automatic API Scanning is turned off. Disabling API Scanning automatically disables Automatic API Scanning, Concurrent API Scanning, and Editor Integration.
 
 ## cURL
 
@@ -74,6 +75,23 @@ The export dialog exposes the formatting and pre-request-script options as per-e
 OpenAPI export is disabled by default. After enabling it in **Features**, the OpenAPI settings tab lets you choose **JSON**, **YAML**, or **Ask each export**. The default file names are `openapi.json` and `openapi.yaml`.
 
 Document-level metadata is configured with `openapi.info.title`, `openapi.info.version`, `openapi.info.description`, and `openapi.server.url` rules. The legacy `openapi.host` rule is also supported. See [Export to OpenAPI](/guide/export-openapi).
+
+## Markdown
+
+The Markdown settings tab is a persistent channel tab that controls the
+template used by Markdown export. These settings are reused across every
+export — the export dialog only asks for Output Directory and File Name.
+
+| Setting | Description |
+|---------|-------------|
+| **Template File** | Path to a local template file (`.tpl` or `.md.tpl`). |
+| **Template URL** | Remote `http(s)` URL serving a template. Responses are cached for 10 minutes; redirects are **not** followed. |
+| **Language** | Combo box of bundled locale templates (e.g. `zh-CN`, `ja`, `en`). Selecting a bundled locale renders the document with that locale's template. |
+| **Show inline template** | Toggles the inline template editor — a multi-line text area for entering template content directly. |
+| **Copy default template** | Saves the bundled default template to a file so you can edit it as a starting point. |
+
+See [Export to Markdown](/guide/export2markdown) for the template resolution
+order and the `markdown.template*` config rules.
 
 ## Custom framework
 
