@@ -41,4 +41,4 @@ EasyYapi 3.x 提供 **两种方式** 编写规则。两者都写入 `.easyapi/*.
 - **项目规则 (3.0+)**: `<project>/.easyapi/*.rules`
 - **全局规则 (3.0+)**: `~/.easyapi/*.rules`
 - **传统项目配置**: `.easy.api.config`（仍会被读取以保持向后兼容）
-- **远程**：通过 `remote.url` 配置
+- **远程**：在 Settings → Rules → Remote 中配置

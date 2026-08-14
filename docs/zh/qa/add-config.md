@@ -20,11 +20,9 @@ your-project/
 
 ## 方式二：远程配置
 
-在本地配置文件中配置远程 URL：
+在 **Settings → EasyApi → Rules → Remote** 中配置远程配置 URL。也可以在规则文件中使用 `###include` 指令拉取远程配置。
 
-```properties
-remote.url=http://your-config-server.com/easy-api.config
-```
+详见 [远程配置文件](/zh/settings/remote-config)。
 
 ## 配置优先级
 

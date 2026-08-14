@@ -73,7 +73,7 @@ sequence. Higher-priority sources override lower-priority ones for the same key.
 |:---:|---|---|
 | 4 | **Project rules** | `<project>/.easyapi/*` (all regular files) + legacy `.easy.api.config*` walked up from `<project>` |
 | 3 | Extension rules | Bundled framework presets (Spring, Jackson, Validation, Swagger, …) toggleable in Settings → Extensions |
-| 3 | Remote rules | URLs from `remote.url` (Settings → Rules → Remote) |
+| 3 | Remote rules | URLs configured in Settings → Rules → Remote |
 | 2 | Global rules | `~/.easyapi/*` (all regular files) |
 
 Project rules win over everything else; global rules are the lowest-tier

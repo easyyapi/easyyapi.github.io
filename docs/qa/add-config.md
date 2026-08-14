@@ -21,11 +21,9 @@ your-project/
 
 ## Option 2: Remote configuration
 
-Configure a remote URL in the local configuration file:
+Configure remote config URLs in **Settings → EasyApi → Rules → Remote**. You can also pull remote configs from within a rule file using the `###include` directive.
 
-```properties
-remote.url=http://your-config-server.com/easy-api.config
-```
+See [Remote Config File](/settings/remote-config) for details.
 
 ## Configuration priority
 

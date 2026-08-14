@@ -33,11 +33,7 @@ See [Local Config File](./local-file-config).
 
 ### Remote Config File
 
-Configure a remote URL to fetch configuration:
-
-```properties
-remote.url=http://your-config-server.com/easy-api.config
-```
+Configure remote config URLs in **Settings → EasyApi → Rules → Remote**. You can also pull remote configs from within a rule file using the `###include` directive.
 
 See [Remote Config File](./remote-config).
 
@@ -60,7 +56,7 @@ See [IDE Settings](./ide-setting).
 
 1. Project rules — `<project>/.easyapi/` + legacy `.easy.api.config*` walked up from the project root (highest priority)
 2. Extension rules — bundled framework presets (Spring, Jackson, Validation, …)
-3. Remote config — URLs from `remote.url`
+3. Remote config — URLs configured in Settings → Rules → Remote
 4. Global rules — `~/.easyapi/` (lowest priority)
 
 ## Features and channel settings

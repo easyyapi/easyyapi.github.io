@@ -25,7 +25,7 @@ Configuration is merged from several sources by priority (highest first):
 
 1. Project rules — `<project>/.easyapi/` + legacy `.easy.api.config*` walked up from the project root
 2. Extension rules — bundled framework presets (Spring, Jackson, Validation, …)
-3. Remote config — URLs from `remote.url`
+3. Remote config — URLs configured in Settings → Rules → Remote
 4. Global rules — `~/.easyapi/` (lowest priority)
 
 There is no per-module config tier; rule files are resolved from the IntelliJ

@@ -25,7 +25,7 @@ return "default"
 
 1. 工程规则 — `<project>/.easyapi/` + 从工程根目录向上查找的传统 `.easy.api.config*`
 2. 扩展规则 — 内置框架预设（Spring、Jackson、Validation 等）
-3. 远程配置 — 来自 `remote.url` 的 URL
+3. 远程配置 —— 在 Settings → Rules → Remote 中配置的 URL
 4. 全局规则 — `~/.easyapi/`（最低优先级）
 
 不存在按模块划分的配置层；规则文件仅从 IntelliJ 工程根目录解析。

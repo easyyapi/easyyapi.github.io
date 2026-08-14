@@ -41,4 +41,4 @@ EasyYapi 3.x offers **two ways** to author rules. Both write to `.easyapi/*.rule
 - **Project rules (3.0+)**: `<project>/.easyapi/*.rules`
 - **Global rules (3.0+)**: `~/.easyapi/*.rules`
 - **Legacy project config**: `.easy.api.config` (still read for backwards compatibility)
-- **Remote**: configured via `remote.url`
+- **Remote**: configured in Settings → Rules → Remote

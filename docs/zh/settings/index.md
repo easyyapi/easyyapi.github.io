@@ -33,11 +33,7 @@ json.rule.convert=groovy:it.type().name()=="java.util.Date" => java.lang.String
 
 ### 远程配置文件
 
-配置远程 URL 来获取配置：
-
-```properties
-remote.url=http://your-config-server.com/easy-api.config
-```
+在 **Settings → EasyApi → Rules → Remote** 中配置远程配置 URL。也可以在规则文件中使用 `###include` 指令拉取远程配置。
 
 详见 [远程配置文件](./remote-config)。
 
@@ -60,7 +56,7 @@ remote.url=http://your-config-server.com/easy-api.config
 
 1. 工程规则 —— `<project>/.easyapi/` + 从工程根目录向上查找的旧版 `.easy.api.config*`（最高优先级）
 2. 扩展规则 —— 内置框架预设（Spring、Jackson、Validation……）
-3. 远程配置 —— 来自 `remote.url` 的 URL
+3. 远程配置 —— 在 Settings → Rules → Remote 中配置的 URL
 4. 全局规则 —— `~/.easyapi/`（最低优先级）
 
 ## Features 与渠道设置

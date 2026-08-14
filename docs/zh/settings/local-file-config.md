@@ -69,7 +69,7 @@ json.rule.convert=groovy:it.type().name()=="java.util.Date" => java.lang.String
 |:---:|---|---|
 | 4 | **工程规则** | `<project>/.easyapi/*`（全部常规文件）+ 从 `<project>` 向上查找的旧版 `.easy.api.config*` |
 | 3 | 扩展规则 | 内置框架预设（Spring、Jackson、Validation、Swagger……），可在 Settings → Extensions 中开关 |
-| 3 | 远程规则 | 来自 `remote.url` 的 URL（Settings → Rules → Remote） |
+| 3 | 远程规则 | 在 Settings → Rules → Remote 中配置的 URL |
 | 2 | 全局规则 | `~/.easyapi/*`（全部常规文件） |
 
 工程规则优先级最高，全局规则为最低的兜底层。不存在单独的“模块级”配置层。
