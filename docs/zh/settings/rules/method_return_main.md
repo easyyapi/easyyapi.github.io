@@ -7,7 +7,7 @@
 ## 用法
 
 ```properties
-method.return.main[groovy:it.returnType().isExtend("Result")]=data
+method.return.main[groovy:it.returnType().isExtend("com.example.Result")]=data
 ```
 
 这告诉 EasyYapi：对于返回类型继承自 `Result` 的方法，将 `@return` 文档注释附加到名为 `data` 的字段上。
@@ -26,7 +26,7 @@ public Result<Void> process() { ... }
 配合此规则：
 
 ```properties
-method.return.main[groovy:it.returnType().isExtend("Result")]=data
+method.return.main[groovy:it.returnType().isExtend("com.example.Result")]=data
 ```
 
 `@return "处理结果"` 注释将被附加到 `Result` 响应模型中的 `data` 字段上，而非 `Result` 包装类型本身。

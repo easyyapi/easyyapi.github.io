@@ -23,7 +23,6 @@ These methods are available on all context types:
 | Method | Return Type | Description |
 |--------|-------------|-------------|
 | `it.name()` | `String` | Get the element name |
-| `it.getName()` | `String?` | Get the element name (nullable) |
 | `it.doc()` | `String?` | Get the Javadoc/KDoc comment text |
 | `it.doc(tag)` | `String?` | Get a specific doc tag value |
 | `it.docs(tag)` | `List<String>?` | Get all values for a doc tag |
@@ -236,9 +235,7 @@ Available when `it` is a `ScriptTypeContext`:
 | Method | Return Type | Description |
 |--------|-------------|-------------|
 | `it.name()` | `String` | Get full type name (e.g., "java.util.List<java.lang.String>") |
-| `it.getName()` | `String` | Alias for name() |
 | `it.simpleName()` | `String` | Get simple type name (e.g., "List") |
-| `it.getSimpleName()` | `String` | Alias for simpleName() |
 
 ### Type Checking
 

@@ -23,7 +23,6 @@
 | 方法 | 返回类型 | 说明 |
 |--------|-------------|-------------|
 | `it.name()` | `String` | 获取元素名称 |
-| `it.getName()` | `String?` | 获取元素名称（可空） |
 | `it.doc()` | `String?` | 获取 Javadoc/KDoc 注释文本 |
 | `it.doc(tag)` | `String?` | 获取特定文档标签值 |
 | `it.docs(tag)` | `List<String>?` | 获取文档标签的所有值 |
@@ -232,9 +231,7 @@
 | 方法 | 返回类型 | 说明 |
 |--------|-------------|-------------|
 | `it.name()` | `String` | 获取完整类型名（如 "java.util.List<java.lang.String>"） |
-| `it.getName()` | `String` | name() 的别名 |
 | `it.simpleName()` | `String` | 获取简单类型名（如 "List"） |
-| `it.getSimpleName()` | `String` | simpleName() 的别名 |
 
 ### 类型检查
 

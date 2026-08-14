@@ -7,7 +7,7 @@ This is useful for wrapper types like `Result<T>`, where you want the `@return` 
 ## Usage
 
 ```properties
-method.return.main[groovy:it.returnType().isExtend("Result")]=data
+method.return.main[groovy:it.returnType().isExtend("com.example.Result")]=data
 ```
 
 This tells EasyYapi: for methods whose return type extends `Result`, attach the `@return` doc comment to the field named `data`.
@@ -26,7 +26,7 @@ public Result<Void> process() { ... }
 And this rule:
 
 ```properties
-method.return.main[groovy:it.returnType().isExtend("Result")]=data
+method.return.main[groovy:it.returnType().isExtend("com.example.Result")]=data
 ```
 
 The `@return "processed result"` comment will be attached to the `data` field in the `Result` response model, rather than to the `Result` wrapper itself.
