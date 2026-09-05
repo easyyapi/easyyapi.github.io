@@ -7,9 +7,7 @@ EasyYapi 是一个 IntelliJ IDEA 插件，基于 [Javadoc](./docs.md#javadoc)、
 ## 功能特性
 
 - [导出 API 文档](./use.md) —— 从代码生成 Postman、YApi、Markdown、cURL、HttpClient、Hoppscotch、OpenAPI 等格式的文档
-  - [AI 辅助规则编写](/zh/settings/rule-authoring#内置-ai-助手) —— 用自然语言描述需求，助手为你生成规则文件
-- [在 IDEA 中直接发起 API 请求](./call.md) —— 通过编辑器行标记调用端点，并在 API Dashboard 中浏览管理
-  - [Postman 环境同步](./call.md#api-dashboard) —— 将 Postman 环境同步到 API Dashboard，支持内联编辑
+- [在 IDEA 中直接发起 API 请求](./call.md) —— 从编辑器调用端点，并在 API Dashboard 中浏览、测试和管理
 
 ## 开箱即用
 

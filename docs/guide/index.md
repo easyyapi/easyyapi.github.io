@@ -7,9 +7,7 @@ You can get fairly complete API documentation while keeping your code zero-intru
 ## Features
 
 - [Export API documentation](./use.md) — generate ready-to-use docs for Postman, YApi, Markdown, cURL, HttpClient, Hoppscotch, and OpenAPI
-  - [AI-assisted rule authoring](/settings/rule-authoring#built-in-ai-assistant) — describe what you want in natural language; the assistant writes the rule file for you
-- [Call API directly in IDEA](./call.md) — invoke endpoints from the editor via gutter icons and browse them in the API Dashboard
-  - [Postman environment sync](./call.md#api-dashboard) — sync Postman environments to the API Dashboard with inline editing
+- [Call API directly in IDEA](./call.md) — invoke endpoints from the editor and browse, test, and manage them in the API Dashboard
 
 ## Out of the Box
 

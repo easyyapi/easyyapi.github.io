@@ -118,6 +118,24 @@ Right-click on endpoints or folders in the tree to access:
 
 Double-click an endpoint to navigate directly to its source code.
 
+### Postman Environment Sync
+
+Environments can be synchronized **bidirectionally** between EasyYapi and Postman, so a host or token defined once is available in both places.
+
+Sync lives on the environment selector inside the dashboard:
+
+- Click the **Sync ▼** button in the inline environment panel, or right-click the environment dropdown and choose an action from the menu
+- **Push to Postman** — push the current project environment and its variables to Postman
+- **Pull from Postman** — pull a Postman environment into the project (the local environment list refreshes afterwards)
+
+Both actions require a **Postman API token** configured in settings; until then the sync actions stay disabled. When pulling an environment whose name already exists locally, you resolve the conflict:
+
+| Strategy | Behavior |
+|----------|----------|
+| **Replace** | Local variables are replaced by the Postman values |
+| **Merge** | Postman values win for keys present in both; local-only keys are kept |
+| **Skip** | Leave the local environment untouched |
+
 ### Auto-save
 
 User modifications to request parameters, headers, host, and body are automatically saved and restored when you revisit the same endpoint.
