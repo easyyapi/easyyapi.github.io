@@ -44,5 +44,12 @@ field.doc[@kotlin.Deprecated]=groovy:"\n「已废弃」" + it.ann("kotlin.Deprec
 - 忽略 `java.lang` 系统类的字段
 - 忽略 `transient` 字段
 - 忽略 `serialVersionUID`
-- 只保留 `private`/`protected` 字段
 - 忽略常见系统类型（`Class`、`ClassLoader`、`Thread`、`ThreadLocal` 等）
+
+::: tip public 字段现在会被导出
+v3.2.4 之前，`field-utils` 扩展带有一条一刀切的规则，会丢弃所有非 `private` 或 `protected` 的字段，导致通过 public 字段暴露业务数据的 DTO（例如查询参数 DTO）导出后请求体为空。该规则已删除——public 和包级私有字段现在与 private 字段一样会被导出。如需恢复旧行为，请在规则文件中加入：
+
+```properties
+field.ignore=groovy:!(it.hasModifier("private")||it.hasModifier("protected"))
+```
+:::

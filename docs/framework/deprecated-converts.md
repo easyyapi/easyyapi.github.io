@@ -44,5 +44,12 @@ The `field-utils` extension (enabled by default) provides sensible defaults for 
 - Ignore fields from `java.lang` system classes
 - Ignore `transient` fields
 - Ignore `serialVersionUID`
-- Only keep `private`/`protected` fields
 - Ignore common system types (`Class`, `ClassLoader`, `Thread`, `ThreadLocal`, etc.)
+
+::: tip Public fields are exported
+Before v3.2.4 the `field-utils` extension carried a blanket rule that dropped every field that was not `private` or `protected`, so DTOs exposing business data through public fields (query-param DTOs, for example) were exported with an empty body. That rule has been removed — public and package-private fields are now exported like private ones. To restore the old behaviour, add this to a rule file:
+
+```properties
+field.ignore=groovy:!(it.hasModifier("private")||it.hasModifier("protected"))
+```
+:::

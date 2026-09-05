@@ -86,6 +86,28 @@ For teams that drive rule authoring from an external AI tool — a terminal-base
 
 Because the skill and the in-IDE assistant share the same knowledge base, a rule authored by one is immediately understood and editable by the other.
 
+## Troubleshooting
+
+### An export comes back empty or misses endpoints
+
+Since v3.2.4, rules that throw while an endpoint is evaluated are collected and surfaced as **one warning notification at the end of the export run**, instead of silently skipping the endpoint. If an export returns fewer APIs than expected, read that notification; the per-occurrence stack traces are in the IDE log (**Help → Show Log in…**).
+
+The usual cause is a Groovy script calling context API that does not exist on that context kind — for example `it.static` as a property instead of the `it.isStatic()` method, or `canonicalText()` on a parameter context (it returns the element path, not the parameter type). See [`it`](./tools/it) for the methods each context exposes.
+
+Well-behaved rules are unaffected: no failure means no notification. Dashboard scans performed outside an export run are logged per occurrence but never ballooned.
+
+### Proposals are dry-run before they are staged
+
+Proposed Groovy values and filters are executed once against representative PSI contexts before a proposal is shown to you. A compile error or an API miss on **every** context kind blocks the proposal outright; failures on only some context kinds are attached to the proposal as reviewer notes so you can decide.
+
+### Non-ASCII text in rule files
+
+Rule files are read and written as UTF-8. If Chinese or other non-ASCII text appears garbled in the rule editor, re-save the file as UTF-8 — earlier releases could misinterpret the platform default encoding on read and write.
+
+### Rule files are resolved relative to the project
+
+The assistant addresses rule files by **name** (e.g. `security.rules`) and resolves them relative to the project directory. Reading a file outside the tracked `.easyapi/` folders still requires an inline approve/reject prompt.
+
 ## Workflow and multi-application guidance
 
 The newer rule-authoring agent can inspect resolved type names and method bodies, retry a failed chat turn, and isolate independent tasks in sub-agents. These capabilities improve detection, but the proposed rule still requires your review and explicit approval before it is saved.

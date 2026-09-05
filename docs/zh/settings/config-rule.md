@@ -19,6 +19,22 @@ it.name() + " - 自定义后缀"
 ```
 ````
 
+## 值格式
+
+引擎**根据值的形态**决定如何求值，而不是根据键——不存在"某个键固定某种执行模式"的说法。同一个键可以用下面任意一种格式书写，选择依据是：值是静态的、已经存在于元素上，还是需要从项目代码中计算得出。
+
+| 格式 | 含义 | 示例 |
+|------|------|------|
+| *（字面量）* | 值原样注入（默认）；多行值使用三反引号 | `field.ignore=true` |
+| `groovy:` | 以 `it` 上下文执行 Groovy 脚本，脚本**返回值**作为规则值 | `method.additional.header=groovy: it.name()` |
+| `@Fqn` / `@Fqn#attr` | 从元素上的**注解**取值（默认取 `value()` 属性） | `method.doc=@io.swagger.v3.oas.annotations.Operation#description` |
+| `#tag` | 从元素上的 **JavaDoc/KDoc 标签**取值 | `method.return=#return` |
+| `${n}` | 替换为 `#regex:` 过滤器捕获的分组 | `json.rule.convert[#regex:ApiResult<(.*?)>]=${1}` |
+
+::: warning 过滤器与值的区别
+不要混淆 `[...]` 中的**过滤器**标记（`$class:`、`@`、`#tag`、`#regex:`、`!`）——它们决定规则**是否生效**；与**值位置**上相同的 `@` / `#` 标记——它们决定值从元素的**哪里**取值。
+:::
+
 ## API 规则
 
 | 规则 | 说明 |

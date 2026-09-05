@@ -19,6 +19,22 @@ it.name() + " - custom suffix"
 ```
 ````
 
+## Value Formats
+
+The engine decides how a value is evaluated **by the value's shape**, not by the key — there is no per-key execution mode. The same key can be written in any of the formats below; pick by whether the value is static, already present on the element, or must be computed from project code.
+
+| Format | Meaning | Example |
+|--------|---------|---------|
+| *(literal)* | Value injected as-is (default); multi-line values in triple backticks | `field.ignore=true` |
+| `groovy:` | Run a Groovy script with the `it` context; its **result** becomes the value | `method.additional.header=groovy: it.name()` |
+| `@Fqn` / `@Fqn#attr` | Pull a value from an **annotation** on the element (default attribute `value()`) | `method.doc=@io.swagger.v3.oas.annotations.Operation#description` |
+| `#tag` | Pull a value from a **JavaDoc/KDoc tag** on the element | `method.return=#return` |
+| `${n}` | Substituted with a `#regex:` filter's captured groups | `json.rule.convert[#regex:ApiResult<(.*?)>]=${1}` |
+
+::: warning Filters vs. values
+Do not confuse the **filter** tokens (`$class:`, `@`, `#tag`, `#regex:`, `!`) inside `[...]`, which decide *whether* a rule applies, with the same `@` / `#` tokens in the **value** position, which *source* the value from the element.
+:::
+
 ## API Rules
 
 | Rule | Description |

@@ -98,7 +98,7 @@ Available when `it` is a `ScriptPsiClassContext` (class rules):
 
 | Method | Return Type | Description |
 |--------|-------------|-------------|
-| `it.isExtend(superClass)` | `Boolean` | Check if extends/implements a class |
+| `it.isExtend(superClass)` | `Boolean` | Check if extends/implements a class — `superClass` must be a **fully qualified name** |
 | `it.isMap()` | `Boolean` | Check if is a Map type |
 | `it.isCollection()` | `Boolean` | Check if is a Collection type |
 | `it.isArray()` | `Boolean` | Check if is an array type |
@@ -241,7 +241,7 @@ Available when `it` is a `ScriptTypeContext`:
 
 | Method | Return Type | Description |
 |--------|-------------|-------------|
-| `it.isExtend(superClass)` | `Boolean` | Check if extends a class |
+| `it.isExtend(superClass)` | `Boolean` | Check if extends a class — `superClass` must be a **fully qualified name** |
 | `it.isMap()` | `Boolean` | Check if is a Map type |
 | `it.isCollection()` | `Boolean` | Check if is a Collection type |
 | `it.isArray()` | `Boolean` | Check if is an array type |
@@ -251,6 +251,10 @@ Available when `it` is a `ScriptTypeContext`:
 | `it.isInterface()` | `Boolean` | Check if is an interface |
 | `it.isAnnotationType()` | `Boolean` | Check if is an annotation type |
 | `it.isEnum()` | `Boolean` | Check if is an enum |
+
+::: warning isExtend() needs a fully qualified name
+`isExtend()` matches fully qualified names only. `type.isExtend("java.lang.Number")` works; `type.isExtend("Number")` never matches and silently returns `false`, which makes rules such as `method.return.main[groovy:it.returnType().isExtend("Result")]=data` look inert with no error.
+:::
 
 ### Members
 
@@ -267,6 +271,10 @@ mind:
 - Use `qualifiedName()` for fully-qualified-name or package comparisons
   (e.g. `it.containingClass()?.qualifiedName().startsWith("com.example.")`).
   On a class context, `name()` returns only the **simple** name.
+- `isExtend()` matches **fully qualified names only** — it delegates to
+  `InheritanceHelper.isInheritor`, so a simple name silently never matches.
+  Write `it.isExtend("com.example.Result")`; `it.isExtend("Result")` always
+  returns `false`.
 - `containingClass()` is the class currently being exported, while
   `defineClass()` is the class that originally declared the member — they
   differ for inherited methods and fields.

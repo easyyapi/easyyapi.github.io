@@ -94,7 +94,7 @@
 
 | 方法 | 返回类型 | 说明 |
 |--------|-------------|-------------|
-| `it.isExtend(superClass)` | `Boolean` | 检查是否继承/实现某个类 |
+| `it.isExtend(superClass)` | `Boolean` | 检查是否继承/实现某个类 —— `superClass` 必须是**全限定名** |
 | `it.isMap()` | `Boolean` | 检查是否是 Map 类型 |
 | `it.isCollection()` | `Boolean` | 检查是否是 Collection 类型 |
 | `it.isArray()` | `Boolean` | 检查是否是数组类型 |
@@ -237,7 +237,7 @@
 
 | 方法 | 返回类型 | 说明 |
 |--------|-------------|-------------|
-| `it.isExtend(superClass)` | `Boolean` | 检查是否继承某个类 |
+| `it.isExtend(superClass)` | `Boolean` | 检查是否继承某个类 —— `superClass` 必须是**全限定名** |
 | `it.isMap()` | `Boolean` | 检查是否是 Map 类型 |
 | `it.isCollection()` | `Boolean` | 检查是否是 Collection 类型 |
 | `it.isArray()` | `Boolean` | 检查是否是数组类型 |
@@ -247,6 +247,10 @@
 | `it.isInterface()` | `Boolean` | 检查是否是接口 |
 | `it.isAnnotationType()` | `Boolean` | 检查是否是注解类型 |
 | `it.isEnum()` | `Boolean` | 检查是否是枚举 |
+
+::: warning isExtend() 必须使用全限定名
+`isExtend()` 只匹配全限定名。`type.isExtend("java.lang.Number")` 有效；`type.isExtend("Number")` 永远不会匹配，只会静默返回 `false`，导致诸如 `method.return.main[groovy:it.returnType().isExtend("Result")]=data` 这样的规则看起来毫无效果且没有任何报错。
+:::
 
 ### 成员
 
