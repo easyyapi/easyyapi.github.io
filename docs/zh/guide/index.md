@@ -6,8 +6,9 @@ EasyYapi 是一个 IntelliJ IDEA 插件，基于 [Javadoc](./docs.md#javadoc)、
 
 ## 功能特性
 
-- [导出 API 文档](./use.md) —— 从代码生成 Postman、YApi、Markdown、cURL、HttpClient、Hoppscotch、OpenAPI 等格式的文档
-- [在 IDEA 中直接发起 API 请求](./call.md) —— 从编辑器调用端点，并在 API Dashboard 中浏览、测试和管理
+- [导出 API 文档](./use.md) —— 从代码生成 Postman、YApi、Markdown、cURL、HttpClient、Hoppscotch、OpenAPI、ApiPost 等格式的文档
+- [在 IDEA 中直接发起 API 请求](./call.md) —— 从编辑器调用端点，并在 API Explorer 中浏览、测试和管理
+- [复制 API 地址](./use.md#复制-api-地址) —— 按 `METHOD /path` 格式逐个复制所选端点的地址
 
 ## 开箱即用
 
@@ -21,9 +22,9 @@ EasyApi 开箱即用地支持标准 HTTP 框架（Spring MVC、WebFlux、JAX-RS�
 |------|---------|---------|
 | 语言 | Java, Kotlin | Scala |
 | Web 框架 | [Spring](https://spring.io/)、[Spring WebFlux](https://docs.spring.io/spring-framework/reference/web/webflux.html)、[Feign](https://spring.io/projects/spring-cloud-openfeign)、[JAX-RS](https://www.oracle.com/technical-resources/articles/java/jax-rs.html) ([Quarkus](https://quarkus.io/) / [Jersey](https://eclipse-ee4j.github.io/jersey/))、[gRPC](https://grpc.io/) | - |
-| 导出渠道 | [Postman](./export2postman.md)、[YApi](./export2yapi.md)、[Markdown](./export2markdown.md)、[cURL](./export2curl.md)、[HttpClient](./export2httpclient.md)、[Hoppscotch](./export-hoppscotch.md)、[OpenAPI](./export-openapi.md) | - |
+| 导出渠道 | [Postman](./export2postman.md)、[YApi](./export2yapi.md)、[Markdown](./export2markdown.md)、[cURL](./export2curl.md)、[HttpClient](./export2httpclient.md)、[Hoppscotch](./export-hoppscotch.md)、[OpenAPI](./export-openapi.md)、[ApiPost](./export-apipost.md) | - |
 | 常用框架 | javax.validation、Jakarta Validation、Jackson、Gson | [Swagger](https://swagger.io/)、Fastjson |
-| 功能特性 | [API 调用](./call.md)、[API Dashboard](./call.md#api-dashboard)、[编辑器行标记导航](./call.md#编辑器行标记导航)、[脚本执行器](./script-executor.md)、[AI 辅助规则编写](/zh/settings/rule-authoring) | Spring Actuator |
+| 功能特性 | [API 调用](./call.md)、[API Explorer](./call.md#api-explorer)、[Search Everywhere](./call.md#search-everywhere)、[编辑器行标记导航](./call.md#编辑器行标记导航)、[脚本执行器](./script-executor.md)、[AI 辅助规则编写](/zh/settings/rule-authoring) | Spring Actuator |
 
 ## 社区
 

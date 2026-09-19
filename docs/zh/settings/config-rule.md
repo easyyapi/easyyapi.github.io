@@ -175,6 +175,17 @@ it.name() + " - 自定义后缀"
 | `hopp.test`、`hopp.class.test`、`hopp.collection.test` | 接口、类、集合级响应测试 |
 | `hopp.format.after` | 集合格式化后执行的事件 |
 
+### ApiPost
+
+| 规则 | 说明 |
+|------|-------------|
+| `apipost.project` | 目标项目 id，覆盖 ApiPost 设置中配置的项目 |
+| `apipost.host` | ApiPost 开放接口地址覆盖；仅用于拼装开放接口请求 |
+| `apipost.server.url` | 被导出 API 的基础地址，写入文档的 host/base_path |
+| `apipost.export.before` | 导出开始前触发一次的事件 |
+| `apipost.save.before` | 推送单个接口前触发，`document` 绑定可被修改 |
+| `apipost.save.after` | 推送单个接口后触发，暴露 `content` 与 `result` |
+
 ### Custom 框架
 
 Custom 是默认关闭的框架，提取逻辑由 `custom.*` 规则控制。主要规则包括 `custom.class.is.api`、`custom.method.is.api`、`custom.http.method`、`custom.path` 和 `custom.param.*` 绑定/命名规则；同时提供 `custom.class.parse.before`、`custom.class.parse.after`、`custom.method.parse.before`、`custom.method.parse.after` 和 `custom.export.after` 生命周期钩子。

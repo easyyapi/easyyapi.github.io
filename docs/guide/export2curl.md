@@ -58,7 +58,7 @@ The cURL export dialog can override the saved cURL defaults for each export:
 - Use long flags such as `--request`, `--header`, and `--data` instead of short flags
 - Append a response body example as a comment when one is available
 
-The Dashboard **Copy as cURL** action uses the saved formatting options. You can also configure whether it uses the endpoint as edited in the Dashboard or the original source endpoint.
+The API Explorer **Copy as cURL** action uses the saved formatting options. You can also configure whether it uses the endpoint as edited in the API Explorer or the original source endpoint.
 
 ## Pre-request scripts
 

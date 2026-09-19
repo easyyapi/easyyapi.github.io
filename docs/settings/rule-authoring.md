@@ -94,7 +94,7 @@ Since v3.2.4, rules that throw while an endpoint is evaluated are collected and 
 
 The usual cause is a Groovy script calling context API that does not exist on that context kind — for example `it.static` as a property instead of the `it.isStatic()` method, or `canonicalText()` on a parameter context (it returns the element path, not the parameter type). See [`it`](./tools/it) for the methods each context exposes.
 
-Well-behaved rules are unaffected: no failure means no notification. Dashboard scans performed outside an export run are logged per occurrence but never ballooned.
+Well-behaved rules are unaffected: no failure means no notification. API Explorer scans performed outside an export run are logged per occurrence but never ballooned.
 
 ### Proposals are dry-run before they are staged
 

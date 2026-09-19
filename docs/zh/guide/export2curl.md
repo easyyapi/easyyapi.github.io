@@ -58,7 +58,7 @@ cURL 导出对话框可以针对本次导出覆盖已保存的 cURL 默认值：
 - 使用 `--request`、`--header`、`--data` 等长参数名代替短参数
 - 有可用响应时，将响应体示例追加为注释
 
-Dashboard 中的 **Copy as cURL** 会使用已保存的格式化选项，也可以配置它使用 Dashboard 中编辑后的接口，还是使用源代码中的原始接口。
+API Explorer 中的 **Copy as cURL** 会使用已保存的格式化选项，也可以配置它使用 API Explorer 中编辑后的接口，还是使用源代码中的原始接口。
 
 ## 请求前脚本
 

@@ -6,8 +6,9 @@ You can get fairly complete API documentation while keeping your code zero-intru
 
 ## Features
 
-- [Export API documentation](./use.md) — generate ready-to-use docs for Postman, YApi, Markdown, cURL, HttpClient, Hoppscotch, and OpenAPI
-- [Call API directly in IDEA](./call.md) — invoke endpoints from the editor and browse, test, and manage them in the API Dashboard
+- [Export API documentation](./use.md) — generate ready-to-use docs for Postman, YApi, Markdown, cURL, HttpClient, Hoppscotch, OpenAPI, and ApiPost
+- [Call API directly in IDEA](./call.md) — invoke endpoints from the editor and browse, test, and manage them in the API Explorer
+- [Copy an API URL](./use.md#copy-an-api-url) — copy the `METHOD /path` address of every endpoint in a selection
 
 ## Out of the Box
 
@@ -23,7 +24,7 @@ Most plugin capabilities can be enabled or disabled from **Settings** > **Other 
 | Web Framework | [Spring](https://spring.io/), [Spring WebFlux](https://docs.spring.io/spring-framework/reference/web/webflux.html), [Feign](https://spring.io/projects/spring-cloud-openfeign), [JAX-RS](https://www.oracle.com/technical-resources/articles/java/jax-rs.html) ([Quarkus](https://quarkus.io/) / [Jersey](https://eclipse-ee4j.github.io/jersey/)), [gRPC](https://grpc.io/) | - |
 | Export Channels | [Postman](./export2postman.md), [YApi](./export2yapi.md), [Markdown](./export2markdown.md), [cURL](./export2curl.md), [HttpClient](./export2httpclient.md), [Hoppscotch](./export-hoppscotch.md), [OpenAPI](./export-openapi.md) | - |
 | Common Frameworks | javax.validation, Jakarta Validation, Jackson, Gson | [Swagger](https://swagger.io/), Fastjson |
-| Features | [API Call](./call.md), [API Dashboard](./call.md#api-dashboard), [Gutter Icon Navigation](./call.md#gutter-icon-navigation), [Script Executor](./script-executor.md), [AI-assisted Rule Authoring](/settings/rule-authoring) | Spring Actuator |
+| Features | [API Call](./call.md), [API Explorer](./call.md#api-explorer), [Search Everywhere](./call.md#search-everywhere), [Gutter Icon Navigation](./call.md#gutter-icon-navigation), [Script Executor](./script-executor.md), [AI-assisted Rule Authoring](/settings/rule-authoring) | Spring Actuator |
 
 ## Community
 

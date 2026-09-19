@@ -44,9 +44,9 @@ EasyYapi 3.2 使用 **Features** 标签页统一管理扩展点的启用状态�
 
 | 分区 | 控制内容 |
 |------|----------|
-| **API Features** | API 扫描（总开关，默认开启），包含嵌套的自动 API 扫描（默认开启）和并发 API 扫描（默认关闭），以及编辑器集成（行标记图标，默认开启，依赖 API 扫描）。 |
+| **API Features** | API 扫描（总开关，默认开启），包含嵌套的自动 API 扫描（默认开启）和并发 API 扫描（默认关闭），以及编辑器集成（行标记图标，默认开启，依赖 API 扫描）。**Copy API URL**（默认开启）和 **Search Everywhere**（默认开启）这两个入口也在这一组——它们都不依赖 API 扫描，因为两者读取的都是保留的 API 索引，即使关闭了 API 扫描，API Explorer 的刷新也会重新填充该索引。 |
 | **Framework Support** | Feign、JAX-RS、Actuator、gRPC 和 Custom 等框架识别器。 |
-| **Export Channels** | YApi、Postman、Markdown、cURL、HttpClient、Hoppscotch (Beta) 和 OpenAPI (Beta) 等导出渠道。实验性渠道默认关闭。 |
+| **Export Channels** | YApi、Postman、Markdown、cURL、HttpClient、Hoppscotch (Beta)、OpenAPI (Beta) 和 ApiPost (Beta) 等导出渠道。实验性渠道默认关闭。 |
 | **Field Format Channels** | JSON、JSON5、Properties、YAML 等字段格式化渠道。 |
 
 大部分框架识别器、导出渠道、字段格式化渠道和扩展配置都可以在 Settings 中启用或关闭。API 扫描、自动/并发扫描和编辑器集成现在在 **Features** 标签页（API Features 分组）中控制。**Features** 标签页中的 **API Scanning** 开关是 API 发现的总开关。功能更改立即生效，无需重启 IDE。
@@ -55,12 +55,12 @@ EasyYapi 3.2 使用 **Features** 标签页统一管理扩展点的启用状态�
 
 ## cURL
 
-cURL 设置页控制变量渲染，以及批量导出和 Dashboard **Copy as cURL** 使用的默认值：
+cURL 设置页控制变量渲染，以及批量导出和 API Explorer **Copy as cURL** 使用的默认值：
 
 | 设置项 | 说明 |
 |--------|------|
 | **Render mode** | 保留占位符、使用当前环境解析，或每次导出询问。环境值优先于配置读取器的值。 |
-| **Copy from edited** | 复制 cURL 时使用 Dashboard 中编辑后的接口，而不是源代码接口。 |
+| **Copy from edited** | 复制 cURL 时使用 API Explorer 中编辑后的接口，而不是源代码接口。 |
 | **Include comments and section dividers** | 在批量脚本中添加接口标题和分隔线。 |
 | **Pretty-print JSON body** | 为 JSON 请求体添加缩进。 |
 | **Multi-line format** | 每行输出一个 cURL 参数。 |
@@ -75,6 +75,19 @@ cURL 设置页控制变量渲染，以及批量导出和 Dashboard **Copy as cUR
 OpenAPI 导出默认关闭。通过 **Features** 启用后，OpenAPI 设置页可以选择 **JSON**、**YAML** 或 **Ask each export**。默认文件名为 `openapi.json` 和 `openapi.yaml`。
 
 文档级元数据通过 `openapi.info.title`、`openapi.info.version`、`openapi.info.description` 和 `openapi.server.url` 规则配置，也兼容旧的 `openapi.host`。详见[导出到 OpenAPI](/zh/guide/export-openapi)。
+
+## ApiPost (Beta)
+
+与其它 beta 渠道一样，ApiPost 默认关闭。通过 **Features** 启用后，设置中会出现 ApiPost 标签页：
+
+| 设置项 | 作用域 | 说明 |
+|---------|--------|-------------|
+| **Server** | Application | ApiPost 开放接口地址，默认 `https://open.apipost.net`。仅用于拼装开放接口请求。 |
+| **Token** | Application | ApiPost 开放接口 token，以 `api-token` 请求头发送。缺少它会退化为写出文件。 |
+| **Team** | — | 该 token 可访问的团队。点击 **Load**（或修改 token）拉取。 |
+| **Project** | Project | 目标项目。点击 **Refresh** 列出所选团队的项目。 |
+
+项目 id 刻意按仓库保存——若作用域为整个应用，它会在仓库之间串用，把某个仓库的接口静默推送到另一个仓库的项目里，而且没有任何提示。详见[导出到 ApiPost](/zh/guide/export-apipost)。
 
 ## Markdown
 

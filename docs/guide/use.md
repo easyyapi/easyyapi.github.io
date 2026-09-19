@@ -28,4 +28,12 @@ See [Call API](./call.md) for more details.
 
 Since v3.2.0, EasyYapi respects method-level selection when exporting. Select one or more methods in the editor (either by caret or by selecting a text range that spans them) before triggering an export — only the endpoints whose source method matches (or overrides) the selection are exported, instead of every endpoint in the containing class.
 
-This works for every export channel (YApi, Postman, Markdown, cURL, HttpClient). If no methods are selected, the whole containing class is exported as before.
+This works for every export channel (YApi, Postman, Markdown, cURL, HttpClient, Hoppscotch, OpenAPI, ApiPost). If no methods are selected, the whole containing class is exported as before.
+
+## Copy an API URL
+
+1. Select one or more methods, a class, or files/folders in the editor or the Project view
+2. Right-click and choose **EasyYapi** > **Copy API URL**
+3. The address of each endpoint in the selection is copied, one per line, as `METHOD /path`
+
+Unlike the API Explorer's **Copy Path**, which copies only the path, **Copy API URL** includes the HTTP method — so `GET /user/{id}` and `PUT /user/{id}` stay distinguishable. It can be turned off in **Features** (`Copy API URL`).

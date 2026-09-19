@@ -72,6 +72,7 @@ function sidebarGuide() {
         { text: '导出到 cURL', link: '/zh/guide/export2curl' },
         { text: '导出到 Hoppscotch (Beta)', link: '/zh/guide/export-hoppscotch' },
         { text: '导出到 OpenAPI (Beta)', link: '/zh/guide/export-openapi' },
+        { text: '导出到 ApiPost (Beta)', link: '/zh/guide/export-apipost' },
         { text: '导出到 HttpClient', link: '/zh/guide/export2httpclient' },
         { text: '导出 RPC 文档', link: '/zh/guide/export-rpc' },
       ],

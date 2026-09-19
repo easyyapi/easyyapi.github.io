@@ -13,7 +13,7 @@ Open **Settings** > **Other Settings** > **EasyApi** > **Features**. Under **Exp
 ## Export
 
 1. Open a file containing API endpoints, or select files/folders in the Project view.
-2. Choose **EasyYapi** > **Export** > **OpenAPI (Beta)**, or use the OpenAPI action from the API Dashboard.
+2. Choose **EasyYapi** > **Export** > **OpenAPI (Beta)**, or use the OpenAPI action from the API Explorer.
 3. Select an output format when prompted, unless a format has already been saved in the OpenAPI settings.
 4. Choose the destination file.
 

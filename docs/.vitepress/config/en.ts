@@ -57,6 +57,7 @@ function sidebarGuide() {
         { text: 'Export to cURL', link: '/guide/export2curl' },
         { text: 'Export to Hoppscotch (Beta)', link: '/guide/export-hoppscotch' },
         { text: 'Export to OpenAPI (Beta)', link: '/guide/export-openapi' },
+        { text: 'Export to ApiPost (Beta)', link: '/guide/export-apipost' },
         { text: 'Export to HttpClient', link: '/guide/export2httpclient' },
         { text: 'Export RPC Doc', link: '/guide/export-rpc' },
       ],

@@ -28,4 +28,12 @@ EasyYapi 支持以下使用方法：
 
 自 v3.2.0 起，EasyYapi 在导出时会尊重方法级选择。在触发导出之前，在编辑器中选中一个或多个方法（通过光标定位或拖选覆盖方法的文本范围）——只会导出源方法匹配（或覆盖）所选方法的端点，而不是包含类中的所有端点。
 
-这对所有导出渠道均生效（YApi、Postman、Markdown、cURL、HttpClient）。若未选中任何方法，则仍按以往行为导出整个包含类。
+这对所有导出渠道均生效（YApi、Postman、Markdown、cURL、HttpClient、Hoppscotch、OpenAPI、ApiPost）。若未选中任何方法，则仍按以往行为导出整个包含类。
+
+## 复制 API 地址
+
+1. 在编辑器或 Project 视图中选中一个或多个方法、一个类，或若干文件/文件夹
+2. 右键选择 **EasyYapi** > **Copy API URL**
+3. 所选范围内每个端点的地址会逐条复制到剪贴板，每行一条，格式为 `METHOD /path`
+
+与 API Explorer 中只复制路径的 **Copy Path** 不同，**Copy API URL** 会带上 HTTP 方法——这样 `GET /user/{id}` 与 `PUT /user/{id}` 才能区分开。可以在 **Features** 中关闭（`Copy API URL`）。

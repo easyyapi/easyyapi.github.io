@@ -13,7 +13,7 @@ EasyYapi 可以将 HTTP 接口导出为 [OpenAPI](https://www.openapis.org/) 3.0
 ## 导出
 
 1. 打开包含 API 的文件，或在 Project 视图中选择文件/文件夹。
-2. 选择 **EasyYapi** > **Export** > **OpenAPI (Beta)**，也可以从 API Dashboard 使用 OpenAPI 操作。
+2. 选择 **EasyYapi** > **Export** > **OpenAPI (Beta)**，也可以从 API Explorer 使用 OpenAPI 操作。
 3. 如果 OpenAPI 设置中没有保存输出格式，按提示选择格式。
 4. 选择目标文件。
 

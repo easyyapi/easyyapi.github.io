@@ -176,6 +176,17 @@ Do not confuse the **filter** tokens (`$class:`, `@`, `#tag`, `#regex:`, `!`) in
 | `hopp.test`, `hopp.class.test`, `hopp.collection.test` | Endpoint, class, and collection response tests |
 | `hopp.format.after` | Event that runs after collection formatting |
 
+### ApiPost
+
+| Rule | Description |
+|------|-------------|
+| `apipost.project` | Target project id; overrides the one configured in the ApiPost settings |
+| `apipost.host` | ApiPost open API base URL override; only ever assembles open API requests |
+| `apipost.server.url` | Base URL of the documented API, written to the document's host/base_path |
+| `apipost.export.before` | Event that fires once before the export starts |
+| `apipost.save.before` | Event that fires before an endpoint is pushed; the `document` binding can be mutated |
+| `apipost.save.after` | Event that fires after an endpoint is pushed; `content` and `result` are exposed |
+
 ### Custom framework
 
 Custom is a disabled-by-default framework whose extraction is controlled by `custom.*` rules. The main keys are `custom.class.is.api`, `custom.method.is.api`, `custom.http.method`, `custom.path`, and the `custom.param.*` binding/name rules. It also provides `custom.class.parse.before`, `custom.class.parse.after`, `custom.method.parse.before`, `custom.method.parse.after`, and `custom.export.after` lifecycle hooks.
