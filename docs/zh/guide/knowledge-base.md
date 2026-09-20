@@ -1,6 +1,6 @@
 # 插件知识库 (AI)
 
-本页为 AI 助手提供知识库，帮助其更好地理解和使用 EasyYapi 插件。它也是规则页签中 **Help** 按钮打开的页面。
+本页为 AI 助手提供知识库，帮助其更好地理解和使用 EasyYapi 插件。它是插件内置知识库的网页镜像——内置助手通过 `get_plugin_doc` 工具读取的正是这些页面，外部的 `easy-yapi-assistant` skill 安装的也是它们。
 
 ## 什么是 EasyYapi？
 

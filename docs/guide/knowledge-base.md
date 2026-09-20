@@ -1,6 +1,6 @@
 # Plugin Knowledge Base (AI)
 
-This page provides a knowledge base for AI assistants to better understand and work with the EasyYapi plugin. It is also the page the Rules tab's **Help** button opens.
+This page provides a knowledge base for AI assistants to better understand and work with the EasyYapi plugin. It mirrors the knowledge base bundled with the plugin — the same pages the in-IDE assistant reads through its `get_plugin_doc` tool, and the pages installed with the external `easy-yapi-assistant` skill.
 
 ## What is EasyYapi?
 
