@@ -30,6 +30,14 @@ Since v3.2.0, EasyYapi respects method-level selection when exporting. Select on
 
 This works for every export channel (YApi, Postman, Markdown, cURL, HttpClient, Hoppscotch, OpenAPI, ApiPost). If no methods are selected, the whole containing class is exported as before.
 
+## Export a Contract Interface
+
+When the mapping annotations (`@RequestMapping` & friends) sit on an interface and the framework annotation (`@RestController`) sits on its implementation — the usual server layout — point the export at the interface, or at a method on it. Since v3.2.6 the export expands the contract to its implementing classes and exports their endpoints, instead of failing with "No API endpoints found".
+
+A selection that names both halves of the layout (the contract interface and the API class that implements it) exports each endpoint once. Selections made in the Project view are unchanged: a directory selection exports only its own classes, never the implementations of interfaces it merely enumerates.
+
+This works for every export channel.
+
 ## Copy an API URL
 
 1. Select one or more methods, a class, or files/folders in the editor or the Project view

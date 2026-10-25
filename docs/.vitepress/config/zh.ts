@@ -91,6 +91,7 @@ function sidebarGuide() {
         { text: '注释规范', link: '/zh/guide/docs' },
         { text: 'Javadoc 示例', link: '/zh/guide/javadoc-demo' },
         { text: '插件知识库 (AI)', link: '/zh/guide/knowledge-base' },
+        { text: 'MCP 客户端集成', link: '/zh/guide/mcp' },
         { text: '脚本执行器', link: '/zh/guide/script-executor' },
       ],
     },

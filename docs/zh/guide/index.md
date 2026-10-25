@@ -9,6 +9,7 @@ EasyYapi 是一个 IntelliJ IDEA 插件，基于 [Javadoc](./docs.md#javadoc)、
 - [导出 API 文档](./use.md) —— 从代码生成 Postman、YApi、Markdown、cURL、HttpClient、Hoppscotch、OpenAPI、ApiPost 等格式的文档
 - [在 IDEA 中直接发起 API 请求](./call.md) —— 从编辑器调用端点，并在 API Explorer 中浏览、测试和管理
 - [复制 API 地址](./use.md#复制-api-地址) —— 按 `METHOD /path` 格式逐个复制所选端点的地址
+- [从 MCP 客户端驱动 EasyYapi](./mcp) —— 让外部 Agent 通过 IntelliJ 内置 MCP 服务器扫描端点并导出到 YApi
 
 ## 开箱即用
 

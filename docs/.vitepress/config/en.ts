@@ -76,6 +76,7 @@ function sidebarGuide() {
         { text: 'Comment Standards', link: '/guide/docs' },
         { text: 'Javadoc Demo', link: '/guide/javadoc-demo' },
         { text: 'Plugin Knowledge Base (AI)', link: '/guide/knowledge-base' },
+        { text: 'MCP Client Integration', link: '/guide/mcp' },
         { text: 'Script Executor', link: '/guide/script-executor' },
       ],
     },

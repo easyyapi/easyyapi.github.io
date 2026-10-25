@@ -9,6 +9,7 @@ You can get fairly complete API documentation while keeping your code zero-intru
 - [Export API documentation](./use.md) — generate ready-to-use docs for Postman, YApi, Markdown, cURL, HttpClient, Hoppscotch, OpenAPI, and ApiPost
 - [Call API directly in IDEA](./call.md) — invoke endpoints from the editor and browse, test, and manage them in the API Explorer
 - [Copy an API URL](./use.md#copy-an-api-url) — copy the `METHOD /path` address of every endpoint in a selection
+- [Drive EasyYapi from an MCP client](./mcp) — let an external agent scan endpoints and export them to YApi through IntelliJ's built-in MCP server
 
 ## Out of the Box
 

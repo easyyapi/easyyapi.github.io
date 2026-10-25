@@ -34,6 +34,20 @@ public String hello(@RequestParam String name) {
 | `@mock` | Mock 数据 | `@mock admin` |
 | `@see` | 参见 | `@see User` |
 
+### Record 组件
+
+Java `record` 的组件没有独立的字段注释，需要在 record 自身的 Javadoc 上用 `@param` 标签描述各个组件。自 v3.2.6 起，它们会作为字段描述导出，且对所有导出渠道生效：
+
+```java
+/**
+ * 用户记录
+ *
+ * @param id 用户 ID
+ * @param name 用户名称
+ */
+public record UserRecord(Long id, String name) {}
+```
+
 ## KDoc
 
 KDoc 是 Kotlin 中的文档注释格式，类似于 Javadoc 但支持 Markdown 语法。
