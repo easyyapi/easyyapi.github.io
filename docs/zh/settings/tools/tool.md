@@ -58,8 +58,20 @@ return tool.removePrefix(name, "get")
 
 | 方法 | 说明 |
 |--------|-------------|
+| `tool.toCamelCase(str)` | 规范化为小驼峰（`user_name` → `userName`，`URLValue` → `urlValue`） |
 | `tool.toCamelCase(str, capitalizeFirst)` | 转换为驼峰命名或帕斯卡命名 |
-| `tool.camel2Underline(str)` | 将驼峰命名转换为下划线命名 |
+| `tool.toSnakeCase(str)` | 规范化为 snake_case（`URLValue` → `url_value`） |
+| `tool.toKebabCase(str)` | 规范化为 kebab-case（`URLValue` → `url-value`） |
+| `tool.toPascalCase(str)` | 规范化为大驼峰（`URLValue` → `UrlValue`） |
+| `tool.toLowerDotCase(str)` | 规范化为点号小写形式（`URLValue` → `url.value`） |
+| `tool.camel2Underline(str)` | 旧版驼峰转下划线，缩写词不拆分（`URLValue` → `urlvalue`） |
+
+::: tip
+5 个单参数转换方法共用同一个分词器：`_`、`-`、`.`、空格、驼峰起伏和缩写词边界
+（`URLValue` → `url` + `value`）。`tool.camel2Underline` 保留 Jackson
+`SnakeCaseStrategy` 的旧行为（`urlvalue`），供已按名字调用它的规则继续使用。
+这些方法是[字段命名策略扩展](/zh/framework/field-name-strategies)的基础。
+:::
 
 ## 集合方法
 

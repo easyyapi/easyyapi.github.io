@@ -8,7 +8,7 @@ Documentation site for the **easy-yapi** IntelliJ IDEA plugin, built with VitePr
 
 ## Traced plugin version
 
-**v3.2.6** (released 2026-10-25)
+**v3.2.7** (released 2026-11-11)
 
 This is the version of the easy-yapi plugin that the documentation on this site
 currently describes. Update it whenever a doc update lands.

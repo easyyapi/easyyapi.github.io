@@ -14,7 +14,7 @@ EasyApi understands standard HTTP frameworks (Spring MVC, WebFlux, JAX-RS, Feign
 
 - **Folder-based rule files** (3.0+): `.easyapi/*.rules` at project (`<project>/.easyapi/`) and global (`~/.easyapi/`) scopes — discovered automatically, reloaded on change. Legacy `.easy.api.config*` files are still read for backwards compatibility.
 - **Built-in AI Assistant**: a provider-neutral AI service (LangChain4j-backed) embedded in the Rules tab (Chat / Magic buttons). Authors rules in natural language and never writes files without explicit approval.
-- **External `easy-yapi-assistant` skill**: a skill you install (`npx skills add tangcent/easy-yapi -g -y`) so external AI coding assistants (Trae, Cursor, Cline, Continue, etc.) author rules from the same knowledge base as the built-in assistant.
+- **External `easy-yapi-assistant` skill**: a skill you install (`npx skills add tangcent/easy-yapi -g -y`) so external AI coding assistants (Trae, Cursor, Cline, Continue, etc.) author rules from the same knowledge base as the built-in assistant. It can also be [used without installing](/settings/rule-authoring#use-the-skill-without-installing).
 - **Configuration Rules**: key-value pairs that customize documentation generation. See [Available Config Rules](/settings/config-rule).
 - **Groovy Scripts**: advanced customization via the `groovy:` prefix. See [Script Tools](/settings/tools).
 - **Parse Events**: callbacks that execute at specific points during the parsing process. See [Callbacks & Events](/settings/).

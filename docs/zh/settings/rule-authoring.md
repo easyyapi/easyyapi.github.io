@@ -86,6 +86,21 @@ EasyYapi 3.0 内置了一个与提供商无关的 AI 助手（基于 LangChain4j
 
 由于 skill 和 IDE 内助手共享同一知识库，一方编写的规则可立即被另一方理解和编辑。
 
+### 免安装使用 skill
+
+如果你的 AI 助手不支持安装 skill，或不想全局安装，可以复制下面的引导语，在末尾
+`我的问题是：` 之后追加自己的问题后发送。助手会直接从仓库 clone 这个 skill，
+无需 `npx skills add`，只拉一个 commit 和 `skills/easy-yapi-assistant/` 目录。
+把 `master` 换成与已安装插件对应的 release tag（如 `v3.2.7`）可避免文档与插件版本漂移。
+
+```text
+把 https://github.com/tangcent/easy-yapi.git clone 到 ~/.easy-yapi-assistant（目录已存在就先删除），执行：
+  git clone --depth 1 --branch master --single-branch --filter=blob:none --sparse https://github.com/tangcent/easy-yapi.git ~/.easy-yapi-assistant
+  git -C ~/.easy-yapi-assistant sparse-checkout set skills/easy-yapi-assistant
+然后读取 ~/.easy-yapi-assistant/skills/easy-yapi-assistant/SKILL.md，按其中的工作流回答我的问题；
+完成后删除 ~/.easy-yapi-assistant。我的问题是：
+```
+
 ## 故障排查
 
 ### 导出结果为空或缺少接口

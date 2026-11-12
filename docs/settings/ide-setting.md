@@ -22,6 +22,7 @@ EasyYapi provides IDE-level settings that can be configured within IDEA.
 |---------|-------------|
 | outputDemo | Generate response demo when exporting Markdown |
 | outputCharset | Export character set |
+| removeDuplicateTitleFromDescription | **Parsing & Output > Output Format** (default `true`): drop the API name when the exported description repeats it as the first non-blank line. See [Comment Standards](/guide/docs#duplicate-title-in-the-description). |
 
 ## Framework Toggles
 

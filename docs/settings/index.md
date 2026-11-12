@@ -52,6 +52,26 @@ See [IDE Settings](./ide-setting).
 | [Script Tools](./tools) | Tools available in Groovy scripts |
 | [Advanced](./advanced/) | Advanced custom configuration |
 
+## Method Event Context
+
+Since v3.2.7, method-level lifecycle events (`api.method.parse.before`,
+`api.method.parse.after`, `export.after`, and the `custom.method.*` hooks)
+receive the same `ResolvedMethod` context on every framework — Spring MVC,
+JAX-RS, Feign, Spring Actuator, gRPC and Custom. In practice:
+
+- **Feign**: `it.returnType()`, `it.args()` and `it.argTypes()` report
+  substituted types on inherited generic methods. On inherited methods,
+  `it.containingClass()` is the exported client and `it.defineClass()` is the
+  declaring interface.
+- A `#regex:` filter on one of these event rules matches the return type, not
+  the method's whole source text — a pattern written against an annotation or
+  comment in that text no longer fires.
+- A failure during class-level setup now still fires `api.class.parse.after`.
+
+Rule keys, config formats and trigger order are unchanged. See
+[Parse Events](./events/api_method_parse_before) and
+[Script tools: it](./tools/it) for the context methods.
+
 ## Configuration Priority
 
 1. Project rules — `<project>/.easyapi/` + legacy `.easy.api.config*` walked up from the project root (highest priority)

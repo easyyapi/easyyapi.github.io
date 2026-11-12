@@ -52,6 +52,23 @@ json.rule.convert=groovy:it.type().name()=="java.util.Date" => java.lang.String
 | [脚本工具](./tools/) | 在 Groovy 脚本中可用的工具 |
 | [高级配置](./advanced/) | 高级自定义配置 |
 
+## 方法事件上下文
+
+自 v3.2.7 起，方法级生命周期事件（`api.method.parse.before`、
+`api.method.parse.after`、`export.after` 以及 `custom.method.*` 钩子）在所有框架上
+都收到同一个 `ResolvedMethod` 上下文 —— Spring MVC、JAX-RS、Feign、
+Spring Actuator、gRPC 和 Custom。具体影响：
+
+- **Feign**：`it.returnType()`、`it.args()` 和 `it.argTypes()` 会返回继承泛型方法
+  替换后的类型。对于继承方法，`it.containingClass()` 是被导出的 client，
+  `it.defineClass()` 是声明该方法的接口。
+- 这些事件规则上的 `#regex:` 过滤器匹配返回类型，而不是方法源码全文 ——
+  针对该文本中的注解或注释写的正则不再命中。
+- 类级别准备阶段失败时，`api.class.parse.after` 现在仍会触发。
+
+rule key、配置格式和触发顺序均未变化。上下文方法参见
+[解析事件](./events/api_method_parse_before) 和 [脚本工具：it](./tools/it)。
+
 ## 配置优先级
 
 1. 工程规则 —— `<project>/.easyapi/` + 从工程根目录向上查找的旧版 `.easy.api.config*`（最高优先级）

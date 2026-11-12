@@ -86,6 +86,25 @@ For teams that drive rule authoring from an external AI tool — a terminal-base
 
 Because the skill and the in-IDE assistant share the same knowledge base, a rule authored by one is immediately understood and editable by the other.
 
+### Use the skill without installing
+
+If your AI assistant cannot install skills, or you do not want a global install,
+paste the prompt below into the chat and append your question after the final
+`My question:`. The assistant clones the skill from the repository itself — no
+`npx skills add` needed — fetching one commit and only the
+`skills/easy-yapi-assistant/` folder. Replace `master` with the release tag that
+matches your installed plugin (e.g. `v3.2.7`) to keep the skill aligned with the
+plugin version.
+
+```text
+Clone https://github.com/tangcent/easy-yapi.git into ~/.easy-yapi-assistant (remove that
+directory first if it already exists) with:
+  git clone --depth 1 --branch master --single-branch --filter=blob:none --sparse https://github.com/tangcent/easy-yapi.git ~/.easy-yapi-assistant
+  git -C ~/.easy-yapi-assistant sparse-checkout set skills/easy-yapi-assistant
+Then read ~/.easy-yapi-assistant/skills/easy-yapi-assistant/SKILL.md and follow it to answer
+my question. Delete ~/.easy-yapi-assistant when done. My question:
+```
+
 ## Troubleshooting
 
 ### An export comes back empty or misses endpoints

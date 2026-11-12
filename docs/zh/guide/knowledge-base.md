@@ -14,7 +14,7 @@ EasyApi 开箱即用地支持标准 HTTP 框架（Spring MVC、WebFlux、JAX-RS�
 
 - **基于文件夹的规则文件** (3.0+)：项目（`<project>/.easyapi/`）和全局（`~/.easyapi/`）作用域下的 `.easyapi/*.rules` —— 自动发现，变更时自动重载。传统的 `.easy.api.config*` 文件仍会被读取以保持向后兼容。
 - **内置 AI 助手**：一个与供应商无关的 AI 服务（基于 LangChain4j）嵌入在规则页签中（Chat / Magic 按钮）。用自然语言编写规则，并且不会在未经明确批准的情况下写入文件。
-- **外部 `easy-yapi-assistant` skill**：你可以安装的 skill（`npx skills add tangcent/easy-yapi -g -y`），以便外部 AI 编码助手（Trae、Cursor、Cline、Continue 等）从与内置助手相同的知识库编写规则。
+- **外部 `easy-yapi-assistant` skill**：你可以安装的 skill（`npx skills add tangcent/easy-yapi -g -y`），以便外部 AI 编码助手（Trae、Cursor、Cline、Continue 等）从与内置助手相同的知识库编写规则。也可以[免安装使用](/zh/settings/rule-authoring#免安装使用-skill)。
 - **配置规则**：自定义文档生成的键值对。参见 [可用配置规则](/zh/settings/config-rule)。
 - **Groovy 脚本**：通过 `groovy:` 前缀实现的高级自定义。参见 [脚本工具](/zh/settings/tools)。
 - **解析事件**：在解析过程中特定时刻执行的回调。参见 [回调与事件](/zh/settings/)。

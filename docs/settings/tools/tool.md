@@ -58,8 +58,21 @@ return tool.removePrefix(name, "get")
 
 | Method | Description |
 |--------|-------------|
+| `tool.toCamelCase(str)` | Normalize to lower camelCase (`user_name` → `userName`, `URLValue` → `urlValue`) |
 | `tool.toCamelCase(str, capitalizeFirst)` | Convert to camelCase or PascalCase |
-| `tool.camel2Underline(str)` | Convert camelCase to snake_case |
+| `tool.toSnakeCase(str)` | Normalize to snake_case (`URLValue` → `url_value`) |
+| `tool.toKebabCase(str)` | Normalize to kebab-case (`URLValue` → `url-value`) |
+| `tool.toPascalCase(str)` | Normalize to UpperCamelCase (`URLValue` → `UrlValue`) |
+| `tool.toLowerDotCase(str)` | Normalize to lower dot case (`URLValue` → `url.value`) |
+| `tool.camel2Underline(str)` | Legacy camelCase → snake_case that keeps acronyms glued (`URLValue` → `urlvalue`) |
+
+::: tip
+The five single-argument converters share one word splitter: `_`, `-`, `.`,
+space, camel humps, and acronym boundaries (`URLValue` → `url` + `value`).
+`tool.camel2Underline` keeps Jackson's legacy `SnakeCaseStrategy` behaviour
+(`urlvalue`) for rules that already call it by name. These helpers back the
+[field name strategy extensions](/framework/field-name-strategies).
+:::
 
 ## Collection Methods
 

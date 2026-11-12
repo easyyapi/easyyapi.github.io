@@ -48,6 +48,33 @@ A Java `record` component carries no per-field comment, so document the componen
 public record UserRecord(Long id, String name) {}
 ```
 
+## Duplicate Title in the Description
+
+The first line of a method comment becomes both the API name and the first line
+of the exported description. Since v3.2.7, EasyYapi drops that repeated title
+from the description by default when exporting, sending, or scanning an API:
+
+```java
+/**
+ * Get user by id
+ *
+ * Returns the user matching the given id.
+ */
+```
+
+The exported description now starts with `Returns the user matching the given
+id.` instead of repeating `Get user by id`.
+
+The comparison runs on the final `name` and `description` fields, so it also
+covers names set by `api.name` / `method.doc` rules or Swagger annotations.
+Remaining lines keep their original indentation, so Markdown code blocks stay
+intact.
+
+Turn it off with **Remove API name duplicated in description** under
+`Settings > Other Settings > EasyApi > Parsing & Output > Output Format`
+(`removeDuplicateTitleFromDescription`). The change applies to the next parse,
+without restarting the IDE.
+
 ## KDoc
 
 KDoc is the documentation comment format in Kotlin, similar to Javadoc but supports Markdown syntax.

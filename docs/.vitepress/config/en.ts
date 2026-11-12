@@ -110,6 +110,7 @@ function sidebarFramework() {
       items: [
         { text: 'Deprecated & Converts', link: '/framework/deprecated-converts' },
         { text: 'Field Order', link: '/framework/field-order' },
+        { text: 'Field Name Strategies', link: '/framework/field-name-strategies' },
       ],
     },
   ]

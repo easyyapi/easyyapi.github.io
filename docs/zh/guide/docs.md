@@ -48,6 +48,29 @@ Java `record` 的组件没有独立的字段注释，需要在 record 自身的 
 public record UserRecord(Long id, String name) {}
 ```
 
+## 描述中重复的接口名称
+
+方法注释的第一行会同时成为 API 名称和导出描述的第一行。自 v3.2.7 起，
+EasyYapi 在导出、发送或扫描 API 时默认删除描述里这行重复的标题：
+
+```java
+/**
+ * 根据 ID 查询用户
+ *
+ * 返回与给定 ID 匹配的用户。
+ */
+```
+
+导出描述现在从"返回与给定 ID 匹配的用户。"开始，不再重复"根据 ID 查询用户"。
+
+比较发生在最终的 `name` 和 `description` 字段上，因此由 `api.name` /
+`method.doc` 规则或 Swagger 注解设置的名称同样生效。其余行保留原有缩进，
+Markdown 代码块不会被破坏。
+
+可在 `Settings > Other Settings > EasyApi > Parsing & Output > Output Format`
+下关闭 **Remove API name duplicated in description**
+（`removeDuplicateTitleFromDescription`）。修改在下一次解析时生效，无需重启 IDE。
+
 ## KDoc
 
 KDoc 是 Kotlin 中的文档注释格式，类似于 Javadoc 但支持 Markdown 语法。

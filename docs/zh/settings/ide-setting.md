@@ -22,6 +22,7 @@ EasyYapi 提供了 IDE 级别的设置，可以在 IDEA 中进行配置。
 |--------|------|
 | outputDemo | 导出 Markdown 时生成响应 demo |
 | outputCharset | 导出字符集 |
+| removeDuplicateTitleFromDescription | **Parsing & Output > Output Format**（默认 `true`）：当导出描述的首个非空行与 API 名称重复时删除该行。参见[注释规范](/zh/guide/docs#描述中重复的接口名称)。 |
 
 ## 框架开关
 

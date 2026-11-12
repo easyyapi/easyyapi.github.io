@@ -125,6 +125,7 @@ function sidebarFramework() {
       items: [
         { text: '废弃信息与类型转换', link: '/zh/framework/deprecated-converts' },
         { text: '字段排序', link: '/zh/framework/field-order' },
+        { text: '字段命名策略', link: '/zh/framework/field-name-strategies' },
       ],
     },
   ]
